@@ -4,12 +4,12 @@ db = SQLAlchemy()
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(120), nullable=False)
-    apellidos = db.Column(db.String(120), nullable=False)
+    name = db.Column(db.String(120), nullable=False)
+    last_name = db.Column(db.String(120), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    contraseña = db.Column(db.String(80), unique=False, nullable=False)
-    favoritos = db.relationship('Favoritos', backref = 'User')
-    favoritos_ingredientes = db.relationship('Ingredientes_favoritos', backref = 'User')
+    password = db.Column(db.String(80), unique=False, nullable=False)
+    recipes_fav = db.relationship('RecipesFavorites', backref = 'User')
+    ingredients_fav = db.relationship('IngredientsFavorites', backref = 'User')
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -17,129 +17,129 @@ class User(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "nombre": self.nombre,
-            "apellidos": self.apellidos,
+            "name": self.name,
+            "last_name": self.last_name,
             "email": self.email,
             # do not serialize the password, its a security breach
         }
 
 
 
-class Favoritos(db.Model):
+class RecipesFavorites(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.integer(150), db.ForeignKey('User.id'))
-    receta_id = db.Column(db.integer(150), db.ForeignKey('recetas.id'))
+    user_id = db.Column(db.integer(150), db.ForeignKey('user.id'))
+    recipe_id = db.Column(db.integer(150), db.ForeignKey('recipes.id'))
 
     def __repr__(self):
-        return f'<Favoritos %r>' % self.id
+        return f'<RecipesFavorites %r>' % self.id
 
     def serialize(self):
         return {
             "id": self.id,
-            "user_id": self.usuario_id,
-            "receta_id" : self.receta_id,
+            "user_id": self.user_id,
+            "recipe_id" : self.recipe_id,
         }
 
 
 
-class Recetas(db.Model):
+class Recipes(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(250), nullable=False)
-    descripcion = db.Column(db.String(500), nullable=False)
-    favoritas = db.relationship('Favoritos', backref = 'Recetas')
-    ingredientes = db.relationship('Recetas_ingredientes', backref = 'Recetas')
-    categorias = db.relationship('Categorias', backref = 'Recetas')
+    name = db.Column(db.String(250), nullable=False)
+    description = db.Column(db.String(500), nullable=False)
+    favorites = db.relationship('RecipesFavorites', backref = 'Recipes')
+    ingredients = db.relationship('RecipesIngredients', backref = 'Recipes')
+    categories = db.relationship('Categories', backref = 'Recipes')
 
     def __repr__(self):
-        return f'<Recetas %r>' % self.id
+        return f'<Recipes %r>' % self.id
 
     def serialize(self):
         return {
             "id": self.id,
-            "nombre": self.nombre,
-            "descripcion": self.descripcion,
+            "name": self.name,
+            "description": self.description,
         }
 
 
-class Ingredientes(db.Model):
+class Ingredients (db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(250), nullable=False)
-    favoritos = db.relationship('Ingredientes_favoritos', backref = 'Ingredientes')
-    recetas = db.relationship('Recetas_ingredientes', backref = 'Ingredientes')
-    curiosidades = db.relationship('Curiosidades', backref = 'Ingredientes')
+    name = db.Column(db.String(250), nullable=False)
+    favorites = db.relationship('IngredientsFavorites', backref = 'Ingredients')
+    recipes = db.relationship('RecipesIngredients', backref = 'Ingredients')
+    trivia = db.relationship('Trivia', backref = 'Ingredients')
 
     def __repr__(self):
-        return f'<Ingredientes %r>' % self.id
+        return f'<Ingredients %r>' % self.id
 
     def serialize(self):
         return {
             "id": self.id,
-            "nombre": self.nombre,
+            "name": self.name,
         }
 
 
-class Ingredientes_favoritos(db.Model):
+class IngredientsFavorites (db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    ingrediente_id = db.Integer(150), db.ForeignKey('ingredientes.id')
-    usuario_id = db.Column(db.integer(150), db.ForeignKey('usuario.id'))
+    ingredient_id = db.Integer(150), db.ForeignKey('ingredients.id')
+    user_id = db.Column(db.integer(150), db.ForeignKey('user.id'))
 
     def __repr__(self):
-        return f'<Ingredientes_favoritos %r>' % self.id
+        return f'<IngredientsFavorites %r>' % self.id
 
     def serialize(self):
         return {
             "id": self.id,
-            "ingrediente_id": self.ingrediente_id,
+            "ingredient_id": self.ingredient_id,
             "user": self.user_id,
         }
 
 
 
-class Recetas_ingredientes(db.Model):
+class RecipesIngredients (db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    receta_id = db.Column(db.integer(150), db.ForeignKey('recetas.id'))
-    ingrediente_id = db.Column(db.integer(150), db.ForeignKey('ingredientes.id'))
+    recipe_id = db.Column(db.integer(150), db.ForeignKey('recipes.id'))
+    ingredient_id = db.Column(db.integer(150), db.ForeignKey('ingredients.id'))
 
     def __repr__(self):
-        return f'<Recetas_ingredientes %r>' % self.id
+        return f'<RecipesIngredients %r>' % self.id
 
     def serialize(self):
         return {
             "id": self.id,
-            "receta_id": self.receta_id,
-            "ingrediente_id": self.ingrediente_id,
+            "recipe_id": self.recipe_id,
+            "ingredient_id": self.ingredient_id,
         }
 
 
 
-class Curiosidades(db.Model):
+class Trivia (db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    texto = db.Column(db.String(500), nullable=False)
-    ingrediente_id = db.Column(db.integer(150), db.ForeignKey('ingredientes.id'))
+    text = db.Column(db.String(500), nullable=False)
+    ingredient_id = db.Column(db.integer(150), db.ForeignKey('ingredients.id'))
 
     def __repr__(self):
-        return f'<Curiosidades %r>' % self.id
+        return f'<Trivia %r>' % self.id
 
     def serialize(self):
         return {
             "id": self.id,
-            "texto": self.texto,
-            "ingrediente_id": self.ingrediente_id,
+            "text": self.text,
+            "ingredient_id": self.ingredient_id,
         }
 
 
 
-class Categorias(db.Model):
+class Categories(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(250), unique=True, nullable=False)
-    receta_id = db.Column(db.integer(150), db.ForeignKey('recetas.id'))
+    recipe_id = db.Column(db.integer(150), db.ForeignKey('recipes.id'))
 
     def __repr__(self):
-        return f'<Categorias %r>' % self.id
+        return f'<Categories %r>' % self.id
 
     def serialize(self):
         return {
             "id": self.id,
-            "nombre": self.nombre,
-            "receta_id": self.receta_id,
+            "name": self.name,
+            "recipe_id": self.recipe_id,
         }

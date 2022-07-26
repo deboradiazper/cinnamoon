@@ -2,15 +2,14 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-class Usuario(db.Model):
-    __tablename__= 'usuario'
+class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(120), nullable=False)
     apellidos = db.Column(db.String(120), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     contraseña = db.Column(db.String(80), unique=False, nullable=False)
-    favoritos = db.relationship('Favoritos', backref = 'Usuario')
-    favoritos_ingredientes = db.relationship('Ingredientes_favoritos', backref = 'Usuario')
+    favoritos = db.relationship('Favoritos', backref = 'User')
+    favoritos_ingredientes = db.relationship('Ingredientes_favoritos', backref = 'User')
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -27,9 +26,8 @@ class Usuario(db.Model):
 
 
 class Favoritos(db.Model):
-    __tablename__= 'favoritos'
     id = db.Column(db.Integer, primary_key=True)
-    usuario_id = db.Column(db.integer(150), db.ForeignKey('usuario.id'))
+    user_id = db.Column(db.integer(150), db.ForeignKey('User.id'))
     receta_id = db.Column(db.integer(150), db.ForeignKey('recetas.id'))
 
     def __repr__(self):
@@ -38,14 +36,13 @@ class Favoritos(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "usuario_id": self.usuario_id,
+            "user_id": self.usuario_id,
             "receta_id" : self.receta_id,
         }
 
 
 
 class Recetas(db.Model):
-    __tablename__= 'recetas'
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(250), nullable=False)
     descripcion = db.Column(db.String(500), nullable=False)
@@ -65,7 +62,6 @@ class Recetas(db.Model):
 
 
 class Ingredientes(db.Model):
-    __tablename__= 'ingredientes'
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(250), nullable=False)
     favoritos = db.relationship('Ingredientes_favoritos', backref = 'Ingredientes')
@@ -83,7 +79,6 @@ class Ingredientes(db.Model):
 
 
 class Ingredientes_favoritos(db.Model):
-    __tablename__= 'ingredientes_favoritos'
     id = db.Column(db.Integer, primary_key=True)
     ingrediente_id = db.Integer(150), db.ForeignKey('ingredientes.id')
     usuario_id = db.Column(db.integer(150), db.ForeignKey('usuario.id'))
@@ -95,13 +90,12 @@ class Ingredientes_favoritos(db.Model):
         return {
             "id": self.id,
             "ingrediente_id": self.ingrediente_id,
-            "usuario_id": self.usuario_id,
+            "user": self.user_id,
         }
 
 
 
 class Recetas_ingredientes(db.Model):
-    __tablename__= 'recetas_ingredientes'
     id = db.Column(db.Integer, primary_key=True)
     receta_id = db.Column(db.integer(150), db.ForeignKey('recetas.id'))
     ingrediente_id = db.Column(db.integer(150), db.ForeignKey('ingredientes.id'))
@@ -119,7 +113,6 @@ class Recetas_ingredientes(db.Model):
 
 
 class Curiosidades(db.Model):
-    __tablename__= 'curiosidades'
     id = db.Column(db.Integer, primary_key=True)
     texto = db.Column(db.String(500), nullable=False)
     ingrediente_id = db.Column(db.integer(150), db.ForeignKey('ingredientes.id'))
@@ -137,7 +130,6 @@ class Curiosidades(db.Model):
 
 
 class Categorias(db.Model):
-    __tablename__= 'categorias'
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(250), unique=True, nullable=False)
     receta_id = db.Column(db.integer(150), db.ForeignKey('recetas.id'))

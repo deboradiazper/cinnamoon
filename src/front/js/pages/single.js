@@ -2,27 +2,90 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
 
-export const Single = props => {
-	const { store, actions } = useContext(Context);
-	const params = useParams();
+export const Single = (props) => {
+  const { store, actions } = useContext(Context);
+  const params = useParams();
 
-	return (
-		<div className="jumbotron">
-			<h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1>
-			<img src={rigoImageUrl} />
-			<hr className="my-4" />
+  const [data, setData] = useState({
+    name: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
 
-			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
-					Back home
-				</span>
-			</Link>
-		</div>
-	);
+  const handleInputChange = (event) => {
+    console.log(event.target.value);
+    setData({
+      ...data,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  return (
+    <div>
+      <div className="container col-12 mb-3 text-center">
+        <h2>Join us!</h2>
+        <p>
+          Join our community and learn about health. It's totally free! Lorem
+          ipsum blablablalblablal
+        </p>
+      </div>
+      <div className="row">
+        <div className="col-12 mb-3 text-center">
+          <form className="registerForm">
+            <div className="col-12 mb-3 text-center">
+              <input
+                name="name"
+                placeholder="your name here"
+                autoComplete="off"
+                type="text"
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div className="col-12 mb-3 text-center">
+              <input
+                name="lastName"
+                placeholder="your last name"
+                autoComplete="off"
+                type="text"
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div className="col-12 mb-3 text-center">
+              <input
+                name="email"
+                placeholder="your mail"
+                autoComplete="off"
+                type="text"
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div className="col-12 mb-3 text-center">
+              <input
+                name="password"
+                placeholder="your password"
+                autoComplete="off"
+                type="text"
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div className="col-12 mb-3 text-center">
+              <button className="btn btn-primary" type="submit">
+                send
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 Single.propTypes = {
-	match: PropTypes.object
+  match: PropTypes.object,
 };

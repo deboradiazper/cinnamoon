@@ -15,11 +15,16 @@ export const Single = (props) => {
   });
 
   const handleInputChange = (event) => {
-    console.log(event.target.value);
+    //console.log(event.target.value);
     setData({
       ...data,
       [event.target.name]: event.target.value,
     });
+  };
+
+  const sendData = (event) => {
+    event.preventDefault();
+    console.log(data);
   };
 
   return (
@@ -33,7 +38,7 @@ export const Single = (props) => {
       </div>
       <div className="row">
         <div className="col-12 mb-3 text-center">
-          <form className="registerForm">
+          <form className="registerForm" onSubmit={sendData}>
             <div className="col-12 mb-3 text-center">
               <input
                 name="name"

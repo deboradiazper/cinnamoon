@@ -20,7 +20,7 @@ def handle_hello():
 
 @api.route('/user', methods=['GET'])
 def get_users():
-    users = user.query.all()
+    users = User.query.all()
     data = [user.serialize() for user in users]
     
     return jsonify(data), 200

@@ -24,8 +24,6 @@ export const Single = (props) => {
     console.log(info);
   };
 
-  const addInfo = (info) => {};
-
   return (
     <div>
       <div className="container col-12 mb-3 text-center">

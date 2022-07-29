@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export const userRegistration = () => {
-  const [data, setData] = useState({
+  const [info, setInfo] = useState({
     name: "",
     lastName: "",
     email: "",
@@ -10,16 +10,18 @@ export const userRegistration = () => {
 
   const handleInputChange = (event) => {
     //console.log(event.target.value);
-    setData({
-      ...data,
+    setInfo({
+      ...info,
       [event.target.name]: event.target.value,
     });
   };
 
-  const sendData = (event) => {
+  const sendInfo = (event) => {
     event.preventDefault();
-    console.log(data);
+    console.log(info);
   };
+
+  const addInfo = (info) => {};
 
   return (
     <div>
@@ -32,7 +34,7 @@ export const userRegistration = () => {
       </div>
       <div className="row">
         <div className="col-12 mb-3 text-center">
-          <form className="registerForm" onSubmit={sendData}>
+          <form className="registerForm" onSubmit={sendInfo}>
             <div className="col-12 mb-3 text-center">
               <input
                 name="name"

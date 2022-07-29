@@ -4,10 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Single = (props) => {
-  const { store, actions } = useContext(Context);
-  const params = useParams();
-
-  const [data, setData] = useState({
+  const [info, setInfo] = useState({
     name: "",
     lastName: "",
     email: "",
@@ -16,16 +13,18 @@ export const Single = (props) => {
 
   const handleInputChange = (event) => {
     //console.log(event.target.value);
-    setData({
-      ...data,
+    setInfo({
+      ...info,
       [event.target.name]: event.target.value,
     });
   };
 
-  const sendData = (event) => {
+  const sendInfo = (event) => {
     event.preventDefault();
-    console.log(data);
+    console.log(info);
   };
+
+  const addInfo = (info) => {};
 
   return (
     <div>
@@ -38,7 +37,7 @@ export const Single = (props) => {
       </div>
       <div className="row">
         <div className="col-12 mb-3 text-center">
-          <form className="registerForm" onSubmit={sendData}>
+          <form className="registerForm" onSubmit={sendInfo}>
             <div className="col-12 mb-3 text-center">
               <input
                 name="name"

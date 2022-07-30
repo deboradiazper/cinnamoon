@@ -24,3 +24,12 @@ def get_users():
     data = [user.serialize() for user in users]
     
     return jsonify(data), 200
+
+
+@api.route('/user', methods=['POST'])
+def create_user():
+    data = request.json
+    user = User(name=data.get('name'), last_name=data.get('lastName'), email=data.get('email'), password=data.get('password'))
+    db.session.add(user)
+    db.session.commit()
+    return jsonify({"message": "everything ok"}), 200

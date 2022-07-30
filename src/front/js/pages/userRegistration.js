@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export const userRegistration = () => {
+export const UserRegistration = () => {
   const [info, setInfo] = useState({
     name: "",
     lastName: "",
@@ -19,9 +19,33 @@ export const userRegistration = () => {
   const sendInfo = (event) => {
     event.preventDefault();
     console.log(info);
+    addInfo(info);
   };
 
-  const addInfo = (info) => {};
+  //llamada fetch api
+  const addInfo = (info) => {
+    fetch(
+      "https://3001-deboradiazper-cinnamoon-3avbj4xkusr.ws-eu54.gitpod.io/api/user",
+      {
+        method: "POST",
+        body: JSON.stringify(info),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then((resp) => {
+        return resp.json(); // (regresa una promesa) will try to parse the result as json as return a promise that you can .then for results
+      })
+      .then((data) => {
+        //Aquí es donde debe comenzar tu código después de que finalice la búsqueda
+        console.log(data); //esto imprimirá en la consola el objeto exacto recibido del servidor
+      })
+      .catch((error) => {
+        //manejo de errores
+        console.log(error);
+      });
+  };
 
   return (
     <div>
@@ -70,7 +94,7 @@ export const userRegistration = () => {
                 name="password"
                 placeholder="your password"
                 autoComplete="off"
-                type="text"
+                type="password"
                 onChange={handleInputChange}
               />
             </div>

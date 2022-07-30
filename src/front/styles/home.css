@@ -5,3 +5,55 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+h3 {
+  margin: 0px;
+  padding-top: 30px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  color: rgba(37, 37, 37, 0.9);
+}
+p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.form-control {
+  width: 100%;
+  border-radius: 40px;
+  background: #dad4d4;
+  font-size: 14px;
+  color: rgba(37, 37, 37, 0.9);
+}
+.search {
+  border-radius: 40px;
+  background: #dad4d4;
+}
+h5 {
+  color: rgba(37, 37, 37, 0.9);
+}
+.number {
+  width: 57px;
+  height: 35px;
+  background: #428e9e;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.subscribe {
+  background: #de21d7;
+  border-radius: 15px;
+  text-decoration-line: underline;
+}
+p {
+  color: rgba(37, 37, 37, 0.9);
+  opacity: 0.7;
+}
+.scroll-container {
+  overflow-x: scroll;
+  scrollbar-width: thin;
+}

@@ -4,7 +4,9 @@ export const Footer = () => (
   <div className="container-fluid p-0">
     <div className="diverse text-center">
       <h2>Cook the most healthy and delicious recipes</h2>
-      <p>You can cook with us and consult your favorites recipes.</p>
+      <p className="text3">
+        You can cook with us and consult your favorites recipes.
+      </p>
       <button className="btn btn-large subscribe text-light border-0 px-3">
         subscribe
       </button>
@@ -13,13 +15,13 @@ export const Footer = () => (
       <p>Follow us</p>
       <div className="iconsFooter">
         <span>
-          <i class="fab fa-instagram px-2"></i>
+          <i class="fab fa-instagram px-3"></i>
         </span>
         <span>
-          <i class="fab fa-pinterest px-2"></i>
+          <i class="fab fa-pinterest px-3"></i>
         </span>
         <span>
-          <i class="fab fa-twitter px-2"></i>
+          <i class="fab fa-twitter px-3"></i>
         </span>
       </div>
     </footer>

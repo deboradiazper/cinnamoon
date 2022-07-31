@@ -10,22 +10,22 @@ export const Navbar = () => {
             <h1>CINNAMON</h1>
           </span>
         </Link>
-        <div className="icons">
+        <div className="icons d-flex align-items-center">
           <span>
-            <i class="fas fa-user-circle px-3"></i>
+            <i class="user fas fa-user-circle fa-2x mx-4"></i>
           </span>
           <span>
-            <i class="fas fa-moon px-3"></i>
+            <i class="moon fas fa-moon fa-2x mx-4"></i>
           </span>
-          <div className="btn-group dropstart">
+          <div className="btn-group dropstart ms-2">
             <button
               type="button"
-              className="btn dropdown border-0
+              className="bars btn dropdown border-0
 			"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <i className="fas fa-bars"></i>
+              <i className="fas fa-align-justify fa-3x"></i>
             </button>
             <ul className="dropdown-menu p-3 shadow p-3 mb-5 bg-body rounded border-0">
               <li>Recipes</li>

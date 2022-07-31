@@ -5,16 +5,12 @@ const RecipeDetail = (props) => {
   return (
     <div className="row">
       <div className="col-12">
-        <img
-          src="https://nutririana.com/wp-content/uploads/2020/06/Poke-bowl-vegano-de-no-at%C3%BAn.jpg"
-          className="image-detail"
-          alt="..."
-        />
+        <img src={props.image} className="image-detail" alt="..." />
       </div>
 
       <div className="col-10">
         <div className="d-flex justify-content-between mt-3">
-          <h2 className="title py-3">Pokebowl vegan</h2>
+          <h2 className="title py-3">{props.name}</h2>
           <span className="star">
             <i className="fas fa-star ms-3"></i>
             <i className="fas fa-star ms-3"></i>
@@ -24,8 +20,8 @@ const RecipeDetail = (props) => {
           </span>
         </div>
 
-        <p className="fs-5">vegan, lactose free</p>
-        <p className="py-3">
+        <p className="text4">Vegan, lactose free</p>
+        <p className=" text1 py-3">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
           mollitia, molestiae quas vel sint commodi repudiandae consequuntur
           voluptatum laborum numquam blanditiis harum quisquam eius sed odit

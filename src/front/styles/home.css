@@ -5,21 +5,25 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
-h3 {
-  margin: 0px;
-  padding-top: 30px;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 30px;
+h2 {
   color: rgba(37, 37, 37, 0.9);
 }
-p {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 30px;
+.text1 {
   color: #000000;
+  font-size: 18px;
+  opacity: 0.7;
+}
+p {
+  color: #000000;
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.recipes {
+  font-family: "Poppins", sans-serif;
+  padding-left: 10px;
+  padding-right: 200px;
+  padding-top: 30px;
 }
 
 .form-control {
@@ -42,18 +46,4 @@ h5 {
   background: #428e9e;
   border-radius: 5px;
   font-size: 16px;
-}
-
-.subscribe {
-  background: #de21d7;
-  border-radius: 15px;
-  text-decoration-line: underline;
-}
-p {
-  color: rgba(37, 37, 37, 0.9);
-  opacity: 0.7;
-}
-.scroll-container {
-  overflow-x: scroll;
-  scrollbar-width: thin;
 }

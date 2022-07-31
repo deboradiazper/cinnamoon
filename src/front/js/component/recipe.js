@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Recipe = (props) => {
   return (
-    <div className="card h-100">
+    <div className="card">
       <div className="position-relative">
         <img src={props.image} className="img-recipe img-fluid" alt="..." />
         <div className="buttonImage position-absolute bottom-0 start-0 m-3">

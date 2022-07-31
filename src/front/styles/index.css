@@ -37,13 +37,15 @@ h1 {
   background: #fffdfd;
   border-radius: 10px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  width: 90%;
 }
 .go {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   background: #de21d7;
   border-radius: 10px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .bars {
   color: rgba(37, 37, 37, 0.7);
@@ -94,7 +96,7 @@ h1 {
   background: #de21d7;
   border-radius: 30px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 22px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .text3 {
@@ -117,4 +119,7 @@ h1 {
 .scroll-container {
   overflow-x: scroll;
   scrollbar-width: thin;
+}
+.text-detail {
+  padding-right: 200px;
 }

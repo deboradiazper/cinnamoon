@@ -1,3 +1,37 @@
-/* 
-    General Styles used on every website (Don't Repeat Yourself)
-*/
+body {
+  background-color: hsl(0, 8%, 95%);
+  font-family: "Comfortaa", cursive;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+}
+
+.button {
+  box-shadow: inset 0px 1px 0px 0px #e184f3;
+  background: linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
+  background-color: #c123de;
+  border-radius: 6px;
+  border: 1px solid #a511c0;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 20px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #9b14b3;
+}
+.button:hover {
+  background: linear-gradient(to bottom, #a20dbd 5%, #c123de 100%);
+  background-color: #a20dbd;
+}
+.button:active {
+  position: relative;
+  top: 1px;
+}
+
+input {
+  background-color: #dad4d4;
+}

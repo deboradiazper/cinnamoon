@@ -33,3 +33,4 @@ def create_user():
     db.session.add(user)
     db.session.commit()
     return jsonify({"message": "everything ok"}), 200
+

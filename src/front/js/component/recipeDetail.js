@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 const RecipeDetail = (props) => {
   return (
     <div className="row">
-      <div className="col-12 col-md-4">
+      <div className="col-6 detail">
         <img src={props.image} className="image-detail" alt="..." />
       </div>
 
-      <div className="col-10">
+      <div className="col-6">
         <div className="text-detail d-flex justify-content-between align-items-center mt-3">
           <h2 className="title py-3">{props.name}</h2>
           <span className="star">

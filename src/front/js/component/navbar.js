@@ -10,6 +10,9 @@ export const Navbar = () => {
             <h1>CINNAMON</h1>
           </span>
         </Link>
+        <Link to="/userRegistration" className="btn btn-danger">
+          Danger
+        </Link>
         <div className="icons d-flex align-items-center">
           <span>
             <i class="user fas fa-user-circle fa-2x mx-4"></i>

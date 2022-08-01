@@ -1,37 +1,140 @@
+/* 
+    General Styles used on every website (Don't Repeat Yourself)
+*/
+
+html,
 body {
-  background-color: hsl(0, 8%, 95%);
-  font-family: "Comfortaa", cursive;
-}
-
-h1 {
+  background: #f3f1f1;
   font-family: "Poppins", sans-serif;
+  width: 100%;
+}
+.navbar {
+  height: 120px;
+  background-color: #9dc383;
+  font-family: "Poppins", sans-serif;
+  color: rgba(37, 37, 37, 0.7);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.dropdown-menu {
+  font-family: "Poppins", sans-serif;
+  width: 40vh;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(135, 132, 132, 0.9);
+}
+h1 {
+  color: rgba(37, 37, 37, 0.7);
+}
+.footer {
+  height: 120px;
+  background-color: #9dc383;
+  font-family: "Poppins", sans-serif;
+  color: rgba(37, 37, 37, 0.7);
 }
 
-.button {
-  box-shadow: inset 0px 1px 0px 0px #e184f3;
-  background: linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
-  background-color: #c123de;
-  border-radius: 6px;
-  border: 1px solid #a511c0;
-  display: inline-block;
+.card {
+  background: #fffdfd;
+  border-radius: 10px;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  overflow: hidden;
   cursor: pointer;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 8px 20px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #9b14b3;
+  transition: all 0.3s linear;
 }
-.button:hover {
-  background: linear-gradient(to bottom, #a20dbd 5%, #c123de 100%);
-  background-color: #a20dbd;
+.card:hover {
+  transform: translateY(-3%);
+  /* transform: scale(1.05); */
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
 }
-.button:active {
-  position: relative;
-  top: 1px;
+.go {
+  font-size: 16px;
+  font-weight: 600;
+  background: #de21d7;
+  border-radius: 10px;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+  transition: 0.3s linear;
 }
-
-input {
-  background-color: #dad4d4;
+.go:hover {
+  background: #de21d7;
+  box-shadow: 0 0 10px #e863e1, 0 0 40px #e863e1, 0 0 80px #e863e1;
+}
+.bars {
+  color: rgba(37, 37, 37, 0.7);
+}
+.star {
+  color: #d9d9d9;
+  padding-right: 10px;
+}
+.recipe,
+.recipeFav {
+  padding-top: 30px;
+}
+.diverse {
+  margin-top: 40px;
+  padding: 50px 20px 30px 20px;
+  width: 100%;
+  height: 300px;
+  color: black;
+  background: rgba(158, 123, 67, 0.6);
+}
+.img-fav {
+  max-height: 35vh;
+}
+.image-detail {
+  max-width: 100%;
+  height: auto;
+  padding-top: 50px;
+  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.card-text {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 300;
+  opacity: 0.7;
+}
+.card-text2 {
+  color: #000000;
+  font-size: 12px;
+  opacity: 0.7;
+  font-weight: 300;
+}
+.subscribe {
+  background: #de21d7;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 22px;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s linear;
+}
+.subscribe:hover {
+  background: #de21d7;
+  box-shadow: 0 0 10px #e863e1, 0 0 40px #e863e1, 0 0 80px #e863e1;
+}
+.text3 {
+  color: rgba(37, 37, 37, 0.7);
+  font-size: 20px;
+  font-weight: 500;
+  opacity: 0, 7;
+}
+.text4 {
+  color: rgba(37, 37, 37, 0.7);
+  font-size: 20px;
+  font-weight: 400;
+  opacity: 0, 7;
+}
+.img-recipe {
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+}
+.scroll-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+}
+.text-detail {
+  padding-right: 200px;
 }

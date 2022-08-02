@@ -8,8 +8,8 @@ export const Home = () => (
   <div className="container">
     <div className="row">
       <div className="col-12">
-        <h2 className="title2 m-0 pt-4 pb-3">Hello,</h2>
-        <p className="text1 ">What do you want to eat today?</p>
+        <h2 className="title2 m-0 mt-5 pb-3">Hello,</h2>
+        <p className="text1 mb-4">What do you want to eat today?</p>
         <div className="input-group mb-3">
           <input
             type="text"

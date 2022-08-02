@@ -5,7 +5,7 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
-h2 {
+h3 {
   color: rgba(37, 37, 37, 0.9);
 }
 .text1 {
@@ -27,13 +27,13 @@ p {
 .form-control {
   width: 100%;
   border-radius: 40px;
-  background: #dad4d4;
+  background: white;
   font-size: 14px;
   color: rgba(37, 37, 37, 0.9);
 }
 .search {
   border-radius: 40px;
-  background: #dad4d4;
+  background: white;
 }
 h5 {
   color: rgba(37, 37, 37, 0.9);
@@ -51,4 +51,8 @@ h5 {
 .number:hover {
   background: #428e9e;
   box-shadow: 0 0 10px #5498a5, 0 0 40px #5498a5, 0 0 80px #5498a5;
+}
+.input-group {
+  border: 1px solid rgb(161, 160, 160);
+  border-radius: 20px;
 }

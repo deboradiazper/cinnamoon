@@ -4,24 +4,58 @@ import PropTypes from "prop-types";
 const RecipeDetail = (props) => {
   return (
     <div className="row">
-      <div className="col-12 col-md-4">
-        <img src={props.image} className="image-detail" alt="..." />
+      <div className="col-6 d-flex justify-content-center align-items-center">
+        <div className="card-detail">
+          <div className="front">
+            <img
+              src={props.image}
+              className="image-detail img-fluid mx-auto d-block"
+              alt="..."
+            />
+          </div>
+          <div className="back">
+            <h3 className="text-light m-5 pt-2">The strawberry</h3>
+            <p className="text-back m-5 pt-3">
+              Strawberries are rich in colourful pigments which have a
+              protective effect, these anthocyanidins are thought to have a
+              number of potential health benefits, including prevention of
+              inflammatory conditions and heart disease. Observational studies
+              appear to link regular berry consumption with fewer heart-related
+              deaths.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div className="col-10">
-        <div className="text-detail d-flex justify-content-between align-items-center mt-3">
-          <h2 className="title py-3">{props.name}</h2>
-          <span className="star">
-            <i className="fas fa-star ms-3"></i>
-            <i className="fas fa-star ms-3"></i>
-            <i className="fas fa-star ms-3"></i>
-            <i className="fas fa-star ms-3"></i>
-            <i className="fas fa-star ms-3"></i>
-          </span>
+      <div className="description-detail col-6 p-2">
+        <h2 className="title-detail">{props.name}</h2>
+        <div className="star mt-3">
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star ms-3"></i>
+          <i className="fas fa-star ms-3"></i>
+          <i className="fas fa-star ms-3"></i>
+          <i className="fas fa-star ms-3"></i>
         </div>
 
-        <p className="text4">Vegan, lactose free</p>
-        <p className=" text1 py-3">
+        <div className="icons-description d-flex my-3">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4337/4337600.png"
+            className="vegan"
+          ></img>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3778/3778967.png"
+            className="lactose-free ms-2"
+          ></img>
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/4807/4807774.png"
+            className="gluten-free ms-2"
+          ></img>
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/1410/1410541.png"
+            className="sugar-free ms-2"
+          ></img>
+        </div>
+        <p className="card-text3">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
           mollitia, molestiae quas vel sint commodi repudiandae consequuntur
           voluptatum laborum numquam blanditiis harum quisquam eius sed odit

@@ -23,7 +23,7 @@ const Recipe = (props) => {
             <i className="fas fa-star"></i>
           </span>
         </div>
-        <p className="card-text fs-6">vegan, lactose free{props.type}</p>
+        <p className="card-text">vegan, lactose free{props.type}</p>
       </div>
     </div>
   );

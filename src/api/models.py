@@ -46,35 +46,39 @@ class Recipes(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(250), nullable=False)
     description = db.Column(db.String(500), nullable=False)
+    image = db.Column(db.String(250))
     favorites = db.relationship('RecipesFavorites', backref = 'Recipes')
     ingredients = db.relationship('RecipesIngredients', backref = 'Recipes')
     categories = db.relationship('Categories', backref = 'Recipes')
 
     def __repr__(self):
-        return f'<Recipes %r>' % self.id
+        return f'<Recipes %r>' % self.name
 
     def serialize(self):
         return {
             "id": self.id,
             "name": self.name,
             "description": self.description,
+            "image": self.image,
         }
 
 
 class Ingredients(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(250), nullable=False)
+    image = db.Column(db.String(250))
     favorites = db.relationship('IngredientsFavorites', backref = 'Ingredients')
     recipes = db.relationship('RecipesIngredients', backref = 'Ingredients')
     trivia = db.relationship('Trivia', backref = 'Ingredients')
 
     def __repr__(self):
-        return f'<Ingredients %r>' % self.id
+        return f'<Ingredients %r>' % self.name
 
     def serialize(self):
         return {
             "id": self.id,
             "name": self.name,
+            "image": self.image,
         }
 
 
@@ -101,7 +105,7 @@ class RecipesIngredients(db.Model):
     ingredient_id = db.Column(db.Integer, db.ForeignKey('ingredients.id'))
 
     def __repr__(self):
-        return f'<RecipesIngredients %r>' % self.id
+        return f'<RecipesIngredients %r>' % self.Ingredients.name
 
     def serialize(self):
         return {
@@ -115,6 +119,7 @@ class RecipesIngredients(db.Model):
 class Trivia(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(500), nullable=False)
+    image = db.Column(db.String(250))
     ingredient_id = db.Column(db.Integer, db.ForeignKey('ingredients.id'))
 
     def __repr__(self):
@@ -124,6 +129,7 @@ class Trivia(db.Model):
         return {
             "id": self.id,
             "text": self.text,
+            "image": self.image,
             "ingredient_id": self.ingredient_id,
         }
 

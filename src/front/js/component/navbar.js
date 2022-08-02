@@ -15,10 +15,10 @@ export const Navbar = () => {
         </Link>
         <div className="icons d-flex align-items-center">
           <span>
-            <i class="user fas fa-user-circle fa-2x mx-4"></i>
+            <i className="user fas fa-user-circle fa-2x mx-4"></i>
           </span>
           <span>
-            <i class="moon fas fa-moon fa-2x mx-4"></i>
+            <i className="moon fas fa-moon fa-2x mx-4"></i>
           </span>
           <div className="btn-group dropstart ms-2">
             <button

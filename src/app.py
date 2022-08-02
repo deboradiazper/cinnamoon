@@ -23,7 +23,7 @@ app.url_map.strict_slashes = False
 # Setup the Flask-JWT-Extended extension
 app.config["JWT_SECRET_KEY"] = "super-secret"  # Change this!
 jwt = JWTManager(app)
-
+ 
 
 # database condiguration
 db_url = os.getenv("DATABASE_URL")

@@ -18,6 +18,7 @@ def setup_admin(app):
     admin.add_view(ModelView(IngredientsFavorites, db.session))
     admin.add_view(ModelView(Trivia, db.session))
     admin.add_view(ModelView(Categories, db.session))
+    admin.add_view(ModelView(RecipesIngredients, db.session))
 
 
     # You can duplicate that line to add mew models

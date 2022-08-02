@@ -48,7 +48,7 @@ def get_recipes():
 @api.route('/recipes', methods=['POST'])
 def create_recipes():
     data = request.json
-    recipe = Recipes(name=data.get('name'), description=data.get('description'))
+    recipe = Recipes(name=data.get('name'), description=data.get('description'), image=data.get('image'))
     db.session.add(recipe)
     db.session.commit()
     return jsonify({"message": "everything ok"}), 200

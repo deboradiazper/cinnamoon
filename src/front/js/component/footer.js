@@ -15,13 +15,13 @@ export const Footer = () => (
       <p>Follow us</p>
       <div className="iconsFooter">
         <span>
-          <i class="fab fa-instagram px-3"></i>
+          <i className="fab fa-instagram px-3"></i>
         </span>
         <span>
-          <i class="fab fa-pinterest px-3"></i>
+          <i className="fab fa-pinterest px-3"></i>
         </span>
         <span>
-          <i class="fab fa-twitter px-3"></i>
+          <i className="fab fa-twitter px-3"></i>
         </span>
       </div>
     </footer>

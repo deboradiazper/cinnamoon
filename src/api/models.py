@@ -137,11 +137,11 @@ class Trivia(db.Model):
 
 class Categories(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(250), unique=True, nullable=False)
+    name = db.Column(db.String(250), unique=True, nullable=False)
     recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.id'))
 
     def __repr__(self):
-        return f'<Categories %r>' % self.id
+        return f'<Categories %r>' % self.name
 
     def serialize(self):
         return {

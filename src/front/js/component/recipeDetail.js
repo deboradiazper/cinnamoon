@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const RecipeDetail = (props) => {
   return (
     <div className="row">
-      <div className="col-6 d-flex justify-content-center align-items-center">
+      <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
         <div className="card-detail">
           <div className="front">
             <img
@@ -27,7 +27,7 @@ const RecipeDetail = (props) => {
         </div>
       </div>
 
-      <div className="description-detail col-6 p-2">
+      <div className="description-detail col-12 col-md-6 p-2">
         <h2 className="title-detail">{props.name}</h2>
         <div className="star mt-3">
           <i className="fas fa-star"></i>

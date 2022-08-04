@@ -15,11 +15,21 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
       ],
       token: null,
+
+      recipes: [],
     },
+
     actions: {
       // Use getActions to call a function within a fuction
       exampleFunction: () => {
         getActions().changeColor(0, "green");
+      },
+      loadRecipe: () => {
+        fetch(
+          "https://3001-deboradiazper-cinnamoon-ukw4x3zxam9.ws-eu54.gitpod.io/api/recipes"
+        )
+          .then((resp) => resp.json())
+          .then((data) => setStore({ recipes: data }));
       },
 
       getMessage: async () => {

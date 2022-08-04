@@ -45,7 +45,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           const data = await resp.json();
           console.log(data.token);
           localStorage.setItem("token", data.token);
-          actions.setToken(data.token);
+          setStore({ token: data.token });
           return true;
         } catch (error) {
           console.error("there has been an error login in");

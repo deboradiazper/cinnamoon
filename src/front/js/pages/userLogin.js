@@ -5,8 +5,10 @@ import { useNavigate } from "react-router-dom";
 export const UserLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { actions } = useContext(Context);
+  const { actions, store } = useContext(Context);
   const navigate = useNavigate();
+
+  console.log("this is your token", store.token);
 
   const handleClick = () => {
     actions.login(email, password);

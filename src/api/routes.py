@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Recipes, Ingredients, Trivia, Categories, RecipesFavorites
+from api.models import db, User, Recipes, Ingredients, Trivia, Categories, RecipesFavorites, IngredientsFavorites
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
 
@@ -58,7 +58,7 @@ def create_user():
     return jsonify({"message": "everything ok"}), 200
 
 
-
+#RecipesFavorites
 @api.route('/recipesfavorites', methods=['GET'])
 @jwt_required()
 def get_recipes_Favorites():
@@ -89,6 +89,22 @@ def create_recipes():
     db.session.add(recipe)
     db.session.commit()
     return jsonify({"message": "everything ok"}), 200
+
+#IngredientsFavorites
+@api.route('/ingredientsfavorites', methods=['GET'])
+@jwt_required()
+def get_ingredients_Favorites():
+    user_id = get_jwt_identity()
+    favorites = IngredientsFavorites.query.filter_by(user_id = user_id)
+    ingredients = Ingredients.query.all()
+    data = [ingredient.serialize() for ingredient in ingredients]
+    for ingredient in data: 
+        for favorite in favorites: 
+            if ingredient["id"] == favorite.ingredient_id: 
+                ingredient["favorite"] = True
+    
+    return jsonify(data), 200
+
 
 
 #Ingredients

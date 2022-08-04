@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Recipes
+from api.models import db, User, Recipes, Ingredients, Trivia, Categories
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
 
@@ -20,41 +20,7 @@ def handle_hello():
     return jsonify(response_body), 200
 
 
-@api.route('/user', methods=['GET'])
-def get_users():
-    users = User.query.all()
-    data = [user.serialize() for user in users]
-    
-    return jsonify(data), 200
-
-
-@api.route('/user', methods=['POST'])
-def create_user():
-    data = request.json
-    user = User(name=data.get('name'), last_name=data.get('lastName'), email=data.get('email'), password=data.get('password'))
-    db.session.add(user)
-    db.session.commit()
-    return jsonify({"message": "everything ok"}), 200
-
-
-@api.route('/recipes', methods=['GET'])
-def get_recipes():
-    recipes = Recipes.query.all()
-    data = [recipe.serialize() for recipe in recipes]
-    
-    return jsonify(data), 200
-
-
-@api.route('/recipes', methods=['POST'])
-def create_recipes():
-    data = request.json
-    recipe = Recipes(name=data.get('name'), description=data.get('description'), image=data.get('image'))
-    db.session.add(recipe)
-    db.session.commit()
-    return jsonify({"message": "everything ok"}), 200
-
-
-
+#Login
 @api.route('/login', methods=['POST'])
 def login():
     data = request.json
@@ -73,3 +39,88 @@ def login():
 def get_user(id):
     user = User.query.get(id)
     return jsonify(user.serialize())
+
+
+#User and userRegistration
+@api.route('/user', methods=['GET'])
+def get_users():
+    users = User.query.all()
+    data = [user.serialize() for user in users]
+    
+    return jsonify(data), 200
+
+@api.route('/user', methods=['POST'])
+def create_user():
+    data = request.json
+    user = User(name=data.get('name'), last_name=data.get('lastName'), email=data.get('email'), password=data.get('password'))
+    db.session.add(user)
+    db.session.commit()
+    return jsonify({"message": "everything ok"}), 200
+
+
+#Recipes
+@api.route('/recipes', methods=['GET'])
+def get_recipes():
+    recipes = Recipes.query.all()
+    data = [recipe.serialize() for recipe in recipes]
+    
+    return jsonify(data), 200
+
+@api.route('/recipes', methods=['POST'])
+def create_recipes():
+    data = request.json
+    recipe = Recipes(name=data.get('name'), description=data.get('description'), image=data.get('image'))
+    db.session.add(recipe)
+    db.session.commit()
+    return jsonify({"message": "everything ok"}), 200
+
+
+#Ingredients
+@api.route('/ingredients', methods=['GET'])
+def get_ingredients():
+    ingredients = Ingredients.query.all()
+    data = [ingredient.serialize() for ingredient in ingredients]
+    
+    return jsonify(data), 200
+
+@api.route('/ingredients', methods=['POST'])
+def create_ingredients():
+    data = request.json
+    ingredient = Ingredients(name=data.get('name'), image=data.get('image'))
+    db.session.add(ingredient)
+    db.session.commit()
+    return jsonify({"message": "everything ok"}), 200
+
+
+#Trivia
+@api.route('/trivia', methods=['GET'])
+def get_trivia():
+    trivia = Trivia.query.all()
+    data = [trivia.serialize() for trivia in trivia]
+    
+    return jsonify(data), 200
+
+@api.route('/trivia', methods=['POST'])
+def create_trivia():
+    data = request.json
+    trivia = Trivia(id=data.get('id'), text=data.get('text'), image=data.get('image'))
+    db.session.add(trivia)
+    db.session.commit()
+    return jsonify({"message": "everything ok"}), 200
+
+
+#Categories
+@api.route('/categories', methods=['GET'])
+def get_categories():
+    categories = Categories.query.all()
+    data = [categories.serialize() for categories in categories]
+    
+    return jsonify(data), 200
+
+@api.route('/categories', methods=['POST'])
+def create_categories():
+    data = request.json
+    categories = Categories(id=data.get('id'), name=data.get('name'))
+    db.session.add(categories)
+    db.session.commit()
+    return jsonify({"message": "everything ok"}), 200

@@ -1,35 +1,19 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
+import { useNavigate } from "react-router-dom";
 
 export const UserLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { actions } = useContext(Context);
+  const navigate = useNavigate();
 
   const handleClick = () => {
-    const opts = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-    };
-
-    fetch(process.env.BACKEND_URL + "/api/login", opts)
-      .then((resp) => {
-        if (resp.status === 200) return resp.json();
-        else alert("Error");
-      })
-      .then((data) => {
-        console.log(data.token);
-        localStorage.setItem("token", data.token);
-        actions.setToken(data.token);
-      })
-      .catch((error) => {
-        console.error("There was an error", error);
-      });
+    actions.login(email, password);
   };
+
+  if (store.token && store.token != "" && store.token != undefined)
+    navigate.push("/");
 
   return (
     <div className="container">

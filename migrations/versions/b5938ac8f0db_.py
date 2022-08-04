@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 7d1b02d01484
+Revision ID: b5938ac8f0db
 Revises: 
-Create Date: 2022-08-03 15:16:59.654928
+Create Date: 2022-07-26 17:33:16.857228
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '7d1b02d01484'
+revision = 'b5938ac8f0db'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -21,14 +21,12 @@ def upgrade():
     op.create_table('ingredients',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=250), nullable=False),
-    sa.Column('image', sa.String(length=250), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('recipes',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=250), nullable=False),
-    sa.Column('description', sa.String(length=5000), nullable=False),
-    sa.Column('image', sa.String(length=250), nullable=True),
+    sa.Column('description', sa.String(length=500), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('user',
@@ -42,11 +40,11 @@ def upgrade():
     )
     op.create_table('categories',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('name', sa.String(length=250), nullable=False),
+    sa.Column('nombre', sa.String(length=250), nullable=False),
     sa.Column('recipe_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['recipe_id'], ['recipes.id'], ),
     sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('name')
+    sa.UniqueConstraint('nombre')
     )
     op.create_table('ingredients_favorites',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -75,7 +73,6 @@ def upgrade():
     op.create_table('trivia',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('text', sa.String(length=500), nullable=False),
-    sa.Column('image', sa.String(length=250), nullable=True),
     sa.Column('ingredient_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['ingredient_id'], ['ingredients.id'], ),
     sa.PrimaryKeyConstraint('id')

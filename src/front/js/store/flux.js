@@ -32,6 +32,36 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => setStore({ recipes: data }));
       },
 
+      login: async (email, password) => {
+        const opts = {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: email,
+            password: password,
+          }),
+        };
+
+        try {
+          const resp = await fetch(
+            process.env.BACKEND_URL + "/api/login",
+            opts
+          );
+          if (resp.status === 200) {
+            alert("There has been some error");
+            return false;
+          }
+
+          const data = await resp.json();
+          console.log(data.token);
+          localStorage.setItem("token", data.token);
+          actions.setToken(data.token);
+          return true;
+        } catch (error) {
+          console.error("there has been an error login in");
+        }
+      },
+
       getMessage: async () => {
         try {
           // fetching data from the backend

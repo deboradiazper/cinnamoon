@@ -47,6 +47,7 @@ class Recipes(db.Model):
     name = db.Column(db.String(250), nullable=False)
     description = db.Column(db.String(5000), nullable=False)
     image = db.Column(db.String(250))
+    cookingtime = db.Column(db.String(250), nullable=True)
     favorites = db.relationship('RecipesFavorites', backref = 'Recipes')
     ingredients = db.relationship('RecipesIngredients', backref = 'Recipes')
     categories = db.relationship('Categories', backref = 'Recipes')
@@ -55,11 +56,15 @@ class Recipes(db.Model):
         return f'<Recipes %r>' % self.name
 
     def serialize(self):
+        print([ingredient.serialize() for ingredient in self.ingredients])
         return {
             "id": self.id,
             "name": self.name,
             "description": self.description,
             "image": self.image,
+            "cookingtime": self.cookingtime,
+            "ingredients": [ingredient.serialize() for ingredient in self.ingredients],
+            "categories": [category.serialize() for category in self.categories],
         }
 
 
@@ -79,6 +84,7 @@ class Ingredients(db.Model):
             "id": self.id,
             "name": self.name,
             "image": self.image,
+            "trivia":  [trivia.serialize() for trivia in self.trivia]
         }
 
 

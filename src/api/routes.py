@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Recipes, Ingredients, Trivia, Categories
+from api.models import db, User, Recipes, Ingredients, Trivia, Categories, RecipesFavorites
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
 
@@ -58,6 +58,22 @@ def create_user():
     return jsonify({"message": "everything ok"}), 200
 
 
+
+@api.route('/recipesfavorites', methods=['GET'])
+@jwt_required()
+def get_recipes_Favorites():
+    user_id = get_jwt_identity()
+    favorites = RecipesFavorites.query.filter_by(user_id = user_id)
+    recipes = Recipes.query.all()
+    data = [recipe.serialize() for recipe in recipes]
+    for recipe in data: 
+        for favorite in favorites: 
+            if recipe["id"] == favorite.recipe_id: 
+                recipe["favorite"] = True
+    
+    return jsonify(data), 200
+
+
 #Recipes
 @api.route('/recipes', methods=['GET'])
 def get_recipes():
@@ -69,7 +85,7 @@ def get_recipes():
 @api.route('/recipes', methods=['POST'])
 def create_recipes():
     data = request.json
-    recipe = Recipes(name=data.get('name'), description=data.get('description'), image=data.get('image'))
+    recipe = Recipes(name=data.get('name'), description=data.get('description'), image=data.get('image'), cookingtime=data.get('cooking_time'))
     db.session.add(recipe)
     db.session.commit()
     return jsonify({"message": "everything ok"}), 200

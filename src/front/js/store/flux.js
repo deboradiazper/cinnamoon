@@ -37,7 +37,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             process.env.BACKEND_URL + "/api/login",
             opts
           );
-          if (resp.status === 200) {
+          if (resp.status != 200) {
             alert("There has been some error");
             return false;
           }
@@ -80,6 +80,10 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       setToken: (token) => {
         setStore({ token: token });
+      },
+      logout: () => {
+        setStore({ token: null });
+        localStorage.removeItem("token");
       },
     },
   };

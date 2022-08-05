@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+  const { store, actions } = useContext(Context);
+
   return (
     <nav className="navbar d-flex justify-content-around align-items-center px-5">
       <div className="container-fluid">
@@ -18,11 +21,17 @@ export const Navbar = () => {
             className="moon mx-4"
             src="https://cdn-icons-png.flaticon.com/128/8098/8098375.png"
           ></img>
-          <img
-            className="user mx-3"
-            src="https://cdn-icons.flaticon.com/png/128/3683/premium/3683214.png?token=exp=1659438553~hmac=fcfde18a9fd1dd7f3453fb7a9c3fd2b6"
-          ></img>
-
+          {store.token ? (
+            <button
+              onClick={() => {
+                actions.logout();
+              }}
+            >
+              Logout
+            </button>
+          ) : (
+            <h1>Login</h1>
+          )}
           <div className="btn dropstart">
             <button
               type="button"

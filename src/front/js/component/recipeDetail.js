@@ -14,15 +14,9 @@ const RecipeDetail = (props) => {
             />
           </div>
           <div className="back">
-            <h3 className="text-light m-5 pt-2">The strawberry</h3>
-            <p className="text-back m-5 pt-3">
-              Strawberries are rich in colourful pigments which have a
-              protective effect, these anthocyanidins are thought to have a
-              number of potential health benefits, including prevention of
-              inflammatory conditions and heart disease. Observational studies
-              appear to link regular berry consumption with fewer heart-related
-              deaths.
-            </p>
+            <h3 className="text-light m-5 pt-2"></h3>
+            <p></p>
+            <p className="text-back m-5 pt-3"></p>
           </div>
         </div>
       </div>
@@ -38,6 +32,7 @@ const RecipeDetail = (props) => {
         </div>
 
         <div className="icons-description d-flex my-3">
+          <p>{props.categories}</p>
           <img
             src="https://cdn-icons-png.flaticon.com/512/4337/4337600.png"
             className="vegan"
@@ -55,29 +50,16 @@ const RecipeDetail = (props) => {
             className="sugar-free ms-2"
           ></img>
         </div>
-        <p className="card-text3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-          mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-          voluptatum laborum numquam blanditiis harum quisquam eius sed odit
-          fugiat iusto fuga praesentium optio, eaque rerum! Provident similique
-          accusantium nemo autem. Veritatis obcaecati tenetur. Lorem ipsum dolor
-          sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas
-          vel sint commodi repudiandae consequuntur voluptatum laborum numquam
-          blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-          optio, eaque rerum! Provident similique accusantium nemo autem.
-          Veritatis obcaecati tenetur
-          {props.description}
-        </p>
+        <p className="card-text3">{props.description}</p>
       </div>
     </div>
   );
 };
 
 RecipeDetail.propTypes = {
-  id: PropTypes.number,
   image: PropTypes.string,
   name: PropTypes.string,
   description: PropTypes.string,
-  categories: PropTypes.string,
+  categories: PropTypes.array,
 };
 export default RecipeDetail;

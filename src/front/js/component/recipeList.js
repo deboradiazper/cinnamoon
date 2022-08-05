@@ -8,7 +8,7 @@ const RecipeList = () => {
     <div className="scroll-container d-flex">
       {store.recipes.map((recipe, index) => {
         return (
-          <div className="col-12 col-md-4">
+          <div className="col-12 col-md-4" key={index}>
             <Recipe
               name={recipe.name}
               categories={recipe.categories}

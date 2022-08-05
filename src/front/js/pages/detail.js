@@ -4,13 +4,26 @@ import { useParams } from "react-router-dom";
 
 export const Detail = () => {
   const params = useParams();
+  const [detalle, setDetalle] = useState();
+  useEffect(() => {
+    fetch(process.env.BACKENND_URL + `api/recipes/${params.detailid}`)
+      .then((response) => response.json())
+      .then((response) => setDetalle(response));
+  }, []);
 
   return (
     <div className="container">
-      <RecipeDetail
-        name="strawberry milkshake"
-        image="https://images.unsplash.com/photo-1592452319703-9a68b88dd26b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8c21vdGhpZXxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60"
-      />
+      {detalle ? (
+        <RecipeDetail
+          image={detalle.image}
+          name={detalle.name}
+          categories={props.categories.map((value, index) => {
+            return <p key={index}>{value.name}</p>;
+          })}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 };

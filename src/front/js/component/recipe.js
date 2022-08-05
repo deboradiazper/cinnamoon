@@ -26,7 +26,11 @@ const Recipe = (props) => {
             <i className="fas fa-star"></i>
           </span>
         </div>
-        <p className="card-text">{props.categories}</p>
+        <div className="card-text">
+          {props.categories.map((value, index) => {
+            return <p key={index}>{value.name}</p>;
+          })}
+        </div>
       </div>
     </div>
   );
@@ -34,7 +38,7 @@ const Recipe = (props) => {
 
 Recipe.propTypes = {
   name: PropTypes.string,
-  categories: PropTypes.string,
+  categories: PropTypes.array,
   image: PropTypes.string,
   id: PropTypes.number,
 };

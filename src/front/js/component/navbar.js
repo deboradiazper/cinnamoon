@@ -1,20 +1,20 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
+
+  const navigate = useNavigate();
 
   return (
     <nav className="navbar d-flex justify-content-around align-items-center px-5">
       <div className="container-fluid">
         <Link className="navbar-brand" to={"/"}>
           <span className="logo">
-            <h3>CINNAMON</h3>
+            <h3>CINNAMOON</h3>
           </span>
-        </Link>
-        <Link to="/userRegistration" className="btn btn-danger">
-          Danger
         </Link>
         <div className="icons d-flex align-items-center">
           <img
@@ -30,7 +30,13 @@ export const Navbar = () => {
               Logout
             </button>
           ) : (
-            <h1>Login</h1>
+            <button
+              onClick={() => {
+                navigate("/user");
+              }}
+            >
+              Login
+            </button>
           )}
           <div className="btn dropstart">
             <button

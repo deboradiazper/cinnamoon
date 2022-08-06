@@ -38,7 +38,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             opts
           );
           if (resp.status != 200) {
-            alert("There has been some error");
+            alert("User or password incorrect");
             return false;
           }
 

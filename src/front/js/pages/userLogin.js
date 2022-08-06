@@ -2,9 +2,6 @@ import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 
-//if (store.token && store.token != "" && store.token != undefined)
-//navigate.push("/");
-
 export const UserLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

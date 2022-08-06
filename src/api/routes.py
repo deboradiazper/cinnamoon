@@ -90,6 +90,7 @@ def create_recipes():
     db.session.commit()
     return jsonify({"message": "everything ok"}), 200
 
+
 #IngredientsFavorites
 @api.route('/ingredientsfavorites', methods=['GET'])
 @jwt_required()

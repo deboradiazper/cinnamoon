@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Context } from "../store/appContext";
 import { PropTypes } from "prop-types";
 import { Link } from "react-router-dom";
+import { Detail } from "../pages/detail";
 
 const Recipe = (props) => {
+  const { store, actions } = useContext(Context);
   return (
     <div className="card border-0">
       <div className="position-relative">
@@ -18,20 +21,24 @@ const Recipe = (props) => {
       </div>
       <div className="card-body">
         <div className="d-flex justify-content-between">
-          <h5 className="card-title">Pokebowl vegan{props.title}</h5>
+          <h5 className="card-title">{props.name}</h5>
           <span className="star">
             <i className="fas fa-star"></i>
           </span>
         </div>
-        <p className="card-text">vegan, lactose free{props.type}</p>
+        <div className="card-text">
+          {props.categories.map((value, index) => {
+            return <p key={index}>{value.name}</p>;
+          })}
+        </div>
       </div>
     </div>
   );
 };
 
 Recipe.propTypes = {
-  title: PropTypes.string,
-  type: PropTypes.string,
+  name: PropTypes.string,
+  categories: PropTypes.array,
   image: PropTypes.string,
   id: PropTypes.number,
 };

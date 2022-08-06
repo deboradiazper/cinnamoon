@@ -16,11 +16,9 @@ export const Navbar = () => {
             <h3>CINNAMOON</h3>
           </span>
         </Link>
-        <div className="icons d-flex align-items-center">
-          <img
-            className="moon mx-4"
-            src="https://cdn-icons-png.flaticon.com/128/8098/8098375.png"
-          ></img>
+        <div className="icons d-flex justify-content-around align-items-center">
+          <i className="far fa-moon me-3"></i>
+
           {store.token ? (
             <button
               onClick={() => {
@@ -35,7 +33,7 @@ export const Navbar = () => {
                 navigate("/user");
               }}
             >
-              Login
+              <i className="far fa-user me-2"></i>
             </button>
           )}
           <div className="btn dropstart">

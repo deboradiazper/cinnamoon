@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const RecipeFav = (props) => {
   return (
     <div className="card border-0">
-      <div class="position-relative">
+      <div className="position-relative">
         <img
           src={props.image}
           className="img-fav card-img-top img-fluid"

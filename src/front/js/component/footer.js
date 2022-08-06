@@ -36,7 +36,7 @@ export const Footer = () => (
           </p>
         </div>
       </div>
-      <div className="button-footer d-flex justify-content-center mt-4">
+      <div className="button-subscribe d-flex justify-content-center mt-4">
         <button className="btn btn-large subscribe text-light border-0 px-3">
           subscribe
         </button>
@@ -46,15 +46,15 @@ export const Footer = () => (
       <p>Follow us</p>
       <div className="iconsFooter">
         <img
-          className="instagram mx-4"
+          className="instagram mx-4 img-fluid"
           src="https://cdn-icons-png.flaticon.com/128/1077/1077042.png"
         ></img>
         <img
-          className="tweet"
+          className="tweet img-fluid"
           src="https://cdn-icons-png.flaticon.com/128/250/250558.png"
         ></img>
         <img
-          className="pinterest mx-4"
+          className="pinterest mx-4 img-fluid"
           src="https://cdn-icons-png.flaticon.com/128/104/104628.png"
         ></img>
       </div>

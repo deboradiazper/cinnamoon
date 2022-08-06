@@ -81,6 +81,13 @@ def get_recipes():
     data = [recipe.serialize() for recipe in recipes]
     
     return jsonify(data), 200
+    
+@api.route('/recipes/<int:id>', methods=['GET'])
+def detail_recipes(id):
+    recipe = Recipes.query.get(id)
+    
+    return jsonify(recipe.serialize()), 200
+
 
 @api.route('/recipes', methods=['POST'])
 def create_recipes():

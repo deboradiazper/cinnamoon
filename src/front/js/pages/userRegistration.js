@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/index.css";
+import { useNavigate } from "react-router-dom";
 
 export const UserRegistration = () => {
   const [info, setInfo] = useState({
@@ -8,6 +9,7 @@ export const UserRegistration = () => {
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     //console.log(event.target.value);
@@ -21,20 +23,18 @@ export const UserRegistration = () => {
     event.preventDefault();
     console.log(info);
     addInfo(info);
+    navigate("/registrationValidated");
   };
 
   //llamada fetch api
   const addInfo = (info) => {
-    fetch(
-      "https://3001-deboradiazper-cinnamoon-3avbj4xkusr.ws-eu54.gitpod.io/api/user",
-      {
-        method: "POST",
-        body: JSON.stringify(info),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
+    fetch(process.env.BACKEND_URL + "/api/user", {
+      method: "POST",
+      body: JSON.stringify(info),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((resp) => {
         return resp.json(); // (regresa una promesa) will try to parse the result as json as return a promise that you can .then for results
       })

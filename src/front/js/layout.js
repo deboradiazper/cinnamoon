@@ -8,6 +8,9 @@ import { Single } from "./pages/single";
 import { UserRegistration } from "./pages/userRegistration";
 import { UserLogin } from "./pages/userLogin";
 import { User } from "./pages/user";
+import { UserArea } from "./pages/userArea";
+import { RegistrationValidated } from "./pages/registrationValidated";
+
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -29,9 +32,14 @@ const Layout = () => {
             <Route element={<Home />} path="/" />
             <Route element={<Demo />} path="/demo" />
             <Route element={<Single />} path="/single/:theid" />
+            <Route element={<User />} path="/user" />
             <Route element={<UserRegistration />} path="/userRegistration" />
             <Route element={<UserLogin />} path="/userLogin" />
-            <Route element={<User />} path="/user" />
+            <Route element={<UserArea />} path="/userArea" />
+            <Route
+              element={<RegistrationValidated />}
+              path="/RegistrationValidated"
+            />
             <Route element={<Detail />} path="/detail/:id" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>

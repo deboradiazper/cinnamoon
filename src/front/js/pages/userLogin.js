@@ -14,7 +14,7 @@ export const UserLogin = () => {
     event.preventDefault();
     const result = actions.login(email, password);
     if (result) {
-      navigate("/");
+      navigate("/userArea");
     }
   };
 

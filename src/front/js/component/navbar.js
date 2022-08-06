@@ -24,7 +24,7 @@ export const Navbar = () => {
           {store.token ? (
             <button
               onClick={() => {
-                actions.logout();
+                actions.logout(navigate("/"));
               }}
             >
               Logout

@@ -109,16 +109,13 @@ class RecipesIngredients(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.id'))
     ingredient_id = db.Column(db.Integer, db.ForeignKey('ingredients.id'))
+    ingredients = db.relationship('Ingredients', backref = 'ingredients')
 
     def __repr__(self):
         return f'<RecipesIngredients %r>' % self.Ingredients.name
 
     def serialize(self):
-        return {
-            "id": self.id,
-            "recipe_id": self.recipe_id,
-            "ingredient_id": self.ingredient_id,
-        }
+        return self.ingredients.serialize()
 
 
 
@@ -144,6 +141,7 @@ class Trivia(db.Model):
 class Categories(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(250), unique=True, nullable=False)
+    image = db.Column(db.String(250))
     recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.id'))
 
     def __repr__(self):
@@ -153,5 +151,7 @@ class Categories(db.Model):
         return {
             "id": self.id,
             "name": self.name,
+            "image": self.image,
             "recipe_id": self.recipe_id,
+
         }

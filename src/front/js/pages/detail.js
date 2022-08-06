@@ -6,9 +6,13 @@ export const Detail = () => {
   const params = useParams();
   const [detalle, setDetalle] = useState();
   useEffect(() => {
-    fetch(process.env.BACKENND_URL + `api/recipes/${params.detailid}`)
+    const url = `${process.env.BACKEND_URL}/api/recipes/${params.id}`;
+    fetch(url)
       .then((response) => response.json())
-      .then((response) => setDetalle(response));
+      .then((response) => {
+        setDetalle(response);
+        console.log(response);
+      });
   }, []);
 
   return (
@@ -17,8 +21,10 @@ export const Detail = () => {
         <RecipeDetail
           image={detalle.image}
           name={detalle.name}
-          categories={props.categories.map((value, index) => {
-            return <p key={index}>{value.name}</p>;
+          ingredients={detalle.ingredients}
+          description={detalle.description}
+          categories={detalle.categories.map((value, index) => {
+            return <img key={index} src={value.image} />;
           })}
         />
       ) : (

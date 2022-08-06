@@ -186,9 +186,7 @@ h3 {
 }
 .back {
   text-align: center;
-  background-image: url("https://images.unsplash.com/photo-1588517936140-11085e6b748b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTV8fHN0cmF3YmVycnl8ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
 }
-
 .card-detail .front {
   transform: perspective(600px) rotateY(0deg);
 }

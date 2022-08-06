@@ -10,12 +10,9 @@ export const Navbar = () => {
             <h3>CINNAMOON</h3>
           </span>
         </Link>
-        <Link to="/userRegistration" className="btn btn-danger">
-          Danger
-        </Link>
         <div className="icons d-flex justify-content-around align-items-center">
-          <i class="far fa-moon me-3"></i>
-          <i class="far fa-user me-2"></i>
+          <i className="far fa-moon me-3"></i>
+          <i className="far fa-user me-2"></i>
 
           <div className="btn dropstart">
             <button
@@ -24,7 +21,7 @@ export const Navbar = () => {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <i class="fas fa-bars fa-2x"></i>
+              <i className="fas fa-bars fa-2x"></i>
             </button>
             <ul className="dropdown-menu p-3 mb-5 bg-body rounded border-0">
               <li>Recipes</li>

@@ -37,15 +37,15 @@ const getState = ({ getStore, getActions, setStore }) => {
             process.env.BACKEND_URL + "/api/login",
             opts
           );
-          if (resp.status === 200) {
-            alert("There has been some error");
+          if (resp.status != 200) {
+            alert("User or password incorrect");
             return false;
           }
 
           const data = await resp.json();
           console.log(data.token);
           localStorage.setItem("token", data.token);
-          actions.setToken(data.token);
+          setStore({ token: data.token });
           return true;
         } catch (error) {
           console.error("there has been an error login in");
@@ -80,6 +80,10 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       setToken: (token) => {
         setStore({ token: token });
+      },
+      logout: () => {
+        setStore({ token: null });
+        localStorage.removeItem("token");
       },
     },
   };

@@ -25,10 +25,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         getActions().changeColor(0, "green");
       },
       loadRecipe: async () => {
-        const response = await fetch(
-          "https://3001-deboradiazper-cinnamoon-x66favfbk3o.ws-eu59.gitpod.io" +
-            "/api/recipes"
-        );
+        const response = await fetch(process.env.BACKEND_URL + "/api/recipes");
         const data = await response.json();
         console.log(data);
         setStore({ recipes: data });
@@ -50,15 +47,15 @@ const getState = ({ getStore, getActions, setStore }) => {
             process.env.BACKEND_URL + "/api/login",
             opts
           );
-          if (resp.status === 200) {
-            alert("There has been some error");
+          if (resp.status != 200) {
+            alert("User or password incorrect");
             return false;
           }
 
           const data = await resp.json();
           console.log(data.token);
           localStorage.setItem("token", data.token);
-          actions.setToken(data.token);
+          setStore({ token: data.token });
           return true;
         } catch (error) {
           console.error("there has been an error login in");
@@ -81,6 +78,10 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       setToken: (token) => {
         setStore({ token: token });
+      },
+      logout: () => {
+        setStore({ token: null });
+        localStorage.removeItem("token");
       },
     },
   };

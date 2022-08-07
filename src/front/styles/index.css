@@ -201,3 +201,15 @@ h3 {
   transform: perspective(600px) rotateY(360deg);
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
 }
+
+.containerForm {
+  border-radius: 10%;
+  border-color: rgba(135, 132, 132, 0.9);
+  background-color: white;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.containerForm p {
+  font-size: 14px;
+}

@@ -19,29 +19,38 @@ export const UserLogin = () => {
   };
 
   return (
-    <div className="container">
-      <div className="text-center mt-5">
-        <h1>login</h1>
-        <div>
-          <form onSubmit={handleSubmit}>
-            <input
-              name="email"
-              value={email}
-              placeholder="your email here"
-              autoComplete="off"
-              type="text"
-              onChange={(event) => setEmail(event.target.value)}
-            />
-            <input
-              name="password"
-              value={password}
-              placeholder="your password here"
-              autoComplete="off"
-              type="password"
-              onChange={(event) => setPassword(event.target.value)}
-            />
-            <button>login</button>
-          </form>
+    <div className="containerForm">
+      <div className="col-12 mb-3 text-center">
+        <h2>
+          <strong>Accede</strong>
+        </h2>
+        <div className="row">
+          <div className="col-12 mb-3 text-center">
+            <form onSubmit={handleSubmit}>
+              <p>Correo electrónico</p>
+              <input
+                name="email"
+                value={email}
+                placeholder=""
+                autoComplete="off"
+                type="text"
+                onChange={(event) => setEmail(event.target.value)}
+              />
+
+              <div className="col-12 mb-3 text-center">
+                <p>Contraseña</p>
+                <input
+                  name="password"
+                  value={password}
+                  placeholder=""
+                  autoComplete="off"
+                  type="password"
+                  onChange={(event) => setPassword(event.target.value)}
+                />
+              </div>
+              <button>login</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

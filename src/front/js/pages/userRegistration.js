@@ -49,67 +49,68 @@ export const UserRegistration = () => {
   };
 
   return (
-    <div>
-      <div className="container col-12 mb-3 text-center">
-        <h2>
-          <strong>Join us!</strong>
-        </h2>
-        <p>
-          Join our community and learn about health. It's totally free! Lorem
-          ipsum blablablalblablal
-        </p>
-      </div>
+    <div className="containerForm col-12 mb-3 text-center">
+      <h2>
+        <strong>Regístrate</strong>
+      </h2>
+      <p>
+        Únete a nuestra comunidad y accede a más de 500 recetas seleccionadas
+        cuidadosamente para ti. Totalmente gratuito.
+      </p>
+
       <div className="row">
         <div className="col-12 mb-3 text-center">
-          <div className="container_register">
-            <form className="registerForm" onSubmit={sendInfo}>
-              <div className="col-12 mb-3 text-center">
-                <input
-                  name="name"
-                  placeholder="your name here"
-                  autoComplete="off"
-                  type="text"
-                  onChange={handleInputChange}
-                />
-              </div>
+          <form onSubmit={sendInfo}>
+            <div className="col-12 mb-3 text-center">
+              <p>Nombre</p>
+              <input
+                name="name"
+                placeholder=""
+                autoComplete="off"
+                type="text"
+                onChange={handleInputChange}
+              />
+            </div>
 
-              <div className="col-12 mb-3 text-center">
-                <input
-                  name="lastName"
-                  placeholder="your last name"
-                  autoComplete="off"
-                  type="text"
-                  onChange={handleInputChange}
-                />
-              </div>
+            <div className="col-12 mb-3 text-center">
+              <p>Apellidos</p>
+              <input
+                name="lastName"
+                placeholder=""
+                autoComplete="off"
+                type="text"
+                onChange={handleInputChange}
+              />
+            </div>
 
-              <div className="col-12 mb-3 text-center">
-                <input
-                  name="email"
-                  placeholder="your mail"
-                  autoComplete="off"
-                  type="text"
-                  onChange={handleInputChange}
-                />
-              </div>
+            <div className="col-12 mb-3 text-center">
+              <p>Correo electrónico</p>
+              <input
+                name="email"
+                placeholder=""
+                autoComplete="off"
+                type="text"
+                onChange={handleInputChange}
+              />
+            </div>
 
-              <div className="col-12 mb-3 text-center">
-                <input
-                  name="password"
-                  placeholder="your password"
-                  autoComplete="off"
-                  type="password"
-                  onChange={handleInputChange}
-                />
-              </div>
+            <div className="col-12 mb-3 text-center">
+              <p>Contraseña</p>
+              <input
+                name="password"
+                placeholder=""
+                autoComplete="off"
+                type="password"
+                onChange={handleInputChange}
+              />
+            </div>
 
-              <div className="col-12 mb-3 text-center">
-                <button className="button" type="submit">
-                  send
-                </button>
-              </div>
-            </form>
-          </div>
+            <div className="col-12 mb-3 text-center">
+              <button className="button" type="submit">
+                send
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

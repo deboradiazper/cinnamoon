@@ -213,3 +213,8 @@ h3 {
 .containerForm p {
   font-size: 14px;
 }
+
+::placeholder {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}

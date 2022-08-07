@@ -65,7 +65,7 @@ export const UserRegistration = () => {
               <p>Nombre</p>
               <input
                 name="name"
-                placeholder=""
+                placeholder=""
                 autoComplete="off"
                 type="text"
                 onChange={handleInputChange}
@@ -76,7 +76,7 @@ export const UserRegistration = () => {
               <p>Apellidos</p>
               <input
                 name="lastName"
-                placeholder=""
+                placeholder=""
                 autoComplete="off"
                 type="text"
                 onChange={handleInputChange}
@@ -87,7 +87,7 @@ export const UserRegistration = () => {
               <p>Correo electrónico</p>
               <input
                 name="email"
-                placeholder=""
+                placeholder="@"
                 autoComplete="off"
                 type="text"
                 onChange={handleInputChange}

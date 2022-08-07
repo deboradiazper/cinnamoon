@@ -10,6 +10,7 @@ import { UserLogin } from "./pages/userLogin";
 import { User } from "./pages/user";
 import { UserArea } from "./pages/userArea";
 import { RegistrationValidated } from "./pages/registrationValidated";
+import { SearchApp } from "./pages/searchApp";
 
 import injectContext from "./store/appContext";
 
@@ -41,6 +42,7 @@ const Layout = () => {
               path="/RegistrationValidated"
             />
             <Route element={<Detail />} path="/detail/:id" />
+            <Route element={<SearchApp />} path="/searchApp" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           <Footer />

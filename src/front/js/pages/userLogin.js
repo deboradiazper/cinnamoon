@@ -29,9 +29,9 @@ export const UserLogin = () => {
             <form onSubmit={handleSubmit}>
               <p>Correo electrónico</p>
               <input
-                name="email"
+                className="email"
                 value={email}
-                placeholder=""
+                placeholder=""
                 autoComplete="off"
                 type="text"
                 onChange={(event) => setEmail(event.target.value)}
@@ -40,7 +40,7 @@ export const UserLogin = () => {
               <div className="col-12 mb-3 text-center">
                 <p>Contraseña</p>
                 <input
-                  name="password"
+                  className="password"
                   value={password}
                   placeholder=""
                   autoComplete="off"

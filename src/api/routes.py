@@ -88,7 +88,6 @@ def detail_recipes(id):
     
     return jsonify(recipe.serialize()), 200
 
-
 @api.route('/recipes', methods=['POST'])
 def create_recipes():
     data = request.json
@@ -164,6 +163,7 @@ def create_categories():
     db.session.add(categories)
     db.session.commit()
     return jsonify({"message": "everything ok"}), 200
+    
 
 @api.route('/recipesfavorites', methods=['POST'])
 def add_recipes_favorites():

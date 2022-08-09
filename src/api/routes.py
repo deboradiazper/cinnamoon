@@ -31,7 +31,7 @@ def login():
         return jsonify({"message": "incorrect email or password"}), 400
     access_token = create_access_token(identity=user.id)
 
-    return jsonify({"token": access_token}), 200
+    return jsonify({"token": access_token, "user":user.serialize()}), 200
 
  
 @api.route('user/<int:id>', methods=['GET'])
@@ -77,7 +77,7 @@ def get_recipes_Favorites():
 #Recipes
 @api.route('/recipes', methods=['GET'])
 def get_recipes():
-    recipes = Recipes.query.all()
+    recipes = Recipes.query.order_by(Recipes.id.desc()).limit(10).all()
     data = [recipe.serialize() for recipe in recipes]
     
     return jsonify(data), 200
@@ -87,7 +87,6 @@ def detail_recipes(id):
     recipe = Recipes.query.get(id)
     
     return jsonify(recipe.serialize()), 200
-
 
 @api.route('/recipes', methods=['POST'])
 def create_recipes():
@@ -164,3 +163,12 @@ def create_categories():
     db.session.add(categories)
     db.session.commit()
     return jsonify({"message": "everything ok"}), 200
+    
+
+@api.route('/recipesfavorites', methods=['POST'])
+def add_recipes_favorites():
+    data = request.json
+    recipes = RecipesFavorites(user_id=data.get('user_id'), recipe_id=data.get('recipe_id'))
+    db.session.add(recipes)
+    db.session.commit()
+    return jsonify({"message": "recipe added"}), 200

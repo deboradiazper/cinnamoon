@@ -49,69 +49,62 @@ export const UserRegistration = () => {
   };
 
   return (
-    <div className="containerForm col-12 mb-3 text-center">
-      <h2>
-        <strong>Regístrate</strong>
-      </h2>
-      <p>
-        Únete a nuestra comunidad y accede a más de 500 recetas seleccionadas
-        cuidadosamente para ti. Totalmente gratuito.
-      </p>
-
+    <div>
+      <div className="registration col-12 mb-3 mt-5 text-center">
+        <h2>REGISTRATE</h2>
+        <p>
+          Unete a nuestra comunidad y descubre recetas deliciosas y saludables
+          que se adapten a ti.
+        </p>
+      </div>
       <div className="row">
-        <div className="col-12 mb-3 text-center">
-          <form onSubmit={sendInfo}>
-            <div className="col-12 mb-3 text-center">
-              <p>Nombre</p>
-              <input
-                name="name"
-                placeholder=""
-                autoComplete="off"
-                type="text"
-                onChange={handleInputChange}
-              />
-            </div>
+        <form className="form" onSubmit={sendInfo}>
+          <div className="col-12 mb-3 mt-4 text-center">
+            <input
+              name="Nombre"
+              placeholder=" Nombre"
+              autoComplete="off"
+              type="text"
+              onChange={handleInputChange}
+            />
+          </div>
 
-            <div className="col-12 mb-3 text-center">
-              <p>Apellidos</p>
-              <input
-                name="lastName"
-                placeholder=""
-                autoComplete="off"
-                type="text"
-                onChange={handleInputChange}
-              />
-            </div>
+          <div className="col-12  mb-3 text-center">
+            <input
+              name="Apellido"
+              placeholder=" Apellido"
+              autoComplete="off"
+              type="text"
+              onChange={handleInputChange}
+            />
+          </div>
 
-            <div className="col-12 mb-3 text-center">
-              <p>Correo electrónico</p>
-              <input
-                name="email"
-                placeholder="@"
-                autoComplete="off"
-                type="text"
-                onChange={handleInputChange}
-              />
-            </div>
+          <div className="col-12 mb-3 text-center">
+            <input
+              name="email"
+              placeholder=" Email"
+              autoComplete="off"
+              type="text"
+              onChange={handleInputChange}
+            />
+          </div>
 
-            <div className="col-12 mb-3 text-center">
-              <p>Contraseña</p>
-              <input
-                name="password"
-                placeholder=""
-                autoComplete="off"
-                type="password"
-                onChange={handleInputChange}
-              />
-            </div>
+          <div className="col-12  mb-5 text-center">
+            <input
+              name="Contraseña"
+              placeholder=" Contraseña"
+              autoComplete="off"
+              type="Contraseña"
+              onChange={handleInputChange}
+            />
+          </div>
 
-            <div className="col-12 mb-3 text-center">
-              <button className="button" type="submit">
-                send
-              </button>
-            </div>
-          </form>
-        </div>
+          <div className="col-12  mb-3 text-center">
+            <button className="send" type="submit">
+              ENVIAR
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

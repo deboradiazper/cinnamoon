@@ -8,32 +8,36 @@ body {
   font-family: "Poppins", sans-serif;
   width: 100%;
 }
-h3 {
-  color: rgba(37, 37, 37, 0.9);
-}
+/* h5 {
+  font-weight: 600;
+} */
 .navbar {
   background-color: #a8c197;
   font-family: "Poppins", sans-serif;
-  color: black;
+  color: #302c2c;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-.user,
-.drop-down,
-.moon {
-  height: 25px;
-  width: 25px;
+.logo {
+  color: #302c2c;
 }
+.loging,
+.logout {
+  background-color: #a8c197;
+}
+
 .dropdown-menu {
   width: 40vh;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
   color: rgba(135, 132, 132, 0.9);
 }
 .footer {
   background-color: #a8c197;
-  font-weight: 400;
 }
+
 .diverse {
+  margin-top: 80px;
+  font-weight: 400;
   padding: 50px 20px 30px 20px;
   background: rgba(158, 123, 67, 0.6);
   box-shadow: 20px, 0px, 10px;
@@ -80,9 +84,18 @@ h3 {
 .bars {
   color: rgba(37, 37, 37, 0.7);
 }
+.love2,
 .star {
   color: #d9d9d9;
   padding-right: 10px;
+}
+.love:focus {
+  outline: none;
+  box-shadow: none;
+}
+.love2:focus {
+  outline: none;
+  box-shadow: none;
 }
 .recipe,
 .recipeFav {
@@ -109,7 +122,7 @@ h3 {
   background: #de21d7;
   border-radius: 30px;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 18px;
   box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
   transition: all 0.3s linear;
 }
@@ -142,17 +155,20 @@ h3 {
   scrollbar-width: thin;
 }
 .title-detail {
+  border-bottom: 1px solid rgb(197, 189, 189);
+  line-height: 50px;
+  color: black;
+}
+.box-title {
   margin-top: 80px;
 }
-.text-detail {
+
+/* .text-detail {
   padding-right: 200px;
-}
-.sugar-free,
-.lactose-free,
-.gluten-free,
-.vegan {
-  width: 30px;
-  height: 30px;
+} */
+.categories {
+  width: 20px;
+  height: 20px;
 }
 .card-text3 {
   color: #000000;
@@ -161,6 +177,7 @@ h3 {
   opacity: 0.7;
 }
 .card-detail {
+  margin-top: 70px;
   width: 90%;
   height: 90%;
   position: relative;
@@ -170,22 +187,53 @@ h3 {
   transition: all 0.8s linear;
 }
 .text-back {
-  color: white;
-  font-size: 14px;
+  color: #000000;
+  font-size: 16px;
   font-weight: 500;
 }
+ul {
+  text-align: center;
+  list-style: none;
+}
+
 .front,
 .back {
   height: 100%;
   width: 100%;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
   position: absolute;
   box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
 }
 .back {
-  text-align: center;
+  background-color: white;
+  text-align: justify;
+  opacity: 0.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.title-back {
+  text-decoration: underline;
+  color: #000000;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 300;
+}
+.time {
+  border-top: 1px solid rgb(64, 66, 64);
+  border-width: thin;
+  line-height: 50px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 300;
+}
+.title-trivia {
+  border-bottom: 1px solid rgb(197, 189, 189);
+  line-height: 50px;
+  color: black;
+}
+.name-trivia {
+  color: #3c3939;
 }
 .card-detail .front {
   transform: perspective(600px) rotateY(0deg);
@@ -200,6 +248,61 @@ h3 {
 .card-detail:hover .back {
   transform: perspective(600px) rotateY(360deg);
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+.card-ingredient {
+  text-align: justify;
+  margin-top: 100px;
+  background: #f3f0f0;
+  box-shadow: 0px 15px 15px -15px rgba(116, 115, 115, 0.25);
+  overflow: hidden;
+  cursor: pointer;
+}
+.send,
+.login {
+  border: none;
+  background: #de21d7;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+  border-radius: 15px;
+  font-size: 18px;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s linear;
+}
+.login:hover,
+.send:hover {
+  background: #de21d7;
+  transform: scale(1.07);
+  box-shadow: 0 0 10px #e863e1, 0 0 40px #e863e1, 0 0 80px #e863e1;
+}
+.form {
+  width: 100%;
+}
+input {
+  border: none;
+  border-bottom: 1px solid rgb(161, 160, 160);
+  border-width: thin;
+  background: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 70%;
+  outline: none;
+}
+
+input::placeholder {
+  opacity: 0.6;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 300;
+}
+input:focus {
+  border-bottom: 1px solid rgb(161, 160, 160);
+  box-shadow: 0px 15px 15px -15px rgba(116, 115, 115, 0.25);
+  transition: all 0.3s ease;
+}
+#recipes {
+  margin-top: 80px;
 }
 
 .containerForm {

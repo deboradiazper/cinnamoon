@@ -19,38 +19,35 @@ export const UserLogin = () => {
   };
 
   return (
-    <div className="containerForm">
-      <div className="col-12 mb-3 text-center">
-        <h2>
-          <strong>Accede</strong>
-        </h2>
+    <div className="col-12 text-center mt-5">
+      <h2>ACCEDE</h2>
+      <div>
         <div className="row">
-          <div className="col-12 mb-3 text-center">
-            <form onSubmit={handleSubmit}>
-              <p>Correo electrónico</p>
+          <form onSubmit={handleSubmit} className="form">
+            <div className="col-12 text-center mt-4 mb-3">
               <input
-                className="email"
+                name="email"
                 value={email}
-                placeholder=""
+                placeholder=" Email"
                 autoComplete="off"
                 type="text"
                 onChange={(event) => setEmail(event.target.value)}
               />
-
-              <div className="col-12 mb-3 text-center">
-                <p>Contraseña</p>
-                <input
-                  className="password"
-                  value={password}
-                  placeholder=""
-                  autoComplete="off"
-                  type="password"
-                  onChange={(event) => setPassword(event.target.value)}
-                />
-              </div>
-              <button>login</button>
-            </form>
-          </div>
+            </div>
+            <div className="col-12 text-center mb-5">
+              <input
+                name="Password"
+                value={password}
+                placeholder=" contraseña"
+                autoComplete="off"
+                type="password"
+                onChange={(event) => setPassword(event.target.value)}
+              />
+            </div>
+            <div className="col-12 text-center mb-3">
+              <button className="login">ACCEDE</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

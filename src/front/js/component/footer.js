@@ -1,49 +1,49 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 export const Footer = () => (
-  <div className="container-fluid p-0 mt-5">
+  <div className="container-fluid p-0">
     <div className="diverse">
       <div className="row d-flex">
-        <h5 className="text-center mb-5">What can CINNAMON offer you?</h5>
-        <div className="col-4 text-center px-5">
+        <h4 className="text-center mb-3">¿QUE PODEMOS HACER POR TI?</h4>
+        <div className="col-12 col-md-4 text-center px-5">
           <img
             className="register"
             src="https://cdn-icons-png.flaticon.com/512/3456/3456400.png"
           ></img>
-          <p>Register in 2 seconds</p>
+          <h5>REGISTRATE</h5>
           <p className="text3">
-            You can cook with us and consult your favorites recipes.
+            En menos de dos clicks podrás tener acceso a todas los servicios de
+            nuestra app.
           </p>
         </div>
-        <div className="col-4 text-center px-5">
+        <div className="col-12 col-md-4 text-center px-5">
           <img
             className="ingredients"
             src="https://cdn-icons-png.flaticon.com/128/2329/2329888.png"
           ></img>
-          <p>Find healthiest recipes by ingredients</p>
-          <p className="text3">
-            You can cook with us and consult your favorites recipes.
-          </p>
+          <h5>RECETAS SENCILLAS Y SALUDABLES</h5>
+          <p className="text3">Puedes bucar por ingrediente o por categoria.</p>
         </div>
-        <div className="col-4 text-center px-5">
+        <div className="col-12 col-md-4 text-center px-5">
           <img
             className="cookbook"
             src="https://cdn-icons-png.flaticon.com/512/4388/4388461.png"
           ></img>
-          <p>Create your own cookbook</p>
-          <p className="text3">
-            You can cook with us and consult your favorites recipes.
-          </p>
+          <h5>CREA TU PROPIO LIBRO DE RECETAS</h5>
+          <p className="text3">Guarda y planifica tus recetas favoritas.</p>
         </div>
       </div>
       <div className="button-subscribe d-flex justify-content-center mt-4">
-        <button className="btn btn-large subscribe text-light border-0 px-3">
-          subscribe
-        </button>
+        <Link
+          to={"userArea"}
+          className="btn btn-large subscribe text-light border-0 px-3"
+        >
+          INSCRIBETE
+        </Link>
       </div>
     </div>
     <footer className="footer mt-auto py-3 text-center pt-4">
-      <p>Follow us</p>
+      <p>Siguenos en:</p>
       <div className="iconsFooter">
         <img
           className="instagram mx-4 img-fluid"

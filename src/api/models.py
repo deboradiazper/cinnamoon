@@ -45,36 +45,44 @@ class RecipesFavorites(db.Model):
 class Recipes(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(250), nullable=False)
-    description = db.Column(db.String(500), nullable=False)
+    description = db.Column(db.String(5000), nullable=False)
+    image = db.Column(db.String(250))
+    cookingtime = db.Column(db.String(250), nullable=True)
     favorites = db.relationship('RecipesFavorites', backref = 'Recipes')
     ingredients = db.relationship('RecipesIngredients', backref = 'Recipes')
-    categories = db.relationship('Categories', backref = 'Recipes')
 
     def __repr__(self):
-        return f'<Recipes %r>' % self.id
+        return f'<Recipes %r>' % self.name
 
     def serialize(self):
+        print(self.recipecategory)
         return {
             "id": self.id,
             "name": self.name,
             "description": self.description,
+            "image": self.image,
+            "cookingtime": self.cookingtime,
+            "ingredients": [ingredient.serialize() for ingredient in self.ingredients],
+            "categories": [item.category.serialize() for item in self.recipecategory],
         }
 
 
 class Ingredients(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(250), nullable=False)
+    image = db.Column(db.String(250))
     favorites = db.relationship('IngredientsFavorites', backref = 'Ingredients')
-    recipes = db.relationship('RecipesIngredients', backref = 'Ingredients')
     trivia = db.relationship('Trivia', backref = 'Ingredients')
 
     def __repr__(self):
-        return f'<Ingredients %r>' % self.id
+        return f'<Ingredients %r>' % self.name
 
     def serialize(self):
         return {
             "id": self.id,
             "name": self.name,
+            "image": self.image,
+            "trivia":  [trivia.serialize() for trivia in self.trivia]
         }
 
 
@@ -99,22 +107,20 @@ class RecipesIngredients(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.id'))
     ingredient_id = db.Column(db.Integer, db.ForeignKey('ingredients.id'))
+    ingredients = db.relationship('Ingredients', backref = 'ingredients')
 
     def __repr__(self):
-        return f'<RecipesIngredients %r>' % self.id
+        return f'<RecipesIngredients %r>' % self.Ingredients.name
 
     def serialize(self):
-        return {
-            "id": self.id,
-            "recipe_id": self.recipe_id,
-            "ingredient_id": self.ingredient_id,
-        }
+        return self.ingredients.serialize()
 
 
 
 class Trivia(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(500), nullable=False)
+    image = db.Column(db.String(250))
     ingredient_id = db.Column(db.Integer, db.ForeignKey('ingredients.id'))
 
     def __repr__(self):
@@ -124,6 +130,7 @@ class Trivia(db.Model):
         return {
             "id": self.id,
             "text": self.text,
+            "image": self.image,
             "ingredient_id": self.ingredient_id,
         }
 
@@ -131,15 +138,32 @@ class Trivia(db.Model):
 
 class Categories(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(250), unique=True, nullable=False)
-    recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.id'))
+    name = db.Column(db.String(250), unique=True, nullable=False)
+    image = db.Column(db.String(250))
+
 
     def __repr__(self):
-        return f'<Categories %r>' % self.id
+        return f'<Categories %r>' % self.name
 
     def serialize(self):
         return {
             "id": self.id,
             "name": self.name,
-            "recipe_id": self.recipe_id,
+            "image": self.image,
+
         }
+class RecipeCategories(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.id'))
+    recipes = db.relationship('Recipes', backref = 'recipecategory')
+    category_id = db.Column(db.Integer, db.ForeignKey('categories.id'))
+    category = db.relationship('Categories', backref = 'recipecategory')
+
+
+    def __repr__(self):
+        return f'<RecipesCategories %r>' % self.recipes.name
+
+
+
+
+

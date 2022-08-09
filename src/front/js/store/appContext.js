@@ -29,8 +29,12 @@ const injectContext = (PassedComponent) => {
        * store, instead use actions, like this:
        **/
 
-      state.actions.setToken(localStorage.getItem("token"));
+      state.actions.setToken(
+        localStorage.getItem("token"),
+        localStorage.getItem("user")
+      );
       state.actions.loadRecipe();
+      //state.actions.loadUser();
     }, []);
 
     // The initial value for the context is not null anymore, but the current state of this component,

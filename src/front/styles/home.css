@@ -5,8 +5,10 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
-h3 {
+
+.title2 {
   color: rgba(37, 37, 37, 0.9);
+  margin-top: 70px;
 }
 .text1 {
   color: #000000;
@@ -22,37 +24,44 @@ p {
 .recipes {
   padding-right: 200px;
   padding-left: 50px;
+  margin-top: 70px;
+}
+.recipes2 {
+  padding-right: 200px;
+  padding-left: 50px;
+  margin-top: 70px;
 }
 
-.form-control {
+.form-search {
+  position: absolute;
   width: 100%;
-  border-radius: 40px;
-  background: white;
-  font-size: 14px;
-  color: rgba(37, 37, 37, 0.9);
+  background: rgb(250, 249, 249);
+  outline: none;
 }
 .search {
-  border-radius: 40px;
-  background: white;
+  position: relative;
+  background: none;
+  font-size: 14px;
+  color: rgba(37, 37, 37, 0.9);
+  opacity: 0.5;
+  transition: all 0.3 ease;
 }
+.form-search:focus + .search {
+  transform: translatey(-100%);
+}
+
 h5 {
   color: rgba(37, 37, 37, 0.9);
 }
-.number {
-  width: 57px;
-  height: 35px;
+.all {
   background: #428e9e;
   border-radius: 5px;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: rfs-fluid-value(1rem);
+  font-weight: 500;
   filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.25));
   transition: 0.3s linear;
 }
-.number:hover {
+.all:hover {
   background: #428e9e;
   box-shadow: 0 0 10px #5498a5, 0 0 40px #5498a5, 0 0 80px #5498a5;
-}
-.input-group {
-  border: 1px solid rgb(161, 160, 160);
-  border-radius: 20px;
 }

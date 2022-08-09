@@ -16,15 +16,18 @@ export const Detail = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div class="container d-flex align-items-center justify-content-center flex-wrap">
       {detalle ? (
         <RecipeDetail
+          cookingtime={detalle.cookingtime}
           image={detalle.image}
           name={detalle.name}
           ingredients={detalle.ingredients}
           description={detalle.description}
           categories={detalle.categories.map((value, index) => {
-            return <img key={index} src={value.image} />;
+            return (
+              <img className="categories m-1" key={index} src={value.image} />
+            );
           })}
         />
       ) : (

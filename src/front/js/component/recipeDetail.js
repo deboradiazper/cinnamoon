@@ -5,7 +5,7 @@ import Trivias from "./trivias";
 const RecipeDetail = (props) => {
   return (
     <div className="row">
-      <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
+      <div className="col-md-6">
         <div className="card-detail">
           <div className="front">
             <img
@@ -15,24 +15,26 @@ const RecipeDetail = (props) => {
             />
           </div>
           <div className="back">
-            <h3 className="text-light m-5 pt-2"></h3>
-            <img
-              src={props.image}
-              className="image-detail img-fluid mx-auto d-block"
-              alt="..."
-            />
-            <p></p>
-            <p className="text-back m-5 pt-3">
-              {props.ingredients.map((value, index) => {
-                return <label key={index}>{value.name}</label>;
-              })}
-            </p>
+            <div className="text-back text-center pt-5 mt-2">
+              <h5 className="title-back">
+                <i class="fas fa-pencil-alt text-muted"></i> Ingredientes:
+              </h5>
+              <ul>
+                {props.ingredients.map((value, index) => {
+                  return <li key={index}>{value.name}</li>;
+                })}
+              </ul>
+            </div>
+            <p className="time mx-5 pb-3 text-center "> {props.cookingtime}</p>
           </div>
         </div>
       </div>
 
-      <div className="description-detail col-12 col-md-6 p-2">
-        <h2 className="title-detail">{props.name}</h2>
+      <div className="description-detail col-md-6 ps-5">
+        <div className="box-title d-flex justify-content-between align-items-center pe-5">
+          <h4 className="title-detail">{props.name}</h4>
+          <i className="fas fa-heart text-muted"></i>
+        </div>
         <div className="star mt-3">
           <i className="fas fa-star"></i>
           <i className="fas fa-star ms-3"></i>
@@ -42,7 +44,7 @@ const RecipeDetail = (props) => {
         </div>
 
         <div className="icons-description d-flex my-3">
-          <div>
+          <div className="categorie d-inline-flex">
             {props.categories.map((value, index) => {
               return <p key={index}>{value}</p>;
             })}
@@ -50,7 +52,11 @@ const RecipeDetail = (props) => {
         </div>
         <p className="card-text3">{props.description}</p>
       </div>
-      <div className="col-12 col-md-4">
+      <div className="col-12">
+        <h4 className="title-trivia mt-5 pt-5">
+          Conoce más sobre esta receta..
+        </h4>
+
         {props.ingredients.map((value, index) => {
           return (
             <Trivias
@@ -70,6 +76,7 @@ RecipeDetail.propTypes = {
   name: PropTypes.string,
   description: PropTypes.string,
   categories: PropTypes.array,
-  ingredientes: PropTypes.array,
+  ingredients: PropTypes.array,
+  cookingtime: PropTypes.string,
 };
 export default RecipeDetail;

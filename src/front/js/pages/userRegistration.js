@@ -50,67 +50,61 @@ export const UserRegistration = () => {
 
   return (
     <div>
-      <div className="container col-12 mb-3 text-center">
-        <h2>
-          <strong>Join us!</strong>
-        </h2>
+      <div className="registration col-12 mb-3 mt-5 text-center">
+        <h2>REGISTRATE</h2>
         <p>
-          Join our community and learn about health. It's totally free! Lorem
-          ipsum blablablalblablal
+          Unete a nuestra comunidad y descubre recetas deliciosas y saludables
+          que se adapten a ti.
         </p>
       </div>
       <div className="row">
-        <div className="col-12 mb-3 text-center">
-          <div className="container_register">
-            <form className="registerForm" onSubmit={sendInfo}>
-              <div className="col-12 mb-3 text-center">
-                <input
-                  name="name"
-                  placeholder="your name here"
-                  autoComplete="off"
-                  type="text"
-                  onChange={handleInputChange}
-                />
-              </div>
-
-              <div className="col-12 mb-3 text-center">
-                <input
-                  name="lastName"
-                  placeholder="your last name"
-                  autoComplete="off"
-                  type="text"
-                  onChange={handleInputChange}
-                />
-              </div>
-
-              <div className="col-12 mb-3 text-center">
-                <input
-                  name="email"
-                  placeholder="your mail"
-                  autoComplete="off"
-                  type="text"
-                  onChange={handleInputChange}
-                />
-              </div>
-
-              <div className="col-12 mb-3 text-center">
-                <input
-                  name="password"
-                  placeholder="your password"
-                  autoComplete="off"
-                  type="password"
-                  onChange={handleInputChange}
-                />
-              </div>
-
-              <div className="col-12 mb-3 text-center">
-                <button className="button" type="submit">
-                  send
-                </button>
-              </div>
-            </form>
+        <form className="form" onSubmit={sendInfo}>
+          <div className="col-12 mb-3 mt-4 text-center">
+            <input
+              name="Nombre"
+              placeholder=" Nombre"
+              autoComplete="off"
+              type="text"
+              onChange={handleInputChange}
+            />
           </div>
-        </div>
+
+          <div className="col-12  mb-3 text-center">
+            <input
+              name="Apellido"
+              placeholder=" Apellido"
+              autoComplete="off"
+              type="text"
+              onChange={handleInputChange}
+            />
+          </div>
+
+          <div className="col-12 mb-3 text-center">
+            <input
+              name="email"
+              placeholder=" Email"
+              autoComplete="off"
+              type="text"
+              onChange={handleInputChange}
+            />
+          </div>
+
+          <div className="col-12  mb-5 text-center">
+            <input
+              name="Contraseña"
+              placeholder=" Contraseña"
+              autoComplete="off"
+              type="Contraseña"
+              onChange={handleInputChange}
+            />
+          </div>
+
+          <div className="col-12  mb-3 text-center">
+            <button className="send" type="submit">
+              ENVIAR
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

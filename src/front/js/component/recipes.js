@@ -2,13 +2,13 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import Recipe from "./recipe";
 
-const RecipeList = () => {
+const Recipes = () => {
   const { store, actions } = useContext(Context);
   return (
-    <div className="scroll-container d-flex">
+    <div className="row">
       {store.recipes.map((recipe, index) => {
         return (
-          <div className="col-12 col-md-4" key={index}>
+          <div className="col-12 col-md-4" id="recipes" key={index}>
             <Recipe
               name={recipe.name}
               id={recipe.id}
@@ -26,4 +26,4 @@ const RecipeList = () => {
   );
 };
 
-export default RecipeList;
+export default Recipes;

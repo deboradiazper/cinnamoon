@@ -17,6 +17,10 @@ const getState = ({ getStore, getActions, setStore }) => {
       token: null,
 
       recipes: [],
+      user: null,
+      favorites: [],
+      auth: false,
+      userInfo: {},
     },
 
     actions: {
@@ -29,6 +33,17 @@ const getState = ({ getStore, getActions, setStore }) => {
         const data = await response.json();
         console.log(data);
         setStore({ recipes: data });
+        return true;
+      },
+      addFavorites: (item) => {
+        //const store = getStore()
+        console.log(item);
+      },
+
+      loadUser: async () => {
+        const response = await fetch(process.env.BACKEND_URL + "/api/user");
+        const data = await response.json();
+        console.log(data);
         return true;
       },
 
@@ -53,7 +68,14 @@ const getState = ({ getStore, getActions, setStore }) => {
           }
 
           const data = await resp.json();
+          console.log(data.user);
+          setStore({ user: data.user.name });
+          setStore({ userInfo: data.user });
+
+          localStorage.setItem("user", data.user.name);
+
           console.log(data.token);
+          setStore({ auth: true });
           localStorage.setItem("token", data.token);
           setStore({ token: data.token });
           return true;
@@ -76,11 +98,14 @@ const getState = ({ getStore, getActions, setStore }) => {
         //reset the global store
         setStore({ demo: demo });
       },
-      setToken: (token) => {
+      setToken: (token, user) => {
         setStore({ token: token });
+        setStore({ user: user });
       },
       logout: () => {
         setStore({ token: null });
+        setStore({ auth: false });
+
         localStorage.removeItem("token");
       },
     },

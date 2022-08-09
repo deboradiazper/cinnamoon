@@ -8,29 +8,40 @@ export const Navbar = () => {
 
   const navigate = useNavigate();
 
+  const isAuthenticate = () => {
+    if (store.auth) {
+      navigate("/userArea");
+    } else {
+      navigate("/user");
+    }
+  };
+
   return (
     <nav className="navbar d-flex justify-content-around align-items-center px-5">
       <div className="container-fluid">
         <Link className="navbar-brand" to={"/"}>
           <span className="logo">
-            <h3>CINNAMOON</h3>
+            <h4 className="logo">CINNAMOON</h4>
           </span>
         </Link>
         <div className="icons d-flex justify-content-around align-items-center">
           <i className="far fa-moon me-3"></i>
 
-          {store.token ? (
+          {store.auth ? (
             <button
+              className="logout border-0"
               onClick={() => {
-                actions.logout(navigate("/"));
+                actions.logout();
+                navigate("/");
               }}
             >
-              Logout
+              <i class="fas fa-user-times"></i>
             </button>
           ) : (
             <button
+              className="loging border-0"
               onClick={() => {
-                navigate("/user");
+                isAuthenticate();
               }}
             >
               <i className="far fa-user me-2"></i>
@@ -43,10 +54,7 @@ export const Navbar = () => {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <img
-                className="drop-down"
-                src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png"
-              ></img>
+              <i class="fas fa-bars fa-2x"></i>
             </button>
             <ul className="dropdown-menu p-3 mb-5 bg-body rounded border-0">
               <li>Recipes</li>

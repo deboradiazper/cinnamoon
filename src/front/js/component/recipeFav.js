@@ -23,8 +23,8 @@ const RecipeFav = (props) => {
       <div className="card-body">
         <div className="d-flex justify-content-between">
           <h6 className="card-title">Cheese cake sugar free{props.title}</h6>
-          <span className="star">
-            <i className="fas fa-star"></i>
+          <span className="heart">
+            <i className="fas fa-heart text-muted"></i>
           </span>
         </div>
         <p className="card-text2">vegan, lactose free{props.type}</p>

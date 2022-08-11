@@ -172,3 +172,11 @@ def add_recipes_favorites():
     db.session.add(recipes)
     db.session.commit()
     return jsonify({"message": "recipe added"}), 200
+
+
+@api.route('/searchbar', methods=['POST'])
+def get_userinput():
+    data = request.json
+
+    print(data)
+    return jsonify("hola ok"), 200

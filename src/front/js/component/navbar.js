@@ -35,7 +35,7 @@ export const Navbar = () => {
                 navigate("/");
               }}
             >
-              <i class="fas fa-user-times"></i>
+              <i className="fas fa-user-times"></i>
             </button>
           ) : (
             <button
@@ -54,7 +54,7 @@ export const Navbar = () => {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <i class="fas fa-bars fa-2x"></i>
+              <i className="fas fa-bars fa-2x"></i>
             </button>
             <ul className="dropdown-menu p-3 mb-5 bg-body rounded border-0">
               <li>Recipes</li>

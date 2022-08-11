@@ -110,7 +110,7 @@ class RecipesIngredients(db.Model):
     ingredients = db.relationship('Ingredients', backref = 'ingredients')
 
     def __repr__(self):
-        return f'<RecipesIngredients %r>' % self.Ingredients.name
+        return f'<RecipesIngredients %r>' % self.ingredients.name
 
     def serialize(self):
         return self.ingredients.serialize()

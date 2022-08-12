@@ -174,9 +174,15 @@ def add_recipes_favorites():
     return jsonify({"message": "recipe added"}), 200
 
 
-@api.route('/searchbar', methods=['POST'])
+@api.route('/searchbar', methods=['POST', 'GET'])
 def get_userinput():
-    data = request.json
+    # data = request.json
+    # userinput = Recipes.query.filter_by(name=data.get('name'))
+    if request.method == "POST":
+        data = dict(request.form)
+        userinput = get_user_input(data["search"])
+    else:
+        userinput = []
 
-    print(data)
-    return jsonify("hola ok"), 200
+    print(userinput)
+    return jsonify("testing"), 200

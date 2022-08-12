@@ -1,50 +1,56 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export const SearchBar = () => {
   //lo q introduce el usuario
-  const [searchInputValue, setSearchInputValue] = useState("");
+  const [search, setSearch] = useState("");
   // lo q tenemos en api
   const [recipe, setRecipe] = useState([]);
 
-  const searchOnApi = (recipe) => {
-    fetch(process.env.BACKEND_URL + "/api/searchbar", {
-      method: "POST",
-      body: JSON.stringify(recipe),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    console.log(searchOnApi);
-    // fetch(process.env.BACKEND_URL + "/api/searchbar")
-    //   .then((response) => response.json())
-    //   .then((data) => setIngredient(data));
+  //datos api
+  const showDataRecipes = async () => {
+    const response = await fetch(process.env.BACKEND_URL + "/api/recipes");
+    const dataRecipes = await response.json();
+    console.log(dataRecipes);
+  };
+  showDataRecipes();
+  console.log("testeando");
+
+  //render vista
+  useEffect(() => {
+    showDataRecipes();
+  }, []);
+
+  const searcher = (e) => {
+    setSearch(e.target.value);
+    console.log(e.target.value);
   };
 
-  const sumbitHandler = (e) => {
-    e.preventDefault();
-    return setRecipe;
+  const subtmitHandler = async (e) => {
+    e.preventdefault();
+    const searchResults = await showDataRecipes(search);
+    console.log(searchResults);
   };
 
   return (
     <div className="search">
       <h1>busca ingredientes</h1>
       <div className="searchInput">
-        <form onSubmit={sumbitHandler}>
+        <form onSubmit={subtmitHandler}>
           <input
             type="search"
             onChange={(e) => {
-              setSearchInputValue(e.target.value);
+              searcher;
             }}
           />
         </form>
 
-        {/* {ingredient.map((ingredient) => {
+        {recipe.map((recipe) => {
           return (
             <div className="recipes">
-              <h1>{ingredient.name}</h1>
+              <h1>{recipe.name}</h1>
             </div>
           );
-        })} */}
+        })}
       </div>
     </div>
   );

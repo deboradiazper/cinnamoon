@@ -21,6 +21,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       favorites: [],
       auth: false,
       userInfo: {},
+      searchBar: [],
     },
 
     actions: {

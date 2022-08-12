@@ -180,7 +180,7 @@ def searchbar():
     data = request.json
     text = data.get("data")
     if len(text):
-        search_data = text.split(", ")    
+        search_data = text.split(", ")
         print(search_data)
         ingredients = Ingredients.query.filter(Ingredients.name.in_(search_data))
         ingredients = [ingredient.id for ingredient in ingredients]

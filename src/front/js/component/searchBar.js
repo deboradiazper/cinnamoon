@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Recipe from "./recipe";
 
 export const SearchBar = () => {
   //lo q introduce el usuario
@@ -8,27 +9,33 @@ export const SearchBar = () => {
 
   //datos api
   const showDataRecipes = async () => {
-    const response = await fetch(process.env.BACKEND_URL + "/api/recipes");
+    const opts = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        data: search,
+      }),
+    };
+    const response = await fetch(
+      process.env.BACKEND_URL + "/api/searchbar",
+      opts
+    );
     const dataRecipes = await response.json();
     console.log(dataRecipes);
+    return dataRecipes;
   };
-  showDataRecipes();
-  console.log("testeando");
 
   //render vista
-  useEffect(() => {
-    showDataRecipes();
-  }, []);
+  useEffect(() => {}, []);
 
   const searcher = (e) => {
     setSearch(e.target.value);
-    console.log(e.target.value);
   };
 
   const subtmitHandler = async (e) => {
-    e.preventdefault();
+    e.preventDefault();
     const searchResults = await showDataRecipes(search);
-    console.log(searchResults);
+    setRecipe(searchResults);
   };
 
   return (
@@ -36,18 +43,23 @@ export const SearchBar = () => {
       <h1>busca ingredientes</h1>
       <div className="searchInput">
         <form onSubmit={subtmitHandler}>
-          <input
-            type="search"
-            onChange={(e) => {
-              searcher;
-            }}
-          />
+          <input type="search" onChange={searcher} />
+          <button>Buscar</button>
         </form>
 
         {recipe.map((recipe) => {
           return (
             <div className="recipes">
-              <h1>{recipe.name}</h1>
+              <Recipe
+                name={recipe.name}
+                id={recipe.id}
+                image={recipe.image}
+                categories={recipe.categories.map((value, index) => {
+                  return (
+                    <img className="categories" key={index} src={value.image} />
+                  );
+                })}
+              />
             </div>
           );
         })}

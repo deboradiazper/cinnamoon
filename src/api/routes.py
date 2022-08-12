@@ -2,7 +2,8 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Recipes, Ingredients, Trivia, Categories, RecipesFavorites, IngredientsFavorites
+from api.models import db, User, Recipes, Ingredients, Trivia, Categories, RecipesFavorites, IngredientsFavorites, RecipesIngredients
+
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
 
@@ -174,15 +175,17 @@ def add_recipes_favorites():
     return jsonify({"message": "recipe added"}), 200
 
 
-@api.route('/searchbar', methods=['POST', 'GET'])
-def get_userinput():
-    # data = request.json
-    # userinput = Recipes.query.filter_by(name=data.get('name'))
-    if request.method == "POST":
-        data = dict(request.form)
-        userinput = get_user_input(data["search"])
-    else:
-        userinput = []
+@api.route('/searchbar', methods=['POST'])
+def searchbar():
+    data = request.json
+    text = data.get("data")
+    if len(text):
+        search_data = text.split(", ")    
+        print(search_data)
+        ingredients = Ingredients.query.filter(Ingredients.name.in_(search_data))
+        ingredients = [ingredient.id for ingredient in ingredients]
+        recipe_ingredients = RecipesIngredients.query.filter(RecipesIngredients.ingredient_id.in_(ingredients))
+        recipes = [recipe_ingredient.Recipes.serialize() for recipe_ingredient in recipe_ingredients]
+        return jsonify(recipes), 200
 
-    print(userinput)
-    return jsonify("testing"), 200
+    return jsonify([]), 200

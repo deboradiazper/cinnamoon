@@ -4,7 +4,7 @@ export const Footer = () => (
   <div className="container-fluid p-0">
     <div className="diverse">
       <div className="row d-flex">
-        <h4 className="text-center mb-3">¿QUE PODEMOS HACER POR TI?</h4>
+        <h5 className="text-center mb-3">¿QUE PODEMOS HACER POR TI?</h5>
         <div className="col-12 col-md-4 text-center px-5">
           <img
             className="register"
@@ -33,12 +33,12 @@ export const Footer = () => (
           <p className="text3">Guarda y planifica tus recetas favoritas.</p>
         </div>
       </div>
-      <div className="button-subscribe d-flex justify-content-center mt-4">
+      <div className="button-subscribe d-flex justify-content-center mt-4 mb-3">
         <Link
           to={"userArea"}
           className="btn btn-large subscribe text-light border-0 px-3"
         >
-          INSCRIBETE
+          REGISTRATE
         </Link>
       </div>
     </div>

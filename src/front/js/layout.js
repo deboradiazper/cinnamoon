@@ -17,6 +17,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Detail } from "./pages/detail";
 import RecipeAll from "./pages/recipesAll";
+import RecipesFavorits from "./component/recipesFavorits";
 
 //create your first component
 const Layout = () => {
@@ -43,6 +44,7 @@ const Layout = () => {
             />
             <Route element={<RecipeAll />} path="/recipeAll" />
             <Route element={<Detail />} path="/detail/:id" />
+            <Route element={<RecipesFavorits />} path="/recipefav" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           <Footer />

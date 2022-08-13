@@ -57,7 +57,7 @@ body {
 }
 .card {
   background: #fffdfd;
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
   width: 90%;
   overflow: hidden;
@@ -145,7 +145,7 @@ body {
 }
 .img-recipe {
   width: 100%;
-  max-width: 400px;
+  max-width: 460px;
   height: 300px;
 }
 .scroll-container {
@@ -185,6 +185,10 @@ body {
 .card-detail div {
   backface-visibility: hidden;
   transition: all 0.8s linear;
+}
+.image-detail {
+  height: 100%;
+  width: 100%;
 }
 .text-back {
   color: #000000;
@@ -303,4 +307,81 @@ input:focus {
 }
 #recipes {
   margin-top: 80px;
+}
+.hero-container,
+.hero-container2 {
+  margin-top: 70px;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  height: 70vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+}
+.hero-title {
+  border-bottom: 1px solid rgb(148, 142, 142);
+  line-height: 50px;
+}
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("https://images.unsplash.com/photo-1501959915551-4e8d30928317?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGNvb2tpbmd8ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=6")
+      no-repeat center center;
+  width: 100%;
+  height: 100%;
+  transition: transform 2s;
+}
+.hero:hover,
+.hero2:hover {
+  transform: scale(1.15);
+}
+
+.hero-stuff,
+.hero-stuff2 {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+}
+.hero-button,
+.hero-button2 {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+}
+
+.btn-user,
+.btn-user2 {
+  font-size: 18px;
+  font-weight: 600;
+  background: #de21d7;
+  border-radius: 10px;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+  transition: 0.4s linear;
+  color: #fff;
+}
+
+.btn-user:hover,
+.btn-user2:hover {
+  box-shadow: 0 0 10px #e863e1, 0 0 40px #e863e1, 0 0 80px #e863e1;
+  background: #de21d7;
+  transform: scale(1.07);
+  transition: all 0.3s linear;
+  color: #fff;
+}
+.hero2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("https://images.unsplash.com/photo-1575709527142-a93ed587bb83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODd8fGNvb2tpbmclMjBib29rfGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=500&q=60")
+      no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 2s;
+}
+.title-all {
+  border-bottom: 1px solid rgb(186, 181, 181);
+  line-height: 50px;
+}
+.image-user {
+  width: 100px;
+  height: 100px;
 }

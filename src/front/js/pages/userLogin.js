@@ -5,22 +5,27 @@ import { useNavigate } from "react-router-dom";
 export const UserLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
   const { actions, store } = useContext(Context);
   const navigate = useNavigate();
 
   console.log("this is your token", store.token);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const result = actions.login(email, password);
+    const result = await actions.login(email, password);
+    console.log(result);
     if (result) {
       navigate("/userArea");
+    } else {
+      setError("Email o contraseña incorrectos");
     }
   };
 
   return (
     <div className="col-12 text-center mt-5">
       <h2>ACCEDE</h2>
+      {error ? <h1>{error}</h1> : ""}
       <div>
         <div className="row">
           <form onSubmit={handleSubmit} className="form">

@@ -1,12 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import RecipeList from "../component/recipeList.js";
 import RecipeFavList from "../component/recipeFavList.js";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
+  const navigate = useNavigate("");
+  const [search, setSearch] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    actions.setSearch(search);
+    navigate("/searchApp");
+  };
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
 
   return (
     <div className="container">
@@ -15,15 +26,18 @@ export const Home = () => {
           <h3 className="title2  mb-5">Hola {store.user}</h3>
           {/* <p className="text1 mb-4">¿Qué te apetece comer hoy?</p> */}
           <div className="input-group mb-5">
-            <input
-              type="text"
-              className="form-search"
-              aria-label="WWhat ingredient do you have?"
-            />
-            <label className="search input-group-text border-0 ms-0">
-              <i className="fas fa-search text-muted"></i> &nbsp; ¿Con qué
-              ingrediente quieres cocinar?
-            </label>
+            <form onSubmit={handleSubmit}>
+              <input
+                onChange={handleChange}
+                type="text"
+                aria-label="WWhat ingredient do you have?"
+              />
+              <label className="search input-group-text border-0 ms-0">
+                <i className="fas fa-search text-muted"></i> &nbsp; ¿Con qué
+                ingrediente quieres cocinar?
+              </label>
+              <button>Buscar</button>
+            </form>
           </div>
           <div className="recipes d-flex justify-content-between mb-4">
             <h4>Nuevas recetas</h4>

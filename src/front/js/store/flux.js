@@ -21,7 +21,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       favorites: [],
       auth: false,
       userInfo: {},
-      searchBar: [],
+      searchRecipes: [],
     },
 
     actions: {
@@ -82,6 +82,32 @@ const getState = ({ getStore, getActions, setStore }) => {
         } catch (error) {
           console.error("there has been an error login in");
         }
+      },
+
+      search: async (search) => {
+        const store = getStore();
+        const opts = {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            data: store.searchRecipes ? store.searchRecipes : search,
+          }),
+        };
+        const response = await fetch(
+          process.env.BACKEND_URL + "/api/searchbar",
+          opts
+        );
+        const dataRecipes = await response.json();
+        console.log(dataRecipes);
+        return dataRecipes;
+      },
+
+      cleanSearch: () => {
+        setStore({ searchRecipes: null });
+      },
+
+      setSearch: (search) => {
+        setStore({ searchRecipes: search });
       },
 
       changeColor: (index, color) => {

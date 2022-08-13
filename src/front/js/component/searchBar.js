@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Context } from "../store/appContext";
 import Recipe from "./recipe";
 
 export const SearchBar = () => {
@@ -6,27 +7,17 @@ export const SearchBar = () => {
   const [search, setSearch] = useState("");
   // lo q tenemos en api
   const [recipe, setRecipe] = useState([]);
-
-  //datos api
-  const showDataRecipes = async () => {
-    const opts = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        data: search,
-      }),
-    };
-    const response = await fetch(
-      process.env.BACKEND_URL + "/api/searchbar",
-      opts
-    );
-    const dataRecipes = await response.json();
-    console.log(dataRecipes);
-    return dataRecipes;
-  };
+  //store
+  const { actions, store } = useContext(Context);
 
   //render vista
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setSearch(store.searchRecipes);
+    actions.search(search).then((result) => {
+      setRecipe(result);
+      actions.cleanSearch();
+    });
+  }, []);
 
   const searcher = (e) => {
     setSearch(e.target.value);
@@ -34,7 +25,7 @@ export const SearchBar = () => {
 
   const subtmitHandler = async (e) => {
     e.preventDefault();
-    const searchResults = await showDataRecipes(search);
+    const searchResults = await actions.search(search);
     setRecipe(searchResults);
   };
 
@@ -43,7 +34,7 @@ export const SearchBar = () => {
       <h1>busca ingredientes</h1>
       <div className="searchInput">
         <form onSubmit={subtmitHandler}>
-          <input type="search" onChange={searcher} />
+          <input type="search" defaultValue={search} onChange={searcher} />
           <button>Buscar</button>
         </form>
 

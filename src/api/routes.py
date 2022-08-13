@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Recipes, Ingredients, Trivia, Categories, RecipesFavorites, IngredientsFavorites
+from api.models import db, User, Recipes, Ingredients, Trivia, Categories, RecipesFavorites, IngredientsFavorites, RecipeCategories
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
 
@@ -64,14 +64,23 @@ def create_user():
 def get_recipes_Favorites():
     user_id = get_jwt_identity()
     favorites = RecipesFavorites.query.filter_by(user_id = user_id)
-    recipes = Recipes.query.all()
-    data = [recipe.serialize() for recipe in recipes]
+    data = [favorite.Recipes.serialize() for favorite in favorites]
     for recipe in data: 
-        for favorite in favorites: 
-            if recipe["id"] == favorite.recipe_id: 
-                recipe["favorite"] = True
+        recipe["favorite"] = True
     
     return jsonify(data), 200
+
+
+@api.route('/recipesfavorites', methods=['POST'])
+@jwt_required()
+def add_recipes_favorites():
+    user_id = get_jwt_identity()
+    data = request.json
+    print(data)
+    recipes = RecipesFavorites(user_id= user_id, recipe_id=data.get('recipe_id'))
+    db.session.add(recipes)
+    db.session.commit()
+    return jsonify({"message": "recipe added"}), 200
 
 
 #Recipes
@@ -97,6 +106,7 @@ def create_recipes():
     return jsonify({"message": "everything ok"}), 200
 
 
+
 #IngredientsFavorites
 @api.route('/ingredientsfavorites', methods=['GET'])
 @jwt_required()
@@ -107,7 +117,7 @@ def get_ingredients_Favorites():
     data = [ingredient.serialize() for ingredient in ingredients]
     for ingredient in data: 
         for favorite in favorites: 
-            if ingredient["id"] == favorite.ingredient_id: 
+            if ingredient["id"] == favorite.ingredie_id: 
                 ingredient["favorite"] = True
     
     return jsonify(data), 200
@@ -148,6 +158,7 @@ def create_trivia():
     return jsonify({"message": "everything ok"}), 200
 
 
+
 #Categories
 @api.route('/categories', methods=['GET'])
 def get_categories():
@@ -165,10 +176,9 @@ def create_categories():
     return jsonify({"message": "everything ok"}), 200
     
 
-@api.route('/recipesfavorites', methods=['POST'])
-def add_recipes_favorites():
-    data = request.json
-    recipes = RecipesFavorites(user_id=data.get('user_id'), recipe_id=data.get('recipe_id'))
-    db.session.add(recipes)
-    db.session.commit()
-    return jsonify({"message": "recipe added"}), 200
+@api.route('/recipesbycategory/<int:id>', methods=['GET'])
+def recipes_category(id):
+    recipecategories = RecipeCategories.query.filter_by(category_id=id)
+    recipes= [recipecategory.recipes.serialize() for recipecategory in recipecategories]
+    return jsonify(recipes), 200
+

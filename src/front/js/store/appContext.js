@@ -16,7 +16,9 @@ const injectContext = (PassedComponent) => {
         setStore: (updatedStore) =>
           setState({
             store: Object.assign(state.store, updatedStore),
-            actions: { ...state.actions },
+            actions: {
+              ...state.actions,
+            },
           }),
       })
     );
@@ -35,6 +37,7 @@ const injectContext = (PassedComponent) => {
       );
       state.actions.loadRecipe();
       //state.actions.loadUser();
+      state.actions.loadRecipe();
     }, []);
 
     // The initial value for the context is not null anymore, but the current state of this component,

@@ -39,6 +39,15 @@ const getState = ({
                 });
                 return true;
             },
+            loadRecipeCategory: async (category) => {
+                const response = await fetch(
+                    process.env.BACKEND_URL + "/api/recipesbycategory/" + category
+                );
+                const data = await response.json();
+                console.log(data);
+
+                return data;
+            },
             addFavorites: (id) => {
                 const store = getStore();
 

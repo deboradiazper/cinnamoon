@@ -15,13 +15,12 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
       ],
       token: null,
-
       recipes: [],
       user: null,
-      favorites: [],
       auth: false,
       userInfo: {},
       searchRecipes: [],
+      recipesfavorites: [],
     },
 
     actions: {

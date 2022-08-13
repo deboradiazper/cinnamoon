@@ -4,320 +4,453 @@
 
 html,
 body {
-  background: #f6f4f4;
-  font-family: "Poppins", sans-serif;
-  width: 100%;
+    background: #f6f4f4;
+    font-family: "Poppins", sans-serif;
+    width: 100%;
 }
+
 /* h5 {
   font-weight: 600;
 } */
 .navbar {
-  background-color: #a8c197;
-  font-family: "Poppins", sans-serif;
-  color: #302c2c;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background-color: #a8c197;
+    font-family: "Poppins", sans-serif;
+    color: #302c2c;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+
 .logo {
-  color: #302c2c;
+    color: #302c2c;
 }
+
 .loging,
 .logout {
-  background-color: #a8c197;
+    background-color: #a8c197;
 }
 
 .dropdown-menu {
-  width: 40vh;
-  font-size: 18px;
-  font-weight: 400;
-  color: rgba(135, 132, 132, 0.9);
+    width: 40vh;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(135, 132, 132, 0.9);
 }
+
 .footer {
-  background-color: #a8c197;
+    background-color: #a8c197;
 }
 
 .diverse {
-  margin-top: 80px;
-  font-weight: 400;
-  padding: 50px 20px 30px 20px;
-  background: rgba(158, 123, 67, 0.6);
-  box-shadow: 20px, 0px, 10px;
+    margin-top: 80px;
+    font-weight: 400;
+    padding: 50px 20px 30px 20px;
+    background: rgba(158, 123, 67, 0.6);
+    box-shadow: 20px, 0px, 10px;
 }
+
 .register,
 .ingredients,
 .cookbook {
-  margin-bottom: 10px;
-  width: 50px;
-  height: 50px;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
 }
+
 .instagram,
 .tweet,
 .pinterest {
-  height: 20px;
-  width: 20px;
+    height: 20px;
+    width: 20px;
 }
+
 .card {
-  background: #fffdfd;
-  border-radius: 10px;
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
-  width: 90%;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.4s linear;
+    background: #fffdfd;
+    border-radius: 8px;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    width: 90%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s linear;
 }
+
 .card:hover {
-  transform: translateY(-4%);
-  /* transform: scale(1.05); */
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-4%);
+    /* transform: scale(1.05); */
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
 }
+
 .go {
-  font-size: 16px;
-  font-weight: 600;
-  background: #de21d7;
-  border-radius: 10px;
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
-  transition: 0.4s linear;
+    font-size: 16px;
+    font-weight: 600;
+    background: #de21d7;
+    border-radius: 10px;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    transition: 0.4s linear;
 }
+
 .go:hover {
-  background: #de21d7;
-  box-shadow: 0 0 10px #e863e1, 0 0 40px #e863e1, 0 0 80px #e863e1;
+    background: #de21d7;
+    box-shadow: 0 0 10px #e863e1, 0 0 40px #e863e1, 0 0 80px #e863e1;
 }
+
 .bars {
-  color: rgba(37, 37, 37, 0.7);
+    color: rgba(37, 37, 37, 0.7);
 }
+
 .love2,
 .star {
-  color: #d9d9d9;
-  padding-right: 10px;
+    color: #d9d9d9;
+    padding-right: 10px;
 }
+
 .love:focus {
-  outline: none;
-  box-shadow: none;
+    outline: none;
+    box-shadow: none;
 }
+
 .love2:focus {
-  outline: none;
-  box-shadow: none;
+    outline: none;
+    box-shadow: none;
 }
+
 .recipe,
 .recipeFav {
-  padding-top: 30px;
+    padding-top: 30px;
 }
 
 .img-fav {
-  max-height: 35vh;
+    max-height: 35vh;
 }
 
 .card-text {
-  color: #000000;
-  font-size: 14px;
-  font-weight: 300;
-  opacity: 0.7;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 300;
+    opacity: 0.7;
 }
+
 .card-text2 {
-  color: #000000;
-  font-size: 12px;
-  opacity: 0.7;
-  font-weight: 300;
+    color: #000000;
+    font-size: 12px;
+    opacity: 0.7;
+    font-weight: 300;
 }
+
 .subscribe {
-  background: #de21d7;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 18px;
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
-  transition: all 0.3s linear;
+    background: #de21d7;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 18px;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s linear;
 }
+
 .subscribe:hover {
-  background: #de21d7;
-  transform: scale(1.07);
-  box-shadow: 0 0 10px #e863e1, 0 0 40px #e863e1, 0 0 80px #e863e1;
+    background: #de21d7;
+    transform: scale(1.07);
+    box-shadow: 0 0 10px #e863e1, 0 0 40px #e863e1, 0 0 80px #e863e1;
 }
+
 .text3 {
-  color: rgba(37, 37, 37, 0.7);
-  font-size: 16px;
-  font-weight: 400;
-  opacity: 0, 7;
+    color: rgba(37, 37, 37, 0.7);
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0, 7;
 }
+
 .text4 {
-  color: rgba(37, 37, 37, 0.7);
-  font-size: 20px;
-  font-weight: 400;
-  opacity: 0, 7;
+    color: rgba(37, 37, 37, 0.7);
+    font-size: 20px;
+    font-weight: 400;
+    opacity: 0, 7;
 }
+
 .img-recipe {
-  width: 100%;
-  max-width: 400px;
-  height: 300px;
+    width: 100%;
+    max-width: 460px;
+    height: 300px;
 }
+
 .scroll-container {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  overflow-x: scroll;
-  scrollbar-width: thin;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow-x: scroll;
+    scrollbar-width: thin;
 }
+
 .title-detail {
-  border-bottom: 1px solid rgb(197, 189, 189);
-  line-height: 50px;
-  color: black;
+    border-bottom: 1px solid rgb(197, 189, 189);
+    line-height: 50px;
+    color: black;
 }
+
 .box-title {
-  margin-top: 80px;
+    margin-top: 80px;
 }
 
 /* .text-detail {
   padding-right: 200px;
 } */
 .categories {
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
 }
+
 .card-text3 {
-  color: #000000;
-  font-size: 18px;
-  font-weight: 300;
-  opacity: 0.7;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 300;
+    opacity: 0.7;
 }
+
 .card-detail {
-  margin-top: 70px;
-  width: 90%;
-  height: 90%;
-  position: relative;
+    margin-top: 70px;
+    width: 90%;
+    height: 90%;
+    position: relative;
 }
+
 .card-detail div {
-  backface-visibility: hidden;
-  transition: all 0.8s linear;
+    backface-visibility: hidden;
+    transition: all 0.8s linear;
 }
+
+.image-detail {
+    height: 100%;
+    width: 100%;
+}
+
 .text-back {
-  color: #000000;
-  font-size: 16px;
-  font-weight: 500;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
 }
+
 ul {
-  text-align: center;
-  list-style: none;
+    text-align: center;
+    list-style: none;
 }
 
 .front,
 .back {
-  height: 100%;
-  width: 100%;
-  cursor: pointer;
-  border-radius: 10px;
-  overflow: hidden;
-  position: absolute;
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
 }
+
 .back {
-  background-color: white;
-  text-align: justify;
-  opacity: 0.5;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    background-color: white;
+    text-align: justify;
+    opacity: 0.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
 .title-back {
-  text-decoration: underline;
-  color: #000000;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 300;
+    text-decoration: underline;
+    color: #000000;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 300;
 }
+
 .time {
-  border-top: 1px solid rgb(64, 66, 64);
-  border-width: thin;
-  line-height: 50px;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 300;
+    border-top: 1px solid rgb(64, 66, 64);
+    border-width: thin;
+    line-height: 50px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 300;
 }
+
 .title-trivia {
-  border-bottom: 1px solid rgb(197, 189, 189);
-  line-height: 50px;
-  color: black;
+    border-bottom: 1px solid rgb(197, 189, 189);
+    line-height: 50px;
+    color: black;
 }
+
 .name-trivia {
-  color: #3c3939;
+    color: #3c3939;
 }
+
 .card-detail .front {
-  transform: perspective(600px) rotateY(0deg);
+    transform: perspective(600px) rotateY(0deg);
 }
+
 .card-detail .back {
-  transform: perspective(600px) rotateY(180deg);
+    transform: perspective(600px) rotateY(180deg);
 }
+
 .card-detail:hover .front {
-  transform: perspective(600px) rotateY(180deg);
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: perspective(600px) rotateY(180deg);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
 }
+
 .card-detail:hover .back {
-  transform: perspective(600px) rotateY(360deg);
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: perspective(600px) rotateY(360deg);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
 }
+
 .card-ingredient {
-  text-align: justify;
-  margin-top: 100px;
-  background: #f3f0f0;
-  box-shadow: 0px 15px 15px -15px rgba(116, 115, 115, 0.25);
-  overflow: hidden;
-  cursor: pointer;
+    text-align: justify;
+    margin-top: 100px;
+    background: #f3f0f0;
+    box-shadow: 0px 15px 15px -15px rgba(116, 115, 115, 0.25);
+    overflow: hidden;
+    cursor: pointer;
 }
+
 .send,
 .login {
-  border: none;
-  background: #de21d7;
-  padding-left: 15px;
-  padding-right: 15px;
-  color: white;
-  border-radius: 15px;
-  font-size: 18px;
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
-  transition: all 0.3s linear;
+    border: none;
+    background: #de21d7;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+    border-radius: 15px;
+    font-size: 18px;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s linear;
 }
+
 .login:hover,
 .send:hover {
-  background: #de21d7;
-  transform: scale(1.07);
-  box-shadow: 0 0 10px #e863e1, 0 0 40px #e863e1, 0 0 80px #e863e1;
+    background: #de21d7;
+    transform: scale(1.07);
+    box-shadow: 0 0 10px #e863e1, 0 0 40px #e863e1, 0 0 80px #e863e1;
 }
+
 .form {
-  width: 100%;
+    width: 100%;
 }
+
 input {
-  border: none;
-  border-bottom: 1px solid rgb(161, 160, 160);
-  border-width: thin;
-  background: none;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  width: 70%;
-  outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(161, 160, 160);
+    border-width: thin;
+    background: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 70%;
+    outline: none;
 }
 
 input::placeholder {
-  opacity: 0.6;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 300;
+    opacity: 0.6;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 300;
 }
+
 input:focus {
-  border-bottom: 1px solid rgb(161, 160, 160);
-  box-shadow: 0px 15px 15px -15px rgba(116, 115, 115, 0.25);
-  transition: all 0.3s ease;
+    border-bottom: 1px solid rgb(161, 160, 160);
+    box-shadow: 0px 15px 15px -15px rgba(116, 115, 115, 0.25);
+    transition: all 0.3s ease;
 }
+
 #recipes {
-  margin-top: 80px;
+    margin-top: 80px;
+}
+
+.hero-container,
+.hero-container2 {
+    margin-top: 70px;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    height: 70vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    border-bottom: 1px solid rgb(148, 142, 142);
+    line-height: 50px;
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url("https://images.unsplash.com/photo-1501959915551-4e8d30928317?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGNvb2tpbmd8ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=6") no-repeat center center;
+    width: 100%;
+    height: 100%;
+    transition: transform 2s;
+}
+
+.hero:hover,
+.hero2:hover {
+    transform: scale(1.15);
+}
+
+.hero-stuff,
+.hero-stuff2 {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+}
+
+.hero-button,
+.hero-button2 {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+}
+
+.btn-user,
+.btn-user2 {
+    font-size: 18px;
+    font-weight: 600;
+    background: #de21d7;
+    border-radius: 10px;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    transition: 0.4s linear;
+    color: #fff;
+}
+
+.btn-user:hover,
+.btn-user2:hover {
+    box-shadow: 0 0 10px #e863e1, 0 0 40px #e863e1, 0 0 80px #e863e1;
+    background: #de21d7;
+    transform: scale(1.07);
+    transition: all 0.3s linear;
+    color: #fff;
+}
+
+.hero2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url("https://images.unsplash.com/photo-1575709527142-a93ed587bb83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODd8fGNvb2tpbmclMjBib29rfGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=500&q=60") no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    transition: transform 2s;
+}
+
+.title-all {
+    border-bottom: 1px solid rgb(186, 181, 181);
+    line-height: 50px;
+}
+
+.image-user {
+    width: 100px;
+    height: 100px;
 }
 
 .containerForm {
-  border-radius: 10%;
-  border-color: rgba(135, 132, 132, 0.9);
-  background-color: white;
-  font-size: 12px;
-  margin-top: 20px;
+    border-radius: 10%;
+    border-color: rgba(135, 132, 132, 0.9);
+    background-color: white;
+    font-size: 12px;
+    margin-top: 20px;
 }
 
 .containerForm p {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 ::placeholder {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 400;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
 }

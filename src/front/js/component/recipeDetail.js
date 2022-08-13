@@ -15,9 +15,9 @@ const RecipeDetail = (props) => {
             />
           </div>
           <div className="back">
-            <div className="text-back text-center pt-5 mt-2">
-              <h5 className="title-back">
-                <i class="fas fa-pencil-alt text-muted"></i> Ingredientes:
+            <div className="text-back text-center">
+              <h5 className="title-back pb-2 mt-3">
+                <i class="fas fa-pencil-alt text-muted pe-2"></i> Ingredientes:
               </h5>
               <ul>
                 {props.ingredients.map((value, index) => {

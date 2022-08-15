@@ -51,11 +51,11 @@ export const UserRegistration = () => {
   return (
     <div>
       <div className="registration col-12 mb-3 mt-5 text-center">
-        <h2>REGISTRATE</h2>
-        <p>
+        <h2>Regístrate</h2>
+        {/* <p>
           Unete a nuestra comunidad y descubre recetas deliciosas y saludables
           que se adapten a ti.
-        </p>
+        </p> */}
       </div>
       <div className="row">
         <form className="form" onSubmit={sendInfo}>
@@ -101,7 +101,7 @@ export const UserRegistration = () => {
 
           <div className="col-12  mb-3 text-center">
             <button className="send" type="submit">
-              ENVIAR
+              Enviar
             </button>
           </div>
         </form>

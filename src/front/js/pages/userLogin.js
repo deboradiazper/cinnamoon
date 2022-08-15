@@ -24,7 +24,7 @@ export const UserLogin = () => {
 
   return (
     <div className="col-12 text-center mt-5">
-      <h2>ACCEDE</h2>
+      <h2>Accede</h2>
       {error ? <h1>{error}</h1> : ""}
       <div>
         <div className="row">
@@ -50,7 +50,7 @@ export const UserLogin = () => {
               />
             </div>
             <div className="col-12 text-center mb-3">
-              <button className="login">ACCEDE</button>
+              <button className="login">Enviar</button>
             </div>
           </form>
         </div>

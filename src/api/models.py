@@ -161,7 +161,7 @@ class RecipeCategories(db.Model):
 
 
     def __repr__(self):
-        return f'<RecipesCategories %r>' % self.recipes.name
+        return f'<RecipesCategories %r>' % self.recipes
 
 
 

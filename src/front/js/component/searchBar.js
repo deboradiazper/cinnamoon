@@ -30,11 +30,15 @@ export const SearchBar = () => {
   };
 
   return (
-    <div className="search">
-      <h1>busca ingredientes</h1>
-      <div className="searchInput">
+    <div className="container">
+      <div className="searchInput justify-content-center">
         <form onSubmit={subtmitHandler}>
-          <input type="search" defaultValue={search} onChange={searcher} />
+          <input
+            type="search"
+            placeholder="¿Qué ingredientes tienes a mano?"
+            defaultValue={search}
+            onChange={searcher}
+          />
           <button>Buscar</button>
         </form>
 

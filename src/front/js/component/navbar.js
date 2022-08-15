@@ -57,11 +57,9 @@ export const Navbar = () => {
               <i className="fas fa-bars fa-2x"></i>
             </button>
             <ul className="dropdown-menu p-3 mb-5 bg-body rounded border-0">
-              <li>Recipes</li>
-              <li>Curiosities</li>
-              <li>About us</li>
-              <li>Contact</li>
-              <li>Settings</li>
+              <li>Recetas</li>
+              <li>Trivia</li>
+              <li>Acerca de nosotros</li>
               <li>
                 <hr className="dropdown-divider" />
               </li>

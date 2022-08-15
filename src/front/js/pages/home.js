@@ -23,19 +23,15 @@ export const Home = () => {
     <div className="container">
       <div className="row">
         <div className="col-12">
-          <h3 className="title2  mb-5">Hola {store.user}</h3>
+          <h3 className="title2  mb-5">Hola, {store.user}</h3>
           {/* <p className="text1 mb-4">¿Qué te apetece comer hoy?</p> */}
           <div className="input-group mb-5">
             <form onSubmit={handleSubmit}>
-              <input
-                onChange={handleChange}
-                type="text"
-                aria-label="WWhat ingredient do you have?"
-              />
               <label className="search input-group-text border-0 ms-0">
-                <i className="fas fa-search text-muted"></i> &nbsp; ¿Con qué
-                ingrediente quieres cocinar?
+                <i className="fas fa-search text-muted"></i> &nbsp; ¿Qué
+                ingredientes tienes a mano?
               </label>
+              <input onChange={handleChange} type="text" />
               <button>Buscar</button>
             </form>
           </div>

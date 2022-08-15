@@ -15,8 +15,9 @@ export const Footer = () => (
             En CINNAMOON somos partidarios de la inclusividad. Es por eso que
             contamos con recetas para todas aquellas personas que, por una
             cuestión personal o de salud, han renunciado a comer ciertos
-            alimentos. Contamos con un amplio banco de recetas sin gluten, sin
-            lactosa y sin azúcar. Nuestra intención es que haya muchas más.
+            alimentos. Partimos de una base vegetariana y contamos con un amplio
+            banco de recetas sin gluten, sin lactosa y sin azúcar. Nuestra
+            intención es que haya muchas más.
           </p>
         </div>
         <div className="col-12 col-md-4 text-center px-5">

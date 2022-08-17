@@ -13,7 +13,9 @@ export const Footer = () => {
           height="300"
         >
           <div class="cta">
-            <span class="hover-underline-animation">Recetas por categoria</span>
+            <span class="hover-underline-animation">
+              <strong>Recetas por categoria</strong>
+            </span>
             <path
               id="Path_10"
               data-name="Path 10"
@@ -47,7 +49,7 @@ export const Footer = () => {
         >
           <button className="cta">
             <span className="hover-underline-animation">
-              Recetas elaboradas con ingredientes vegetales
+              <strong>Recetas elaboradas con ingredientes vegetales</strong>
             </span>
             <path
               id="Path_10"

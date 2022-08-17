@@ -34,6 +34,7 @@ export const SearchBar = () => {
       <div className="search justify-content-center">
         <form onSubmit={subtmitHandler}>
           <input
+            id="searchinput"
             type="search"
             placeholder="¿Qué ingredientes tienes a mano?"
             defaultValue={search}

@@ -29,10 +29,10 @@ export const Home = () => {
         <div className="col-12">
           <div
             id="carouselExampleDark"
-            class="carousel carousel-dark slide"
+            className="carousel carousel-dark slide"
             data-bs-ride="carousel"
           >
-            <div class="carousel-indicators">
+            <div className="carousel-indicators">
               <button
                 type="button"
                 data-bs-target="#carouselExampleDark"
@@ -60,38 +60,38 @@ export const Home = () => {
                 aria-label="Slide 4"
               ></button>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="10000">
+            <div className="carousel-inner">
+              <div className="carousel-item active" data-bs-interval="10000">
                 <img src={glutenfree} class="d-block w-100" alt="..." />
 
-                <div class="carousel-caption d-none d-md-block">
+                <div className="carousel-caption d-none d-md-block">
                   <h3 className="titel-all">SIN GLUTEN</h3>
                   <p>
-                    Crea tus platos preferidos con otroa ingredientes,
-                    consiguiendo resultados increibles
+                    Ni trigo, ni centeno, ni cebada: descubre deliciosas recetas
+                    sin gluten
                   </p>
                 </div>
               </div>
-              <div class="carousel-item" data-bs-interval="2000">
+              <div className="carousel-item" data-bs-interval="2000">
                 <img src={vegana} class="d-block w-100" alt="..." />
-                <div class="carousel-caption d-none d-md-block">
+                <div className="carousel-caption d-none d-md-block">
                   <h3 className="titel-all">VEGANAS</h3>
                   <p>Cocina con vegetales y crea sabores exquisitos</p>
                 </div>
               </div>
-              <div class="carousel-item">
+              <div className="carousel-item">
                 <img src={lactosefree} class="d-block w-100" alt="..." />
-                <div class="carousel-caption d-none d-md-block">
+                <div className="carousel-caption d-none d-md-block">
                   <h3 className="titel-all">SIN LACTOSA</h3>
                   <p>
-                    Descubre otras alternativas a la leche y descubre otros
-                    alimentos que son fuente de calcio
+                    Descubre otras alternativas a la leche y alimentos que son
+                    fuente de calcio
                   </p>
                 </div>
               </div>
-              <div class="carousel-item">
+              <div className="carousel-item">
                 <img src={sugarfree} class="d-block w-100" alt="..." />
-                <div class="carousel-caption d-none d-md-block">
+                <div className="carousel-caption d-none d-md-block">
                   <h3 className="titel-all">SIN AZUCAR</h3>
                   <p>
                     Descubre como sustituir azúcar por otros productos naturales
@@ -101,28 +101,28 @@ export const Home = () => {
               </div>
             </div>
             <button
-              class="carousel-control-prev"
+              className="carousel-control-prev"
               type="button"
               data-bs-target="#carouselExampleDark"
               data-bs-slide="prev"
             >
               <span
-                class="carousel-control-prev-icon"
+                className="carousel-control-prev-icon"
                 aria-hidden="true"
               ></span>
-              <span class="visually-hidden">Previous</span>
+              <span className="visually-hidden">Previous</span>
             </button>
             <button
-              class="carousel-control-next"
+              className="carousel-control-next"
               type="button"
               data-bs-target="#carouselExampleDark"
               data-bs-slide="next"
             >
               <span
-                class="carousel-control-next-icon"
+                className="carousel-control-next-icon"
                 aria-hidden="true"
               ></span>
-              <span class="visually-hidden">Next</span>
+              <span className="visually-hidden">Next</span>
             </button>
           </div>
         </div>
@@ -144,21 +144,38 @@ export const Home = () => {
             );
           })}
         </div>
-        <div className="col-12">
-          <form onSubmit={handleSubmit}>
-            <div className="input-group pb-5 pt-5">
-              <input
-                onChange={handleChange}
-                type="text"
-                className="form-control"
-                aria-label="Con que ingredientes quieres cocinar?"
-              />
-              {/* <label className="search input-group-text border-0">
-                <i className="fas fa-search text-muted"></i>
-              </label> */}
-              <button>Buscar</button>
-            </div>
-          </form>
+        <div className="row justify-content-center">
+          <div className="col-10">
+            <form onSubmit={handleSubmit}>
+              <div className="input-group pb-5 pt-5 mt-5">
+                <input
+                  onChange={handleChange}
+                  type="text"
+                  className="form-control"
+                  placeholder="¿Qué ingredientes tienes a mano?"
+                />
+                <div className="col-3">
+                  <button className="botonreceta">
+                    <p>Buscar recetas</p>
+                    <svg
+                      stroke-width="4"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      class="h-6 w-6"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
         <div className="recipes d-flex justify-content-between mb-4">
           <h3 className="title-all">NUEVAS RECETAS</h3>

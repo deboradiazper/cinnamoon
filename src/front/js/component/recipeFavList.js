@@ -3,7 +3,7 @@ import RecipeFav from "./recipeFav";
 
 const RecipeFavList = () => {
   return (
-    <div className="scroll-container d-flex">
+    <div className="scroll-container d-flex mb-5">
       <div className="col-12 col-md-3">
         <RecipeFav
           image={

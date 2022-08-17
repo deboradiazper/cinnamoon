@@ -30,7 +30,7 @@ const Recipe = (props) => {
             <button
               onClick={handleClick}
               className={
-                Click === true
+                Click === true || props.is_favorite == true
                   ? "love btn border-0 text-danger"
                   : "love2 btn border-0 text-muted"
               }
@@ -61,6 +61,7 @@ Recipe.propTypes = {
   image: PropTypes.string,
   id: PropTypes.number,
   categories: PropTypes.array,
+  is_favorite: PropTypes.bool,
 };
 
 export default Recipe;

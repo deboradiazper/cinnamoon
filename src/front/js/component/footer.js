@@ -9,18 +9,9 @@ export const Footer = () => {
       <div className="row">
         <div
           className="diverse col-md-6 d-flex justify-content-center align-items-center"
-          width="100%"
-          height="300"
+          style={{ minHeight: "300px" }}
         >
-          <div class="cta">
-            <span class="hover-underline-animation">Recetas por categoria</span>
-            <path
-              id="Path_10"
-              data-name="Path 10"
-              d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-              transform="translate(30)"
-            ></path>
-          </div>
+          <h3 className="title-all2">RECETAS PARA TODOS</h3>
         </div>
         <div className="imgfooter col-md-6 p-0">
           <img
@@ -28,9 +19,11 @@ export const Footer = () => {
             className="imgfooter"
             alt="img-footer"
             width="100%"
-            height="300x"
+            height="300"
           />
         </div>
+      </div>
+      <div className="row">
         <div className="imgfooter col-md-6 p-0">
           <img
             src={imgfooter2}
@@ -40,81 +33,45 @@ export const Footer = () => {
             height="300"
           />
         </div>
-        <div
-          className="diverse2 col-md-6 d-flex justify-content-center"
-          width="100%"
-          height="300"
+        < div className="diverse2 col-md-6 d-flex justify-content-center align-items-center text-center"
+          style={{ minHeight: "300px" }}
         >
-          <button className="cta">
-            <span className="hover-underline-animation">
-              Recetas elaboradas con ingredientes vegetales
-            </span>
-            <path
-              id="Path_10"
-              data-name="Path 10"
-              d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-              transform="translate(30)"
-            ></path>
-          </button>
+          <h3 className="title-all2">
+            ALIMENTACION BASADA EN INGREDIENTES VEGETALES</h3>
         </div>
       </div>
-      <div className="diverse3" id="diverse3" width="100%" height="150">
+      <div className="diverse3" id="diverse3" width="100%" height="300">
         <div className="row">
-          <div className="col-md-6 mt-3">
-            <div
-              className="text-center collapse multi-collapse p-4"
-              id="multiCollapseExample2"
-            >
-              <div className="card card-body text3">
-                Tan importante es alimentarse bien como hacerlo de forma
-                consciente. Es por eso que nos gusta aportar información acerca
-                de los ingredientes que utilizamos para las recetas. Como
-                cocinar nos apasiona, también nos apasiona la historia de los
-                ingredientes.
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6 mt-3">
-            <div
-              className="text-center collapse multi-collapse p-4"
-              id="multiCollapseExample1"
-            >
-              <div className="card card-body text3">
-                En CINNAMOON somos partidarios de la inclusividad. Es por eso
-                que contamos con recetas para todas aquellas personas que, por
-                una cuestión personal o de salud, han renunciado a comer ciertos
-                alimentos. Partimos de una base vegetariana y contamos con un
-                amplio banco de recetas sin gluten, sin lactosa y sin azúcar.
-                Nuestra intención es que haya muchas más.
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-md-6">
-            <h3
-              className="text-center pt-5"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#multiCollapseExample2"
-              aria-expanded="false"
-              aria-controls="multiCollapseExample2"
-            >
+          <div className="col-md-4 py-5 text-center">
+            <h5 className="px-3">
               NUESTROS VALORES
-            </h3>
+            </h5>
+            <p className="text3 px-2 py-3 px-2">
+              En CINNAMOON somos partidarios de la inclusividad. Es por eso que
+              contamos con recetas para todas aquellas personas que, por una
+              cuestión personal o de salud, han renunciado a comer ciertos
+              alimentos. Partimos de una base vegetariana y contamos con un amplio
+              banco de recetas sin gluten, sin lactosa y sin azúcar. Nuestra
+              intención es que haya muchas más.
+            </p>
           </div>
-          <div className="col-md-6">
-            <h3
-              className="text-center pt-5"
-              type="button"
-              data-bs-toggle="collapse"
-              href="#multiCollapseExample1"
-              role="button"
-              aria-expanded="false"
-              aria-controls="multiCollapseExample1"
-            >
-              SOMOS LO QUE COMEMOS
-            </h3>
+          <div className="col-md-4 py-5 text-center">
+            <h5 className="px-3">SOMOS LO QUE COMEMOS</h5>
+            <p className="text3 px-2 py-3">
+              Tan importante es alimentarse bien como hacerlo de forma consciente.
+              Es por eso que nos gusta aportar información acerca de los
+              ingredientes que utilizamos para las recetas. Como cocinar nos
+              apasiona, también nos apasiona la historia de los ingredientes.
+            </p>
+          </div>
+          <div className="col-md-4 py-5 text-center px-2">
+            <h5 className="px-3">CRECER EN COMUNIDAD</h5>
+            <p className="text3 px-2 py-3">
+              No queremos ser únicamente una página web de recetas. Nuestro
+              objetivo es crear una comunidad en la que cualquier persona afín a
+              nuestros valores pueda aportar su granito de arena. Compartir es
+              vivir.
+            </p>
           </div>
         </div>
       </div>

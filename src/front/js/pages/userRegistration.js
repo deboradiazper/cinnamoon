@@ -62,7 +62,7 @@ export const UserRegistration = () => {
           <div className="col-12 mb-3 mt-4 text-center">
             <input
               className="input-reg"
-              name="Nombre"
+              name="name"
               placeholder=" Nombre"
               autoComplete="off"
               type="text"
@@ -73,7 +73,7 @@ export const UserRegistration = () => {
           <div className="col-12  mb-3 text-center">
             <input
               className="input-reg"
-              name="Apellido"
+              name="lastName"
               placeholder=" Apellido"
               autoComplete="off"
               type="text"
@@ -95,17 +95,21 @@ export const UserRegistration = () => {
           <div className="col-12  mb-5 text-center">
             <input
               className="input-reg"
-              name="Contraseña"
+              name="password"
               placeholder=" Contraseña"
               autoComplete="off"
-              type="Contraseña"
+              type="password"
               onChange={handleInputChange}
             />
           </div>
 
           <div className="col-12  mb-3 text-center">
-            <button className="send" type="submit">
-              Enviar
+            <button class="ctaregister">
+              <span>Enviar</span>
+              <svg viewBox="0 0 13 10" height="10px" width="15px">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+              </svg>
             </button>
           </div>
         </form>
@@ -113,3 +117,6 @@ export const UserRegistration = () => {
     </div>
   );
 };
+//<button className="send" type="submit">
+// Enviar
+//</button>;

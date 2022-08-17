@@ -5,16 +5,16 @@ import Trivias from "./trivias";
 const RecipeDetail = (props) => {
   return (
     <div className="row">
-      <div className="col-md-6">
-        <div className="card-detail">
+      <div className="col-md-6" style={{ minHeight: "400px" }}>
+        <div className="card-detail" >
           <div className="front">
             <img
               src={props.image}
-              className="image-detail img-fluid mx-auto d-block"
+              className="image-detail"
               alt="..."
             />
           </div>
-          <div className="back">
+          <div className="back overflow-auto">
             <div className="text-back text-center">
               <h5 className="title-back pb-2 mt-3">
                 <i class="fas fa-pencil-alt text-muted pe-2"></i> Ingredientes:

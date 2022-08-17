@@ -60,39 +60,39 @@ export const Home = () => {
                 aria-label="Slide 4"
               ></button>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="10000">
+            <div className="carousel-inner">
+              <div className="carousel-item active" data-bs-interval="10000">
                 <img src={glutenfree} class="d-block w-100" alt="..." />
 
-                <div class="carousel-caption d-none d-md-block">
-                  <h3 className="titel-all">SIN GLUTEN</h3>
+                <div className="carousel-caption d-none d-md-block">
+                  <h2 className="title-all px-5">SIN GLUTEN</h2>
                   <p>
                     Crea tus platos preferidos con otroa ingredientes,
                     consiguiendo resultados increibles
                   </p>
                 </div>
               </div>
-              <div class="carousel-item" data-bs-interval="2000">
+              <div className="carousel-item" data-bs-interval="2000">
                 <img src={vegana} class="d-block w-100" alt="..." />
-                <div class="carousel-caption d-none d-md-block">
-                  <h3 className="titel-all">VEGANAS</h3>
+                <div className="carousel-caption d-none d-md-block">
+                  <h2 className="title-all px-5">VEGANAS</h2>
                   <p>Cocina con vegetales y crea sabores exquisitos</p>
                 </div>
               </div>
-              <div class="carousel-item">
+              <div className="carousel-item">
                 <img src={lactosefree} class="d-block w-100" alt="..." />
-                <div class="carousel-caption d-none d-md-block">
-                  <h3 className="titel-all">SIN LACTOSA</h3>
+                <div className="carousel-caption d-none d-md-block">
+                  <h2 className="title-all px-5">SIN LACTOSA</h2>
                   <p>
                     Descubre otras alternativas a la leche y descubre otros
                     alimentos que son fuente de calcio
                   </p>
                 </div>
               </div>
-              <div class="carousel-item">
+              <div className="carousel-item">
                 <img src={sugarfree} class="d-block w-100" alt="..." />
-                <div class="carousel-caption d-none d-md-block">
-                  <h3 className="titel-all">SIN AZUCAR</h3>
+                <div className="carousel-caption d-none d-md-block">
+                  <h2 className="title-all px-5">SIN AZUCAR</h2>
                   <p>
                     Descubre como sustituir azúcar por otros productos naturales
                     y cocina postres y dulces saludables.
@@ -101,25 +101,25 @@ export const Home = () => {
               </div>
             </div>
             <button
-              class="carousel-control-prev"
+              className="carousel-control-prev"
               type="button"
               data-bs-target="#carouselExampleDark"
               data-bs-slide="prev"
             >
               <span
-                class="carousel-control-prev-icon"
+                className="carousel-control-prev-icon"
                 aria-hidden="true"
               ></span>
-              <span class="visually-hidden">Previous</span>
+              <span className="visually-hidden">Previous</span>
             </button>
             <button
-              class="carousel-control-next"
+              className="carousel-control-next"
               type="button"
               data-bs-target="#carouselExampleDark"
               data-bs-slide="next"
             >
               <span
-                class="carousel-control-next-icon"
+                className="carousel-control-next-icon"
                 aria-hidden="true"
               ></span>
               <span class="visually-hidden">Next</span>
@@ -127,10 +127,10 @@ export const Home = () => {
           </div>
         </div>
 
-        <div className=" col-12 pt-3 d-flex justify-content-center">
+        <div className=" col-12 my-5 d-flex justify-content-center">
           {store.categories.map((category) => {
             return (
-              <Link to={`/recipeAll/${category.name}`} className="cta pe-5">
+              <Link to={`/recipeAll/${category.name}`} className="cta2 pe-5">
                 <span className="hover-underline-animation">
                   {category.name}{" "}
                 </span>
@@ -146,7 +146,7 @@ export const Home = () => {
         </div>
         <div className="col-12">
           <form onSubmit={handleSubmit}>
-            <div className="input-group pb-5 pt-5">
+            <div className="input-group pb-5">
               <input
                 onChange={handleChange}
                 type="text"

@@ -32,7 +32,13 @@ export const Navbar = () => {
           </span>
         </Link>
         <div className="icons d-flex justify-content-around align-items-center">
-          {store.auth ? <div><h5 className="title2  mb-5">Hola {store.user}</h5></div> : ""}
+          {store.auth ? (
+            <div>
+              <h5 className="px-5">Hola {store.user}</h5>
+            </div>
+          ) : (
+            ""
+          )}
           <i className="icon far fa-moon me-3"></i>
 
           {store.auth ? (
@@ -40,6 +46,7 @@ export const Navbar = () => {
               className="logout border-0 bg-white"
               onClick={() => {
                 actions.logout();
+                actions.loadRecipe();
                 navigate("/");
               }}
             >
@@ -55,7 +62,6 @@ export const Navbar = () => {
               <i className="icon far fa-user me-2 text-black"></i>
             </button>
           )}
-
         </div>
       </div>
     </nav>

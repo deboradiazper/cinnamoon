@@ -28,9 +28,10 @@ export const UserLogin = () => {
       {error ? <h1>{error}</h1> : ""}
       <div>
         <div className="row">
-          <form onSubmit={handleSubmit} className="form">
+          <form onSubmit={handleSubmit} className="form" id="registration">
             <div className="col-12 text-center mt-4 mb-3">
               <input
+                className="input-reg"
                 name="email"
                 value={email}
                 placeholder=" Email"
@@ -41,6 +42,7 @@ export const UserLogin = () => {
             </div>
             <div className="col-12 text-center mb-5">
               <input
+                className="input-reg"
                 name="Password"
                 value={password}
                 placeholder=" contraseña"

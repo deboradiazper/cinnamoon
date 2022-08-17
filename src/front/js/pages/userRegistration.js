@@ -58,9 +58,10 @@ export const UserRegistration = () => {
         </p> */}
       </div>
       <div className="row">
-        <form className="form" onSubmit={sendInfo}>
+        <form className="form" onSubmit={sendInfo} id="registration">
           <div className="col-12 mb-3 mt-4 text-center">
             <input
+              className="input-reg"
               name="Nombre"
               placeholder=" Nombre"
               autoComplete="off"
@@ -71,6 +72,7 @@ export const UserRegistration = () => {
 
           <div className="col-12  mb-3 text-center">
             <input
+              className="input-reg"
               name="Apellido"
               placeholder=" Apellido"
               autoComplete="off"
@@ -81,6 +83,7 @@ export const UserRegistration = () => {
 
           <div className="col-12 mb-3 text-center">
             <input
+              className="input-reg"
               name="email"
               placeholder=" Email"
               autoComplete="off"
@@ -91,6 +94,7 @@ export const UserRegistration = () => {
 
           <div className="col-12  mb-5 text-center">
             <input
+              className="input-reg"
               name="Contraseña"
               placeholder=" Contraseña"
               autoComplete="off"

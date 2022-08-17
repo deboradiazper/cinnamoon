@@ -176,9 +176,9 @@ def create_categories():
     return jsonify({"message": "everything ok"}), 200
     
 
-@api.route('/recipesbycategory/<int:id>', methods=['GET'])
-def recipes_category(id):
-    recipecategories = RecipeCategories.query.filter_by(category_id=id)
+@api.route('/recipesbycategory/<name>', methods=['GET'])
+def recipes_category(name):
+    recipecategories = RecipeCategories.query.join(Categories).filter(Categories.name == name)
     recipes= [recipecategory.recipes.serialize() for recipecategory in recipecategories]
     return jsonify(recipes), 200
 

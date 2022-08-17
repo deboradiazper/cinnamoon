@@ -121,7 +121,7 @@ export const Footer = () => {
         </div>
       </div>
       <footer className="footer mt-auto py-3 text-center pt-4">
-        <p>Siguenos en:</p>
+        <p>Síguenos en:</p>
         <div className="iconsFooter">
           <img
             className="instagram mx-4 img-fluid"

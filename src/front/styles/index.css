@@ -20,7 +20,7 @@ h3 {
 }
 
 .navbar {
-  background: white;
+  background-color: transparent !important;
 }
 
 .icon {
@@ -511,7 +511,7 @@ ul {
 
 .cta2 span {
   position: relative;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -571,7 +571,7 @@ ul {
 
 .ctaregister span {
   position: relative;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -641,7 +641,7 @@ ul {
 
 .ctalogin span {
   position: relative;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -753,3 +753,24 @@ ul {
   width: 15px;
   transition-delay: 0.2s;
 }
+
+/*scrollbar*/
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #428e9e;
+}
+::-webkit-scrollbar-corner {
+  background: #428e9e;
+}
+
+/*input home buscador*/

@@ -144,35 +144,35 @@ export const Home = () => {
             );
           })}
         </div>
-        <div className="row justify-content-center">
-          <div className="col-10">
+        <div className="row justify-content-center text-center">
+          <div className="col-10 text-center mb-3">
             <form onSubmit={handleSubmit}>
-              <div className="input-group pb-5 pt-5 mt-5">
+              <div className="input-group pb-2 pt-5 mt-5">
                 <input
                   onChange={handleChange}
                   type="text"
                   className="form-control"
                   placeholder="¿Qué ingredientes tienes a mano?"
                 />
-                <div className="col-3">
-                  <button className="botonreceta">
-                    <p>Buscar recetas</p>
-                    <svg
-                      stroke-width="4"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      class="h-6 w-6"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
+              </div>
+              <div className="col-12 d-flex justify-content-center">
+                <button className="botonreceta">
+                  <p>Buscar recetas</p>
+                  <svg
+                    stroke-width="4"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    class="h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      stroke-linejoin="round"
+                      stroke-linecap="round"
+                    ></path>
+                  </svg>
+                </button>
               </div>
             </form>
           </div>

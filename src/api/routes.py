@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Recipes, Ingredients, Trivia, Categories, RecipesFavorites, IngredientsFavorites
+from api.models import db, User, Recipes, Ingredients, Trivia, Categories, RecipesFavorites, IngredientsFavorites, RecipeCategories, RecipesIngredients
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
 
@@ -64,14 +64,23 @@ def create_user():
 def get_recipes_Favorites():
     user_id = get_jwt_identity()
     favorites = RecipesFavorites.query.filter_by(user_id = user_id)
-    recipes = Recipes.query.all()
-    data = [recipe.serialize() for recipe in recipes]
+    data = [favorite.Recipes.serialize() for favorite in favorites]
     for recipe in data: 
-        for favorite in favorites: 
-            if recipe["id"] == favorite.recipe_id: 
-                recipe["favorite"] = True
+        recipe["favorite"] = True
     
     return jsonify(data), 200
+
+
+@api.route('/recipesfavorites', methods=['POST'])
+@jwt_required()
+def add_recipes_favorites():
+    user_id = get_jwt_identity()
+    data = request.json
+    print(data)
+    recipes = RecipesFavorites(user_id= user_id, recipe_id=data.get('recipe_id'))
+    db.session.add(recipes)
+    db.session.commit()
+    return jsonify({"message": "recipe added"}), 200
 
 
 #Recipes
@@ -88,7 +97,6 @@ def detail_recipes(id):
     
     return jsonify(recipe.serialize()), 200
 
-
 @api.route('/recipes', methods=['POST'])
 def create_recipes():
     data = request.json
@@ -96,6 +104,7 @@ def create_recipes():
     db.session.add(recipe)
     db.session.commit()
     return jsonify({"message": "everything ok"}), 200
+
 
 
 #IngredientsFavorites
@@ -108,7 +117,7 @@ def get_ingredients_Favorites():
     data = [ingredient.serialize() for ingredient in ingredients]
     for ingredient in data: 
         for favorite in favorites: 
-            if ingredient["id"] == favorite.ingredient_id: 
+            if ingredient["id"] == favorite.ingredie_id: 
                 ingredient["favorite"] = True
     
     return jsonify(data), 200
@@ -149,6 +158,7 @@ def create_trivia():
     return jsonify({"message": "everything ok"}), 200
 
 
+
 #Categories
 @api.route('/categories', methods=['GET'])
 def get_categories():
@@ -164,11 +174,26 @@ def create_categories():
     db.session.add(categories)
     db.session.commit()
     return jsonify({"message": "everything ok"}), 200
+    
 
-@api.route('/recipesfavorites', methods=['POST'])
-def add_recipes_favorites():
+@api.route('/recipesbycategory/<name>', methods=['GET'])
+def recipes_category(name):
+    recipecategories = RecipeCategories.query.join(Categories).filter(Categories.name == name)
+    recipes= [recipecategory.recipes.serialize() for recipecategory in recipecategories]
+    return jsonify(recipes), 200
+
+
+@api.route('/searchbar', methods=['POST'])
+def searchbar():
     data = request.json
-    recipes = RecipesFavorites(user_id=data.get('user_id'), recipe_id=data.get('recipe_id'))
-    db.session.add(recipes)
-    db.session.commit()
-    return jsonify({"message": "recipe added"}), 200
+    text = data.get("data")
+    if len(text):
+        search_data = text.split(", ")
+        print(search_data)
+        ingredients = Ingredients.query.filter(Ingredients.name.in_(search_data))
+        ingredients = [ingredient.id for ingredient in ingredients]
+        recipe_ingredients = RecipesIngredients.query.filter(RecipesIngredients.ingredient_id.in_(ingredients))
+        recipes = [recipe_ingredient.Recipes.serialize() for recipe_ingredient in recipe_ingredients]
+        return jsonify(recipes), 200
+
+    return jsonify([]), 200

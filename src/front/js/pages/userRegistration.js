@@ -32,9 +32,9 @@ export const UserRegistration = () => {
   const onSubmit = (data, e) => {
     // e.preventDefault();
     addInfo(data);
-    if (data) {
-      navigate("/home");
-    }
+    // if (data) {
+    //   navigate("/home");
+    // }
   };
 
   //llamada fetch api

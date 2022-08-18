@@ -18,7 +18,7 @@ const Recipe = (props) => {
       <div className="position-relative">
         <img src={props.image} className="img-recipe" alt="receta" />
         <div className="buttonImage position-absolute bottom-0 start-0 m-3">
-          <Link to={`/detail/${props.id}`} className="button1">
+          <Link to={`/detail/${props.id}`} className="buttonDetail">
             VER
           </Link>
         </div>

@@ -75,6 +75,10 @@ def get_recipes_Favorites():
 def add_recipes_favorites():
     user_id = get_jwt_identity()
     data = request.json
+    is_exist = RecipesFavorites.query.filter_by(user_id= user_id, recipe_id=data.get('recipe_id')).count()
+    print(is_exist)
+    if is_exist: 
+        return jsonify({"message": "recipe exist"}), 200
     recipes = RecipesFavorites(user_id= user_id, recipe_id=data.get('recipe_id'))
     db.session.add(recipes)
     db.session.commit()

@@ -12,7 +12,13 @@ export const UserRegistration = () => {
   });
   const navigate = useNavigate();
 
-  const { register, errors, handleSubmit } = useForm();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+
+  console.log(errors);
 
   const handleInputChange = (event) => {
     //console.log(event.target.value);
@@ -24,12 +30,11 @@ export const UserRegistration = () => {
 
   //form submit
   const onSubmit = (data, e) => {
-    e.preventDefault();
-    console.log(info);
-    addInfo(info);
-    //   if (info) {
-    //   //navigate("/home")
-    // }
+    // e.preventDefault();
+    addInfo(data);
+    if (data) {
+      navigate("/home");
+    }
   };
 
   //llamada fetch api
@@ -73,14 +78,17 @@ export const UserRegistration = () => {
               placeholder=" Nombre"
               autoComplete="off"
               type="text"
-              {...register("nombre obligatorio", { required: true })}
+              {...register("name", {
+                required: "this is required",
+                minLength: {
+                  value: 4,
+                  message: "min length is 4",
+                },
+              })}
               onChange={handleInputChange}
             />
           </div>
-          <span className="text-danger text-small d-block mb-2">
-            {errors?.name?.message}
-          </span>
-
+          <p>{errors.name?.message}</p>
           <div className="col-12  mb-3 text-center">
             <input
               className="input-reg"
@@ -88,6 +96,7 @@ export const UserRegistration = () => {
               placeholder=" Apellido"
               autoComplete="off"
               type="text"
+              {...register("lastName", { required: true })}
               onChange={handleInputChange}
             />
           </div>
@@ -99,6 +108,7 @@ export const UserRegistration = () => {
               placeholder=" Email"
               autoComplete="off"
               type="text"
+              {...register("email", { required: true })}
               onChange={handleInputChange}
             />
           </div>
@@ -110,6 +120,9 @@ export const UserRegistration = () => {
               placeholder=" Contraseña"
               autoComplete="off"
               type="password"
+              {...register("password", {
+                required: "Email Address is required",
+              })}
               onChange={handleInputChange}
             />
           </div>

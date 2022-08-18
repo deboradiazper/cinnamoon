@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/index.css";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 export const UserRegistration = () => {
   const [info, setInfo] = useState({
@@ -11,6 +12,8 @@ export const UserRegistration = () => {
   });
   const navigate = useNavigate();
 
+  const { register, errors, handleSubmit } = useForm();
+
   const handleInputChange = (event) => {
     //console.log(event.target.value);
     setInfo({
@@ -19,11 +22,14 @@ export const UserRegistration = () => {
     });
   };
 
-  const sendInfo = (event) => {
-    event.preventDefault();
+  //form submit
+  const onSubmit = (data, e) => {
+    e.preventDefault();
     console.log(info);
     addInfo(info);
-    navigate("/registrationValidated");
+    //   if (info) {
+    //   //navigate("/home")
+    // }
   };
 
   //llamada fetch api
@@ -52,13 +58,14 @@ export const UserRegistration = () => {
     <div>
       <div className="registration col-12 mb-3 mt-5 text-center">
         <h2>Regístrate</h2>
-        {/* <p>
-          Unete a nuestra comunidad y descubre recetas deliciosas y saludables
-          que se adapten a ti.
-        </p> */}
       </div>
+
       <div className="row">
-        <form className="form" onSubmit={sendInfo} id="registration">
+        <form
+          className="form"
+          onSubmit={handleSubmit(onSubmit)}
+          id="registration"
+        >
           <div className="col-12 mb-3 mt-4 text-center">
             <input
               className="input-reg"
@@ -66,9 +73,13 @@ export const UserRegistration = () => {
               placeholder=" Nombre"
               autoComplete="off"
               type="text"
+              {...register("nombre obligatorio", { required: true })}
               onChange={handleInputChange}
             />
           </div>
+          <span className="text-danger text-small d-block mb-2">
+            {errors?.name?.message}
+          </span>
 
           <div className="col-12  mb-3 text-center">
             <input
@@ -104,7 +115,7 @@ export const UserRegistration = () => {
           </div>
 
           <div className="col-12  mb-3 text-center">
-            <button class="ctaregister">
+            <button className="ctaregister">
               <span>Enviar</span>
               <svg viewBox="0 0 13 10" height="10px" width="15px">
                 <path d="M1,5 L11,5"></path>
@@ -117,6 +128,3 @@ export const UserRegistration = () => {
     </div>
   );
 };
-//<button className="send" type="submit">
-// Enviar
-//</button>;

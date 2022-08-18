@@ -29,10 +29,10 @@ export const Home = () => {
         <div className="col-12">
           <div
             id="carouselExampleDark"
-            class="carousel carousel-dark slide"
+            className="carousel carousel-dark slide"
             data-bs-ride="carousel"
           >
-            <div class="carousel-indicators">
+            <div className="carousel-indicators">
               <button
                 type="button"
                 data-bs-target="#carouselExampleDark"
@@ -122,7 +122,7 @@ export const Home = () => {
                 className="carousel-control-next-icon"
                 aria-hidden="true"
               ></span>
-              <span class="visually-hidden">Next</span>
+              <span className="visually-hidden">Next</span>
             </button>
           </div>
         </div>
@@ -130,7 +130,10 @@ export const Home = () => {
         <div className=" col-12 my-5 d-flex justify-content-center">
           {store.categories.map((category) => {
             return (
-              <Link to={`/recipeAll/${category.name}`} className="ctaCategory pe-5">
+              <Link
+                to={`/recipeAll/${category.name}`}
+                className="ctaCategory pe-5"
+              >
                 <span className="hover-underline-animation">
                   {category.name}{" "}
                 </span>
@@ -144,21 +147,38 @@ export const Home = () => {
             );
           })}
         </div>
-        <div className="col-12">
-          <form onSubmit={handleSubmit}>
-            <div className="input-group pb-5">
-              <input
-                onChange={handleChange}
-                type="text"
-                className="form-control"
-                aria-label="Con que ingredientes quieres cocinar?"
-              />
-              {/* <label className="search input-group-text border-0">
-                <i className="fas fa-search text-muted"></i>
-              </label> */}
-              <button>Buscar</button>
-            </div>
-          </form>
+        <div className="row justify-content-center text-center">
+          <div className="col-10 text-center mb-3">
+            <form onSubmit={handleSubmit}>
+              <div className="input-group pb-2 pt-5 mt-5">
+                <input
+                  onChange={handleChange}
+                  type="text"
+                  className="form-control"
+                  placeholder="¿Qué ingredientes tienes a mano?"
+                />
+              </div>
+              <div className="col-12 d-flex justify-content-center">
+                <button className="botonreceta">
+                  <p>Buscar recetas</p>
+                  <svg
+                    stroke-width="4"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    class="h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      stroke-linejoin="round"
+                      stroke-linecap="round"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
         <div className="recipes d-flex justify-content-between mb-4">
           <h3 className="title-all">NUEVAS RECETAS</h3>

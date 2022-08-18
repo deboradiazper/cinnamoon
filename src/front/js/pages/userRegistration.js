@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/index.css";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 export const UserRegistration = () => {
   const [info, setInfo] = useState({
@@ -11,6 +12,14 @@ export const UserRegistration = () => {
   });
   const navigate = useNavigate();
 
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+
+  console.log(errors);
+
   const handleInputChange = (event) => {
     //console.log(event.target.value);
     setInfo({
@@ -19,11 +28,13 @@ export const UserRegistration = () => {
     });
   };
 
-  const sendInfo = (event) => {
-    event.preventDefault();
-    console.log(info);
-    addInfo(info);
-    navigate("/registrationValidated");
+  //form submit
+  const onSubmit = (data, e) => {
+    // e.preventDefault();
+    addInfo(data);
+    // if (data) {
+    //   navigate("/home");
+    // }
   };
 
   //llamada fetch api
@@ -51,32 +62,41 @@ export const UserRegistration = () => {
   return (
     <div>
       <div className="registration col-12 mb-3 mt-5 text-center">
-        <h2>REGISTRATE</h2>
-        <p>
-          Unete a nuestra comunidad y descubre recetas deliciosas y saludables
-          que se adapten a ti.
-        </p>
+        <h2>Regístrate</h2>
       </div>
+
       <div className="row">
-        <form className="form" onSubmit={sendInfo} id="registration">
+        <form
+          className="form"
+          onSubmit={handleSubmit(onSubmit)}
+          id="registration"
+        >
           <div className="col-12 mb-3 mt-4 text-center">
             <input
               className="input-reg"
-              name="Nombre"
+              name="name"
               placeholder=" Nombre"
               autoComplete="off"
               type="text"
+              {...register("name", {
+                required: "this is required",
+                minLength: {
+                  value: 4,
+                  message: "min length is 4",
+                },
+              })}
               onChange={handleInputChange}
             />
           </div>
-
+          <p>{errors.name?.message}</p>
           <div className="col-12  mb-3 text-center">
             <input
               className="input-reg"
-              name="Apellido"
+              name="lastName"
               placeholder=" Apellido"
               autoComplete="off"
               type="text"
+              {...register("lastName", { required: true })}
               onChange={handleInputChange}
             />
           </div>
@@ -88,6 +108,7 @@ export const UserRegistration = () => {
               placeholder=" Email"
               autoComplete="off"
               type="text"
+              {...register("email", { required: true })}
               onChange={handleInputChange}
             />
           </div>
@@ -95,17 +116,24 @@ export const UserRegistration = () => {
           <div className="col-12  mb-5 text-center">
             <input
               className="input-reg"
-              name="Contraseña"
+              name="password"
               placeholder=" Contraseña"
               autoComplete="off"
-              type="Contraseña"
+              type="password"
+              {...register("password", {
+                required: "Email Address is required",
+              })}
               onChange={handleInputChange}
             />
           </div>
 
           <div className="col-12  mb-3 text-center">
-            <button className="send" type="submit">
-              ENVIAR
+            <button className="ctaregister">
+              <span>Enviar</span>
+              <svg viewBox="0 0 13 10" height="10px" width="15px">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+              </svg>
             </button>
           </div>
         </form>

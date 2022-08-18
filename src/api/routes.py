@@ -195,6 +195,7 @@ def recipes_category(name):
     return jsonify(recipes), 200
 
 
+#searhBar
 @api.route('/searchbar', methods=['POST'])
 def searchbar():
     data = request.json

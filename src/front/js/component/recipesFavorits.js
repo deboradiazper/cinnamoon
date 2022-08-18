@@ -4,8 +4,6 @@ import { PropTypes } from "prop-types";
 import { Link } from "react-router-dom";
 import Recipe from "./recipe";
 
-
-
 const RecipesFavorits = () => {
     const { store, actions } = useContext(Context);
     // const listrecipesfav = store.recipesfavorites.map(() => {
@@ -18,6 +16,8 @@ const RecipesFavorits = () => {
     return (
         <div className="container">
             <div className="row">
+                <h3 className="title-all mt-5">Mis Recetas favoritas</h3>
+
                 {store.recipesfavorites.map((recipe, index) => {
                     return (
                         <div className="col-12 col-md-3 pt-3 mt-5" key={index}>
@@ -34,7 +34,6 @@ const RecipesFavorits = () => {
                         </div>
                     );
                 })}
-
             </div>
         </div>
     );

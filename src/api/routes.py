@@ -24,7 +24,6 @@ def handle_hello():
 @api.route('/login', methods=['POST'])
 def login():
     data = request.json
-    print(data)
 
     user = User.query.filter_by(email=data['email'], password=data['password']).first()
     if not user:
@@ -76,7 +75,10 @@ def get_recipes_Favorites():
 def add_recipes_favorites():
     user_id = get_jwt_identity()
     data = request.json
-    print(data)
+    is_exist = RecipesFavorites.query.filter_by(user_id= user_id, recipe_id=data.get('recipe_id')).count()
+    print(is_exist)
+    if is_exist: 
+        return jsonify({"message": "recipe exist"}), 200
     recipes = RecipesFavorites(user_id= user_id, recipe_id=data.get('recipe_id'))
     db.session.add(recipes)
     db.session.commit()
@@ -85,9 +87,19 @@ def add_recipes_favorites():
 
 #Recipes
 @api.route('/recipes', methods=['GET'])
+@jwt_required(optional=True)
 def get_recipes():
+    user_id = get_jwt_identity()
+    print(user_id)
+    
     recipes = Recipes.query.order_by(Recipes.id.desc()).limit(10).all()
     data = [recipe.serialize() for recipe in recipes]
+    if user_id:
+        user = User.query.get(user_id)
+        favoritesrecipes = [user_fav.Recipes.id for user_fav in user.recipes_fav]
+    
+        for recipe in data: 
+            recipe["is_favorite"] = True if recipe["id"] in favoritesrecipes else False
     
     return jsonify(data), 200
     
@@ -190,7 +202,6 @@ def searchbar():
     text = data.get("data")
     if len(text):
         search_data = text.split(", ")
-        print(search_data)
         ingredients = Ingredients.query.filter(Ingredients.name.in_(search_data))
         ingredients = [ingredient.id for ingredient in ingredients]
         recipe_ingredients = RecipesIngredients.query.filter(RecipesIngredients.ingredient_id.in_(ingredients))

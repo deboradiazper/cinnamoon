@@ -8,21 +8,29 @@ export const Footer = () => {
     <div className="container-fluid p-0 mt-5">
       <div className="row">
         <div
-          className="diverse col-md-6 d-flex justify-content-center align-items-center"
-          width="100%"
-          height="300"
+          className="diverse col-md-6 d-flex flex-column"
+          style={{ minHeight: "300px" }}
         >
-          <div class="cta">
-            <span class="hover-underline-animation">
-              <strong>Recetas por categoria</strong>
-            </span>
-            <path
-              id="Path_10"
-              data-name="Path 10"
-              d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-              transform="translate(30)"
-            ></path>
-          </div>
+          <h3 className="title-all2 pt-5 px-3 text-center">
+            RECETAS PARA TODOS
+          </h3>
+          <ul className="py-2 px-3">
+            <li>
+              El <b>calcio que mejor se absorbes</b> no es el de los lácteo,
+              sino el de las algas.
+            </li>
+            <li>
+              <b>Eliminar el gluten</b>de tu dieta mejora tu salud intestinal.
+            </li>
+            <li>
+              Es posible <b>endulzar tus platos</b> con alimentos que tienen
+              azúcar en su composición
+            </li>
+            <li>
+              Una alimentación <b>vegana</b> puede ser rica en proteínas de
+              origen vegetal.
+            </li>
+          </ul>
         </div>
         <div className="imgfooter col-md-6 p-0">
           <img
@@ -30,93 +38,59 @@ export const Footer = () => {
             className="imgfooter"
             alt="img-footer"
             width="100%"
-            height="300x"
+            height="100%"
           />
-        </div>
-        <div className="imgfooter col-md-6 p-0">
-          <img
-            src={imgfooter2}
-            className="imgfooter"
-            alt="img-footer"
-            width="100%"
-            height="300"
-          />
-        </div>
-        <div
-          className="diverse2 col-md-6 d-flex justify-content-center"
-          width="100%"
-          height="300"
-        >
-          <button className="cta">
-            <span className="hover-underline-animation">
-              <strong>Recetas elaboradas con ingredientes vegetales</strong>
-            </span>
-            <path
-              id="Path_10"
-              data-name="Path 10"
-              d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-              transform="translate(30)"
-            ></path>
-          </button>
         </div>
       </div>
-      <div className="diverse3" id="diverse3" width="100%" height="150">
-        <div className="row">
-          <div className="col-md-6 mt-3">
-            <div
-              className="text-center collapse multi-collapse p-4"
-              id="multiCollapseExample2"
-            >
-              <div className="card card-body text3">
-                Tan importante es alimentarse bien como hacerlo de forma
-                consciente. Es por eso que nos gusta aportar información acerca
-                de los ingredientes que utilizamos para las recetas. Como
-                cocinar nos apasiona, también nos apasiona la historia de los
-                ingredientes.
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6 mt-3">
-            <div
-              className="text-center collapse multi-collapse p-4"
-              id="multiCollapseExample1"
-            >
-              <div className="card card-body text3">
-                En CINNAMOON somos partidarios de la inclusividad. Es por eso
-                que contamos con recetas para todas aquellas personas que, por
-                una cuestión personal o de salud, han renunciado a comer ciertos
-                alimentos. Partimos de una base vegetariana y contamos con un
-                amplio banco de recetas sin gluten, sin lactosa y sin azúcar.
-                Nuestra intención es que haya muchas más.
-              </div>
-            </div>
-          </div>
+      <div className="row">
+        <div className="imgfooter col-md-6 p-0">
+          <img src={imgfooter2} alt="img-footer" width="100%" height="300" />
         </div>
+        <div
+          className="diverse2 col-md-6 d-flex flex-column text-center"
+          style={{ minHeight: "300px" }}
+        >
+          <h3 className="title-all2 pt-5 px-3">
+            ALIMENTACION BASADA EN INGREDIENTES VEGETALES
+          </h3>
+          <p className="py-2 px-3">
+            <b>Okinawa</b>,es una isla en el sur de Japón que se ha hecho
+            conocer por tener la esperanza de vida más elevada del mundo. Su
+            alimentación fundamentada en <b>productos de origen vegetal</b> y
+            pobre en acidos grasos parece ser la clave de su <b>longevidad</b>.
+          </p>
+        </div>
+      </div>
+      <div className="diverse3" id="diverse3" width="100%" height="300">
         <div className="row">
-          <div className="col-md-6">
-            <h3
-              className="text-center pt-5"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#multiCollapseExample2"
-              aria-expanded="false"
-              aria-controls="multiCollapseExample2"
-            >
-              NUESTROS VALORES
-            </h3>
+          <div className="col-md-4 py-5 text-center">
+            <h5 className="px-3">NUESTROS VALORES</h5>
+            <p className="text3 px-2 py-3 px-2 text-center">
+              En CINNAMOON somos partidarios de la inclusividad. Es por eso que
+              contamos con recetas para todas aquellas personas que, por una
+              cuestión personal o de salud, han renunciado a comer ciertos
+              alimentos. Partimos de una base vegetariana y contamos con un
+              amplio banco de recetas sin gluten, sin lactosa y sin azúcar.
+              Nuestra intención es que haya muchas más.
+            </p>
           </div>
-          <div className="col-md-6">
-            <h3
-              className="text-center pt-5"
-              type="button"
-              data-bs-toggle="collapse"
-              href="#multiCollapseExample1"
-              role="button"
-              aria-expanded="false"
-              aria-controls="multiCollapseExample1"
-            >
-              SOMOS LO QUE COMEMOS
-            </h3>
+          <div className="col-md-4 py-5 text-center">
+            <h5 className="px-3">SOMOS LO QUE COMEMOS</h5>
+            <p className="text3 px-2 py-3">
+              Tan importante es alimentarse bien como hacerlo de forma
+              consciente. Es por eso que nos gusta aportar información acerca de
+              los ingredientes que utilizamos para las recetas. Como cocinar nos
+              apasiona, también nos apasiona la historia de los ingredientes.
+            </p>
+          </div>
+          <div className="col-md-4 py-5 text-center px-2">
+            <h5 className="px-3">CRECER EN COMUNIDAD</h5>
+            <p className="text3 px-2 py-3">
+              No queremos ser únicamente una página web de recetas. Nuestro
+              objetivo es crear una comunidad en la que cualquier persona afín a
+              nuestros valores pueda aportar su granito de arena. Compartir es
+              vivir.
+            </p>
           </div>
         </div>
       </div>

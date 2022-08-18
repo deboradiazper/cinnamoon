@@ -18,7 +18,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="navbar d-flex justify-content-around align-items-center px-5">
+    <nav className="navbar sticky-top d-flex justify-content-around align-items-center px-5 pb-0">
       <div className="container-fluid">
         <Link className="navbar-brand" to={"/"}>
           <span className="logo">
@@ -34,7 +34,7 @@ export const Navbar = () => {
         <div className="icons d-flex justify-content-around align-items-center">
           {store.auth ? (
             <div>
-              <h5 className="title2  mb-5">Hola {store.user}</h5>
+              <h5 className="px-5">Hola {store.user}</h5>
             </div>
           ) : (
             ""
@@ -43,9 +43,10 @@ export const Navbar = () => {
 
           {store.auth ? (
             <button
-              className="logout border-0 bg-white"
+              className="logout border-0"
               onClick={() => {
                 actions.logout();
+                actions.loadRecipe();
                 navigate("/");
               }}
             >
@@ -53,7 +54,7 @@ export const Navbar = () => {
             </button>
           ) : (
             <button
-              className="loging border-0 bg-white"
+              className="loging border-0"
               onClick={() => {
                 isAuthenticate();
               }}

@@ -65,34 +65,34 @@ export const Home = () => {
                 <img src={glutenfree} class="d-block w-100" alt="..." />
 
                 <div className="carousel-caption d-none d-md-block">
-                  <h3 className="titel-all">SIN GLUTEN</h3>
+                  <h2 className="title-all px-5">SIN GLUTEN</h2>
                   <p>
-                    Ni trigo, ni centeno, ni cebada: descubre deliciosas recetas
-                    sin gluten
+                    Crea tus platos preferidos con otroa ingredientes,
+                    consiguiendo resultados increibles.
                   </p>
                 </div>
               </div>
               <div className="carousel-item" data-bs-interval="2000">
                 <img src={vegana} class="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
-                  <h3 className="titel-all">VEGANAS</h3>
-                  <p>Cocina con vegetales y crea sabores exquisitos</p>
+                  <h2 className="title-all px-5">VEGANAS</h2>
+                  <p>Cocina con vegetales y crea sabores exquisitos.</p>
                 </div>
               </div>
               <div className="carousel-item">
                 <img src={lactosefree} class="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
-                  <h3 className="titel-all">SIN LACTOSA</h3>
+                  <h2 className="title-all px-5">SIN LACTOSA</h2>
                   <p>
-                    Descubre otras alternativas a la leche y alimentos que son
-                    fuente de calcio
+                    Descubre otras alternativas a la leche y conoce que
+                    alimentos que son fuente de calcio.
                   </p>
                 </div>
               </div>
               <div className="carousel-item">
                 <img src={sugarfree} class="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
-                  <h3 className="titel-all">SIN AZUCAR</h3>
+                  <h2 className="title-all px-5">SIN AZUCAR</h2>
                   <p>
                     Descubre como sustituir azúcar por otros productos naturales
                     y cocina postres y dulces saludables.
@@ -127,10 +127,13 @@ export const Home = () => {
           </div>
         </div>
 
-        <div className=" col-12 pt-3 d-flex justify-content-center">
+        <div className=" col-12 my-5 d-flex justify-content-center">
           {store.categories.map((category) => {
             return (
-              <Link to={`/recipeAll/${category.name}`} className="cta pe-5">
+              <Link
+                to={`/recipeAll/${category.name}`}
+                className="ctaCategory pe-5"
+              >
                 <span className="hover-underline-animation">
                   {category.name}{" "}
                 </span>

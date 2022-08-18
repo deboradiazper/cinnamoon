@@ -33,7 +33,17 @@ const getState = ({
                 getActions().changeColor(0, "green");
             },
             loadRecipe: async () => {
-                const response = await fetch(process.env.BACKEND_URL + "/api/recipes");
+                let header = {
+                    "Content-Type": "application/json",
+                };
+                if (getStore().token) {
+                    header.Authorization = "Bearer " + localStorage.getItem("token");
+                }
+                const response = await fetch(process.env.BACKEND_URL + "/api/recipes", {
+                    method: "GET",
+                    headers: header,
+                });
+
                 const data = await response.json();
                 console.log(data);
                 setStore({
@@ -42,7 +52,9 @@ const getState = ({
                 return true;
             },
             loadCategories: async () => {
-                const response = await fetch(process.env.BACKEND_URL + "/api/categories");
+                const response = await fetch(
+                    process.env.BACKEND_URL + "/api/categories"
+                );
                 const data = await response.json();
                 console.log(data);
                 setStore({
@@ -96,7 +108,7 @@ const getState = ({
                 const opts = {
                     method: "POST",
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
                         email: email,
@@ -116,21 +128,21 @@ const getState = ({
                     const data = await resp.json();
                     console.log(data.user);
                     setStore({
-                        user: data.user.name
+                        user: data.user.name,
                     });
                     setStore({
-                        userInfo: data.user
+                        userInfo: data.user,
                     });
 
                     localStorage.setItem("user", data.user.name);
 
                     console.log(data.token);
                     setStore({
-                        auth: true
+                        auth: true,
                     });
                     localStorage.setItem("token", data.token);
                     setStore({
-                        token: data.token
+                        token: data.token,
                     });
                     return true;
                 } catch (error) {
@@ -143,7 +155,7 @@ const getState = ({
                 const opts = {
                     method: "POST",
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
                         data: store.searchRecipes ? store.searchRecipes : search,
@@ -160,13 +172,13 @@ const getState = ({
 
             cleanSearch: () => {
                 setStore({
-                    searchRecipes: null
+                    searchRecipes: null,
                 });
             },
 
             setSearch: (search) => {
                 setStore({
-                    searchRecipes: search
+                    searchRecipes: search,
                 });
             },
 
@@ -183,23 +195,23 @@ const getState = ({
 
                 //reset the global store
                 setStore({
-                    demo: demo
+                    demo: demo,
                 });
             },
             setToken: (token, user) => {
                 setStore({
-                    token: token
+                    token: token,
                 });
                 setStore({
-                    user: user
+                    user: user,
                 });
             },
             logout: () => {
                 setStore({
-                    token: null
+                    token: null,
                 });
                 setStore({
-                    auth: false
+                    auth: false,
                 });
 
                 localStorage.removeItem("token");

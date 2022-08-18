@@ -68,7 +68,7 @@ export const Home = () => {
                   <h2 className="title-all px-5">SIN GLUTEN</h2>
                   <p>
                     Crea tus platos preferidos con otroa ingredientes,
-                    consiguiendo resultados increibles
+                    consiguiendo resultados increibles.
                   </p>
                 </div>
               </div>
@@ -76,7 +76,7 @@ export const Home = () => {
                 <img src={vegana} class="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
                   <h2 className="title-all px-5">VEGANAS</h2>
-                  <p>Cocina con vegetales y crea sabores exquisitos</p>
+                  <p>Cocina con vegetales y crea sabores exquisitos.</p>
                 </div>
               </div>
               <div className="carousel-item">
@@ -84,8 +84,8 @@ export const Home = () => {
                 <div className="carousel-caption d-none d-md-block">
                   <h2 className="title-all px-5">SIN LACTOSA</h2>
                   <p>
-                    Descubre otras alternativas a la leche y descubre otros
-                    alimentos que son fuente de calcio
+                    Descubre otras alternativas a la leche y conoce que
+                    alimentos que son fuente de calcio.
                   </p>
                 </div>
               </div>
@@ -130,7 +130,7 @@ export const Home = () => {
         <div className=" col-12 my-5 d-flex justify-content-center">
           {store.categories.map((category) => {
             return (
-              <Link to={`/recipeAll/${category.name}`} className="cta2 pe-5">
+              <Link to={`/recipeAll/${category.name}`} className="ctaCategory pe-5">
                 <span className="hover-underline-animation">
                   {category.name}{" "}
                 </span>

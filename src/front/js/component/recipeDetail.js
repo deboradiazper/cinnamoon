@@ -6,13 +6,9 @@ const RecipeDetail = (props) => {
   return (
     <div className="row">
       <div className="col-md-6" style={{ minHeight: "400px" }}>
-        <div className="card-detail" >
+        <div className="card-detail">
           <div className="front">
-            <img
-              src={props.image}
-              className="image-detail"
-              alt="..."
-            />
+            <img src={props.image} className="image-detail" alt="..." />
           </div>
           <div className="back overflow-auto">
             <div className="text-back text-center">

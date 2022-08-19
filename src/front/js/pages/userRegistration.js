@@ -29,12 +29,12 @@ export const UserRegistration = () => {
   };
 
   //form submit
-  const onSubmit = (data, e) => {
+  const onSubmit = (data) => {
     // e.preventDefault();
     addInfo(data);
-    // if (data) {
-    //   navigate("/home");
-    // }
+    if (data) {
+      navigate("/registrationValidated");
+    }
   };
 
   //llamada fetch api
@@ -60,7 +60,7 @@ export const UserRegistration = () => {
   };
 
   return (
-    <div>
+    <div className="registro col-6">
       <div className="registration col-12 mb-3 mt-5 text-center">
         <h2>Regístrate</h2>
       </div>
@@ -79,16 +79,17 @@ export const UserRegistration = () => {
               autoComplete="off"
               type="text"
               {...register("name", {
-                required: "this is required",
+                required: "Por favor, introduce un nombre válido",
                 minLength: {
-                  value: 4,
-                  message: "min length is 4",
+                  value: 3,
+                  message: "Por favor, introduce un nombre válido",
                 },
               })}
               onChange={handleInputChange}
             />
+            <p>{errors.name?.message}</p>
           </div>
-          <p>{errors.name?.message}</p>
+
           <div className="col-12  mb-3 text-center">
             <input
               className="input-reg"
@@ -96,9 +97,16 @@ export const UserRegistration = () => {
               placeholder=" Apellido"
               autoComplete="off"
               type="text"
-              {...register("lastName", { required: true })}
+              {...register("lastName", {
+                required: "Por favor, introduce un apellido válido",
+                minLength: {
+                  value: 3,
+                  message: "Por favor, introduce un apellido válido",
+                },
+              })}
               onChange={handleInputChange}
             />
+            <p>{errors.name?.message}</p>
           </div>
 
           <div className="col-12 mb-3 text-center">
@@ -108,9 +116,19 @@ export const UserRegistration = () => {
               placeholder=" Email"
               autoComplete="off"
               type="text"
-              {...register("email", { required: true })}
+              {...register("email", {
+                required: {
+                  value: true,
+                  message: "Por favor, introduce un email válido",
+                },
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                  message: "Por favor, introduce un email válido",
+                },
+              })}
               onChange={handleInputChange}
             />
+            <p>{errors.email?.message}</p>
           </div>
 
           <div className="col-12  mb-5 text-center">
@@ -121,10 +139,18 @@ export const UserRegistration = () => {
               autoComplete="off"
               type="password"
               {...register("password", {
-                required: "Email Address is required",
+                required: {
+                  value: true,
+                  message: "Por favor, introduce una contraseña válida",
+                },
+                minLength: {
+                  value: 6,
+                  message: "La contraseña debe tener al menos 8 caracteres",
+                },
               })}
               onChange={handleInputChange}
             />
+            <p>{errors.password?.message}</p>
           </div>
 
           <div className="col-12  mb-3 text-center">

@@ -43,7 +43,7 @@ const Layout = () => {
             <Route element={<UserArea />} path="/userArea" />
             <Route
               element={<RegistrationValidated />}
-              path="/RegistrationValidated"
+              path="/registrationValidated"
             />
             <Route element={<RecipeAll />} path="/recipeAll/:name" />
             <Route element={<Detail />} path="/detail/:id" />

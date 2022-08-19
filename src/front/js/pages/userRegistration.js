@@ -32,9 +32,9 @@ export const UserRegistration = () => {
   const onSubmit = (data, e) => {
     // e.preventDefault();
     addInfo(data);
-    // if (data) {
-    //   navigate("/home");
-    // }
+    if (data) {
+      navigate("/");
+    }
   };
 
   //llamada fetch api
@@ -79,16 +79,17 @@ export const UserRegistration = () => {
               autoComplete="off"
               type="text"
               {...register("name", {
-                required: "this is required",
+                required: "Por favor, introduce un nombre válido",
                 minLength: {
-                  value: 4,
-                  message: "min length is 4",
+                  value: 3,
+                  message: "Por favor, introduce un nombre válido",
                 },
               })}
               onChange={handleInputChange}
             />
           </div>
           <p>{errors.name?.message}</p>
+
           <div className="col-12  mb-3 text-center">
             <input
               className="input-reg"
@@ -96,10 +97,17 @@ export const UserRegistration = () => {
               placeholder=" Apellido"
               autoComplete="off"
               type="text"
-              {...register("lastName", { required: true })}
+              {...register("lastName", {
+                required: "Por favor, introduce un apellido válido",
+                minLength: {
+                  value: 3,
+                  message: "Por favor, introduce un apellido válido",
+                },
+              })}
               onChange={handleInputChange}
             />
           </div>
+          <p>{errors.name?.message}</p>
 
           <div className="col-12 mb-3 text-center">
             <input
@@ -108,10 +116,20 @@ export const UserRegistration = () => {
               placeholder=" Email"
               autoComplete="off"
               type="text"
-              {...register("email", { required: true })}
+              {...register("email", {
+                required: {
+                  value: true,
+                  message: "Por favor, introduce un email",
+                },
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                  message: "El formato no es correcto",
+                },
+              })}
               onChange={handleInputChange}
             />
           </div>
+          <p>{errors.email?.message}</p>
 
           <div className="col-12  mb-5 text-center">
             <input
@@ -121,11 +139,19 @@ export const UserRegistration = () => {
               autoComplete="off"
               type="password"
               {...register("password", {
-                required: "Email Address is required",
+                required: {
+                  value: true,
+                  message: "Por favor, introduce una contraseña",
+                },
+                minLength: {
+                  value: 6,
+                  message: "La contraseña debe tener al menos 8 caracteres",
+                },
               })}
               onChange={handleInputChange}
             />
           </div>
+          <p>{errors.password?.message}</p>
 
           <div className="col-12  mb-3 text-center">
             <button className="ctaregister">

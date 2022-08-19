@@ -1,67 +1,88 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import imgfooter from "../../img/imgfooter.png";
-import imgfooter2 from "../../img/imgfooter2.png";
+import footerimg from "../../img/footerimg.png";
+import footerimg2 from "../../img/footerimg2.png";
 
 export const Footer = () => {
   return (
     <div className="container-fluid p-0 mt-5">
       <div className="row">
         <div
-          className="diverse col-md-6 d-flex flex-column"
-          style={{ minHeight: "300px" }}
+          className="diverse col-md-6 d-flex align-items-start text-center pt-2"
+          style={{ minHeight: "350px" }}
         >
-          <h3 className="title-all2 pt-5 px-3 text-center">
-            RECETAS PARA TODOS
-          </h3>
-          <ul className="py-2 px-3">
-            <li>
-              El <b>calcio que mejor se absorbes</b> no es el de los lácteo,
-              sino el de las algas.
-            </li>
-            <li>
-              <b>Eliminar el gluten</b>de tu dieta mejora tu salud intestinal.
-            </li>
-            <li>
-              Es posible <b>endulzar tus platos</b> con alimentos que tienen
-              azúcar en su composición
-            </li>
-            <li>
-              Una alimentación <b>vegana</b> puede ser rica en proteínas de
-              origen vegetal.
-            </li>
-          </ul>
+          <div className="textFooter">
+            <h4 className="title-all2 pt-4 px-3 text-center">
+              RECETAS PARA TODOS
+            </h4>
+            <ul className="py-2 px-2">
+              <li>
+                El <b>calcio que mejor se absorbes</b> no es el de los lácteo,
+                sino el de las algas.
+              </li>
+              <li>
+                <b>Eliminar el gluten</b>de tu dieta mejora tu salud intestinal.
+              </li>
+              <li>
+                Es posible <b>endulzar tus platos</b> con alimentos que tienen
+                azúcar en su composición
+              </li>
+              <li>
+                Una alimentación <b>vegana</b> puede ser rica en proteínas de
+                origen vegetal.
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="imgfooter col-md-6 p-0">
-          <img
-            src={imgfooter}
-            className="imgfooter"
-            alt="img-footer"
-            width="100%"
-            height="100%"
-          />
+        <div
+          className="imgfooter1 col-md-6 p-0 position-relative"
+          style={{ minHeight: "350px" }}
+        >
+          <div className="position-absolute top-0 start-50 translate-middle-x mt-5">
+            <img
+              src={footerimg}
+              className="img-footer"
+              alt="img-footer"
+              width="300 vw"
+              height="auto"
+            />
+          </div>
         </div>
       </div>
       <div className="row">
-        <div className="imgfooter col-md-6 p-0">
-          <img src={imgfooter2} alt="img-footer" width="100%" height="300" />
+        <div
+          className="imgfooter2 col-md-6 p-0 position-relative"
+          style={{ minHeight: "350px" }}
+        >
+          <div className="position-absolute bottom-0 start-50 translate-middle-x mb-5">
+            <img
+              src={footerimg2}
+              className="img-footer"
+              alt="img-footer"
+              width="300 vw"
+              height="auto"
+            />
+          </div>
         </div>
         <div
-          className="diverse2 col-md-6 d-flex flex-column text-center"
-          style={{ minHeight: "300px" }}
+          className="diverse2 col-md-6 d-flex align-items-end text-center pb-2"
+          style={{ minHeight: "350px" }}
         >
-          <h3 className="title-all2 pt-5 px-3">
-            ALIMENTACION BASADA EN INGREDIENTES VEGETALES
-          </h3>
-          <p className="py-2 px-3">
-            <b>Okinawa</b>,es una isla en el sur de Japón que se ha hecho
-            conocer por tener la esperanza de vida más elevada del mundo. Su
-            alimentación fundamentada en <b>productos de origen vegetal</b> y
-            pobre en acidos grasos parece ser la clave de su <b>longevidad</b>.
-          </p>
+          <div className="textFooter">
+            <h4 className="title-all2 pt-4 px-3">
+              ALIMENTACION BASADA EN INGREDIENTES VEGETALES
+            </h4>
+            <p className="py-2 px-2">
+              <b>Okinawa</b>,es una isla en el sur de Japón que se ha dado a
+              conocer por tener la esperanza de vida más elevada del mundo. Su
+              alimentación fundamentada en <b>productos de origen vegetal</b> y
+              pobre en acidos grasos parece ser la clave de su ç
+              <b>longevidad</b>.
+            </p>
+          </div>
         </div>
       </div>
-      <div className="diverse3" id="diverse3" width="100%" height="300">
+      <div className="diverse3" id="diverse3" width="100%" height="350">
         <div className="row">
           <div className="col-md-4 py-5 text-center">
             <h5 className="px-3">NUESTROS VALORES</h5>

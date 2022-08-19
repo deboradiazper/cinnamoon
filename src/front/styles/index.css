@@ -4,19 +4,19 @@
 /* body */
 html,
 body {
-  /* background: #f6f4f4; */
-  background: rgb(250, 249, 249);
-  width: 100%;
-  font-family: "Raleway", sans-serif;
+    /* background: #f6f4f4; */
+    background: rgb(250, 249, 249);
+    width: 100%;
+    font-family: "Raleway", sans-serif;
 }
 
 h3 {
-  font-family: "Playfair Display", serif;
+    font-family: "Playfair Display", serif;
 }
 
 .text3 {
-  font-family: "Raleway", sans-serif;
-  font-size: 20px;
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
 }
 
 /* navbar */
@@ -24,37 +24,19 @@ h3 {
     background: rgb(250, 249, 249);
 }
 
-/* iconosnavbar */
-.icon {
-    background: transparent;
-    transition: all 0.4s linear;
-}
-
-.icon:hover {
-  transform: scale(1.3);
-}
-
-.loging,
-.logout {
-  background: transparent;
-  color: black;
-}
-
-/* logoCinnamoon */
-.loging,
-.logout {
-    background: transparent;
-    color: black;
+/* userName navbar */
+.userNavbar {
+    color: #428e9e;
 }
 
 /* logoCinnamoon */
 .img-logo {
-  color: #302c2c;
-  transition: all 0.4s linear;
+    color: #302c2c;
+    transition: all 0.4s linear;
 }
 
 .img-logo:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 /* home */
@@ -72,11 +54,11 @@ h3 {
 
 /* recipe-component */
 .card {
-  background: white;
-  width: 90%;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.4s linear;
+    background: white;
+    width: 90%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s linear;
 }
 
 .card:hover {
@@ -114,24 +96,24 @@ h3 {
 }
 
 .img-fav {
-  max-height: 35vh;
+    max-height: 35vh;
 }
 
 /* recipelist-component */
 .scroll-container {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  overflow-x: scroll;
-  scrollbar-width: thin;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow-x: scroll;
+    scrollbar-width: thin;
 }
 
 /* recipeDetail */
 .title-detail {
-  font-family: "Playfair Display", serif;
-  letter-spacing: 4px;
-  border-bottom: 1px solid rgb(197, 189, 189);
-  line-height: 50px;
-  color: black;
+    font-family: "Playfair Display", serif;
+    letter-spacing: 4px;
+    border-bottom: 1px solid rgb(197, 189, 189);
+    line-height: 50px;
+    color: black;
 }
 
 /* cardRecipeDetail */
@@ -154,8 +136,9 @@ h3 {
 }
 
 .box-title {
-  margin-top: 80px;
-=======
+    margin-top: 80px;
+}
+
 /* cardRecipeDetail */
 .card-detail .front {
     transform: perspective(600px) rotateY(0deg);
@@ -176,22 +159,22 @@ h3 {
 }
 
 .card-text3 {
-  font-family: "Raleway", sans-serif;
-  color: #000000;
-  font-size: 18px;
-  font-weight: 300;
+    font-family: "Raleway", sans-serif;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 300;
 }
 
 .card-detail {
-  margin-top: 70px;
-  width: 90%;
-  height: 90%;
-  position: relative;
+    margin-top: 70px;
+    width: 90%;
+    height: 90%;
+    position: relative;
 }
 
 .card-detail div {
-  backface-visibility: hidden;
-  transition: all 0.8s linear;
+    backface-visibility: hidden;
+    transition: all 0.8s linear;
 }
 
 .image-detail {
@@ -201,57 +184,57 @@ h3 {
 }
 
 .text-back {
-  color: #000000;
-  font-size: 18px;
-  font-weight: 500;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 ul {
-  text-align: center;
-  list-style: none;
+    text-align: center;
+    list-style: none;
 }
 
 .front,
 .back {
-  height: 100%;
-  width: 100%;
-  cursor: pointer;
-  overflow: hidden;
-  position: absolute;
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
 }
 
 .back {
-  background-color: white;
-  text-align: justify;
-  opacity: 0.5;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    background-color: white;
+    text-align: justify;
+    opacity: 0.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .title-back {
-  letter-spacing: 4px;
-  text-decoration: underline;
-  color: #000000;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 300;
+    letter-spacing: 4px;
+    text-decoration: underline;
+    color: #000000;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 300;
 }
 
 .time {
-  border-top: 1px solid rgb(64, 66, 64);
-  border-width: thin;
-  line-height: 50px;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 300;
+    border-top: 1px solid rgb(64, 66, 64);
+    border-width: thin;
+    line-height: 50px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 300;
 }
 
 /* trivia */
 .title-trivia {
-  letter-spacing: 4px;
-  border-bottom: 1px solid rgb(197, 189, 189);
-  line-height: 50px;
-  color: black;
+    letter-spacing: 4px;
+    border-bottom: 1px solid rgb(197, 189, 189);
+    line-height: 50px;
+    color: black;
 }
 
 .name-trivia {
@@ -259,47 +242,47 @@ ul {
 }
 
 .card-ingredient {
-  text-align: justify;
-  margin-top: 100px;
-  background: #f3f0f0;
-  box-shadow: 0px 15px 15px -15px rgba(116, 115, 115, 0.25);
-  overflow: hidden;
-  cursor: pointer;
+    text-align: justify;
+    margin-top: 100px;
+    background: #f3f0f0;
+    box-shadow: 0px 15px 15px -15px rgba(116, 115, 115, 0.25);
+    overflow: hidden;
+    cursor: pointer;
 }
 
 /* userLogin-component */
 #registration {
-  width: 100%;
+    width: 100%;
 }
 
 .input-reg {
-  border: none;
-  border-bottom: 1px solid rgb(161, 160, 160);
-  border-width: thin;
-  background: none;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  width: 70%;
-  outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(161, 160, 160);
+    border-width: thin;
+    background: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 70%;
+    outline: none;
 }
 
 .input-reg::placeholder {
-  opacity: 0.6;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 300;
+    opacity: 0.6;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 300;
 }
 
 .input-reg:focus {
-  border-bottom: 1px solid rgb(161, 160, 160);
-  box-shadow: 0px 15px 15px -15px rgba(116, 115, 115, 0.25);
-  transition: all 0.3s ease;
+    border-bottom: 1px solid rgb(161, 160, 160);
+    box-shadow: 0px 15px 15px -15px rgba(116, 115, 115, 0.25);
+    transition: all 0.3s ease;
 }
 
 /* recipeAll-component */
 #recipes {
-  margin-top: 80px;
+    margin-top: 80px;
 }
 
 /* imagenRecipeAll */
@@ -379,8 +362,19 @@ ul {
     background: #efe9ef;
 }
 
-.imgfooter {
-    height: 300px;
+.imgfooter1 {
+    background: #efe9ef;
+    /* height: 400px; */
+}
+
+.imgfooter2 {
+    background: rgb(250, 249, 249);
+    /* height: 400px; */
+}
+
+/* images footer */
+.img-footer {
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
 }
 
 /*iconosfooter */
@@ -529,8 +523,88 @@ ul {
     transform-origin: bottom left;
 }
 
-/*boton login*/
+/* button userLoging Navbar */
 
+.ctaLoging {
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+    font-weight: 800;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+}
+
+.ctaLoging:focus,
+.ctaLoging:hover {
+    color: rgba(90, 65, 26, 0.6);
+}
+
+.ctaLoging:focus:after,
+.ctaLoging:hover:after {
+    width: 100%;
+    left: 0%;
+}
+
+.ctaLoging:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: rgba(90, 65, 26, 0.6);
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+}
+
+/* boton modo noche Navbar */
+.ctamoon {
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+    font-weight: 800;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+}
+
+.ctamoon:focus,
+.ctamoon:hover {
+    color: #4094a5;
+}
+
+.ctamoon:focus:after,
+.ctamoon:hover:after {
+    width: 100%;
+    left: 0%;
+}
+
+.ctamoon:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #4094a5;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+}
+
+/*boton login*/
 .ctalogin {
     text-decoration: none;
     position: relative;
@@ -586,6 +660,65 @@ ul {
 }
 
 .ctalogin:active {
+    transform: scale(0.95);
+}
+
+/* button Crear receta , createRecipe*/
+.ctaNewrecipe {
+    text-decoration: none;
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+}
+
+.ctaNewrecipe:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #b1dae7;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+}
+
+.ctaNewrecipe span {
+    position: relative;
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: black;
+}
+
+.ctaNewrecipe svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: black;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+
+.ctaNewrecipe:hover:before {
+    width: 100%;
+    background: #428e9e;
+}
+
+.ctaNewrecipe:hover svg {
+    transform: translateX(0);
+}
+
+.ctaNewrecipe:active {
     transform: scale(0.95);
 }
 
@@ -749,3 +882,9 @@ ul {
 }
 
 /*input home buscador*/
+
+/* Form create Recipe */
+.formCreateRecipe {
+    background: white;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}

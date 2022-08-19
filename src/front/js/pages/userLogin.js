@@ -23,44 +23,46 @@ export const UserLogin = () => {
   };
 
   return (
-    <div className="col-12 text-center mt-5">
-      <h2>Accede</h2>
-      {error ? <h1>{error}</h1> : ""}
-      <div>
-        <div className="row">
-          <form onSubmit={handleSubmit} className="form" id="registration">
-            <div className="col-12 text-center mt-4 mb-3">
-              <input
-                className="input-reg"
-                name="email"
-                value={email}
-                placeholder=" Email"
-                autoComplete="off"
-                type="text"
-                onChange={(event) => setEmail(event.target.value)}
-              />
-            </div>
-            <div className="col-12 text-center mb-5">
-              <input
-                className="input-reg"
-                name="Password"
-                value={password}
-                placeholder=" contraseña"
-                autoComplete="off"
-                type="password"
-                onChange={(event) => setPassword(event.target.value)}
-              />
-            </div>
-            <div className="col-12 text-center mb-3">
-              <button class="ctalogin">
-                <span>Enviar</span>
-                <svg viewBox="0 0 13 10" height="10px" width="15px">
-                  <path d="M1,5 L11,5"></path>
-                  <polyline points="8 1 12 5 8 9"></polyline>
-                </svg>
-              </button>
-            </div>
-          </form>
+    <div className="logueo col-6">
+      <div className="col-12 text-center mt-5">
+        <h2>Accede</h2>
+        <div>
+          <div className="row">
+            <form onSubmit={handleSubmit} className="form" id="registration">
+              <div className="col-12 text-center mt-4 mb-3">
+                <input
+                  className="input-reg"
+                  name="email"
+                  value={email}
+                  placeholder=" Email"
+                  autoComplete="off"
+                  type="text"
+                  onChange={(event) => setEmail(event.target.value)}
+                />
+              </div>
+              <div className="col-12 text-center mb-5">
+                <input
+                  className="input-reg"
+                  name="Password"
+                  value={password}
+                  placeholder=" contraseña"
+                  autoComplete="off"
+                  type="password"
+                  onChange={(event) => setPassword(event.target.value)}
+                />
+                {error ? <p className="error">{error}</p> : ""}
+              </div>
+              <div className="col-12 text-center mb-3">
+                <button class="ctalogin">
+                  <span>Enviar</span>
+                  <svg viewBox="0 0 13 10" height="10px" width="15px">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>

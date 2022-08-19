@@ -5,8 +5,22 @@ import { Link } from "react-router-dom";
 const FavUser = () => {
   const { store, actions } = useContext(Context);
 
+  const style = {
+    backgroundImage: 'url("/imgfav.png")',
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    marginTop: "70px",
+    boxShadow: "0px 1px 15px rgba(0, 0, 0, 0.25)",
+    height: "70vh",
+    width: "100%",
+    position: "relative",
+    overflow: "hidden",
+    marginBottom: "20px",
+  };
+
   return (
-    <div className="position-relative" id="hero-container1">
+    <div className="position-relative" style={style}>
       <h3 className="hero-title text-center pt-5 mx-5">
         Mis recetas favoritas
       </h3>

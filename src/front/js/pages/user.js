@@ -22,12 +22,8 @@ export const User = () => {
         </div>
       </div>
       <div className="row">
-        <div className="registro col-6">
-          <UserRegistration />
-        </div>
-        <div className="logueo col-6">
-          <UserLogin />
-        </div>
+        <UserRegistration />
+        <UserLogin />
       </div>
     </div>
   );

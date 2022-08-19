@@ -11,7 +11,11 @@ export const RegistrationValidated = () => {
     <div className="container">
       <div className="row d-flex justify-content-center">
         <div className="col-6">
-          <h1>Everything went ok! please confirm email and log in</h1>
+          <h1>
+            <i class="fas fa-seedling"></i>Todo ha ido sobre ruedas
+            <i class="fas fa-seedling"></i>
+          </h1>
+          <h2>Por favor, inicia sesión para validar tu usuario</h2>
         </div>
       </div>
     </div>

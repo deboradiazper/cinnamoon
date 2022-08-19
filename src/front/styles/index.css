@@ -480,16 +480,6 @@ ul {
   transform: scale(0.95);
 }
 
-.registro {
-  border-width: 2px;
-  border-color: #000000;
-}
-
-.logueo {
-  border-width: 2px;
-  border-color: #000000;
-}
-
 /* button category */
 .ctaCategory {
   border: none;
@@ -739,13 +729,11 @@ ul {
 
 /*registro y logueo container border*/
 .registro {
-  border-width: 2px;
-  border-color: #000000;
+  border: 2px solid black;
 }
 
 .logueo {
-  border-width: 2px;
-  border-color: #000000;
+  border: 2px solid black;
 }
 
 /*input home buscador*/

@@ -29,11 +29,11 @@ export const UserRegistration = () => {
   };
 
   //form submit
-  const onSubmit = (data, e) => {
+  const onSubmit = (data) => {
     // e.preventDefault();
     addInfo(data);
     if (data) {
-      navigate("/");
+      navigate("/registrationValidated");
     }
   };
 
@@ -60,7 +60,7 @@ export const UserRegistration = () => {
   };
 
   return (
-    <div>
+    <div className="registro col-6">
       <div className="registration col-12 mb-3 mt-5 text-center">
         <h2>Regístrate</h2>
       </div>
@@ -87,8 +87,8 @@ export const UserRegistration = () => {
               })}
               onChange={handleInputChange}
             />
+            <p>{errors.name?.message}</p>
           </div>
-          <p>{errors.name?.message}</p>
 
           <div className="col-12  mb-3 text-center">
             <input
@@ -106,8 +106,8 @@ export const UserRegistration = () => {
               })}
               onChange={handleInputChange}
             />
+            <p>{errors.name?.message}</p>
           </div>
-          <p>{errors.name?.message}</p>
 
           <div className="col-12 mb-3 text-center">
             <input
@@ -119,17 +119,17 @@ export const UserRegistration = () => {
               {...register("email", {
                 required: {
                   value: true,
-                  message: "Por favor, introduce un email",
+                  message: "Por favor, introduce un email válido",
                 },
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                  message: "El formato no es correcto",
+                  message: "Por favor, introduce un email válido",
                 },
               })}
               onChange={handleInputChange}
             />
+            <p>{errors.email?.message}</p>
           </div>
-          <p>{errors.email?.message}</p>
 
           <div className="col-12  mb-5 text-center">
             <input
@@ -141,7 +141,7 @@ export const UserRegistration = () => {
               {...register("password", {
                 required: {
                   value: true,
-                  message: "Por favor, introduce una contraseña",
+                  message: "Por favor, introduce una contraseña válida",
                 },
                 minLength: {
                   value: 6,
@@ -150,8 +150,8 @@ export const UserRegistration = () => {
               })}
               onChange={handleInputChange}
             />
+            <p>{errors.password?.message}</p>
           </div>
-          <p>{errors.password?.message}</p>
 
           <div className="col-12  mb-3 text-center">
             <button className="ctaregister">

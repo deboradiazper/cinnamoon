@@ -34,36 +34,35 @@ export const Navbar = () => {
         <div className="icons d-flex justify-content-around align-items-center">
           {store.auth ? (
             <div>
-              <h5 className="px-5">Hola {store.user}</h5>
+              <p className="userNavbar text-3 px-2 mt-3"> Hola {store.user} </p>
             </div>
           ) : (
             ""
           )}
-          <i className="icon far fa-moon me-3"></i>
-
+          <button className="ctamoon mx-4"> Moon </button>
           {store.auth ? (
             <button
-              className="logout border-0"
+              className="ctaLoging"
               onClick={() => {
                 actions.logout();
                 actions.loadRecipe();
                 navigate("/");
               }}
             >
-              <i className="fas fa-user-times "></i>
+              Salir
             </button>
           ) : (
             <button
-              className="loging border-0"
+              className="ctaLoging"
               onClick={() => {
                 isAuthenticate();
               }}
             >
-              <i className="icon far fa-user me-2 text-black"></i>
+              Area Usuario
             </button>
-          )}
-        </div>
-      </div>
+          )}{" "}
+        </div>{" "}
+      </div>{" "}
     </nav>
   );
 };

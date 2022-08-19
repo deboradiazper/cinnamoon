@@ -5,6 +5,8 @@ from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Recipes, Ingredients, Trivia, Categories, RecipesFavorites, IngredientsFavorites, RecipeCategories, RecipesIngredients
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
+import cloudinary 
+import cloudinary.uploader
 
 
 api = Blueprint('api', __name__)
@@ -117,6 +119,24 @@ def create_recipes():
     db.session.commit()
     return jsonify({"message": "everything ok"}), 200
 
+
+@api.route('/addrecipes', methods=['POST'])
+@jwt_required()
+def add_recipes():
+    user_id = get_jwt_identity()
+    data = request.form
+    cloudinary.config( 
+        cloud_name = "dxl1qnyjk", 
+        api_key = "355537951832466", 
+        api_secret = "jgVwtqtSvAqiAfI8drww04j2ySs"
+    )
+    print(request.files.to_dict())
+    image = request.files["image"]
+    uploadresult = cloudinary.uploader.upload(image)
+    recipe = Recipes(name=data.get('name'), description=data.get('description'), image = uploadresult["secure_url"], cookingtime=data.get('cookingtime'), user_id=user_id)
+    db.session.add(recipe)
+    db.session.commit()
+    return jsonify({"message": "recipe added"}), 200
 
 
 #IngredientsFavorites

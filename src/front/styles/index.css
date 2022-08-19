@@ -4,736 +4,875 @@
 /* body */
 html,
 body {
-  /* background: #f6f4f4; */
-  background: rgb(250, 249, 249);
-  width: 100%;
-  font-family: "Raleway", sans-serif;
+    /* background: #f6f4f4; */
+    background: rgb(250, 249, 249);
+    width: 100%;
+    font-family: "Raleway", sans-serif;
 }
 
 h3 {
-  font-family: "Playfair Display", serif;
+    font-family: "Playfair Display", serif;
 }
 
 .text3 {
-  font-family: "Raleway", sans-serif;
-  font-size: 20px;
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
 }
 
 /* navbar */
 .navbar {
-  background: rgb(250, 249, 249);
+    background: rgb(250, 249, 249);
 }
 
-/* iconosnavbar */
-.icon {
-  background: transparent;
-  transition: all 0.4s linear;
-}
-
-.icon:hover {
-  transform: scale(1.3);
-}
-
-.loging,
-.logout {
-  background: transparent;
-  color: black;
-}
-
-/* logoCinnamoon */
-.loging,
-.logout {
-  background: transparent;
-  color: black;
+/* userName navbar */
+.userNavbar {
+    color: #428e9e;
 }
 
 /* logoCinnamoon */
 .img-logo {
-  color: #302c2c;
-  transition: all 0.4s linear;
+    color: #302c2c;
+    transition: all 0.4s linear;
 }
 
 .img-logo:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 /* home */
 .title-all {
-  letter-spacing: 4px;
-  font-family: "Raleway", serif;
-  border-bottom: 1px solid black;
-  line-height: 50px;
+    letter-spacing: 4px;
+    font-family: "Raleway", serif;
+    border-bottom: 1px solid black;
+    line-height: 50px;
 }
 
 .title-all2 {
-  letter-spacing: 4px;
-  font-family: "Raleway", serif;
+    letter-spacing: 4px;
+    font-family: "Raleway", serif;
 }
 
 /* recipe-component */
 .card {
-  background: white;
-  width: 90%;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.4s linear;
+    background: white;
+    width: 90%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s linear;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
 }
 
 .img-recipe {
-  width: 100%;
-  max-width: 460px;
-  height: 300px;
+    width: 100%;
+    max-width: 460px;
+    height: 300px;
 }
 
 /* iconosRecipe */
 .love2,
 .star {
-  color: #d9d9d9;
-  padding-right: 10px;
+    color: #d9d9d9;
+    padding-right: 10px;
 }
 
 .love:focus {
-  outline: none;
-  box-shadow: none;
+    outline: none;
+    box-shadow: none;
 }
 
 .love2:focus {
-  outline: none;
-  box-shadow: none;
+    outline: none;
+    box-shadow: none;
 }
 
 /* recipefav-component */
 .recipe,
 .recipeFav {
-  padding-top: 30px;
+    padding-top: 30px;
 }
 
 .img-fav {
-  max-height: 35vh;
+    max-height: 35vh;
 }
 
 /* recipelist-component */
 .scroll-container {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  overflow-x: scroll;
-  scrollbar-width: thin;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow-x: scroll;
+    scrollbar-width: thin;
 }
 
 /* recipeDetail */
 .title-detail {
-  font-family: "Playfair Display", serif;
-  letter-spacing: 4px;
-  border-bottom: 1px solid rgb(197, 189, 189);
-  line-height: 50px;
-  color: black;
+    font-family: "Playfair Display", serif;
+    letter-spacing: 4px;
+    border-bottom: 1px solid rgb(197, 189, 189);
+    line-height: 50px;
+    color: black;
 }
 
 /* cardRecipeDetail */
 .card-detail .front {
-  transform: perspective(600px) rotateY(0deg);
+    transform: perspective(600px) rotateY(0deg);
 }
 
 .card-detail .back {
-  transform: perspective(600px) rotateY(180deg);
+    transform: perspective(600px) rotateY(180deg);
 }
 
 .card-detail:hover .front {
-  transform: perspective(600px) rotateY(180deg);
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: perspective(600px) rotateY(180deg);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
 }
 
 .card-detail:hover .back {
-  transform: perspective(600px) rotateY(360deg);
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: perspective(600px) rotateY(360deg);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
 }
 
 .box-title {
-  margin-top: 80px;
+    margin-top: 80px;
 }
+
 /* cardRecipeDetail */
 .card-detail .front {
-  transform: perspective(600px) rotateY(0deg);
+    transform: perspective(600px) rotateY(0deg);
 }
 
 .card-detail .back {
-  transform: perspective(600px) rotateY(180deg);
+    transform: perspective(600px) rotateY(180deg);
 }
 
 .card-detail:hover .front {
-  transform: perspective(600px) rotateY(180deg);
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: perspective(600px) rotateY(180deg);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
 }
 
 .card-detail:hover .back {
-  transform: perspective(600px) rotateY(360deg);
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: perspective(600px) rotateY(360deg);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
 }
 
 .card-text3 {
-  font-family: "Raleway", sans-serif;
-  color: #000000;
-  font-size: 18px;
-  font-weight: 300;
+    font-family: "Raleway", sans-serif;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 300;
 }
 
 .card-detail {
-  margin-top: 70px;
-  width: 90%;
-  height: 90%;
-  position: relative;
+    margin-top: 70px;
+    width: 90%;
+    height: 90%;
+    position: relative;
 }
 
 .card-detail div {
-  backface-visibility: hidden;
-  transition: all 0.8s linear;
+    backface-visibility: hidden;
+    transition: all 0.8s linear;
 }
 
 .image-detail {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .text-back {
-  color: #000000;
-  font-size: 18px;
-  font-weight: 500;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 ul {
-  text-align: center;
-  list-style: none;
+    text-align: center;
+    list-style: none;
 }
 
 .front,
 .back {
-  height: 100%;
-  width: 100%;
-  cursor: pointer;
-  overflow: hidden;
-  position: absolute;
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
 }
 
 .back {
-  background-color: white;
-  text-align: justify;
-  opacity: 0.5;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    background-color: white;
+    text-align: justify;
+    opacity: 0.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .title-back {
-  letter-spacing: 4px;
-  text-decoration: underline;
-  color: #000000;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 300;
+    letter-spacing: 4px;
+    text-decoration: underline;
+    color: #000000;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 300;
 }
 
 .time {
-  border-top: 1px solid rgb(64, 66, 64);
-  border-width: thin;
-  line-height: 50px;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 300;
+    border-top: 1px solid rgb(64, 66, 64);
+    border-width: thin;
+    line-height: 50px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 300;
 }
 
 /* trivia */
 .title-trivia {
-  letter-spacing: 4px;
-  border-bottom: 1px solid rgb(197, 189, 189);
-  line-height: 50px;
-  color: black;
+    letter-spacing: 4px;
+    border-bottom: 1px solid rgb(197, 189, 189);
+    line-height: 50px;
+    color: black;
 }
 
 .name-trivia {
-  color: #3c3939;
+    color: #3c3939;
 }
 
 .card-ingredient {
-  text-align: justify;
-  margin-top: 100px;
-  background: #f3f0f0;
-  box-shadow: 0px 15px 15px -15px rgba(116, 115, 115, 0.25);
-  overflow: hidden;
-  cursor: pointer;
+    text-align: justify;
+    margin-top: 100px;
+    background: #f3f0f0;
+    box-shadow: 0px 15px 15px -15px rgba(116, 115, 115, 0.25);
+    overflow: hidden;
+    cursor: pointer;
 }
 
 /* userLogin-component */
 #registration {
-  width: 100%;
+    width: 100%;
 }
 
 .input-reg {
-  border: none;
-  border-bottom: 1px solid rgb(161, 160, 160);
-  border-width: thin;
-  background: none;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  width: 70%;
-  outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(161, 160, 160);
+    border-width: thin;
+    background: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 70%;
+    outline: none;
 }
 
 .input-reg::placeholder {
-  opacity: 0.6;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 300;
+    opacity: 0.6;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 300;
 }
 
 .input-reg:focus {
-  border-bottom: 1px solid rgb(161, 160, 160);
-  box-shadow: 0px 15px 15px -15px rgba(116, 115, 115, 0.25);
-  transition: all 0.3s ease;
+    border-bottom: 1px solid rgb(161, 160, 160);
+    box-shadow: 0px 15px 15px -15px rgba(116, 115, 115, 0.25);
+    transition: all 0.3s ease;
 }
 
 /* recipeAll-component */
 #recipes {
-  margin-top: 80px;
+    margin-top: 80px;
 }
 
 /* imagenRecipeAll */
 .categories {
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
 }
 
 /* creacteRecipe-component */
 .containerForm {
-  border-radius: 10%;
-  border-color: rgba(135, 132, 132, 0.9);
-  background-color: white;
-  font-size: 12px;
-  margin-top: 20px;
+    border-radius: 10%;
+    border-color: rgba(135, 132, 132, 0.9);
+    background-color: white;
+    font-size: 12px;
+    margin-top: 20px;
 }
 
 .containerForm p {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 ::placeholder {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 400;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
 }
 
 /*pagina usuario*/
 /* favUser */
 #hero-container1 {
-  background-image: url("../img/imgfav.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: 70px;
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
-  height: 70vh;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 20px;
+    background-image: url("../img/imgfav.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 70px;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    height: 70vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
 /* TableUser */
 .hero-container2 {
-  margin-top: 70px;
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
-  height: 70vh;
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 20px;
+    margin-top: 70px;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    height: 70vh;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .hero-title {
-  letter-spacing: 4px;
-  border-bottom: 1px solid rgb(148, 142, 142);
+    letter-spacing: 4px;
+    border-bottom: 1px solid rgb(148, 142, 142);
 }
 
 .hero-container2 {
-  margin-top: 70px;
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
-  height: 70vh;
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 20px;
+    margin-top: 70px;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    height: 70vh;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
 /* divfooter */
 .diverse {
-  background: rgba(158, 123, 67, 0.6);
+    background: rgba(158, 123, 67, 0.6);
 }
 
 .diverse2 {
-  background: #428e9e;
+    background: #428e9e;
 }
 
 .diverse3 {
-  background: #efe9ef;
+    background: #efe9ef;
 }
 
-.imgfooter {
-  height: 300px;
+.imgfooter1 {
+    background: #efe9ef;
+    /* height: 400px; */
+}
+
+.imgfooter2 {
+    background: rgb(250, 249, 249);
+    /* height: 400px; */
+}
+
+/* images footer */
+.img-footer {
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
 }
 
 /*iconosfooter */
 .instagram,
 .tweet,
 .pinterest {
-  height: 20px;
-  width: 20px;
+    height: 20px;
+    width: 20px;
 }
 
 /* button Detalle */
 .buttonDetail {
-  font-family: "Raleway", sans-serif;
-  position: relative;
-  border-radius: 5px;
-  display: inline-block;
-  text-align: center;
-  padding: 0px 5px;
-  font-size: 16px;
-  letter-spacing: 1px;
-  text-decoration: none;
-  color: #151516;
-  font-weight: 500;
-  background: white;
-  cursor: pointer;
-  transition: ease-out 0.5s;
-  border: 2px solid white;
-  box-shadow: inset 0 0 0 0 #0d0d0e;
+    font-family: "Raleway", sans-serif;
+    position: relative;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    padding: 0px 5px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #151516;
+    font-weight: 500;
+    background: white;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid white;
+    box-shadow: inset 0 0 0 0 #0d0d0e;
 }
 
 .buttonDetail:hover {
-  color: white;
-  box-shadow: inset 0 -100px 0 0 #0d0d0e;
-  border: 2px solid #0d0d0e;
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #0d0d0e;
+    border: 2px solid #0d0d0e;
 }
 
 .buttonDetail:active {
-  transform: scale(0.9);
+    transform: scale(0.9);
 }
 
 /*boton registro*/
 .ctaregister {
-  text-decoration: none;
-  position: relative;
-  margin: auto;
-  padding: 12px 18px;
-  transition: all 0.2s ease;
-  border: none;
-  background: none;
+    text-decoration: none;
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
 }
 
 .ctaregister:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  border-radius: 50px;
-  background: #b1dae7;
-  width: 45px;
-  height: 45px;
-  transition: all 0.3s ease;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #b1dae7;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
 }
 
 .ctaregister span {
-  position: relative;
-  font-family: "Raleway", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: black;
+    position: relative;
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: black;
 }
 
 .ctaregister svg {
-  position: relative;
-  top: 0;
-  margin-left: 10px;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke: black;
-  stroke-width: 2;
-  transform: translateX(-5px);
-  transition: all 0.3s ease;
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: black;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
 }
 
 .ctaregister:hover:before {
-  width: 100%;
-  background: #428e9e;
+    width: 100%;
+    background: #428e9e;
 }
 
 .ctaregister:hover svg {
-  transform: translateX(0);
+    transform: translateX(0);
 }
 
 .ctaregister:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }
 
 /* button category */
 .ctaCategory {
-  border: none;
-  background: none;
-  text-decoration: none;
+    border: none;
+    background: none;
+    text-decoration: none;
 }
 
 .ctaCategory span {
-  padding-bottom: 7px;
-  letter-spacing: 4px;
-  font-size: 18px;
-  padding-right: 15px;
-  text-transform: uppercase;
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 18px;
+    padding-right: 15px;
+    text-transform: uppercase;
 }
 
 .hover-underline-animation {
-  position: relative;
-  color: black;
-  padding-bottom: 20px;
+    position: relative;
+    color: black;
+    padding-bottom: 20px;
 }
 
 .hover-underline-animation:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 1.5px;
-  bottom: 0;
-  left: 0;
-  background-color: #000000;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
 }
 
 .ctaCategory:hover .hover-underline-animation:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* button userLoging Navbar */
+
+.ctaLoging {
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+    font-weight: 800;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+}
+
+.ctaLoging:focus,
+.ctaLoging:hover {
+    color: rgba(90, 65, 26, 0.6);
+}
+
+.ctaLoging:focus:after,
+.ctaLoging:hover:after {
+    width: 100%;
+    left: 0%;
+}
+
+.ctaLoging:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: rgba(90, 65, 26, 0.6);
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+}
+
+/* boton modo noche Navbar */
+.ctamoon {
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+    font-weight: 800;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+}
+
+.ctamoon:focus,
+.ctamoon:hover {
+    color: #4094a5;
+}
+
+.ctamoon:focus:after,
+.ctamoon:hover:after {
+    width: 100%;
+    left: 0%;
+}
+
+.ctamoon:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #4094a5;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
 }
 
 /*boton login*/
-
 .ctalogin {
-  text-decoration: none;
-  position: relative;
-  margin: auto;
-  padding: 12px 18px;
-  transition: all 0.2s ease;
-  border: none;
-  background: none;
+    text-decoration: none;
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
 }
 
 .ctalogin:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  border-radius: 50px;
-  background: #b1dae7;
-  width: 45px;
-  height: 45px;
-  transition: all 0.3s ease;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #b1dae7;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
 }
 
 .ctalogin span {
-  position: relative;
-  font-family: "Raleway", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: black;
+    position: relative;
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: black;
 }
 
 .ctalogin svg {
-  position: relative;
-  top: 0;
-  margin-left: 10px;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke: black;
-  stroke-width: 2;
-  transform: translateX(-5px);
-  transition: all 0.3s ease;
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: black;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
 }
 
 .ctalogin:hover:before {
-  width: 100%;
-  background: #428e9e;
+    width: 100%;
+    background: #428e9e;
 }
 
 .ctalogin:hover svg {
-  transform: translateX(0);
+    transform: translateX(0);
 }
 
 .ctalogin:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+/* button Crear receta , createRecipe*/
+.ctaNewrecipe {
+    text-decoration: none;
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+}
+
+.ctaNewrecipe:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #b1dae7;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+}
+
+.ctaNewrecipe span {
+    position: relative;
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: black;
+}
+
+.ctaNewrecipe svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: black;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+
+.ctaNewrecipe:hover:before {
+    width: 100%;
+    background: #428e9e;
+}
+
+.ctaNewrecipe:hover svg {
+    transform: translateX(0);
+}
+
+.ctaNewrecipe:active {
+    transform: scale(0.95);
 }
 
 /*botonreceta home*/
 .botonreceta {
-  padding: 0;
-  margin: 0;
-  border: none;
-  background: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
 }
 
 .botonreceta {
-  --primary-color: #111;
-  --hovered-color: #000000;
-  position: relative;
-  display: flex;
-  font-weight: 600;
-  font-size: 20px;
-  gap: 0.5rem;
-  align-items: center;
+    --primary-color: #111;
+    --hovered-color: #000000;
+    position: relative;
+    display: flex;
+    font-weight: 600;
+    font-size: 20px;
+    gap: 0.5rem;
+    align-items: center;
 }
 
 .botonreceta p {
-  margin: 0;
-  position: relative;
-  font-size: 20px;
-  color: var(--primary-color);
+    margin: 0;
+    position: relative;
+    font-size: 20px;
+    color: var(--primary-color);
 }
 
 .botonreceta::after {
-  position: absolute;
-  content: "";
-  width: 0;
-  left: 0;
-  bottom: -7px;
-  background: var(--hovered-color);
-  height: 2px;
-  transition: 0.3s ease-out;
+    position: absolute;
+    content: "";
+    width: 0;
+    left: 0;
+    bottom: -7px;
+    background: var(--hovered-color);
+    height: 2px;
+    transition: 0.3s ease-out;
 }
 
 .botonreceta p::before {
-  position: absolute;
-  /*   box-sizing: border-box; */
-  content: "";
-  width: 0%;
-  inset: 0;
-  color: var(--hovered-color);
-  overflow: hidden;
-  transition: 0.3s ease-out;
+    position: absolute;
+    /*   box-sizing: border-box; */
+    content: "";
+    width: 0%;
+    inset: 0;
+    color: var(--hovered-color);
+    overflow: hidden;
+    transition: 0.3s ease-out;
 }
 
 .botonreceta:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
 .botonreceta:hover p::before {
-  width: 100%;
+    width: 100%;
 }
 
 .botonreceta:hover svg {
-  transform: translateX(4px);
-  color: var(--hovered-color);
+    transform: translateX(4px);
+    color: var(--hovered-color);
 }
 
 .botonreceta svg {
-  color: var(--primary-color);
-  transition: 0.2s;
-  position: relative;
-  width: 15px;
-  transition-delay: 0.2s;
+    color: var(--primary-color);
+    transition: 0.2s;
+    position: relative;
+    width: 15px;
+    transition-delay: 0.2s;
 }
 
 /* button favUser ,button tableUser*/
 .ctaUser {
-  text-decoration: none;
-  position: relative;
-  margin: auto;
-  padding: 12px 18px;
-  transition: all 0.2s ease;
-  border: none;
-  background: none;
+    text-decoration: none;
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
 }
 
 .ctaUser:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  border-radius: 50px;
-  background: #b1dae7;
-  width: 45px;
-  height: 45px;
-  transition: all 0.3s ease;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #b1dae7;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
 }
 
 .ctaUser span {
-  position: relative;
-  font-family: "Ubuntu", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: black;
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: black;
 }
 
 .ctaUser svg {
-  position: relative;
-  top: 0;
-  margin-left: 10px;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke: black;
-  stroke-width: 2;
-  transform: translateX(-5px);
-  transition: all 0.3s ease;
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: black;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
 }
 
 .ctaUser:hover:before {
-  width: 100%;
-  background: #428e9e;
+    width: 100%;
+    background: #428e9e;
 }
 
 .ctaUser:hover svg {
-  transform: translateX(0);
+    transform: translateX(0);
 }
 
 .ctaUser:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }
 
 /*scrollbar*/
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 6px;
+    width: 10px;
+    height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background: #428e9e;
+    border-radius: 5px;
+    background: #428e9e;
 }
 
 ::-webkit-scrollbar-corner {
-  background: #428e9e;
+    background: #428e9e;
 }
 
 /*registro y logueo container border*/
 .registro {
-  border: 2px solid black;
+    border: 2px solid black;
 }
 
 .logueo {
-  border: 2px solid black;
+    border: 2px solid black;
 }
 
 /*input home buscador*/
+
+/* Form create Recipe */
+.formCreateRecipe {
+    background: white;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}

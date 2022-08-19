@@ -135,7 +135,7 @@ export const Home = () => {
                 className="ctaCategory pe-5"
               >
                 <span className="hover-underline-animation">
-                  {category.name}{" "}
+                  {category.name}
                 </span>
                 <path
                   id="Path_10"

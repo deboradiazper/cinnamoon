@@ -34,7 +34,7 @@ export const Navbar = () => {
         <div className="icons d-flex justify-content-around align-items-center">
           {store.auth ? (
             <div>
-              <h5 className="px-5">Hola {store.user}</h5>
+              <h5 className="px-5">Hola, {store.user}</h5>
             </div>
           ) : (
             ""

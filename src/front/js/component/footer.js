@@ -6,7 +6,9 @@ export const Footer = () => {
   return (
     <div className="container-fluid p-0 mt-5">
       <footer className="footer mt-auto py-3 text-center pt-4">
-        <p>Síguenos en:</p>
+        <p>
+          <strong>Síguenos en las redes sociales</strong>
+        </p>
         <div className="iconsFooter">
           <img
             className="instagram mx-4 img-fluid"

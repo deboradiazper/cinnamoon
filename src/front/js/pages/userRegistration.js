@@ -61,9 +61,7 @@ export const UserRegistration = () => {
 
   return (
     <div className="registro col-6">
-      <div className="registration col-12 mb-3 mt-5 text-center">
-        <h2>Regístrate</h2>
-      </div>
+      <div className="registration col-12 mb-3 mt-5 text-center"></div>
 
       <div className="row">
         <form
@@ -71,9 +69,10 @@ export const UserRegistration = () => {
           onSubmit={handleSubmit(onSubmit)}
           id="registration"
         >
-          <div className="col-12 mb-3 mt-4 text-center">
+          <div className="col-12 mb-3 mt-1 text-center">
+            <p>¿No tienes una cuenta?</p>
             <input
-              className="input-reg"
+              className="input-reg mt-1"
               name="name"
               placeholder=" Nombre"
               autoComplete="off"

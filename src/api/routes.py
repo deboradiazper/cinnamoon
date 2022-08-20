@@ -1,6 +1,7 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
+import os
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Recipes, Ingredients, Trivia, Categories, RecipesFavorites, IngredientsFavorites, RecipeCategories, RecipesIngredients
 from api.utils import generate_sitemap, APIException
@@ -126,9 +127,9 @@ def add_recipes():
     user_id = get_jwt_identity()
     data = request.form
     cloudinary.config( 
-        cloud_name = "dxl1qnyjk", 
-        api_key = "355537951832466", 
-        api_secret = "jgVwtqtSvAqiAfI8drww04j2ySs"
+        cloud_name = os.getenv('cloud_name'), 
+        api_key = os.getenv('api_key'), 
+        api_secret = os.getenv('api_secret'),
     )
     print(request.files.to_dict())
     image = request.files["image"]

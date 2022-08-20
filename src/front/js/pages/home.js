@@ -8,6 +8,8 @@ import glutenfree from "../../img/glutenfree.png";
 import lactosefree from "../../img/lactosefree.png";
 import sugarfree from "../../img/sugarfree.png";
 import vegana from "../../img/vegana.png";
+import footerimg from "../../img/footerimg.png";
+import footerimg2 from "../../img/footerimg2.png";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -127,7 +129,7 @@ export const Home = () => {
           </div>
         </div>
 
-        <div className=" col-12 my-5 d-flex justify-content-center">
+        <div className="col-12 my-5 d-flex justify-content-center">
           {store.categories.map((category) => {
             return (
               <Link
@@ -188,6 +190,121 @@ export const Home = () => {
           <h3 className="title-all">RECETAS POPULARES</h3>
         </div>
         <RecipeFavList />
+      </div>
+      <div className="row mt-5">
+        <div
+          className="diverse col-md-6 d-flex align-items-start text-center pt-2"
+          style={{ minHeight: "350px" }}
+        >
+          <div className="textFooter">
+            <h4 className="title-all2 pt-4 px-3 text-center">
+              RECETAS PARA TODOS
+            </h4>
+            <ul className="py-2 px-2">
+              <li>
+                El <b>calcio que mejor se absorbes</b> no es el de los lácteo,
+                sino el de las algas.
+              </li>
+              <li>
+                <b>Eliminar el gluten</b>de tu dieta mejora tu salud intestinal.
+              </li>
+              <li>
+                Es posible <b>endulzar tus platos</b> con alimentos que tienen
+                azúcar en su composición
+              </li>
+              <li>
+                Una alimentación <b>vegana</b> puede ser rica en proteínas de
+                origen vegetal.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          className="imgfooter1 col-md-6 p-0 position-relative"
+          style={{ minHeight: "350px" }}
+        >
+          <div className="position-absolute top-0 start-50 translate-middle-x mt-5">
+            <img
+              src={footerimg}
+              className="img-footer"
+              alt="img-footer"
+              width="300 vw"
+              height="auto"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="row">
+        <div
+          className="imgfooter2 col-md-6 p-0 position-relative"
+          style={{ minHeight: "350px" }}
+        >
+          <div className="position-absolute bottom-0 start-50 translate-middle-x mb-5">
+            <img
+              src={footerimg2}
+              className="img-footer"
+              alt="img-footer"
+              width="300 vw"
+              height="auto"
+            />
+          </div>
+        </div>
+        <div
+          className="diverse2 col-md-6 d-flex align-items-end text-center pb-2"
+          style={{ minHeight: "350px" }}
+        >
+          <div className="textFooter">
+            <h4 className="title-all2 pt-4 px-3">
+              ALIMENTACION BASADA EN INGREDIENTES VEGETALES
+            </h4>
+            <p className="py-2 px-2">
+              <b>Okinawa</b>,es una isla en el sur de Japón que se ha dado a
+              conocer por tener la esperanza de vida más elevada del mundo. Su
+              alimentación fundamentada en <b>productos de origen vegetal</b> y
+              pobre en acidos grasos parece ser la clave de su
+              <b>longevidad</b>.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="diverse3 text-center"
+        id="diverse3"
+        width="100%"
+        height="350"
+      >
+        <div className="row d-flex justify-content-around">
+          <div className="textAboutus col-md-3 my-4 text-center p-3">
+            <h5 className="px-2 mt-2">NUESTROS VALORES</h5>
+            <p className="px-2 py-2">
+              En CINNAMOON somos partidarios de la inclusividad. Es por eso que
+              contamos con recetas para todas aquellas personas que, por una
+              cuestión personal o de salud, han renunciado a comer ciertos
+              alimentos. Partimos de una base vegetariana y contamos con un
+              amplio banco de recetas sin gluten, sin lactosa y sin azúcar.
+              Nuestra intención es que haya muchas más.
+            </p>
+          </div>
+
+          <div className="textAboutus col-md-3 my-4 text-center p-3">
+            <h5 className="px-2 mt-2">SOMOS LO QUE COMEMOS</h5>
+            <p className="px-2 py-2">
+              Tan importante es alimentarse bien como hacerlo de forma
+              consciente. Es por eso que nos gusta aportar información acerca de
+              los ingredientes que utilizamos para las recetas. Como cocinar nos
+              apasiona, también nos apasiona la historia de los ingredientes.
+            </p>
+          </div>
+          <div className="textAboutus col-md-3 my-4 text-center p-3">
+            <h5 className="px-2 mt-2">CRECER EN COMUNIDAD</h5>
+            <p className="px-2 py-2">
+              No queremos ser únicamente una página web de recetas. Nuestro
+              objetivo es crear una comunidad en la que cualquier persona afín a
+              nuestros valores pueda aportar su granito de arena. Compartir es
+              vivir.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
+import cinnamoon from "../../img/cinnamoon.png";
 
 const CreateRecipe = () => {
     const { store, actions } = useContext(Context);
@@ -10,7 +11,7 @@ const CreateRecipe = () => {
         setNewrecipe({ ...newrecipe, [event.target.name]: event.target.value });
     };
     const handleSubmit = (event) => {
-        event.preventDefault()
+        event.preventDefault();
         const formData = new FormData(event.target);
         //for (const key in newrecipe) {
         //  formData.append(key, newrecipe[key])
@@ -25,27 +26,48 @@ const CreateRecipe = () => {
             },
         })
             .then((data) => {
-                return data.json()
+                return data.json();
             })
             .then((data) => {
-                console.log(data)
-            })
-
+                console.log(data);
+            });
     };
     const handleFileInput = (e) => {
-        setFile(e.target.files[0])
-    }
+        setFile(e.target.files[0]);
+    };
 
     return (
         <>
             <div className="col-12 my-3 pt-5">
                 <div className="d-flex justify-content-center flex-column">
-                    <h3 className="text-center">Gracias {store.user}</h3>
+                    <h3 className="text-center">Gracias</h3>
                     <p className="text-3 text-center">
                         Por hacer crecer nuesra comunidad. Con tu aportación más personas
                         podrán disfrutar de una alimentación más adaptada, saludable y
                         variada.
                     </p>
+                </div>
+            </div>
+            <div className="col-12 d-flex justify-content-center">
+                <div class="card-newrecipe">
+                    <div class="header">
+                        <div class="img-box d-flex justify-content-center">
+                            <img
+                                src={cinnamoon}
+                                className="img-logo"
+                                alt="logo"
+                                width="70"
+                                height="70"
+                            />
+                        </div>
+                        <p class="text-3 titleNewrecipe">¿Es tu primera vez? Lee esto..</p>
+                    </div>
+
+                    <div class="content pt-1 pb-3 px-2" >
+                        <p>
+                            En Cinnamoon valoramos mucho tu tiempo, es por ello que hemos creado este senciilo formulario donde puedes añadir en cada campo información sobre tu receta. Es muy importante que selecciones bien la categoria, puesto que asi otros usuarios interesados podrán acceder a tu receta de manera sencila. Recuerda subir una imagen en el formato y medidas aceptadas y no olvides darle click al botón de añadir y ¡LISTO!, tu receta ya es visible para el resto de la comunidad.
+                        </p>
+                    </div>
                 </div>
             </div>
             <div className="col-12 my-5">
@@ -158,7 +180,6 @@ const CreateRecipe = () => {
                             </button>
                         </div>
                     </form>
-
                 </div>
             </div>
         </>

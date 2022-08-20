@@ -20,7 +20,7 @@ const FavUser = () => {
   };
 
   return (
-    <div className="position-relative" style={style}>
+    <div className="position-relative my-5" style={style}>
       <h3 className="hero-title text-center pt-5 mx-5">
         Mis recetas favoritas
       </h3>

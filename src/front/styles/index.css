@@ -53,6 +53,7 @@ h3 {
 }
 
 /* recipe-component */
+/* card recipe */
 .card {
     background: white;
     width: 90%;
@@ -289,24 +290,6 @@ ul {
 .categories {
     width: 20px;
     height: 20px;
-}
-
-/* creacteRecipe-component */
-.containerForm {
-    border-radius: 10%;
-    border-color: rgba(135, 132, 132, 0.9);
-    background-color: white;
-    font-size: 12px;
-    margin-top: 20px;
-}
-
-.containerForm p {
-    font-size: 14px;
-}
-
-::placeholder {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 400;
 }
 
 /*pagina usuario*/
@@ -875,4 +858,69 @@ ul {
 .formCreateRecipe {
     background: white;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* createNew recipe explication */
+.card-newrecipe {
+    width: 550px;
+    height: 130px;
+    transition: all 0.5s;
+    box-shadow: 15px 15px 30px rgba(25, 25, 25, 0.11),
+        -15px -15px 30px rgba(60, 60, 60, 0.082);
+    text-align: center;
+    overflow: hidden;
+}
+
+.card-newrecipe:hover {
+    height: 400px;
+    cursor: pointer;
+}
+
+.card-newrecipe .header {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ddb7bc;
+    background: linear-gradient(to top, #dac5c5, #eca2a2);
+    margin-bottom: 16px;
+}
+
+.card-newrecipe .header .titleNewrecipe {
+    padding: 4px 0 10px 0;
+    transition: all 0.5s;
+}
+
+.card-newrecipe:hover .card-newrecipe .header .titleNewrecipe {
+    padding: 0;
+}
+
+.card-newrecipe .content {
+    display: block;
+    text-align: justify;
+}
+
+.card-newrecipe .content p {
+    transition: all 0.5s;
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+
+/* form creacteRecipe */
+.containerForm {
+    border-radius: 10%;
+    border-color: rgba(135, 132, 132, 0.9);
+    background-color: white;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.containerForm p {
+    font-size: 14px;
+}
+
+::placeholder {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
 }

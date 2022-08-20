@@ -30,46 +30,67 @@ export const SearchBar = () => {
   };
 
   return (
-    <div className="container">
-      <div className="search justify-content-center">
-        <form onSubmit={subtmitHandler}>
-          <input
-            id="searchinput"
-            type="search"
-            placeholder="¿Qué ingredientes tienes a mano?"
-            defaultValue={search}
-            onChange={searcher}
-          />
-          <button className="search__button">
-            <svg
-              className="search__icon"
-              aria-hidden="true"
-              viewBox="0 0 24 24"
-            >
-              <g>
-                <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
-              </g>
-            </svg>
-          </button>
-        </form>
+    <>
+      <div className="row justify-content-center text-center">
+        <div className="col-10 search text-center mb-3">
 
-        {recipe.map((recipe) => {
+          <form onSubmit={subtmitHandler}>
+            <div className="input-group pb-2 pt-5 mt-5">
+              <input
+                className="form-control"
+                id="searchinput"
+                type="text"
+                placeholder="¿Qué ingredientes tienes a mano?"
+                defaultValue={search}
+                onChange={searcher}
+              />
+            </div>
+            <div className="col-12 d-flex justify-content-center">
+              <button className="botonreceta">
+                <p>Buscar recetas</p>
+                <svg
+                  stroke-width="4"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  class="h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div className="row">
+        {recipe.map((recipe, index) => {
           return (
-            <div className="recipes">
+            <div className="recipes col-12 col-md-4" key={index}>
               <Recipe
                 name={recipe.name}
                 id={recipe.id}
                 image={recipe.image}
                 categories={recipe.categories.map((value, index) => {
                   return (
-                    <img className="categories" key={index} src={value.image} />
+                    <img
+                      className="categories"
+                      key={index}
+                      src={value.image}
+                    />
+
                   );
                 })}
               />
             </div>
+
           );
         })}
       </div>
-    </div>
+    </>
   );
 };

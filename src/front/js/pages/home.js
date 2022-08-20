@@ -8,6 +8,8 @@ import glutenfree from "../../img/glutenfree.png";
 import lactosefree from "../../img/lactosefree.png";
 import sugarfree from "../../img/sugarfree.png";
 import vegana from "../../img/vegana.png";
+import footerimg from "../../img/footerimg.png";
+import footerimg2 from "../../img/footerimg2.png";
 import imgfooter from "../../img/imgfooter.png";
 import imgfooter2 from "../../img/imgfooter2.png";
 
@@ -129,7 +131,7 @@ export const Home = () => {
           </div>
         </div>
 
-        <div className=" col-12 my-5 d-flex justify-content-center">
+        <div className="col-12 my-5 d-flex justify-content-center">
           {store.categories.map((category) => {
             return (
               <Link
@@ -137,7 +139,7 @@ export const Home = () => {
                 className="ctaCategory pe-5"
               >
                 <span className="hover-underline-animation">
-                  {category.name}{" "}
+                  {category.name}
                 </span>
                 <path
                   id="Path_10"

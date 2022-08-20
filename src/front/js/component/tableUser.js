@@ -20,7 +20,7 @@ const TableUser = () => {
   };
 
   return (
-    <div className="hero-container2 position-relative" style={style}>
+    <div className="hero-container2 position-relative my-5" style={style}>
       <h3 className="hero-title text-center pt-5 mx-5">Añadir mis recetas</h3>
       <div class="position-absolute bottom-0 start-50 translate-middle-x mb-5">
         <Link to="/newrecipe" className="ctaUser">

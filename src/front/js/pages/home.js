@@ -164,7 +164,7 @@ export const Home = () => {
               </div>
               <div className="col-12 d-flex justify-content-center">
                 <button className="botonreceta">
-                  <p>Buscar recetas</p>
+                  <p>Buscar</p>
                   <svg
                     stroke-width="4"
                     stroke="currentColor"
@@ -252,7 +252,7 @@ export const Home = () => {
       <div className="diverse3" id="diverse3" width="100%" height="300">
         <div className="row">
           <div className="col-md-4 py-5 text-center">
-            <h5 className="px-3">NUESTROS VALORES</h5>
+            <h5 className="px-3">Nuestros valores</h5>
             <p className="text3 px-2 py-3 px-2 text-center">
               En CINNAMOON somos partidarios de la inclusividad. Es por eso que
               contamos con recetas para todas aquellas personas que, por una

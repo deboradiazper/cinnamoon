@@ -11,8 +11,6 @@ import vegana from "../../img/vegana.png";
 import footerimg from "../../img/footerimg.png";
 import footerimg2 from "../../img/footerimg2.png";
 
-
-
 export const Home = () => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate("");
@@ -99,8 +97,8 @@ export const Home = () => {
                   <div className="carousel-caption d-none d-md-block">
                     <h2 className="title-all px-5">SIN AZUCAR</h2>
                     <p>
-                      Descubre como sustituir azúcar por otros productos naturales
-                      y cocina postres y dulces saludables.
+                      Descubre como sustituir azúcar por otros productos
+                      naturales y cocina postres y dulces saludables.
                     </p>
                   </div>
                 </div>
@@ -199,18 +197,21 @@ export const Home = () => {
         <div className="row mt-5">
           <div
             className="diverse col-12 col-md-4 text-center pt-2 d-flex justify-content-around align-items-center"
-            style={{ minHeight: "400px", width: "100%" }}>
-            <div className="textFooter mt-5" style={{ minHeight: "400px", width: "50%" }}>
-              <h4 className="title-footer mt-5">
-                RECETAS PARA TODOS
-              </h4>
+            style={{ minHeight: "400px", width: "100%" }}
+          >
+            <div
+              className="textFooter mt-5"
+              style={{ minHeight: "400px", width: "50%" }}
+            >
+              <h4 className="title-footer mt-5">RECETAS PARA TODOS</h4>
               <ul className="text-footer">
                 <li>
                   El <b>calcio que mejor se absorbes</b> no es el de los lácteo,
                   sino el de las algas.
                 </li>
                 <li>
-                  <b>Eliminar el gluten</b>de tu dieta mejora tu salud intestinal.
+                  <b>Eliminar el gluten</b>de tu dieta mejora tu salud
+                  intestinal.
                 </li>
                 <li>
                   Es posible <b>endulzar tus platos</b> con alimentos que tienen
@@ -235,7 +236,6 @@ export const Home = () => {
             className="imgfooter1 col-md-6 p-0 position-relative"
             style={{ minHeight: "350px" }}
                 > */}
-
           </div>
         </div>
 
@@ -248,8 +248,8 @@ export const Home = () => {
           {/* </div> */}
           <div
             className="diverse2 col-12 col-md-4 text-center pt-2 d-flex justify-content-around align-items-center"
-            style={{ minHeight: "400px", width: "100%" }}>
-
+            style={{ minHeight: "400px", width: "100%" }}
+          >
             <div className="footerimg2">
               <img
                 src={footerimg2}
@@ -259,20 +259,21 @@ export const Home = () => {
                 height="auto"
               />
             </div>
-            <div className="textFooter mt-5" style={{ minHeight: "400px", width: "50%" }}>
+            <div
+              className="textFooter mt-5"
+              style={{ minHeight: "400px", width: "50%" }}
+            >
               <h4 className="pt-4">
                 ALIMENTACION BASADA EN INGREDIENTES VEGETALES
               </h4>
               <p className="py-2">
                 <b>Okinawa</b>,es una isla en el sur de Japón que se ha dado a
                 conocer por tener la esperanza de vida más elevada del mundo. Su
-                alimentación fundamentada en <b>productos de origen vegetal</b> y
-                pobre en acidos grasos parece ser la clave de su
+                alimentación fundamentada en <b>productos de origen vegetal</b>{" "}
+                y pobre en acidos grasos parece ser la clave de su
                 <b>longevidad</b>.
               </p>
             </div>
-
-
           </div>
         </div>
         <div
@@ -292,31 +293,35 @@ export const Home = () => {
                   height="100"
                 />
               </div> */}
-              <div class="box__body mt-"><h3>NUESTROS VALORES</h3>
+              <div class="box__body mt-">
+                <h3>NUESTROS VALORES</h3>
               </div>
-              <p className="text-3 text-center">En CINNAMOON somos partidarios de la inclusividad. Es por eso que
-                contamos con recetas para todas aquellas personas que, por una
-                cuestión personal o de salud, han renunciado a comer ciertos
+              <p className="text-3 text-center">
+                En CINNAMOON somos partidarios de la inclusividad. Es por eso
+                que contamos con recetas para todas aquellas personas que, por
+                una cuestión personal o de salud, han renunciado a comer ciertos
                 alimentos. Partimos de una base vegetariana y contamos con un
                 amplio banco de recetas sin gluten, sin lactosa y sin azúcar.
-                Nuestra intención es que haya muchas más.</p>
+                Nuestra intención es que haya muchas más.
+              </p>
             </div>
             <div className="textAboutus col-md-3 my-4 text-center p-3">
               <h5 className="px-2 mt-2">SOMOS LO QUE COMEMOS</h5>
               <p className="px-2 py-2">
                 Tan importante es alimentarse bien como hacerlo de forma
-                consciente. Es por eso que nos gusta aportar información acerca de
-                los ingredientes que utilizamos para las recetas. Como cocinar nos
-                apasiona, también nos apasiona la historia de los ingredientes.
+                consciente. Es por eso que nos gusta aportar información acerca
+                de los ingredientes que utilizamos para las recetas. Como
+                cocinar nos apasiona, también nos apasiona la historia de los
+                ingredientes.
               </p>
             </div>
             <div className="textAboutus col-md-3 my-4 text-center p-3">
               <h5 className="px-2 mt-2">CRECER EN COMUNIDAD</h5>
               <p className="px-2 py-2">
                 No queremos ser únicamente una página web de recetas. Nuestro
-                objetivo es crear una comunidad en la que cualquier persona afín a
-                nuestros valores pueda aportar su granito de arena. Compartir es
-                vivir.
+                objetivo es crear una comunidad en la que cualquier persona afín
+                a nuestros valores pueda aportar su granito de arena. Compartir
+                es vivir.
               </p>
             </div>
           </div>

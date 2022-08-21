@@ -64,104 +64,106 @@ export const UserRegistration = () => {
       <div className="registration col-12 mb-3 mt-5 text-center"></div>
 
       <div className="row">
-        <form
-          className="form"
-          onSubmit={handleSubmit(onSubmit)}
-          id="registration"
-        >
-          <div className="col-12 mb-3 mt-1 text-center">
-            <p>¿No tienes una cuenta?</p>
-            <input
-              className="input-reg mt-1"
-              name="name"
-              placeholder=" Nombre"
-              autoComplete="off"
-              type="text"
-              {...register("name", {
-                required: "Por favor, introduce un nombre válido",
-                minLength: {
-                  value: 3,
-                  message: "Por favor, introduce un nombre válido",
-                },
-              })}
-              onChange={handleInputChange}
-            />
-            <p>{errors.name?.message}</p>
-          </div>
+        <div className="container_form">
+          <form
+            className="form"
+            onSubmit={handleSubmit(onSubmit)}
+            id="registration"
+          >
+            <div className="col-12 mb-3 mt-1 text-center">
+              <p>¿No tienes una cuenta?</p>
+              <input
+                className="input-reg mt-1"
+                name="name"
+                placeholder=" Nombre"
+                autoComplete="off"
+                type="text"
+                {...register("name", {
+                  required: "Por favor, introduce un nombre válido",
+                  minLength: {
+                    value: 3,
+                    message: "Por favor, introduce un nombre válido",
+                  },
+                })}
+                onChange={handleInputChange}
+              />
+              <p>{errors.name?.message}</p>
+            </div>
 
-          <div className="col-12  mb-3 text-center">
-            <input
-              className="input-reg"
-              name="lastName"
-              placeholder=" Apellido"
-              autoComplete="off"
-              type="text"
-              {...register("lastName", {
-                required: "Por favor, introduce un apellido válido",
-                minLength: {
-                  value: 3,
-                  message: "Por favor, introduce un apellido válido",
-                },
-              })}
-              onChange={handleInputChange}
-            />
-            <p>{errors.name?.message}</p>
-          </div>
+            <div className="col-12  mb-3 text-center">
+              <input
+                className="input-reg"
+                name="lastName"
+                placeholder=" Apellido"
+                autoComplete="off"
+                type="text"
+                {...register("lastName", {
+                  required: "Por favor, introduce un apellido válido",
+                  minLength: {
+                    value: 3,
+                    message: "Por favor, introduce un apellido válido",
+                  },
+                })}
+                onChange={handleInputChange}
+              />
+              <p>{errors.name?.message}</p>
+            </div>
 
-          <div className="col-12 mb-3 text-center">
-            <input
-              className="input-reg"
-              name="email"
-              placeholder=" Email"
-              autoComplete="off"
-              type="text"
-              {...register("email", {
-                required: {
-                  value: true,
-                  message: "Por favor, introduce un email válido",
-                },
-                pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                  message: "Por favor, introduce un email válido",
-                },
-              })}
-              onChange={handleInputChange}
-            />
-            <p>{errors.email?.message}</p>
-          </div>
+            <div className="col-12 mb-3 text-center">
+              <input
+                className="input-reg"
+                name="email"
+                placeholder=" Email"
+                autoComplete="off"
+                type="text"
+                {...register("email", {
+                  required: {
+                    value: true,
+                    message: "Por favor, introduce un email válido",
+                  },
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                    message: "Por favor, introduce un email válido",
+                  },
+                })}
+                onChange={handleInputChange}
+              />
+              <p>{errors.email?.message}</p>
+            </div>
 
-          <div className="col-12  mb-5 text-center">
-            <input
-              className="input-reg"
-              name="password"
-              placeholder=" Contraseña"
-              autoComplete="off"
-              type="password"
-              {...register("password", {
-                required: {
-                  value: true,
-                  message: "Por favor, introduce una contraseña válida",
-                },
-                minLength: {
-                  value: 6,
-                  message: "La contraseña debe tener al menos 8 caracteres",
-                },
-              })}
-              onChange={handleInputChange}
-            />
-            <p>{errors.password?.message}</p>
-          </div>
+            <div className="col-12  mb-5 text-center">
+              <input
+                className="input-reg"
+                name="password"
+                placeholder=" Contraseña"
+                autoComplete="off"
+                type="password"
+                {...register("password", {
+                  required: {
+                    value: true,
+                    message: "Por favor, introduce una contraseña válida",
+                  },
+                  minLength: {
+                    value: 6,
+                    message: "La contraseña debe tener al menos 8 caracteres",
+                  },
+                })}
+                onChange={handleInputChange}
+              />
+              <p>{errors.password?.message}</p>
+            </div>
 
-          <div className="col-12  mb-3 text-center">
-            <button className="ctaregister">
-              <span>Enviar</span>
-              <svg viewBox="0 0 13 10" height="10px" width="15px">
-                <path d="M1,5 L11,5"></path>
-                <polyline points="8 1 12 5 8 9"></polyline>
-              </svg>
-            </button>
-          </div>
-        </form>
+            <div className="col-12  mb-3 text-center">
+              <button className="ctaregister">
+                <span>Enviar</span>
+                <svg viewBox="0 0 13 10" height="10px" width="15px">
+                  <path d="M1,5 L11,5"></path>
+                  <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

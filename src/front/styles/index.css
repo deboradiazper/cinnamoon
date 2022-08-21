@@ -864,7 +864,7 @@ ul {
   height: 75%;
 }
 
-.form {
+.container_form {
   position: relative;
   z-index: 1;
   background: #ffffff;
@@ -874,7 +874,7 @@ ul {
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-.form input {
+.container_form input {
   font-family: "Karla", sans-serif;
   outline: 0;
   background: #f2f2f2;
@@ -885,8 +885,6 @@ ul {
   box-sizing: border-box;
   font-size: 14px;
 }
-
-/*input home buscador*/
 
 /* Form create Recipe */
 .formCreateRecipe {

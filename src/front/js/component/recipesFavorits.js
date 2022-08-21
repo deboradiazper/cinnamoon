@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
+import { useNavigate } from "react-router-dom";
+
 import { PropTypes } from "prop-types";
 import { Link } from "react-router-dom";
 import Recipe from "./recipe";
@@ -9,9 +11,15 @@ const RecipesFavorits = () => {
     // const listrecipesfav = store.recipesfavorites.map(() => {
     //  return <li>{item.name}</li>;
     // });
+    const navigate = useNavigate();
+
 
     useEffect(() => {
+        if (!store.token) {
+            navigate("/user");
+        }
         actions.loadFavoritesRecipes();
+
     }, []);
     return (
         <div className="container">

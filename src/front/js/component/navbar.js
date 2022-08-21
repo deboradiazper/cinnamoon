@@ -41,16 +41,25 @@ export const Navbar = () => {
           )}
           <button className="ctamoon mx-4"> Moon </button>
           {store.auth ? (
-            <button
-              className="ctaLoging"
-              onClick={() => {
-                actions.logout();
-                actions.loadRecipe();
-                navigate("/");
-              }}
-            >
-              Salir
-            </button>
+            <>
+              <Link to={"/userArea"}
+                className="ctaLoging"
+
+              >
+                AREA USUARIO
+              </Link>
+              <button
+                className="ctaLoging"
+                onClick={() => {
+                  const result = actions.logout();
+                  if (result) {
+                    navigate("/");
+                  }
+                }}
+              >
+                LOGOUT
+              </button>
+            </>
           ) : (
             <button
               className="ctaLoging"
@@ -58,11 +67,11 @@ export const Navbar = () => {
                 isAuthenticate();
               }}
             >
-              Area Usuario
+              LOGIN
             </button>
-          )}{" "}
-        </div>{" "}
-      </div>{" "}
+          )}
+        </div>
+      </div>
     </nav>
   );
 };

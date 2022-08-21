@@ -257,7 +257,7 @@ ul {
 .card-ingredient {
   text-align: justify;
   margin-top: 100px;
-  background: #f3f0f0;
+  background: #efe9ef;
   box-shadow: 0px 15px 15px -15px rgba(116, 115, 115, 0.25);
   overflow: hidden;
   cursor: pointer;
@@ -306,55 +306,55 @@ ul {
 
 /*pagina usuario*/
 /* favUser */
-#hero-container1 {
-  background-image: url("../img/imgfav.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: 70px;
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
-  height: 70vh;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
+/* #hero-container1 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 70px;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    height: 70vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+} */
 
 /* TableUser */
-.hero-container2 {
-  margin-top: 70px;
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
-  height: 70vh;
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
+/* .hero-container2 {
+    margin-top: 70px;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    height: 70vh;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+} */
 
 .hero-title {
   letter-spacing: 4px;
   border-bottom: 1px solid rgb(148, 142, 142);
 }
 
-.hero-container2 {
-  margin-top: 70px;
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
-  height: 70vh;
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
+/* .hero-container2 {
+    margin-top: 70px;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    height: 70vh;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+} */
 
 /* divfooter */
 .diverse {
-  background: rgba(158, 123, 67, 0.6);
+  background: rgba(159, 127, 77, 0.6);
 }
 
 .diverse2 {
-  background: #428e9e;
+  background: #6397a1;
 }
 
 .diverse3 {
   background: #efe9ef;
+  height: 350px;
 }
 
 .imgfooter1 {
@@ -897,8 +897,7 @@ ul {
   width: 550px;
   height: 130px;
   transition: all 0.5s;
-  box-shadow: 15px 15px 30px rgba(25, 25, 25, 0.11),
-    -15px -15px 30px rgba(60, 60, 60, 0.082);
+  box-shadow: 15px 15px 30px rgba(25, 25, 25, 0.11);
   text-align: center;
   overflow: hidden;
 }
@@ -914,8 +913,7 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #ddb7bc;
-  background: linear-gradient(to top, #dac5c5, #eca2a2);
+  background: #efe9ef;
   margin-bottom: 16px;
 }
 
@@ -955,4 +953,60 @@ ul {
 ::placeholder {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
+}
+
+/* From uiverse.io by @satyamchaudharydev */
+.box {
+  --bg: #efe9ef;
+  --hover-bg: #efe9ef;
+  --hover-text: #1d1a1c;
+  max-width: 30ch;
+  text-align: center;
+  background: #efe9ef;
+  /* padding: 1.5em; */
+  /* padding-block: 1.8em; */
+  /* border-radius: 5px; */
+  position: relative;
+  overflow: hidden;
+  transition-timing-function: ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* gap: 1em; */
+  cursor: pointer;
+}
+
+.box > :not(p) {
+  transition-timing-function: ease;
+}
+
+.box > strong {
+  display: block;
+  letter-spacing: -0.035em;
+}
+
+.box p {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--hover-text);
+  top: 100%;
+}
+
+.box:hover p {
+  top: 0;
+}
+
+.box:hover {
+  background: #efe9ef;
+}
+
+.box:hover > div,
+.box:hover > strong {
+  opacity: 0;
 }

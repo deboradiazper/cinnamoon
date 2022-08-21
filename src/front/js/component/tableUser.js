@@ -6,7 +6,7 @@ const TableUser = () => {
   const { store, actions } = useContext(Context);
 
   const style = {
-    backgroundImage: 'url("/imgcrear.png")',
+    backgroundImage: 'url("https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80")',
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -20,7 +20,7 @@ const TableUser = () => {
   };
 
   return (
-    <div className="hero-container2 position-relative my-5" style={style}>
+    <div className="position-relative my-5" style={style}>
       <h3 className="hero-title text-center pt-5 mx-5">Añadir mis recetas</h3>
       <div class="position-absolute bottom-0 start-50 translate-middle-x mb-5">
         <Link to="/newrecipe" className="ctaUser">

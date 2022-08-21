@@ -8,6 +8,7 @@ from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
 import cloudinary 
 import cloudinary.uploader
+from sqlalchemy import func
 
 
 api = Blueprint('api', __name__)
@@ -230,3 +231,21 @@ def searchbar():
         return jsonify(recipes), 200
 
     return jsonify([]), 200
+
+
+@api.route('/top_recipes', methods=['GET'])
+@jwt_required(optional=True)
+def top_recipes():
+    user_id = get_jwt_identity()
+    print(user_id)
+    top_recipes = RecipesFavorites.query.with_entities(RecipesFavorites.recipe_id, func.count(RecipesFavorites.recipe_id)).group_by(RecipesFavorites.recipe_id).all()
+    top_recipes = [item[0] for item in top_recipes]
+    top_recipes = Recipes.query.filter(Recipes.id.in_(top_recipes))
+    recipes = [recipe_fav.serialize() for recipe_fav in top_recipes]
+    if user_id:
+        user = User.query.get(user_id)
+        favoritesrecipes = [user_fav.Recipes.id for user_fav in user.recipes_fav]
+    
+        for recipe in recipes: 
+            recipe["is_favorite"] = True if recipe["id"] in favoritesrecipes else False
+    return jsonify(recipes), 200

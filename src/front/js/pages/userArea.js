@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
-import { Link, useParams, useResolvedPath } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import FavUser from "../component/favUser";
 import TableUser from "../component/tableUser";
@@ -8,6 +8,12 @@ import imgfav from "../../img/imgfav.png";
 
 export const UserArea = () => {
   const { store, actions } = useContext(Context);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!store.token) {
+      navigate("/user");
+    }
+  }, []);
   return (
     <div className="container">
       <div className="row">

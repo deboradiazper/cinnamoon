@@ -25,6 +25,7 @@ const getState = ({
             searchRecipes: [],
             recipesfavorites: [],
             categories: [],
+            top_recipes: [],
         },
 
         actions: {
@@ -48,6 +49,27 @@ const getState = ({
                 console.log(data);
                 setStore({
                     recipes: data,
+                });
+                return true;
+            },
+            loadToprecipe: async () => {
+                let header = {
+                    "Content-Type": "application/json",
+                };
+                if (getStore().token) {
+                    header.Authorization = "Bearer " + localStorage.getItem("token");
+                }
+                const response = await fetch(
+                    process.env.BACKEND_URL + "/api/top_recipes", {
+                        method: "GET",
+                        headers: header,
+                    }
+                );
+
+                const data = await response.json();
+                console.log(data);
+                setStore({
+                    top_recipes: data,
                 });
                 return true;
             },
@@ -144,6 +166,9 @@ const getState = ({
                     setStore({
                         token: data.token,
                     });
+                    const actions = getActions();
+                    actions.loadToprecipe();
+                    actions.loadRecipe();
                     return true;
                 } catch (error) {
                     console.error("there has been an error login in");
@@ -215,6 +240,14 @@ const getState = ({
                 });
 
                 localStorage.removeItem("token");
+                localStorage.removeItem("user");
+                const actions = getActions();
+                const recipesResult = actions.loadRecipe();
+                const recipesTop = actions.loadToprecipe();
+                if (recipesTop && recipesResult) {
+                    return true;
+                }
+                return false;
             },
             loadFavoritesRecipes: async () => {
                 const store = getStore();

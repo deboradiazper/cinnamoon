@@ -36,6 +36,8 @@ const injectContext = (PassedComponent) => {
         localStorage.getItem("user")
       );
       state.actions.loadRecipe();
+      state.actions.loadToprecipe();
+
       //state.actions.loadUser();
       state.actions.loadCategories();
     }, []);

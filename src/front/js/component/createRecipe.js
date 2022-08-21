@@ -1,12 +1,22 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
+import { useNavigate } from "react-router-dom";
+
 import cinnamoon from "../../img/cinnamoon.png";
 
 const CreateRecipe = () => {
     const { store, actions } = useContext(Context);
     const [newrecipe, setNewrecipe] = useState();
     const [file, setFile] = useState();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!store.token) {
+            navigate("/user");
+        }
+    }, []);
+
     const handleChange = (event) => {
         setNewrecipe({ ...newrecipe, [event.target.name]: event.target.value });
     };
@@ -63,9 +73,16 @@ const CreateRecipe = () => {
                         <p class="text-3 titleNewrecipe">¿Es tu primera vez? Lee esto..</p>
                     </div>
 
-                    <div class="content pt-1 pb-3 px-2" >
+                    <div class="content pt-1 pb-3 px-2">
                         <p>
-                            En Cinnamoon valoramos mucho tu tiempo, es por ello que hemos creado este senciilo formulario donde puedes añadir en cada campo información sobre tu receta. Es muy importante que selecciones bien la categoria, puesto que asi otros usuarios interesados podrán acceder a tu receta de manera sencila. Recuerda subir una imagen en el formato y medidas aceptadas y no olvides darle click al botón de añadir y ¡LISTO!, tu receta ya es visible para el resto de la comunidad.
+                            En Cinnamoon valoramos mucho tu tiempo, es por ello que hemos
+                            creado este senciilo formulario donde puedes añadir en cada campo
+                            información sobre tu receta. Es muy importante que selecciones
+                            bien la categoria, puesto que asi otros usuarios interesados
+                            podrán acceder a tu receta de manera sencila. Recuerda subir una
+                            imagen en el formato y medidas aceptadas y no olvides darle click
+                            al botón de añadir y ¡LISTO!, tu receta ya es visible para el
+                            resto de la comunidad.
                         </p>
                     </div>
                 </div>

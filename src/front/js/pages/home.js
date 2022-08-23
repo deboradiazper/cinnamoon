@@ -10,6 +10,7 @@ import sugarfree from "../../img/sugarfree.png";
 import vegana from "../../img/vegana.png";
 import footerimg from "../../img/footerimg.png";
 import footerimg2 from "../../img/footerimg2.png";
+import firma from "../../img/firma.png";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -27,9 +28,9 @@ export const Home = () => {
 
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
+      <div className="container-fluid p-0" style={{ minHeight: "200px" }}>
+        <div className="row" style={{ height: '90%' }}>
+          <div className="col-12" style={{ height: '90%' }}>
             <div
               id="carouselExampleDark"
               className="carousel carousel-dark slide"
@@ -65,25 +66,25 @@ export const Home = () => {
               </div>
               <div className="carousel-inner">
                 <div className="carousel-item active" data-bs-interval="10000">
-                  <img src={glutenfree} class="d-block w-100" alt="..." />
+                  <img src={glutenfree} className="w-100" alt="..." />
 
                   <div className="carousel-caption d-none d-md-block">
                     <h2 className="title-all px-5">SIN GLUTEN</h2>
                     <p>
-                      Crea tus platos preferidos con otroa ingredientes,
+                      Crea tus platos preferidos con otros ingredientes,
                       consiguiendo resultados increibles.
                     </p>
                   </div>
                 </div>
                 <div className="carousel-item" data-bs-interval="2000">
-                  <img src={vegana} class="d-block w-100" alt="..." />
+                  <img className="w-100" src={vegana} alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h2 className="title-all px-5">VEGANAS</h2>
                     <p>Cocina con vegetales y crea sabores exquisitos.</p>
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img src={lactosefree} class="d-block w-100" alt="..." />
+                  <img className=" w-100" src={lactosefree} alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h2 className="title-all px-5">SIN LACTOSA</h2>
                     <p>
@@ -93,7 +94,7 @@ export const Home = () => {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img src={sugarfree} class="d-block w-100" alt="..." />
+                  <img className=" w-100" src={sugarfree} alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h2 className="title-all px-5">SIN AZUCAR</h2>
                     <p>
@@ -129,10 +130,15 @@ export const Home = () => {
               </button>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div className="col-12 my-5 d-flex justify-content-center">
-            {store.categories.map((category) => {
-              return (
+
+      <div className="buttonsCategory container">
+        <div className="col-12 my-5 d-flex flex-md-column flex-sm-column flex-lg-row justify-content-lg-center">
+          {store.categories.map((category) => {
+            return (
+              <div className="align-self-md-center">
                 <Link
                   to={`/recipeAll/${category.name}`}
                   className="ctaCategory pe-5"
@@ -147,62 +153,51 @@ export const Home = () => {
                     transform="translate(40)"
                   ></path>
                 </Link>
-              );
-            })}
-          </div>
-          <div className="row justify-content-center text-center">
-            <div className="col-10 text-center mb-5">
-              <form onSubmit={handleSubmit}>
-                <div className="input-group pb-2 pt-3 my-3">
-                  <input
-                    onChange={handleChange}
-                    type="text"
-                    className="form-control"
-                    placeholder="¿Qué ingredientes tienes a mano?"
-                  />
-                </div>
-                <div className="col-12 d-flex justify-content-center">
-                  <button className="botonreceta">
-                    <p>Buscar recetas</p>
-                    <svg
-                      stroke-width="4"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      class="h-6 w-6"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div className="recipes d-flex justify-content-between mb-4">
-            <h3 className="title-all">NUEVAS RECETAS</h3>
-          </div>
-          <RecipeList />
-          <div className="recipes d-flex justify-content-between my-5">
-            <h3 className="title-all mt-5">RECETAS POPULARES</h3>
-          </div>
-          <RecipeFavList />
+              </div>
+            );
+          })}
         </div>
       </div>
+
+
+      <div className="busca container-fluid p-0" style={{ minHeight: "250px", width: "100%" }}>
+        <h3 className="px-lg-5 px-sm-5 pt-4 text-center">¿Qué ingredientes tienes a mano?</h3>
+        <form onSubmit={handleSubmit} className="formBusca d-flex justify-content-center">
+          <div className="input-group pb-2 mt-5 px-lg-5 px-sm-5 w-75">
+            <input
+              onChange={handleChange}
+              type="text"
+              className="searchIngredients form-control"
+              placeholder="¿Qué ingredientes tienes a mano?"
+            />
+            <button className="botonreceta bg-white">
+              <i className="fas fa-search text-muted"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div className="container recetas">
+        <div className="recipes d-flex justify-content-between">
+          <h3>NUEVAS RECETAS</h3>
+        </div>
+        <RecipeList />
+      </div>
+
+
+
+
+
       <div className="container-fluid">
         <div className="row mt-5">
           <div
-            className="diverse col-12 col-md-4 text-center pt-2 d-flex justify-content-around align-items-center"
+            className="diverse col-12 col-md-4 mt-5 pt-2 px-0  d-flex justify-content-lg-around align-items-lg-center
+ flex-lg-row flex-md-column flex-sm-column"
             style={{ minHeight: "400px", width: "100%" }}
           >
             <div
-              className="textFooter mt-5"
-              style={{ minHeight: "400px", width: "50%" }}
-            >
+              className="textFooter text-center flex-column d-flex align-items-center"
+              style={{ minHeight: "400px", width: "50%" }}            >
               <h4 className="title-footer mt-5">RECETAS PARA TODOS</h4>
               <ul className="text-footer">
                 <li>
@@ -222,8 +217,14 @@ export const Home = () => {
                   origen vegetal.
                 </li>
               </ul>
+              <img
+                src={firma.png}
+                className="firma"
+                width="50vw"
+                height="auto"
+              />
             </div>
-            <div className="footerimg">
+            <div className="footerimg d-flex align-items-center">
               <img
                 src={footerimg}
                 className="img-footer"
@@ -232,13 +233,19 @@ export const Home = () => {
                 height="auto"
               />
             </div>
-            {/* <div
-            className="imgfooter1 col-md-6 p-0 position-relative"
-            style={{ minHeight: "350px" }}
-                > */}
           </div>
         </div>
+      </div>
+      <div className="container">
+        <div className="recipes d-flex justify-content-between my-5">
+          <h3 className="mt-5">RECETAS POPULARES</h3>
+        </div>
 
+        <RecipeFavList />
+      </div>
+
+
+      <div className="container-fluid p-0">
         <div className="row">
           {/* <div
             className="imgfooter2 col-md-6 p-0 position-relative"
@@ -247,10 +254,11 @@ export const Home = () => {
 
           {/* </div> */}
           <div
-            className="diverse2 col-12 col-md-4 text-center pt-2 d-flex justify-content-around align-items-center"
+            className="diverse2 col-12 col-md-4 mt-5 pt-2 px-0  d-flex justify-content-lg-around align-items-lg-center
+            flex-lg-row flex-md-column flex-sm-column"
             style={{ minHeight: "400px", width: "100%" }}
           >
-            <div className="footerimg2">
+            <div className="footerimg2 d-flex align-items-center">
               <img
                 src={footerimg2}
                 className="img-footer"
@@ -260,13 +268,13 @@ export const Home = () => {
               />
             </div>
             <div
-              className="textFooter mt-5"
+              className="textFooter text-center flex-column d-flex align-items-center"
               style={{ minHeight: "400px", width: "50%" }}
             >
-              <h4 className="pt-4">
+              <h4 className="title-footer mt-5">
                 ALIMENTACION BASADA EN INGREDIENTES VEGETALES
               </h4>
-              <p className="py-2">
+              <p className="text-footer">
                 <b>Okinawa</b>,es una isla en el sur de Japón que se ha dado a
                 conocer por tener la esperanza de vida más elevada del mundo. Su
                 alimentación fundamentada en <b>productos de origen vegetal</b>{" "}
@@ -330,3 +338,45 @@ export const Home = () => {
     </>
   );
 };
+{/* <div className="container-fluid">
+        <div className="row mt-5">
+          <div
+            className="diverse col-12 col-md-4 text-center pt-2 d-flex justify-content-around align-items-center"
+            style={{ minHeight: "400px", width: "100%" }}
+          >
+            <div
+              className="textFooter mt-5"
+              style={{ minHeight: "400px", width: "50%" }}
+            >
+              <h4 className="title-footer mt-5">RECETAS PARA TODOS</h4>
+              <ul className="text-footer">
+                <li>
+                  El <b>calcio que mejor se absorbes</b> no es el de los lácteo,
+                  sino el de las algas.
+                </li>
+                <li>
+                  <b>Eliminar el gluten</b>de tu dieta mejora tu salud
+                  intestinal.
+                </li>
+                <li>
+                  Es posible <b>endulzar tus platos</b> con alimentos que tienen
+                  azúcar en su composición
+                </li>
+                <li>
+                  Una alimentación <b>vegana</b> puede ser rica en proteínas de
+                  origen vegetal.
+                </li>
+              </ul>
+            </div>
+            <div className="footerimg">
+              <img
+                src={footerimg}
+                className="img-footer"
+                alt="img-footer"
+                width="280 vw"
+                height="auto"
+              />
+            </div>
+          </div>
+        </div>
+      </div> */}

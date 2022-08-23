@@ -5,10 +5,11 @@ import os
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Recipes, Ingredients, Trivia, Categories, RecipesFavorites, IngredientsFavorites, RecipeCategories, RecipesIngredients
 from api.utils import generate_sitemap, APIException
-from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
+from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required, verify_jwt_in_request
 import cloudinary 
 import cloudinary.uploader
-from sqlalchemy import func
+from sqlalchemy import func, any_
+
 
 
 api = Blueprint('api', __name__)
@@ -68,9 +69,11 @@ def get_recipes_Favorites():
     user_id = get_jwt_identity()
     favorites = RecipesFavorites.query.filter_by(user_id = user_id)
     data = [favorite.Recipes.serialize() for favorite in favorites]
+
     for recipe in data: 
-        recipe["favorite"] = True
+        recipe["is_favorite"] = True
     
+    print(data)
     return jsonify(data), 200
 
 
@@ -80,7 +83,6 @@ def add_recipes_favorites():
     user_id = get_jwt_identity()
     data = request.json
     is_exist = RecipesFavorites.query.filter_by(user_id= user_id, recipe_id=data.get('recipe_id')).count()
-    print(is_exist)
     if is_exist: 
         return jsonify({"message": "recipe exist"}), 200
     recipes = RecipesFavorites(user_id= user_id, recipe_id=data.get('recipe_id'))
@@ -94,7 +96,6 @@ def add_recipes_favorites():
 @jwt_required(optional=True)
 def get_recipes():
     user_id = get_jwt_identity()
-    print(user_id)
     
     recipes = Recipes.query.order_by(Recipes.id.desc()).limit(10).all()
     data = [recipe.serialize() for recipe in recipes]
@@ -132,7 +133,6 @@ def add_recipes():
         api_key = os.getenv('api_key'), 
         api_secret = os.getenv('api_secret'),
     )
-    print(request.files.to_dict())
     image = request.files["image"]
     uploadresult = cloudinary.uploader.upload(image)
     recipe = Recipes(name=data.get('name'), description=data.get('description'), image = uploadresult["secure_url"], cookingtime=data.get('cookingtime'), user_id=user_id)
@@ -217,17 +217,33 @@ def recipes_category(name):
     return jsonify(recipes), 200
 
 
-#searhBar
+#searchBar
 @api.route('/searchbar', methods=['POST'])
 def searchbar():
+    user_id = None
+    try: 
+        if verify_jwt_in_request():
+            user_id = get_jwt_identity()
+    except Exception as e:  
+        print(f"error: {e}")       
+
     data = request.json
     text = data.get("data")
     if len(text):
         search_data = text.split(", ")
-        ingredients = Ingredients.query.filter(Ingredients.name.in_(search_data))
+        search_data = [f"{word}%" for word in search_data]
+        ingredients = Ingredients.query.filter(Ingredients.name.ilike(any_(search_data)))
         ingredients = [ingredient.id for ingredient in ingredients]
         recipe_ingredients = RecipesIngredients.query.filter(RecipesIngredients.ingredient_id.in_(ingredients))
-        recipes = [recipe_ingredient.Recipes.serialize() for recipe_ingredient in recipe_ingredients]
+        recipes_id = [recipe_ingredient.Recipes.id for recipe_ingredient in recipe_ingredients ]
+        recipes = Recipes.query.filter(Recipes.id.in_(recipes_id))
+        recipes = [recipe.serialize() for recipe in recipes]
+        if user_id:
+            user = User.query.get(user_id)
+            favoritesrecipes = [user_fav.Recipes.id for user_fav in user.recipes_fav]
+    
+            for recipe in recipes:
+                recipe["is_favorite"] = True if recipe["id"] in favoritesrecipes else False
         return jsonify(recipes), 200
 
     return jsonify([]), 200
@@ -237,7 +253,7 @@ def searchbar():
 @jwt_required(optional=True)
 def top_recipes():
     user_id = get_jwt_identity()
-    print(user_id)
+
     top_recipes = RecipesFavorites.query.with_entities(RecipesFavorites.recipe_id, func.count(RecipesFavorites.recipe_id)).group_by(RecipesFavorites.recipe_id).all()
     top_recipes = [item[0] for item in top_recipes]
     top_recipes = Recipes.query.filter(Recipes.id.in_(top_recipes))

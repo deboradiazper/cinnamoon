@@ -35,8 +35,7 @@ const Recipe = (props) => {
                   : "love2 btn border-0 text-muted"
               }
             >
-              <i className="heart fas fa-heart"> </i>
-            </button>
+              <i class="fas fa-heart"></i></button>
           ) : (
             ""
           )}

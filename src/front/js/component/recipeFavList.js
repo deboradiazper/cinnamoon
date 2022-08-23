@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import Recipe from "./recipe";
 
-
 const RecipeFavList = () => {
   const { store, actions } = useContext(Context);
 
@@ -10,7 +9,11 @@ const RecipeFavList = () => {
     <div className="scroll-container d-flex">
       {store.top_recipes.map((recipe, index) => {
         return (
-          <div className="col-12 col-md-4" key={index}>
+          <div
+            className="col-12 col-md-3
+          "
+            key={index}
+          >
             <Recipe
               name={recipe.name}
               id={recipe.id}

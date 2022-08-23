@@ -26,19 +26,11 @@ const RecipeDetail = (props) => {
         </div>
       </div>
 
-      <div className="description-detail col-md-6 ps-5">
+      <div className="description-detail col-md-6 ps-5 overflow-auto" style={{ minHeight: "400px" }}>
         <div className="box-title d-flex justify-content-between align-items-center pe-5">
           <h4 className="title-detail">{props.name}</h4>
           <i className="fas fa-heart text-muted"></i>
         </div>
-        <div className="star mt-3">
-          <i className="fas fa-star"></i>
-          <i className="fas fa-star ms-3"></i>
-          <i className="fas fa-star ms-3"></i>
-          <i className="fas fa-star ms-3"></i>
-          <i className="fas fa-star ms-3"></i>
-        </div>
-
         <div className="icons-description d-flex my-3">
           <div className="categorie d-inline-flex">
             {props.categories.map((value, index) => {

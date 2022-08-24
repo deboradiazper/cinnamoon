@@ -68,6 +68,7 @@ def get_recipes_Favorites():
     user_id = get_jwt_identity()
     favorites = RecipesFavorites.query.filter_by(user_id = user_id)
     data = [favorite.Recipes.serialize() for favorite in favorites]
+
     for recipe in data: 
         recipe["favorite"] = True
     

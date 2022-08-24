@@ -36,7 +36,9 @@ const injectContext = (PassedComponent) => {
         localStorage.getItem("user")
       );
       state.actions.loadRecipe();
-      state.actions.loadToprecipe();
+      if (localStorage.getItem("token")) {
+        state.actions.loadToprecipe();
+      }
 
       //state.actions.loadUser();
       state.actions.loadCategories();
@@ -47,7 +49,7 @@ const injectContext = (PassedComponent) => {
     // on the state of this component
     return (
       <Context.Provider value={state}>
-        <PassedComponent {...props} />
+        <PassedComponent {...props} />{" "}
       </Context.Provider>
     );
   };

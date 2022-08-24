@@ -31,40 +31,26 @@ export const SearchBar = () => {
 
   return (
     <>
-      <div className="row justify-content-center">
-        <div className="col-lg-8 search text-center mb-3">
-          <form onSubmit={subtmitHandler}>
-            <div className="input-group pb-2 pt-5 mt-5">
-              <input
-                className="form-control"
-                id="searchinput"
-                type="text"
-                placeholder="¿Qué ingredientes tienes a mano?"
-                defaultValue={search}
-                onChange={searcher}
-              />
-            </div>
-            <div className="col-lg-4 ">
-              <button className="botonreceta">
-                <p>Buscar</p>
-                <svg
-                  stroke-width="4"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  class="h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    stroke-linejoin="round"
-                    stroke-linecap="round"
-                  ></path>
-                </svg>
-              </button>
-            </div>
-          </form>
-        </div>
+      <div className="row justify-content-center text-center my-5">
+        <form
+          onSubmit={subtmitHandler}
+          className="formBusca d-flex justify-content-center"
+        >
+          <div className="input-group pb-2 mt-5 px-lg-5 px-sm-5 w-75">
+            <input
+              className="form-control searchIngredients2"
+              id="searchinput"
+              type="text"
+              placeholder="¿Qué ingredientes tienes a mano?"
+              defaultValue={search}
+              onChange={searcher}
+            />
+
+            <button className="botonreceta bg-white">
+              <i className="fas fa-search text-muted"></i>
+            </button>
+          </div>
+        </form>
       </div>
       <div className="row">
         {recipe.map((recipe, index) => {
@@ -74,6 +60,7 @@ export const SearchBar = () => {
                 name={recipe.name}
                 id={recipe.id}
                 image={recipe.image}
+                is_favorite={recipe.is_favorite ? recipe.is_favorite : false}
                 categories={recipe.categories.map((value, index) => {
                   return (
                     <img className="categories" key={index} src={value.image} />

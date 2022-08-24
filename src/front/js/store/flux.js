@@ -176,12 +176,16 @@ const getState = ({
             },
 
             search: async (search) => {
+                let header = {
+                    "Content-Type": "application/json",
+                };
+                if (getStore().token) {
+                    header.Authorization = "Bearer " + localStorage.getItem("token");
+                }
                 const store = getStore();
                 const opts = {
                     method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
+                    headers: header,
                     body: JSON.stringify({
                         data: store.searchRecipes ? store.searchRecipes : search,
                     }),
@@ -224,6 +228,7 @@ const getState = ({
                 });
             },
             setToken: (token, user) => {
+                console.log(token, user);
                 setStore({
                     token: token,
                 });

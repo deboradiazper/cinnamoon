@@ -60,7 +60,7 @@ export const UserRegistration = () => {
   };
 
   return (
-    <div className="registro col-6">
+    <div className="registro">
       <div className="registration col-12 mb-3 mt-5 text-center"></div>
 
       <div className="row">

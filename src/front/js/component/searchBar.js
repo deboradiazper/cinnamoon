@@ -31,9 +31,8 @@ export const SearchBar = () => {
 
   return (
     <>
-      <div className="row justify-content-center text-center">
-        <div className="col-10 search text-center mb-3">
-
+      <div className="row justify-content-center">
+        <div className="col-lg-8 search text-center mb-3">
           <form onSubmit={subtmitHandler}>
             <div className="input-group pb-2 pt-5 mt-5">
               <input
@@ -45,9 +44,9 @@ export const SearchBar = () => {
                 onChange={searcher}
               />
             </div>
-            <div className="col-12 d-flex justify-content-center">
+            <div className="col-lg-4 ">
               <button className="botonreceta">
-                <p>Buscar recetas</p>
+                <p>Buscar</p>
                 <svg
                   stroke-width="4"
                   stroke="currentColor"
@@ -77,17 +76,11 @@ export const SearchBar = () => {
                 image={recipe.image}
                 categories={recipe.categories.map((value, index) => {
                   return (
-                    <img
-                      className="categories"
-                      key={index}
-                      src={value.image}
-                    />
-
+                    <img className="categories" key={index} src={value.image} />
                   );
                 })}
               />
             </div>
-
           );
         })}
       </div>

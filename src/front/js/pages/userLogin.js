@@ -23,7 +23,7 @@ export const UserLogin = () => {
   };
 
   return (
-    <div className="logueo col-6">
+    <div className="logueo">
       <div className="col-12 text-center mt-5">
         <div>
           <div className="row">

@@ -5,7 +5,7 @@ import os
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Recipes, Ingredients, Trivia, Categories, RecipesFavorites, IngredientsFavorites, RecipeCategories, RecipesIngredients
 from api.utils import generate_sitemap, APIException
-from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
+from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required, verify_jwt_in_request
 import cloudinary 
 import cloudinary.uploader
 from sqlalchemy import func
@@ -91,9 +91,11 @@ def add_recipes_favorites():
 
 #Recipes
 @api.route('/recipes', methods=['GET'])
-@jwt_required(optional=True)
 def get_recipes():
-    user_id = get_jwt_identity()
+    try: 
+        user_id = get_jwt_identity()
+    except: 
+        user_id = None
     print(user_id)
     
     recipes = Recipes.query.order_by(Recipes.id.desc()).limit(10).all()
@@ -106,6 +108,7 @@ def get_recipes():
             recipe["is_favorite"] = True if recipe["id"] in favoritesrecipes else False
     
     return jsonify(data), 200
+
     
 @api.route('/recipes/<int:id>', methods=['GET'])
 def detail_recipes(id):
@@ -234,9 +237,11 @@ def searchbar():
 
 
 @api.route('/top_recipes', methods=['GET'])
-@jwt_required(optional=True)
 def top_recipes():
-    user_id = get_jwt_identity()
+    try: 
+        user_id = get_jwt_identity()
+    except: 
+        user_id = None
     print(user_id)
     top_recipes = RecipesFavorites.query.with_entities(RecipesFavorites.recipe_id, func.count(RecipesFavorites.recipe_id)).group_by(RecipesFavorites.recipe_id).all()
     top_recipes = [item[0] for item in top_recipes]

@@ -23,6 +23,11 @@ h1 {
   font-family: "Playfair Display", serif;
 }
 
+h4 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+}
+
 .text3 {
   font-family: "Karla", sans-serif;
 }
@@ -345,7 +350,7 @@ ul {
 
 /* divfooter */
 .diverse {
-  background: rgba(159, 127, 77, 0.6);
+  background: rgba(161, 135, 92, 0.349);
 }
 
 .diverse2 {
@@ -1009,4 +1014,9 @@ ul {
 .box:hover > div,
 .box:hover > strong {
   opacity: 0;
+}
+
+.busca {
+  background-color: #dbd1c2;
+  min-width: 100%;
 }

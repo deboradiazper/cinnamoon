@@ -175,17 +175,20 @@ const CreateRecipe = () => {
                                 Escoge una categoria
                             </label>
                             <select
-                                className="form-control"
+                                classNeme="form-select form-select-sm"
                                 name="category"
                                 id="categorySelect"
-                                placeholder="Escoge una categoria"
-                                onChange={handleChange}
-                            >
-                                <option>Vegano</option>
-                                <option>Sin gluten</option>
-                                <option>Sin lactosa</option>
-                                <option>Sin azucar</option>
+                                multiple data mdb-placeholder="Escoge una categoria"
+                                //multiple aria-label="multiple select example"
+                                onChange={handleChange}>
+
+                                <option value="1">Vegano</option>
+                                <option value="2">Sin gluten</option>
+                                <option value="3">Sin lactosa</option>
+                                <option value="4">Sin azucar</option>
                             </select>
+
+
                         </div>
                         <div className="button-newrecipe text-center pt-5">
                             <button className="ctaNewrecipe">

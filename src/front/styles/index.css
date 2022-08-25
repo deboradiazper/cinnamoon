@@ -318,15 +318,16 @@ ul {
 /* divfooter */
 .diverse {
     background: rgba(159, 127, 77, 0.6);
+    margin-top: 5rem;
 }
 
 .diverse2 {
-    background: #6397a1;
+    background: #c2d7db;
+    margin-top: 5rem;
 }
 
 .diverse3 {
-    background: #efe9ef;
-    height: 350px;
+    background: #fbfafb;
 }
 
 .imgfooter1 {
@@ -919,7 +920,7 @@ ul {
 
 /* buscador home */
 .busca {
-    background: #dbd1c2;
+    background: #c2d7db;
 }
 
 .searchIngredients {
@@ -944,8 +945,12 @@ ul {
     margin-top: 5rem;
 }
 
+.recetas2 {
+    margin-top: 5rem;
+}
+
 /* container botones catgories */
 .buttonsCategory {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
 }

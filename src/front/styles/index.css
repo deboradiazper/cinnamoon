@@ -257,7 +257,7 @@ ul {
 .card-ingredient {
     text-align: justify;
     margin-top: 100px;
-    background: #efe9ef;
+    background: white;
     box-shadow: 0px 15px 15px -15px rgba(116, 115, 115, 0.25);
     overflow: hidden;
     cursor: pointer;
@@ -824,7 +824,7 @@ ul {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #efe9ef;
+    background: rgba(159, 127, 77, 0.6);
     margin-bottom: 16px;
 }
 
@@ -947,10 +947,4 @@ ul {
 
 .recetas2 {
     margin-top: 5rem;
-}
-
-/* container botones catgories */
-.buttonsCategory {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
 }

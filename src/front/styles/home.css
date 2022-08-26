@@ -5,3 +5,15 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+
+/* carousel imagen  */
+.imgCarousel {
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel-item {
+    max-height: 550px;
+    min-height: 200px;
+}

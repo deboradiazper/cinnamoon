@@ -135,7 +135,7 @@ export const Home = () => {
 
       </div>
 
-      <div className="container" style={{ maxheight: "350px", minHeight: "200px" }}>
+      <div className="container mt-5" style={{ maxheight: "350px", minHeight: "200px" }}>
         <div className="row">
           <div className="col-12 my-3 d-flex flex-md-column flex-sm-column flex-lg-row justify-content-lg-center justify-content-md-center justify-content-sm-center">
             {store.categories.map((category) => {
@@ -159,24 +159,19 @@ export const Home = () => {
               );
             })}
           </div>
-          <div className="col-12">
-            <h4 className="mt-4 text-center">
-              ¿Con qué ingredientes quieres cocinar hoy?
-            </h4>
+          <div className="col-12 mt-4">
             <form
               onSubmit={handleSubmit}
-              className="formBusca d-flex justify-content-center mt-3"
+              className="formBusca d-flex justify-content-center my-3"
             >
-              <div className="input-group pb-2 mt-3 px-lg-5 px-sm-5 w-75">
+              <div className="inputHome input-group pb-2 mt-3 px-lg-5 px-sm-5 w-75">
                 <input
                   onChange={handleChange}
                   type="text"
                   className="searchIngredients form-control"
                   placeholder="¿Qué ingredientes tienes a mano?"
                 />
-                <button className="botonreceta bg-white border-0">
-                  <i className="fas fa-search text-muted pe-2"></i>
-                </button>
+                <button className="botonreceta"><i class="fas fa-search px-3"></i></button>
               </div>
             </form>
           </div>

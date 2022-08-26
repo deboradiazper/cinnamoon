@@ -26,7 +26,10 @@ const RecipeDetail = (props) => {
         </div>
       </div>
 
-      <div className="description-detail col-md-6 ps-5 overflow-auto" style={{ minHeight: "400px" }}>
+      <div
+        className="description-detail col-md-6 ps-5 overflow-auto"
+        style={{ minHeight: "400px" }}
+      >
         <div className="box-title d-flex justify-content-between align-items-center pe-5">
           <h4 className="title-detail">{props.name}</h4>
           <i className="fas fa-heart text-muted"></i>
@@ -41,9 +44,7 @@ const RecipeDetail = (props) => {
         <p className="card-text3">{props.description}</p>
       </div>
       <div className="col-12">
-        <h4 className="title-trivia mt-5 pt-5">
-          Conoce más sobre esta receta..
-        </h4>
+        <h4 className="title-trivia mt-5 pt-5">Conoce más sobre esta receta</h4>
 
         {props.ingredients.map((value, index) => {
           return (

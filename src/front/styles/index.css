@@ -257,7 +257,7 @@ ul {
 .card-ingredient {
     text-align: justify;
     margin-top: 100px;
-    background: #efe9ef;
+    background: white;
     box-shadow: 0px 15px 15px -15px rgba(116, 115, 115, 0.25);
     overflow: hidden;
     cursor: pointer;
@@ -318,15 +318,16 @@ ul {
 /* divfooter */
 .diverse {
     background: rgba(159, 127, 77, 0.6);
+    margin-top: 5rem;
 }
 
 .diverse2 {
-    background: #6397a1;
+    background: #c2d7db;
+    margin-top: 5rem;
 }
 
 .diverse3 {
-    background: #efe9ef;
-    height: 350px;
+    background: #fbfafb;
 }
 
 .imgfooter1 {
@@ -678,13 +679,6 @@ ul {
     transform: scale(0.95);
 }
 
-/* botonreceta */
-
-.botonreceta {
-    border: none;
-    border-radius: 0px 8px 8px 0px;
-}
-
 /* button favUser ,button tableUser*/
 .ctaUser {
     text-decoration: none;
@@ -757,11 +751,11 @@ ul {
 
 ::-webkit-scrollbar-thumb {
     border-radius: 5px;
-    background: #428e9e;
+    background: #7b7c7d;
 }
 
 ::-webkit-scrollbar-corner {
-    background: #428e9e;
+    background: #434546;
 }
 
 /*registro y logueo container border*/
@@ -823,7 +817,7 @@ ul {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #efe9ef;
+    background: rgba(159, 127, 77, 0.6);
     margin-bottom: 16px;
 }
 
@@ -917,35 +911,22 @@ ul {
     opacity: 0;
 }
 
-/* buscador home */
-.busca {
-    background: #dbd1c2;
-}
-
-.searchIngredients {
-    display: flow-root;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid #f9fafb;
-    border-radius: 8px 0 0px 8px;
-}
-
-.searchIngredients2 {
-    display: flow-root;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid #cacdd0;
-    border-radius: 8px 0 0px 8px;
-    outline: none;
-}
-
 /* container recetas */
 .recetas {
     margin-top: 5rem;
 }
 
-/* container botones catgories */
-.buttonsCategory {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+.recetas2 {
+    margin-top: 5rem;
+}
+
+/* buscador2 */
+.searchIngredients2 {
+    border-radius: 0;
+    border: none;
+    display: flow-root;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid #1a1a1a;
+    outline: none;
 }

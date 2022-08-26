@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
-
 import cinnamoon from "../../img/cinnamoon.png";
 
 const CreateRecipe = () => {
@@ -10,6 +9,13 @@ const CreateRecipe = () => {
     const [newrecipe, setNewrecipe] = useState();
     const [file, setFile] = useState();
     const navigate = useNavigate();
+    const [categories, setCategory] = useState(store.categories.map((category) => {
+        return {
+            id: category.id,
+            name: category.name,
+            status: false
+        }
+    }));
 
     useEffect(() => {
         if (!store.token) {
@@ -23,10 +29,10 @@ const CreateRecipe = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
-        //for (const key in newrecipe) {
-        //  formData.append(key, newrecipe[key])
-        //}
-        // formData.append("image", file)
+        formData.append(
+            "categories", categories.filter(category => category.status == true).map(category => category.id).join()
+
+        )
         fetch(process.env.BACKEND_URL + "/api/addrecipes", {
             method: "POST",
             body: formData,
@@ -40,7 +46,8 @@ const CreateRecipe = () => {
             })
             .then((data) => {
                 console.log(data);
-            });
+                navigate(`/detail/${data.recipe_id}`)
+            })
     };
     const handleFileInput = (e) => {
         setFile(e.target.files[0]);
@@ -174,21 +181,23 @@ const CreateRecipe = () => {
                             >
                                 Escoge una categoria
                             </label>
-                            <select
-                                className="form-control"
-                                name="category"
-                                id="categorySelect"
-                                placeholder="Escoge una categoria"
-                                onChange={handleChange}
-                            >
-                                <option>Vegano</option>
-                                <option>Sin gluten</option>
-                                <option>Sin lactosa</option>
-                                <option>Sin azucar</option>
-                            </select>
+                            {
+                                categories.map((category, index) => {
+                                    return (
+                                        <button className={`m-4 btn btn-${category.status ? "secondary" : "light"}`} type="button" onClick={() => {
+                                            setCategory(categories.map((item) => {
+                                                if (item.id == category.id) {
+                                                    item.status = !item.status
+                                                }
+                                                return item
+                                            }))
+                                        }}>{category.name}</button>
+                                    )
+                                })
+                            }
                         </div>
                         <div className="button-newrecipe text-center pt-5">
-                            <button className="ctaNewrecipe">
+                            <button className="ctaNewrecipe" type="submit">
                                 <span>AÑADIR</span>
                                 <svg viewBox="0 0 13 10" height="10px" width="15px">
                                     <path d="M1,5 L11,5"></path>
@@ -198,7 +207,7 @@ const CreateRecipe = () => {
                         </div>
                     </form>
                 </div>
-            </div>
+            </div >
         </>
     );
 };

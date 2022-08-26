@@ -32,7 +32,10 @@ export const SearchBar = () => {
   return (
     <>
       <div className="row justify-content-center text-center my-5">
-        <form onSubmit={subtmitHandler} className="formBusca d-flex justify-content-center">
+        <form
+          onSubmit={subtmitHandler}
+          className="formBusca d-flex justify-content-center"
+        >
           <div className="input-group pb-2 mt-5 px-lg-5 px-sm-5 w-75">
             <input
               className="form-control searchIngredients2"
@@ -43,9 +46,7 @@ export const SearchBar = () => {
               onChange={searcher}
             />
 
-            <button className="botonreceta bg-white">
-              <i className="fas fa-search text-muted"></i>
-            </button>
+            <button className="botonreceta"><i class="fas fa-search px-3"></i></button>
           </div>
         </form>
       </div>

@@ -50,10 +50,8 @@ const CreateRecipe = () => {
     <>
       <div className="col-12 my-3 pt-5">
         <div className="d-flex justify-content-center flex-column">
-          <h3 className="text-center">
-            <b>Gracias</b>
-          </h3>
-          <p className="text-3 text-center">
+          <h1 className="text-center p-3">Gracias</h1>
+          <p className="text-3 text-center pb-3">
             Por hacer crecer nuesra comunidad. Con tu aportación más personas
             podrán disfrutar de una alimentación más adaptada, saludable y
             variada.
@@ -173,7 +171,7 @@ const CreateRecipe = () => {
                 for="exampleFormControlSelect1"
                 className="title-all2 mb-2"
               >
-                Escoge una categoria
+                Escoge una categoría
               </label>
               <select
                 className="form-control"
@@ -190,7 +188,7 @@ const CreateRecipe = () => {
             </div>
             <div className="button-newrecipe text-center pt-5">
               <button className="ctaNewrecipe">
-                <span>AÑADIR</span>
+                <span>Añadir</span>
                 <svg viewBox="0 0 13 10" height="10px" width="15px">
                   <path d="M1,5 L11,5"></path>
                   <polyline points="8 1 12 5 8 9"></polyline>

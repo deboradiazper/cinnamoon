@@ -8,8 +8,6 @@ import glutenfree from "../../img/glutenfree.png";
 import lactosefree from "../../img/lactosefree.png";
 import sugarfree from "../../img/sugarfree.png";
 import vegana from "../../img/vegana.png";
-import footerimg from "../../img/footerimg.png";
-import footerimg2 from "../../img/footerimg2.png";
 import firma from "../../img/firma.png";
 
 export const Home = () => {
@@ -131,8 +129,6 @@ export const Home = () => {
             </div>
           </div>
         </div>
-
-
       </div>
 
       <div className="container mt-5" style={{ maxheight: "350px", minHeight: "200px" }}>
@@ -220,13 +216,7 @@ export const Home = () => {
             </div>
           </div>
           <div className="col-sm-12 col-lg-6 col-md-6 footerimg d-flex justify-content-center align-items-center">
-            <img
-              src={footerimg}
-              className="img-footer"
-              alt="img-footer"
-              width="280 vw"
-              height="auto"
-            />
+
           </div>
         </div>
       </div>
@@ -243,13 +233,7 @@ export const Home = () => {
           style={{ minHeight: "450px" }}
         >
           <div className="col-sm-12 col-lg-6 col-md-6 footerimg2 d-flex justify-content-center align-items-center">
-            <img
-              src={footerimg2}
-              className="img-footer"
-              alt="img-footer"
-              width="280 vw"
-              height="auto"
-            />
+
           </div>
           <div className="col-sm-12 col-lg-6 col-md-6 textFooter d-flex justify-content-center align-items-center">
             <div className="text-center px-5 py-2">

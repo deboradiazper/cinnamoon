@@ -152,7 +152,7 @@ export const Home = () => {
       {/* categorias */}
       <div data-aos="fade-down" className="buttonsCategory container">
         <div className="row">
-          <div className="col-12 my-3 d-flex flex-md-column flex-sm-column flex-lg-row justify-content-lg-center">
+          <div className="col-12 my-2 d-flex flex-md-column flex-sm-column flex-lg-row justify-content-lg-center">
             {store.categories.map((category) => {
               return (
                 <div className="align-self-md-center">
@@ -211,7 +211,7 @@ export const Home = () => {
 
       {/* canela */}
       <div data-aos="fade-down" className="container-fluid diverse p-0">
-        <div className="row pt-2 align-items-lg-center">
+        <div className="gutternone row">
           <div className="col-md-6 col-sm-12  textFooter d-flex justify-content-center align-items-center">
             <div className="canela p-5">
               <h1 className="title-footer pb-5">
@@ -261,15 +261,15 @@ export const Home = () => {
 
       {/* okinawa */}
       <div data-aos="fade-down" className="container-fluid diverse2">
-        <div className="diverse2 row pt-2 px-0 align-items-lg-center p-0">
-          <div className="col-md-6 col-sm-12 col-lg-6 footerimg2 my-3">
+        <div className="gutternone row">
+          <div className="col-md-6 col-sm-12 col-lg-6 footerimg2 p-5">
             <img
               src="https://visitokinawajapan.com/wp-content/themes/visit-okinawa/assets/img/discover/126/di126_kv_okinawa-food-culture.jpg "
               class="img-fluid"
             />
           </div>
           <div className="col-md-6 col-sm-12 col-lg-6 textFooter d-flex justify-content-center align-items-center">
-            <div className="okinawa p-5">
+            <div className="okinawa pt-5 pb-5 ps-5 ms-2">
               <h1 className="title2 pb-5">Okinawa, la isla de la longevidad</h1>
               <p>
                 Okinawa es una isla en el sur de Japón que se ha dado a conocer

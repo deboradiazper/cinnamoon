@@ -66,6 +66,7 @@ def create_user():
 @jwt_required()
 def get_recipes_Favorites():
     user_id = get_jwt_identity()
+    print(user_id)
     favorites = RecipesFavorites.query.filter_by(user_id = user_id)
     data = [favorite.Recipes.serialize() for favorite in favorites]
 
@@ -101,6 +102,7 @@ def get_recipes():
     
     recipes = Recipes.query.order_by(Recipes.id.desc()).limit(10).all()
     data = [recipe.serialize() for recipe in recipes]
+    print(user_id)
     if user_id:
         user = User.query.get(user_id)
         favoritesrecipes = [user_fav.Recipes.id for user_fav in user.recipes_fav]
@@ -131,6 +133,7 @@ def create_recipes():
 def add_recipes():
     user_id = get_jwt_identity()
     data = request.form
+    print(data)
     cloudinary.config( 
         cloud_name = os.getenv('cloud_name'), 
         api_key = os.getenv('api_key'), 
@@ -142,7 +145,12 @@ def add_recipes():
     recipe = Recipes(name=data.get('name'), description=data.get('description'), image = uploadresult["secure_url"], cookingtime=data.get('cookingtime'), user_id=user_id)
     db.session.add(recipe)
     db.session.commit()
-    return jsonify({"message": "recipe added"}), 200
+    categories = data.get("categories", "").split(",")
+    for category_id in categories: 
+        category = RecipeCategories(recipe_id = recipe.id, category_id = category_id)
+        db.session.add(category)
+        db.session.commit()
+    return jsonify({"recipe_id": recipe.id}), 200
 
 
 #IngredientsFavorites

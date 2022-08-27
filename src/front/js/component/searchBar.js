@@ -46,9 +46,7 @@ export const SearchBar = () => {
               onChange={searcher}
             />
 
-            <button className="botonreceta bg-white">
-              <i className="fas fa-search text-muted"></i>
-            </button>
+            <button className="botonreceta"><i class="fas fa-search px-3"></i></button>
           </div>
         </form>
       </div>

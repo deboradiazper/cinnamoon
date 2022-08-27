@@ -31,10 +31,9 @@ export const Home = () => {
 
   return (
     <>
-      {/* carrusel */}
-      <div className="container-fluid p-0" style={{ minHeight: "200px" }}>
-        <div className="row" style={{ height: "90%" }}>
-          <div className="col-12" style={{ height: "90%" }}>
+      <div className="container-fluid p-0">
+        <div className="row">
+          <div className="col-12 p-0 m-0">
             <div
               id="carouselExampleDark"
               className="carousel carousel-dark slide"
@@ -69,8 +68,16 @@ export const Home = () => {
                 ></button>
               </div>
               <div className="carousel-inner">
-                <div className="carousel-item active" data-bs-interval="10000">
-                  <img src={glutenfree} className="w-100" alt="..." />
+                <div
+                  className="carousel-item active"
+                  data-bs-interval="10000"
+                  s
+                >
+                  <img
+                    className="imgCarousel img-fluid"
+                    src={glutenfree}
+                    alt="..."
+                  />
 
                   <div className="carousel-caption d-none d-md-block">
                     <h2 className="title-all px-5">
@@ -84,7 +91,11 @@ export const Home = () => {
                   </div>
                 </div>
                 <div className="carousel-item" data-bs-interval="2000">
-                  <img className="w-100" src={vegana} alt="..." />
+                  <img
+                    className="imgCarousel img-fluid"
+                    src={vegana}
+                    alt="..."
+                  />
                   <div className="carousel-caption d-none d-md-block">
                     <h2 className="title-all px-5">
                       <b>VEGANAS</b>
@@ -96,7 +107,11 @@ export const Home = () => {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img className=" w-100" src={lactosefree} alt="..." />
+                  <img
+                    className="imgCarousel img-fluid"
+                    src={lactosefree}
+                    alt="..."
+                  />
                   <div className="carousel-caption d-none d-md-block">
                     <h2 className="title-all px-5">
                       <b>SIN LACTOSA</b>
@@ -108,7 +123,11 @@ export const Home = () => {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img className=" w-100" src={sugarfree} alt="..." />
+                  <img
+                    className="imgCarousel img-fluid"
+                    src={sugarfree}
+                    alt="..."
+                  />
                   <div className="carousel-caption d-none d-md-block">
                     <h2 className="title-all px-5">
                       <b>SIN AZÚCAR</b>
@@ -310,6 +329,63 @@ export const Home = () => {
         </p>
         <button className="suscribe">Suscríbete</button>
       </div>
+
+      {/* mailing list */}
+      <div
+        data-aos="flip-left"
+        className="econtainer-fluid suscribirse text-center justify-content-center align-items-center"
+      >
+        <h2>¡únete a nosotros!</h2>
+        <p>
+          Suscríbete a nuestra mailing list y recibe las últimas novedades:
+          nuevas recetas, historia de los alimentos, estilo de vida saludable...
+        </p>
+        <button className="suscribe">Suscríbete</button>
+      </div>
     </>
   );
 };
+{
+  /* <div className="container-fluid">
+        <div className="row mt-5">
+          <div
+            className="diverse col-12 col-md-4 text-center pt-2 d-flex justify-content-around align-items-center"
+            style={{ minHeight: "400px", width: "100%" }}
+          >
+            <div
+              className="textFooter mt-5"
+              style={{ minHeight: "400px", width: "50%" }}
+            >
+              <h4 className="title-footer mt-5">RECETAS PARA TODOS</h4>
+              <ul className="text-footer">
+                <li>
+                  El <b>calcio que mejor se absorbes</b> no es el de los lácteo,
+                  sino el de las algas.
+                </li>
+                <li>
+                  <b>Eliminar el gluten</b>de tu dieta mejora tu salud
+                  intestinal.
+                </li>
+                <li>
+                  Es posible <b>endulzar tus platos</b> con alimentos que tienen
+                  azúcar en su composición
+                </li>
+                <li>
+                  Una alimentación <b>vegana</b> puede ser rica en proteínas de
+                  origen vegetal.
+                </li>
+              </ul>
+            </div>
+            <div className="footerimg">
+              <img
+                src={footerimg}
+                className="img-footer"
+                alt="img-footer"
+                width="280 vw"
+                height="auto"
+              />
+            </div>
+          </div>
+        </div>
+      </div> */
+}

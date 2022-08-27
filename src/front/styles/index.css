@@ -275,7 +275,7 @@ ul {
 .card-ingredient {
   text-align: justify;
   margin-top: 100px;
-  background: #efe9ef;
+  background: white;
   box-shadow: 0px 15px 15px -15px rgba(116, 115, 115, 0.25);
   overflow: hidden;
   cursor: pointer;
@@ -936,7 +936,10 @@ ul {
   opacity: 0;
 }
 
-/* buscador home */
+/* container recetas */
+.recetas {
+  margin-top: 5rem;
+}
 
 .searchIngredients {
   display: flow-root;
@@ -947,11 +950,12 @@ ul {
 }
 
 .searchIngredients2 {
+  border-radius: 0;
+  border: none;
   display: flow-root;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid #cacdd0;
-  border-radius: 8px 0 0px 8px;
+  border-bottom: 1px solid #1a1a1a;
   outline: none;
 }
 

@@ -316,20 +316,6 @@ export const Home = () => {
           </div>
         </div>
       </div>
-
-      {/* mailing list */}
-      <div
-        data-aos="flip-left"
-        className="econtainer-fluid suscribirse text-center justify-content-center align-items-center"
-      >
-        <h2>¡únete a nosotros!</h2>
-        <p>
-          Suscríbete a nuestra mailing list y recibe las últimas novedades:
-          nuevas recetas, historia de los alimentos, estilo de vida saludable...
-        </p>
-        <button className="suscribe">Suscríbete</button>
-      </div>
-
       {/* mailing list */}
       <div
         data-aos="flip-left"
@@ -346,46 +332,4 @@ export const Home = () => {
   );
 };
 {
-  /* <div className="container-fluid">
-        <div className="row mt-5">
-          <div
-            className="diverse col-12 col-md-4 text-center pt-2 d-flex justify-content-around align-items-center"
-            style={{ minHeight: "400px", width: "100%" }}
-          >
-            <div
-              className="textFooter mt-5"
-              style={{ minHeight: "400px", width: "50%" }}
-            >
-              <h4 className="title-footer mt-5">RECETAS PARA TODOS</h4>
-              <ul className="text-footer">
-                <li>
-                  El <b>calcio que mejor se absorbes</b> no es el de los lácteo,
-                  sino el de las algas.
-                </li>
-                <li>
-                  <b>Eliminar el gluten</b>de tu dieta mejora tu salud
-                  intestinal.
-                </li>
-                <li>
-                  Es posible <b>endulzar tus platos</b> con alimentos que tienen
-                  azúcar en su composición
-                </li>
-                <li>
-                  Una alimentación <b>vegana</b> puede ser rica en proteínas de
-                  origen vegetal.
-                </li>
-              </ul>
-            </div>
-            <div className="footerimg">
-              <img
-                src={footerimg}
-                className="img-footer"
-                alt="img-footer"
-                width="280 vw"
-                height="auto"
-              />
-            </div>
-          </div>
-        </div>
-      </div> */
 }

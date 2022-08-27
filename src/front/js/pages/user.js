@@ -15,10 +15,10 @@ export const User = () => {
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-md-6">
-          <UserLogin />
+          <UserRegistration />
         </div>
         <div className="col-md-6">
-          <UserRegistration />
+          <UserLogin />
         </div>
       </div>
     </div>

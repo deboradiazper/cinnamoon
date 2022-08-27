@@ -23,14 +23,16 @@ export const UserLogin = () => {
   };
 
   return (
-    <div className="logueo col-6">
+    <div className="logueo">
       <div className="col-12 text-center mt-5">
         <div>
           <div className="row">
             <div className="container_form">
               <form onSubmit={handleSubmit} className="form" id="registration">
                 <div className="col-12 text-center mt-2 mb-3">
-                  <p>Inicia sesión</p>
+                  <p>
+                    <b>Inicia sesión</b>
+                  </p>
                   <input
                     className="input-reg mt-1"
                     name="email"

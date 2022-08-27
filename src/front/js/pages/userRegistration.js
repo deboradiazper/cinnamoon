@@ -60,7 +60,7 @@ export const UserRegistration = () => {
   };
 
   return (
-    <div className="registro col-6">
+    <div className="registro">
       <div className="registration col-12 mb-3 mt-5 text-center"></div>
 
       <div className="row">
@@ -71,7 +71,9 @@ export const UserRegistration = () => {
             id="registration"
           >
             <div className="col-12 mb-3 mt-1 text-center">
-              <p>¿No tienes una cuenta?</p>
+              <p>
+                <b>¿No tienes una cuenta?</b>
+              </p>
               <input
                 className="input-reg mt-1"
                 name="name"

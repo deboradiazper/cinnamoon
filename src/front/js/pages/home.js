@@ -133,8 +133,8 @@ export const Home = () => {
                       <b>SIN AZÚCAR</b>
                     </h2>
                     <p>
-                      Descubre como sustituir azúcar por otros productos
-                      naturales y cocina postres y dulces saludables.
+                      Es posible sustituir el azúcar por otros productos
+                      naturales y cocinar postres y dulces saludables.
                     </p>
                   </div>
                 </div>
@@ -230,7 +230,7 @@ export const Home = () => {
 
       {/* canela */}
       <div data-aos="fade-down" className="container-fluid diverse p-0">
-        <div className="gutternone row">
+        <div className="gutternone row py-5">
           <div className="col-md-6 col-sm-12  textFooter d-flex justify-content-center align-items-center">
             <div className="canela p-5">
               <h1 className="title-footer pb-5">
@@ -261,9 +261,9 @@ export const Home = () => {
               </p>
             </div>
           </div>
-          <div className="col-md-6 col-sm-12  footerimg d-flex justify-content-center align-items-center">
+          <div className="col-md-6 col-sm-12  footerimg justify-content-center align-items-center pe-5">
             <img
-              src="https://post.healthline.com/wp-content/uploads/2020/08/AN452-Cinnamon-732x549-thumb-1-732x549.jpg"
+              src="https://images.unsplash.com/photo-1554675427-1d637bdb5a12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1633&q=80"
               class="img-fluid"
             />
           </div>
@@ -279,16 +279,16 @@ export const Home = () => {
       </div>
 
       {/* okinawa */}
-      <div data-aos="fade-down" className="container-fluid diverse2">
-        <div className="gutternone row">
-          <div className="col-md-6 col-sm-12 col-lg-6 footerimg2 p-5">
+      <div data-aos="fade-down" className="container-fluid diverse2 p-0">
+        <div className="gutternone row py-5">
+          <div className="col-md-6 col-sm-12 col-lg-6 footerimg2 ps-5">
             <img
-              src="https://visitokinawajapan.com/wp-content/themes/visit-okinawa/assets/img/discover/126/di126_kv_okinawa-food-culture.jpg "
+              src="https://images.unsplash.com/photo-1562547256-2c5ee93b60b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=741&q=80nop"
               class="img-fluid"
             />
           </div>
           <div className="col-md-6 col-sm-12 col-lg-6 textFooter d-flex justify-content-center align-items-center">
-            <div className="okinawa pt-5 pb-5 ps-5 ms-2">
+            <div className="okinawa p-5">
               <h1 className="title2 pb-5">Okinawa, la isla de la longevidad</h1>
               <p>
                 Okinawa es una isla en el sur de Japón que se ha dado a conocer
@@ -319,7 +319,7 @@ export const Home = () => {
       {/* mailing list */}
       <div
         data-aos="flip-left"
-        className="econtainer-fluid suscribirse text-center justify-content-center align-items-center"
+        className="econtainer-fluid suscribirse text-center justify-content-center align-items-center pt-4"
       >
         <h2>¡únete a nosotros!</h2>
         <p>

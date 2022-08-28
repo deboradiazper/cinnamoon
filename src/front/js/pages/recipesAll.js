@@ -20,7 +20,7 @@ export const RecipeAll = () => {
         </div>
         {recipes.map((recipe, index) => {
           return (
-            <div className="col-12 col-md-3 mt-5" id="recipes" key={index}>
+            <div className="col-12 col-md-3 my-5" id="recipes" key={index}>
               <Recipe
                 name={recipe.name}
                 id={recipe.id}

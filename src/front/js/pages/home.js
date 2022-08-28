@@ -74,7 +74,7 @@ export const Home = () => {
                   s
                 >
                   <img
-                    className="imgCarousel img-fluid"
+                    className="imgCarousel  img-fluid"
                     src={glutenfree}
                     alt="..."
                   />
@@ -124,7 +124,7 @@ export const Home = () => {
                 </div>
                 <div className="carousel-item">
                   <img
-                    className="imgCarousel img-fluid"
+                    className="imgCarousel  img-fluid"
                     src={sugarfree}
                     alt="..."
                   />
@@ -171,7 +171,7 @@ export const Home = () => {
       {/* categorias */}
       <div data-aos="fade-down" className="buttonsCategory container">
         <div className="row">
-          <div className="col-12 my-2 d-flex flex-md-column flex-sm-column flex-lg-row justify-content-lg-center">
+          <div className="col-12 d-flex flex-md-column flex-sm-column flex-lg-row justify-content-lg-center">
             {store.categories.map((category) => {
               return (
                 <div className="align-self-md-center">
@@ -206,16 +206,12 @@ export const Home = () => {
           onSubmit={handleSubmit}
           className="formBusca d-flex justify-content-center"
         >
-          <div className="input-group pb-2 mt-5 px-lg-5 px-sm-5 w-75">
+          <div className="input-group mt-2 w-75">
             <input
               onChange={handleChange}
               type="text"
               className="searchIngredients form-control"
-              placeholder="¿Qué ingredientes tienes a mano?"
-            />
-            <button className="botonreceta bg-white">
-              <i className="fas fa-search text-muted"></i>
-            </button>
+              placeholder="  ¿Qué ingrediente tienes a mano?" />
           </div>
         </form>
       </div>

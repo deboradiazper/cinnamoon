@@ -36,17 +36,15 @@ export const SearchBar = () => {
           onSubmit={subtmitHandler}
           className="formBusca d-flex justify-content-center"
         >
-          <div className="input-group pb-2 mt-5 px-lg-5 px-sm-5 w-75">
+          <div className="input-group pb-2 mt-5 w-75">
             <input
-              className="form-control searchIngredients2"
+              className="form-control searchIngredients2 px-2"
               id="searchinput"
               type="text"
-              placeholder="¿Qué ingredientes tienes a mano?"
+              placeholder="¿  Qué ingredientes tienes a mano?"
               defaultValue={search}
               onChange={searcher}
             />
-
-            <button className="botonreceta"><i class="fas fa-search px-3"></i></button>
           </div>
         </form>
       </div>

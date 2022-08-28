@@ -229,15 +229,17 @@ def recipes_category(name):
     return jsonify(recipes), 200
 
 
-#searhBar
+#searchBar
 @api.route('/searchbar', methods=['POST'])
 def searchbar():
     data = request.json
     text = data.get("data")
     if len(text):
         search_data = text.split(", ")
-        ingredients = Ingredients.query.filter(Ingredients.name.in_(search_data))
-        ingredients = [ingredient.id for ingredient in ingredients]
+        for data in search_data: 
+            ingredients = Ingredients.query.filter(Ingredients.name.ilike(f"{data}%"))
+            ingredients = [ingredient.id for ingredient in ingredients]
+            ingredients = list(set(ingredients))
         recipe_ingredients = RecipesIngredients.query.filter(RecipesIngredients.ingredient_id.in_(ingredients))
         recipes = [recipe_ingredient.Recipes.serialize() for recipe_ingredient in recipe_ingredients]
         return jsonify(recipes), 200

@@ -4,7 +4,7 @@ import "../../styles/home.css";
 import RecipeList from "../component/recipeList.js";
 import RecipeFavList from "../component/recipeFavList.js";
 import { Link, useNavigate } from "react-router-dom";
-import glutenfree from "../../img/glutenfree.png";
+import glutenfree3 from "../../img/glutenfree3.png";
 import lactosefree from "../../img/lactosefree.png";
 import sugarfree from "../../img/sugarfree.png";
 import vegana from "../../img/vegana.png";
@@ -75,7 +75,7 @@ export const Home = () => {
                 >
                   <img
                     className="imgCarousel  img-fluid"
-                    src={glutenfree}
+                    src={glutenfree3}
                     alt="..."
                   />
 
@@ -83,10 +83,11 @@ export const Home = () => {
                     <h2 className="title-all px-5">
                       <b>SIN GLUTEN</b>
                     </h2>
-                    <p>
+                    <p className="fs-5">
                       El gluten es una proteína que se encuentra en el trigo, la
-                      cebada, el centeno y el triticale (un cruzamiento entre el
-                      trigo y el centeno).
+                      cebada, el centeno y el triticale.
+                      El arroz, el trigo sarraceno, el teff, el amaranto, el maiz o el mijo son cereales que no contienen dicha proteina.
+
                     </p>
                   </div>
                 </div>
@@ -100,9 +101,8 @@ export const Home = () => {
                     <h2 className="title-all px-5">
                       <b>VEGANAS</b>
                     </h2>
-                    <p>
-                      Potenciamos el consumo de vegetales, hortalizas, frutos y
-                      semejantes.
+                    <p className="fs-5">
+                      Para que una dieta vegana sea equilibrada es importante incluir proteinas de origen vegetal como las algas, las legumbres, las setas, los frutos secos o las semillas.
                     </p>
                   </div>
                 </div>
@@ -116,9 +116,8 @@ export const Home = () => {
                     <h2 className="title-all px-5">
                       <b>SIN LACTOSA</b>
                     </h2>
-                    <p>
-                      Descubre otras alternativas a la leche y conoce que
-                      alimentos que son fuente de calcio.
+                    <p className="fs-5">
+                      Si no tomas leche, no hay razón para que tengas una dieta pobre en calcio si escoges alimentos que contengan este nutriente, como el brocoli, la coliflor, la col, el kale, los garbanzos, las alubias, las almendras, las semillas de sésamo, etc.
                     </p>
                   </div>
                 </div>
@@ -132,9 +131,9 @@ export const Home = () => {
                     <h2 className="title-all px-5">
                       <b>SIN AZÚCAR</b>
                     </h2>
-                    <p>
-                      Descubre como sustituir azúcar por otros productos
-                      naturales y cocina postres y dulces saludables.
+                    <p className="fs-5">
+                      Usa alimentos que contengan azúcar en su composición ( Calabaza, platano, datil, zanahoria, manzana...)  o edulcorantes naturales  (Estevia, miel, xilitol..) para endulzar tus platos.
+
                     </p>
                   </div>
                 </div>
@@ -206,7 +205,7 @@ export const Home = () => {
           onSubmit={handleSubmit}
           className="formBusca d-flex justify-content-center"
         >
-          <div className="input-group mt-2 w-75">
+          <div className="input-group w-75">
             <input
               onChange={handleChange}
               type="text"

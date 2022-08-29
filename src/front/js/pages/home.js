@@ -84,8 +84,10 @@ export const Home = () => {
                       <b>SIN GLUTEN</b>
                     </h2>
                     <p className="fs-5">
-                      El arroz, el trigo sarraceno, el teff, el amaranto, el maiz o el mijo son cereales que no contienen gluten, una proteina potencialmente inflamaroria
-                      que se encuentra en el trigo, la cebada, el centeno y el triticale.
+                      El arroz, el trigo sarraceno, el teff, el amaranto, el
+                      maiz o el mijo son cereales que no contienen gluten, una
+                      proteina potencialmente inflamaroria que se encuentra en
+                      el trigo, la cebada, el centeno y el triticale.
                     </p>
                   </div>
                 </div>
@@ -100,7 +102,10 @@ export const Home = () => {
                       <b>VEGANAS</b>
                     </h2>
                     <p className="fs-5">
-                      Para que una dieta vegana sea equilibrada es importante incluir proteinas de origen vegetal como las algas, las legumbres, los cereales, los hongos o setas, los frutos secos y las semillas.
+                      Para que una dieta vegana sea equilibrada es importante
+                      incluir proteinas de origen vegetal como las algas, las
+                      legumbres, los cereales, los hongos o setas, los frutos
+                      secos y las semillas.
                     </p>
                   </div>
                 </div>
@@ -115,7 +120,11 @@ export const Home = () => {
                       <b>SIN LACTOSA</b>
                     </h2>
                     <p className="fs-5">
-                      No consumir leche animal no es sinónimo de una dieta pobre en calcio siempre y cuando tomes otros alimentos que contengan este nutriente. El brócoli, la coliflor, la col, el kale, los garbanzos, las alubias, las almendras, las semillas de sésamo, etc son buenso ejemplos de ello.
+                      No consumir leche animal no es sinónimo de una dieta pobre
+                      en calcio siempre y cuando tomes otros alimentos que
+                      contengan este nutriente. El brócoli, la coliflor, la col,
+                      el kale, los garbanzos, las alubias, las almendras, las
+                      semillas de sésamo, etc son buenso ejemplos de ello.
                     </p>
                   </div>
                 </div>
@@ -130,7 +139,11 @@ export const Home = () => {
                       <b>SIN AZÚCAR</b>
                     </h2>
                     <p className="fs-5">
-                      Es posible endulzar tus platos con alimentos que contengan azúcar de manera natural en su composición. Prueba con manzana, plátano, melocotón, mango, pasas, orejones, dátiles, calabaza, zanahoria o edulcorantes naturales como la estevia, el xilitol o la miel.
+                      Es posible endulzar tus platos con alimentos que contengan
+                      azúcar de manera natural en su composición. Prueba con
+                      manzana, plátano, melocotón, mango, pasas, orejones,
+                      dátiles, calabaza, zanahoria o edulcorantes naturales como
+                      la estevia, el xilitol o la miel.
                     </p>
                   </div>
                 </div>
@@ -166,7 +179,7 @@ export const Home = () => {
 
       {/* categorias */}
       <div data-aos="fade-down" className="container buttonsCategory">
-        <div className="row">
+        <div className="row pb-5">
           {store.categories.map((category) => {
             return (
               <div className="col-12 col-md-3 col-sm-3 d-flex justify-content-center align-items-center">
@@ -205,7 +218,8 @@ export const Home = () => {
               onChange={handleChange}
               type="text"
               className="searchIngredients form-control"
-              placeholder="  ¿Qué ingrediente tienes a mano?" />
+              placeholder="  "
+            />
           </div>
         </form>
       </div>
@@ -227,14 +241,19 @@ export const Home = () => {
                 ¿Sabes de dónde viene la canela?
               </h1>
               <p>
-                Aporta un aroma y un sabor muy reconocibles a multitud de
-                platos. Pero, ¿sabes de dónde viene exactamente la canela? Esta
-                especia la encontramos en forma de rama o en polvo. Su origen
-                está en China y procede de un árbol del que se aprovecha la
-                corteza interna obtenida pelando y frotando las ramas. Se
-                cultiva en muchas zonas de Asia y es una especia que se emplea
-                en gran parte de cocinas del mundo, con reconocidos beneficios
-                para la salud.
+                La canela se obtiene de la corteza de los árboles Cinnamomum, y
+                su uso culinario se remonta a siglos atrás, especialmente en
+                India. Se utiliza principalmente para aromatizar diversos platos
+                culinarios y también para preparar té, su sabor es dulce y
+                exótico.
+              </p>
+              <p>
+                {" "}
+                Su origen está en China y procede de un árbol del que se
+                aprovecha la corteza interna obtenida pelando y frotando las
+                ramas. Se cultiva en muchas zonas de Asia y es una especia que
+                se emplea en gran parte de cocinas del mundo, con reconocidos
+                beneficios para la salud.
               </p>
               <p>
                 En la composición de la canela destacan vitamina C, vitamina B1,
@@ -301,6 +320,12 @@ export const Home = () => {
                 influencia en nuestra salud: la forma de prepararlos, el tiempo
                 que nos tomamos en ingerirlos, incluso nuestro estado mental
                 cuando realizamos dicha ingesta son importantes.
+              </p>
+              <p>
+                Se descartan las proteínas provenientes de la carne de res. Esta
+                dieta también elimina los alimentos procesados como azucares
+                refinados, lácteos, repostería, snacks y aceites de cocina
+                procesados. El consumo de sal es bajo.
               </p>
             </div>
           </div>

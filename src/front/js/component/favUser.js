@@ -10,7 +10,8 @@ const FavUser = () => {
   }, []);
 
   const style = {
-    backgroundImage: 'url("/imagenrecetas.png")',
+    backgroundImage:
+      'url("https://images.unsplash.com/photo-1543339308-43e59d6b73a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")',
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -28,7 +29,8 @@ const FavUser = () => {
       <div className="header">
         <h3 className="hero-title text-center pt-5 mx-5">
           Mis recetas favoritas
-        </h3></div>
+        </h3>
+      </div>
       <div class="position-absolute bottom-0 start-50 translate-middle-x mb-5">
         <Link className="ctaUser" to="/recipefav">
           <span> VER </span>

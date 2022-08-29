@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <div data-aos="fade-down" className="sticky-bottom container-fluid p-0">
+    <div data-aos="fade-up" className="sticky-bottom container-fluid p-0">
       <div className="container-fluid diverse3">
         <div className="row pt-2" id="diverse3" width="100%" height="350">
           <div className="textAboutus col-md-4 my-4 text-center p-3">
@@ -39,7 +39,8 @@ export const Footer = () => {
         <div className="row">
           <div className="col-md-4">
             {" "}
-            <div className="iconsFooter">
+            <div className="iconsFooter"></div>
+            <div className="col-md-4">
               <img
                 className="instagram mx-4 img-fluid"
                 src="https://cdn-icons-png.flaticon.com/128/1077/1077042.png"
@@ -53,11 +54,6 @@ export const Footer = () => {
                 src="https://cdn-icons-png.flaticon.com/128/104/104628.png"
               />
             </div>
-          </div>
-          <div className="col-md-4">
-            {/* <p>
-              <strong>Síguenos en las redes sociales</strong>
-            </p> */}
           </div>
           <div className="col-md-4"></div>
         </div>

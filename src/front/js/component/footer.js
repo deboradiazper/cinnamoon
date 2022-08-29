@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <div data-aos="fade-down" className="container-fluid p-0">
+    <div data-aos="fade-down" className="sticky-bottom container-fluid p-0">
       <div className="container-fluid diverse3">
         <div className="row pt-2" id="diverse3" width="100%" height="350">
           <div className="textAboutus col-md-4 my-4 text-center p-3">

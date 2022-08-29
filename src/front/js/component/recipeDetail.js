@@ -4,7 +4,7 @@ import Trivias from "./trivias";
 
 const RecipeDetail = (props) => {
   return (
-    <div className="row">
+    <div className="row my-5">
       <div className="col-md-6" style={{ minHeight: "400px" }}>
         <div className="card-detail">
           <div className="front">
@@ -44,7 +44,7 @@ const RecipeDetail = (props) => {
         <p className="card-text3">{props.description}</p>
       </div>
       <div className="col-12">
-        <h4 className="title-trivia mt-5 pt-5">Conoce más sobre esta receta</h4>
+        <h4 className="title-trivia mt-5 pt-5">Conoce más sobre estos alimentos</h4>
 
         {props.ingredients.map((value, index) => {
           return (

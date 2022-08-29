@@ -4,7 +4,7 @@ import "../../styles/home.css";
 import RecipeList from "../component/recipeList.js";
 import RecipeFavList from "../component/recipeFavList.js";
 import { Link, useNavigate } from "react-router-dom";
-import glutenfree3 from "../../img/glutenfree3.png";
+import glutenfree from "../../img/glutenfree.png";
 import lactosefree from "../../img/lactosefree.png";
 import sugarfree from "../../img/sugarfree.png";
 import vegana from "../../img/vegana.png";
@@ -75,7 +75,7 @@ export const Home = () => {
                 >
                   <img
                     className="imgCarousel  img-fluid"
-                    src={glutenfree3}
+                    src={glutenfree}
                     alt="..."
                   />
 
@@ -84,10 +84,8 @@ export const Home = () => {
                       <b>SIN GLUTEN</b>
                     </h2>
                     <p className="fs-5">
-                      El gluten es una proteína que se encuentra en el trigo, la
-                      cebada, el centeno y el triticale.
-                      El arroz, el trigo sarraceno, el teff, el amaranto, el maiz o el mijo son cereales que no contienen dicha proteina.
-
+                      El arroz, el trigo sarraceno, el teff, el amaranto, el maiz o el mijo son cereales que no contienen gluten, una proteina potencialmente inflamaroria
+                      que se encuentra en el trigo, la cebada, el centeno y el triticale.
                     </p>
                   </div>
                 </div>
@@ -102,7 +100,7 @@ export const Home = () => {
                       <b>VEGANAS</b>
                     </h2>
                     <p className="fs-5">
-                      Para que una dieta vegana sea equilibrada es importante incluir proteinas de origen vegetal como las algas, las legumbres, las setas, los frutos secos o las semillas.
+                      Para que una dieta vegana sea equilibrada es importante incluir proteinas de origen vegetal como las algas, las legumbres, los cereales, los hongos o setas, los frutos secos y las semillas.
                     </p>
                   </div>
                 </div>
@@ -117,7 +115,7 @@ export const Home = () => {
                       <b>SIN LACTOSA</b>
                     </h2>
                     <p className="fs-5">
-                      Si no tomas leche, no hay razón para que tengas una dieta pobre en calcio si escoges alimentos que contengan este nutriente, como el brocoli, la coliflor, la col, el kale, los garbanzos, las alubias, las almendras, las semillas de sésamo, etc.
+                      No consumir leche animal no es sinónimo de una dieta pobre en calcio siempre y cuando tomes otros alimentos que contengan este nutriente. El brócoli, la coliflor, la col, el kale, los garbanzos, las alubias, las almendras, las semillas de sésamo, etc son buenso ejemplos de ello.
                     </p>
                   </div>
                 </div>
@@ -132,8 +130,7 @@ export const Home = () => {
                       <b>SIN AZÚCAR</b>
                     </h2>
                     <p className="fs-5">
-                      Usa alimentos que contengan azúcar en su composición ( Calabaza, platano, datil, zanahoria, manzana...)  o edulcorantes naturales  (Estevia, miel, xilitol..) para endulzar tus platos.
-
+                      Es posible endulzar tus platos con alimentos que contengan azúcar de manera natural en su composición. Prueba con manzana, plátano, melocotón, mango, pasas, orejones, dátiles, calabaza, zanahoria o edulcorantes naturales como la estevia, el xilitol o la miel.
                     </p>
                   </div>
                 </div>
@@ -168,30 +165,28 @@ export const Home = () => {
       </div>
 
       {/* categorias */}
-      <div data-aos="fade-down" className="buttonsCategory container">
+      <div data-aos="fade-down" className="container buttonsCategory">
         <div className="row">
-          <div className="col-12 d-flex flex-md-column flex-sm-column flex-lg-row justify-content-lg-center">
-            {store.categories.map((category) => {
-              return (
-                <div className="align-self-md-center">
-                  <Link
-                    to={`/recipeAll/${category.name}`}
-                    className="ctaCategory pe-5"
-                  >
-                    <span className="hover-underline-animation">
-                      {category.name}
-                    </span>
-                    <path
-                      id="Path_10"
-                      data-name="Path 10"
-                      d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-                      transform="translate(40)"
-                    ></path>
-                  </Link>
-                </div>
-              );
-            })}
-          </div>
+          {store.categories.map((category) => {
+            return (
+              <div className="col-12 col-md-3 col-sm-3 d-flex justify-content-center align-items-center">
+                <Link
+                  to={`/recipeAll/${category.name}`}
+                  className="ctaCategory pe-5"
+                >
+                  <span className="hover-underline-animation">
+                    {category.name}
+                  </span>
+                  <path
+                    id="Path_10"
+                    data-name="Path 10"
+                    d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                    transform="translate(40)"
+                  ></path>
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </div>
 
@@ -225,7 +220,7 @@ export const Home = () => {
 
       {/* canela */}
       <div data-aos="fade-down" className="container-fluid diverse p-0">
-        <div className="gutternone row">
+        <div className="gutternone row py-5">
           <div className="col-md-6 col-sm-12  textFooter d-flex justify-content-center align-items-center">
             <div className="canela p-5">
               <h1 className="title-footer pb-5">
@@ -256,9 +251,9 @@ export const Home = () => {
               </p>
             </div>
           </div>
-          <div className="col-md-6 col-sm-12  footerimg d-flex justify-content-center align-items-center">
+          <div className="col-md-6 col-sm-12  footerimg justify-content-center align-items-center pe-5">
             <img
-              src="https://post.healthline.com/wp-content/uploads/2020/08/AN452-Cinnamon-732x549-thumb-1-732x549.jpg"
+              src="https://images.unsplash.com/photo-1554675427-1d637bdb5a12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1633&q=80"
               class="img-fluid"
             />
           </div>
@@ -274,16 +269,16 @@ export const Home = () => {
       </div>
 
       {/* okinawa */}
-      <div data-aos="fade-down" className="container-fluid diverse2">
-        <div className="gutternone row">
-          <div className="col-md-6 col-sm-12 col-lg-6 footerimg2 p-5">
+      <div data-aos="fade-down" className="container-fluid diverse2 p-0">
+        <div className="gutternone row py-5">
+          <div className="col-md-6 col-sm-12 col-lg-6 footerimg2 ps-5">
             <img
-              src="https://visitokinawajapan.com/wp-content/themes/visit-okinawa/assets/img/discover/126/di126_kv_okinawa-food-culture.jpg "
+              src="https://images.unsplash.com/photo-1562547256-2c5ee93b60b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=741&q=80nop"
               class="img-fluid"
             />
           </div>
           <div className="col-md-6 col-sm-12 col-lg-6 textFooter d-flex justify-content-center align-items-center">
-            <div className="okinawa pt-5 pb-5 ps-5 ms-2">
+            <div className="okinawa p-5">
               <h1 className="title2 pb-5">Okinawa, la isla de la longevidad</h1>
               <p>
                 Okinawa es una isla en el sur de Japón que se ha dado a conocer
@@ -314,7 +309,7 @@ export const Home = () => {
       {/* mailing list */}
       <div
         data-aos="flip-left"
-        className="econtainer-fluid suscribirse text-center justify-content-center align-items-center"
+        className="econtainer-fluid suscribirse text-center justify-content-center align-items-center pt-4"
       >
         <h2>¡únete a nosotros!</h2>
         <p>

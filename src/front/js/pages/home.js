@@ -83,10 +83,9 @@ export const Home = () => {
                     <h2 className="title-all px-5">
                       <b>SIN GLUTEN</b>
                     </h2>
-                    <p>
-                      El gluten es una proteína que se encuentra en el trigo, la
-                      cebada, el centeno y el triticale (un cruzamiento entre el
-                      trigo y el centeno).
+                    <p className="fs-5">
+                      El arroz, el trigo sarraceno, el teff, el amaranto, el maiz o el mijo son cereales que no contienen gluten, una proteina potencialmente inflamaroria
+                      que se encuentra en el trigo, la cebada, el centeno y el triticale.
                     </p>
                   </div>
                 </div>
@@ -100,9 +99,8 @@ export const Home = () => {
                     <h2 className="title-all px-5">
                       <b>VEGANAS</b>
                     </h2>
-                    <p>
-                      Potenciamos el consumo de vegetales, hortalizas, frutos y
-                      semejantes.
+                    <p className="fs-5">
+                      Para que una dieta vegana sea equilibrada es importante incluir proteinas de origen vegetal como las algas, las legumbres, los cereales, los hongos o setas, los frutos secos y las semillas.
                     </p>
                   </div>
                 </div>
@@ -116,9 +114,8 @@ export const Home = () => {
                     <h2 className="title-all px-5">
                       <b>SIN LACTOSA</b>
                     </h2>
-                    <p>
-                      Descubre otras alternativas a la leche y conoce que
-                      alimentos que son fuente de calcio.
+                    <p className="fs-5">
+                      No consumir leche animal no es sinónimo de una dieta pobre en calcio siempre y cuando tomes otros alimentos que contengan este nutriente. El brócoli, la coliflor, la col, el kale, los garbanzos, las alubias, las almendras, las semillas de sésamo, etc son buenso ejemplos de ello.
                     </p>
                   </div>
                 </div>
@@ -132,9 +129,8 @@ export const Home = () => {
                     <h2 className="title-all px-5">
                       <b>SIN AZÚCAR</b>
                     </h2>
-                    <p>
-                      Es posible sustituir el azúcar por otros productos
-                      naturales y cocinar postres y dulces saludables.
+                    <p className="fs-5">
+                      Es posible endulzar tus platos con alimentos que contengan azúcar de manera natural en su composición. Prueba con manzana, plátano, melocotón, mango, pasas, orejones, dátiles, calabaza, zanahoria o edulcorantes naturales como la estevia, el xilitol o la miel.
                     </p>
                   </div>
                 </div>
@@ -169,30 +165,28 @@ export const Home = () => {
       </div>
 
       {/* categorias */}
-      <div data-aos="fade-down" className="buttonsCategory container">
+      <div data-aos="fade-down" className="container buttonsCategory">
         <div className="row">
-          <div className="col-12 d-flex flex-md-column flex-sm-column flex-lg-row justify-content-lg-center">
-            {store.categories.map((category) => {
-              return (
-                <div className="align-self-md-center">
-                  <Link
-                    to={`/recipeAll/${category.name}`}
-                    className="ctaCategory pe-5"
-                  >
-                    <span className="hover-underline-animation">
-                      {category.name}
-                    </span>
-                    <path
-                      id="Path_10"
-                      data-name="Path 10"
-                      d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-                      transform="translate(40)"
-                    ></path>
-                  </Link>
-                </div>
-              );
-            })}
-          </div>
+          {store.categories.map((category) => {
+            return (
+              <div className="col-12 col-md-3 col-sm-3 d-flex justify-content-center align-items-center">
+                <Link
+                  to={`/recipeAll/${category.name}`}
+                  className="ctaCategory pe-5"
+                >
+                  <span className="hover-underline-animation">
+                    {category.name}
+                  </span>
+                  <path
+                    id="Path_10"
+                    data-name="Path 10"
+                    d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                    transform="translate(40)"
+                  ></path>
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </div>
 
@@ -206,7 +200,7 @@ export const Home = () => {
           onSubmit={handleSubmit}
           className="formBusca d-flex justify-content-center"
         >
-          <div className="input-group mt-2 w-75">
+          <div className="input-group w-75">
             <input
               onChange={handleChange}
               type="text"

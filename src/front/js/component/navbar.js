@@ -18,7 +18,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light sticky-top d-flex justify-content-around align-items-center px-5 pb-0">
+    <nav className="navbar navbar-expand-lg navbar-light sticky-top d-flex justify-content-around align-items-center px-4 pb-0">
       <div className="container-fluid">
         <Link className="navbar-brand" to={"/"}>
           <span className="logo">
@@ -26,8 +26,6 @@ export const Navbar = () => {
               src={cinnamoon}
               className="img-logo img-fluid"
               alt="logo"
-              width="65"
-              height="65"
             />
           </span>
         </Link>
@@ -43,7 +41,7 @@ export const Navbar = () => {
             ) : (
               ""
             )}
-            <button className="ctamoon  mx-lg-4"> Moon </button>
+            <button className="ctamoon mx-lg-4"> Moon </button>
             {store.auth ? (
               <>
                 <Link to={"/userArea"} className="ctaLoging mx-lg-4">

@@ -211,7 +211,8 @@ export const Home = () => {
               onChange={handleChange}
               type="text"
               className="searchIngredients form-control"
-              placeholder="  ¿Qué ingrediente tienes a mano?" />
+              placeholder="  ¿Qué ingrediente tienes a mano?"
+            />
           </div>
         </form>
       </div>
@@ -233,14 +234,19 @@ export const Home = () => {
                 ¿Sabes de dónde viene la canela?
               </h1>
               <p>
-                Aporta un aroma y un sabor muy reconocibles a multitud de
-                platos. Pero, ¿sabes de dónde viene exactamente la canela? Esta
-                especia la encontramos en forma de rama o en polvo. Su origen
-                está en China y procede de un árbol del que se aprovecha la
-                corteza interna obtenida pelando y frotando las ramas. Se
-                cultiva en muchas zonas de Asia y es una especia que se emplea
-                en gran parte de cocinas del mundo, con reconocidos beneficios
-                para la salud.
+                La canela se obtiene de la corteza de los árboles Cinnamomum, y
+                su uso culinario se remonta a siglos atrás, especialmente en
+                India. Se utiliza principalmente para aromatizar diversos platos
+                culinarios y también para preparar té, su sabor es dulce y
+                exótico.
+              </p>
+              <p>
+                {" "}
+                Su origen está en China y procede de un árbol del que se
+                aprovecha la corteza interna obtenida pelando y frotando las
+                ramas. Se cultiva en muchas zonas de Asia y es una especia que
+                se emplea en gran parte de cocinas del mundo, con reconocidos
+                beneficios para la salud.
               </p>
               <p>
                 En la composición de la canela destacan vitamina C, vitamina B1,
@@ -307,6 +313,12 @@ export const Home = () => {
                 influencia en nuestra salud: la forma de prepararlos, el tiempo
                 que nos tomamos en ingerirlos, incluso nuestro estado mental
                 cuando realizamos dicha ingesta son importantes.
+              </p>
+              <p>
+                Se descartan las proteínas provenientes de la carne de res. Esta
+                dieta también elimina los alimentos procesados como azucares
+                refinados, lácteos, repostería, snacks y aceites de cocina
+                procesados. El consumo de sal es bajo.
               </p>
             </div>
           </div>

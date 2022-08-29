@@ -61,17 +61,14 @@ h5 {
 
 /* logoCinnamoon */
 .img-logo {
-<<<<<<< HEAD
   color: #302c2c;
   transition: all 0.4s linear;
-=======
-    min-height: 20px;
-    min-width: 20px;
-    max-height: 60px;
-    max-width: 60px;
-    color: #302c2c;
-    transition: all 0.4s linear;
->>>>>>> develop
+  min-height: 20px;
+  min-width: 20px;
+  max-height: 60px;
+  max-width: 60px;
+  color: #302c2c;
+  transition: all 0.4s linear;
 }
 
 .img-logo:hover {
@@ -107,17 +104,10 @@ h5 {
 }
 
 .img-recipe {
-<<<<<<< HEAD
   object-fit: cover;
   width: 100%;
   max-width: 460px;
   height: 250px;
-=======
-    object-fit: cover;
-    width: 100%;
-    max-width: 460px;
-    height: 200px;
->>>>>>> develop
 }
 
 /* iconosRecipe */
@@ -791,21 +781,12 @@ ul {
 }
 
 ::-webkit-scrollbar-thumb {
-<<<<<<< HEAD
   border-radius: 5px;
-  background: #aaa9a9;
+  background: #000000;
 }
 
 ::-webkit-scrollbar-corner {
-  background: #aaa9a9;
-=======
-    border-radius: 5px;
-    background: #b8b4b4;
-}
-
-::-webkit-scrollbar-corner {
-    background: #b8b4b4;
->>>>>>> develop
+  background: #000000;
 }
 
 /*registro y logueo container border*/
@@ -993,13 +974,8 @@ ul {
 
 /* container botones catgories */
 .buttonsCategory {
-<<<<<<< HEAD
   margin-top: 3rem;
   margin-bottom: 3rem;
-=======
-    margin-top: 5rem;
-    margin-bottom: 5rem;
->>>>>>> develop
 }
 
 /*imagenes footer*/
@@ -1062,12 +1038,7 @@ ul {
 }
 
 .gutternone {
-<<<<<<< HEAD
   justify-content: space-between;
-=======
-    justify-content: space-between;
-    --ps-gutter-x: none !important;
->>>>>>> develop
 }
 
 /* carousel imagen  */

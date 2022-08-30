@@ -36,7 +36,7 @@ export const Footer = () => {
         </div>
       </div>
       <footer className="footer mt-auto py-3 pt-1">
-        <div className="row">
+        {/* <div className="row">
           <div className="col-md-4">
             {" "}
             <div className="iconsFooter"></div>
@@ -56,7 +56,7 @@ export const Footer = () => {
             </div>
           </div>
           <div className="col-md-4"></div>
-        </div>
+        </div> */}
       </footer>
     </div>
   );

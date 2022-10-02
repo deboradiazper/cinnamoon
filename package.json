@@ -73,6 +73,7 @@
 		]
 	},
 	"dependencies": {
+		"@emailjs/browser": "^3.7.0",
 		"aos": "^2.3.4",
 		"bootstrap-icons": "^1.9.1",
 		"prop-types": "^15.6.1",

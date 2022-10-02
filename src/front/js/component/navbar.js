@@ -22,30 +22,40 @@ export const Navbar = () => {
       <div className="container-fluid">
         <Link className="navbar-brand" to={"/"}>
           <span className="logo">
-            <img
-              src={cinnamoon}
-              className="img-logo img-fluid"
-              alt="logo"
-            />
+            <img src={cinnamoon} className="img-logo img-fluid" alt="logo" />
           </span>
         </Link>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse border-0 justify-content-end" id="navbarSupportedContent">
-          <div className="d-flex flex-sm-column flex-md-column flex-lg-row align-items-sm-end  align-items-md-end align-items-lg-center">
+        <div
+          class="collapse navbar-collapse border-0 justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <div className="navnuevo d-flex flex-sm-column flex-md-column flex-lg-row  align-items-lg-center">
             {store.auth ? (
               <div>
-                <p className="userNavbar text-3 px-md-2 my-md-3"> Hola {store.user} </p>
+                <p className="userNavbar text-3 px-md-2 my-md-3">
+                  {" "}
+                  Hola {store.user}{" "}
+                </p>
               </div>
             ) : (
               ""
             )}
-            <button className="ctamoon mx-lg-4"> Moon </button>
+            <button className="ctamoon mx-lg-4"> CONTACTA CON NOSOTROS </button>
             {store.auth ? (
               <>
                 <Link to={"/userArea"} className="ctaLoging mx-lg-4">
-                  AREA USUARIO
+                  ÁREA USUARIO
                 </Link>
                 <button
                   className="ctaLoging"

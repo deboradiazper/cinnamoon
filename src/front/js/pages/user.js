@@ -7,10 +7,6 @@ import { UserRegistration } from "./userRegistration";
 import { UserLogin } from "./userLogin";
 
 export const User = () => {
-  const style = {
-    backgroundImage: 'url("/fotolado.jpg")',
-  };
-
   return (
     <div className="container">
       <div className="row justify-content-center">

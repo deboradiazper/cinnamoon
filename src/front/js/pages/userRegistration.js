@@ -10,6 +10,7 @@ export const UserRegistration = () => {
     email: "",
     password: "",
   });
+
   const navigate = useNavigate();
 
   const {

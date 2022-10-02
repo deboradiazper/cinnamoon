@@ -8,6 +8,14 @@ import glutenfree from "../../img/glutenfree.png";
 import lactosefree from "../../img/lactosefree.png";
 import sugarfree from "../../img/sugarfree.png";
 import vegana from "../../img/vegana.png";
+import cinnamoon from "../../img/cinnamoon.png";
+import okinawa from "../../img/okinawa.png";
+import canela from "../../img/canela.png";
+import verde from "../../img/verde.png";
+import valores from "../../img/valores.png";
+import comunidad from "../../img/comunidad.png";
+import somosque from "../../img/somosque.png";
+
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -26,166 +34,138 @@ export const Home = () => {
   };
 
   useEffect(() => {
-    Aos.init({ duration: 2000 });
+    Aos.init({ duration: 1500 });
   }, []);
 
   return (
     <>
-      <div className="container-fluid p-0">
-        <div className="row">
-          <div className="col-12 p-0 m-0">
-            <div
-              id="carouselExampleDark"
-              className="carousel carousel-dark slide"
-              data-bs-ride="carousel"
-            >
-              <div className="carousel-indicators">
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleDark"
-                  data-bs-slide-to="0"
-                  class="active"
-                  aria-current="true"
-                  aria-label="Slide 1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleDark"
-                  data-bs-slide-to="1"
-                  aria-label="Slide 2"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleDark"
-                  data-bs-slide-to="2"
-                  aria-label="Slide 3"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleDark"
-                  data-bs-slide-to="3"
-                  aria-label="Slide 4"
-                ></button>
-              </div>
-              <div className="carousel-inner">
-                <div
-                  className="carousel-item active"
-                  data-bs-interval="10000"
-                  s
-                >
-                  <img
-                    className="imgCarousel  img-fluid"
-                    src={glutenfree}
-                    alt="..."
-                  />
+      {/* carrousel */}
+      <div
+        id="carouselExampleDark"
+        className="carousel carousel-dark slide  d-none d-sm-block"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+        </div>
 
-                  <div className="carousel-caption d-none d-md-block">
-                    <h2 className="title-all px-5">
-                      <b>SIN GLUTEN</b>
-                    </h2>
-                    <p className="fs-5">
-                      El arroz, el trigo sarraceno, el teff, el amaranto, el
-                      maiz o el mijo son cereales que no contienen gluten, una
-                      proteina potencialmente inflamaroria que se encuentra en
-                      el trigo, la cebada, el centeno y el triticale.
-                    </p>
-                  </div>
-                </div>
-                <div className="carousel-item" data-bs-interval="2000">
-                  <img
-                    className="imgCarousel img-fluid"
-                    src={vegana}
-                    alt="..."
-                  />
-                  <div className="carousel-caption d-none d-md-block">
-                    <h2 className="title-all px-5">
-                      <b>VEGANAS</b>
-                    </h2>
-                    <p className="fs-5">
-                      Para que una dieta vegana sea equilibrada es importante
-                      incluir proteinas de origen vegetal como las algas, las
-                      legumbres, los cereales, los hongos o setas, los frutos
-                      secos y las semillas.
-                    </p>
-                  </div>
-                </div>
-                <div className="carousel-item">
-                  <img
-                    className="imgCarousel img-fluid"
-                    src={lactosefree}
-                    alt="..."
-                  />
-                  <div className="carousel-caption d-none d-md-block">
-                    <h2 className="title-all px-5">
-                      <b>SIN LACTOSA</b>
-                    </h2>
-                    <p className="fs-5">
-                      No consumir leche animal no es sinónimo de una dieta pobre
-                      en calcio siempre y cuando tomes otros alimentos que
-                      contengan este nutriente. El brócoli, la coliflor, la col,
-                      el kale, los garbanzos, las alubias, las almendras, las
-                      semillas de sésamo, etc son buenso ejemplos de ello.
-                    </p>
-                  </div>
-                </div>
-                <div className="carousel-item">
-                  <img
-                    className="imgCarousel  img-fluid"
-                    src={sugarfree}
-                    alt="..."
-                  />
-                  <div className="carousel-caption d-none d-md-block">
-                    <h2 className="title-all px-5">
-                      <b>SIN AZÚCAR</b>
-                    </h2>
-                    <p className="fs-5">
-                      Es posible endulzar tus platos con alimentos que contengan
-                      azúcar de manera natural en su composición. Prueba con
-                      manzana, plátano, melocotón, mango, pasas, orejones,
-                      dátiles, calabaza, zanahoria o edulcorantes naturales como
-                      la estevia, el xilitol o la miel.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <button
-                className="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleDark"
-                data-bs-slide="prev"
-              >
-                <span
-                  className="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span className="visually-hidden">Previous</span>
-              </button>
-              <button
-                className="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleDark"
-                data-bs-slide="next"
-              >
-                <span
-                  className="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span className="visually-hidden">Next</span>
-              </button>
+        {/* sugarfree */}
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img src={sugarfree} class="d-block w-100" />
+            <div className="carousel-caption d-none d-sm-block">
+              <h5 className="carousel-titulos">Sin azúcar</h5>
+              <p className="carousel-texto">
+                Es posible endulzar tus platos con alimentos que contengan
+                azúcar de manera natural en su composición. Prueba con manzana,
+                plátano, melocotón, mango, pasas, orejones, dátiles, calabaza,
+                zanahoria o edulcorantes naturales como la estevia, el xilitol o
+                la miel.{" "}
+              </p>
+            </div>
+          </div>
+          {/* vegan */}
+          <div className="carousel-item">
+            <img src={vegana} class="d-block w-100" />
+            <div className="carousel-caption d-none d-sm-block">
+              <h5 className="carousel-titulos">Vegano</h5>
+              <p className="carousel-texto">
+                Para que una dieta vegana sea equilibrada es importante incluir
+                proteinas de origen vegetal como las algas, las legumbres, los
+                cereales, los hongos o setas, los frutos secos y las semillas.{" "}
+              </p>
+            </div>
+          </div>
+          {/* {glutenfree} */}
+          <div className="carousel-item">
+            <img src={glutenfree} class="d-block w-100" />
+            <div className="carousel-caption d-none d-sm-block">
+              <h5 className="carousel-titulos">Sin gluten</h5>
+              <p className="carousel-texto">
+                El arroz, el trigo sarraceno, el teff, el amaranto, el maiz o el
+                mijo son cereales que no contienen gluten, una proteina
+                potencialmente inflamaroria que se encuentra en el trigo, la
+                cebada, el centeno y el triticale.{" "}
+              </p>
+            </div>
+          </div>
+
+          {/* {sin lactosa} */}
+          <div className="carousel-item">
+            <img src={lactosefree} class="d-block w-100" />
+            <div className="carousel-caption d-none d-sm-block">
+              <h5 className="carousel-titulos">Sin lactosa</h5>
+              <p className="carousel-texto">
+                No consumir leche animal no es sinónimo de una dieta pobre en
+                calcio siempre y cuando tomes otros alimentos que contengan este
+                nutriente. El brócoli, la coliflor, la col, el kale, los
+                garbanzos, las alubias, las almendras, las semillas de sésamo,
+                etc son buenso ejemplos de ello.{" "}
+              </p>
             </div>
           </div>
         </div>
+
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide="prev"
+        >
+          <span
+            className="carousel-control-prev-icon d-none d-sm-block"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button
+          className="carousel-control-next d-none d-sm-block"
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide="next"
+        >
+          <span
+            className="carousel-control-next-icon d-none d-sm-block"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Next</span>
+        </button>
       </div>
 
       {/* categorias */}
       <div data-aos="fade-down" className="container buttonsCategory">
-        <div className="row pb-5">
+        <div className="row pb-4">
           {store.categories.map((category) => {
             return (
-              <div className="col-12 col-md-3 col-sm-3 d-flex justify-content-center align-items-center">
+              <div className="col-12 col-lg-3 col-md-3 col-sm-3 text-center">
                 <Link
                   to={`/recipeAll/${category.name}`}
-                  className="ctaCategory pe-5"
+                  className="ctaCategory"
                 >
                   <span className="hover-underline-animation">
                     {category.name}
@@ -202,7 +182,6 @@ export const Home = () => {
           })}
         </div>
       </div>
-
       {/* buscador */}
       <div
         data-aos="fade-down"
@@ -224,38 +203,115 @@ export const Home = () => {
         </form>
       </div>
 
+      {/* texto bienvenida */}
+      <div data-aos="fade-left" className="container hola1 mb-5 text-center">
+        <img src={cinnamoon} className="mb-4"></img>
+        <h4 className="textocentral mx-4">
+          queremos llevar la cocina, la alimentación y un estilo de vida
+          consciente a la mayor cantidad de personas, para conseguir que sean
+          más felices y que estén bien consigo mismas y con su entorno.
+          Arrancamos con la visión de crear una nueva forma de construir
+          bienestar, empezando por la comida y la preparación de los alimentos,
+          nutriendo la vida sin culpas y con el balance como camino. Te damos la
+          bienvenida a Cinnamoon, una nueva forma de estar bien. Damos prioridad
+          a la alimentación saludable y alternativa.
+        </h4>
+        <h4 className="textocentral my-4 mx-4">
+          También tenemos en cuenta aquellas personas que deben restringir su
+          dieta, como celíacos o diabéticos.
+        </h4>
+      </div>
+
       {/* recipesgeneral */}
-      <div data-aos="fade-right" className="container recetas">
+      <div
+        data-aos="fade-right"
+        className="container recetas align-items-center  ps-5"
+      >
         <div className="recipes d-flex justify-content-between">
-          <h3 className="nuevasrecetas my-2">NUEVAS RECETAS</h3>
+          <h3 className="nuevasrecetas ">NUEVAS RECETAS</h3>
         </div>
         <RecipeList />
       </div>
 
-      {/* canela */}
-      <div data-aos="fade-down" className="container-fluid diverse p-0">
-        <div className="gutternone row py-5">
-          <div className="col-md-6 col-sm-12  textFooter d-flex justify-content-center align-items-center">
-            <div className="canela p-5">
-              <h1 className="title-footer pb-5">
+      {/* carrousel central con txto*/}
+      <div
+        id="carouselExampleCaptions"
+        className="carousel slide my-5 d-none d-sm-block"
+        data-bs-ride="false"
+      >
+        <div className="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+
+        {/* okinawa */}
+        <div className="carousel-inner ">
+          <div className="carousel-item active">
+            <img src={okinawa} class="d-block w-100" />
+            <div className="carousel-caption d-none d-md-block">
+              <div className="row">
+                <div className="col-lg-6 col-sm-none">
+                  <h5 className="carousel-titulos2 align-content-center">
+                    Okinawa, la isla de la longevidad
+                  </h5>
+                </div>
+                <div className="col-lg-6 col-sm-none">
+                  <p className="carousel-texto2 justify-content-center">
+                    Okinawa es una isla en el sur de Japón que se ha dado a
+                    conocer por tener la esperanza de vida más elevada del
+                    mundo. Su alimentación fundamentada en productos de origen
+                    vegetal y pobre en ácidos grasos parece ser la clave de su
+                    longevidad. Sus habitantes practican la alimentación
+                    consciente, utilizan plantas y hierbas de la medicina
+                    tradicional china como la cúrcuma o la artemisa, y le dan un
+                    papel protagonista a los alimentos de origen vegetal. Los
+                    ultraprocesados, azúcares refinados o grasas trans no tienen
+                    cabida en esta dieta, una de las más interesantes del mundo
+                    para prevenir enfermedades, según numerosos estudios.{" "}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* canela */}
+          <div class="carousel-item">
+            <img src={canela} class="d-block w-100" />
+            <div className="carousel-caption d-none d-md-block">
+              <h5 className="carousel-titulos2">
                 ¿Sabes de dónde viene la canela?
-              </h1>
-              <p>
+              </h5>
+              <p className="carousel-texto2-canela">
                 La canela se obtiene de la corteza de los árboles Cinnamomum, y
                 su uso culinario se remonta a siglos atrás, especialmente en
                 India. Se utiliza principalmente para aromatizar diversos platos
                 culinarios y también para preparar té, su sabor es dulce y
-                exótico.
-              </p>
-              <p>
-                {" "}
-                Su origen está en China y procede de un árbol del que se
-                aprovecha la corteza interna obtenida pelando y frotando las
+                exótico. Su origen está en China y procede de un árbol del que
+                se aprovecha la corteza interna obtenida pelando y frotando las
                 ramas. Se cultiva en muchas zonas de Asia y es una especia que
                 se emplea en gran parte de cocinas del mundo, con reconocidos
                 beneficios para la salud.
               </p>
-              <p>
+              <p className="carousel-texto2-canela">
+                {" "}
                 En la composición de la canela destacan vitamina C, vitamina B1,
                 hierro, potasio, calcio y fósforo y son conocidos desde tiempos
                 inmemoriales sus beneficios saludables. Se le atribuyen las
@@ -266,82 +322,106 @@ export const Home = () => {
                 acumulación de grasa y ayuda a controlar el colesterol. También
                 habrás oido hablar de su poder afrodisiaco y esto es debido a
                 que mejora la circulación de la sangre y contribuye a aumentar
-                la sensibilidad.
+                la sensibilidad.{" "}
               </p>
             </div>
           </div>
-          <div className="col-md-6 col-sm-12  footerimg justify-content-center align-items-center pe-5">
-            <img
-              src="https://images.unsplash.com/photo-1554675427-1d637bdb5a12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1633&q=80"
-              class="img-fluid"
-            />
+
+          {/* {verde} */}
+          <div className="carousel-item">
+            <img src={verde} class="d-block w-100" />
+            <div className="carousel-caption d-none d-md-block">
+              <div className="row">
+                <div className="col-lg-6 col-sm-none"></div>
+                <div className="col-lg-6 col-sm-none">
+                  {" "}
+                  <h5 className="carousel-titulos2">Verde</h5>
+                  <p className="carousel-texto2">
+                    Los alimentos de color verde se componen normalmente de
+                    frutas y verduras. Estos son fuente de muchas propiedades
+                    con beneficios para la salud. Expertos en salud recomiendan
+                    ampliamente su consumo para mantener, no sólo una buena
+                    salud y evitar diversas enfermedades, sino para mantener un
+                    buen peso y talla. Estos alimentos deben su color gracias a
+                    la presencia de la clorofila. Esto indica que aportan muy
+                    pocas calorías y tienen un gran valor alimentario por su
+                    riqueza en vitaminas A, C, complejo B, E y K. También
+                    cuentan con minerales como el calcio, hierro, magnesio y
+                    potasio, además de ser una fuente abundante de fibra.{" "}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Next</span>
+        </button>
       </div>
 
       {/* recipesfavlist */}
-      <div data-aos="fade-left" className="container recetas2">
+      <div data-aos="fade-left" className="container recetas2  ps-5">
         <div className="recipes d-flex justify-content-between">
           <h3 className="recetaspopu my-2">RECETAS POPULARES</h3>
         </div>
         <RecipeFavList />
       </div>
 
-      {/* okinawa */}
-      <div data-aos="fade-down" className="container-fluid diverse2 p-0">
-        <div className="gutternone row py-5">
-          <div className="col-md-6 col-sm-12 col-lg-6 footerimg2 ps-5">
-            <img
-              src="https://images.unsplash.com/photo-1562547256-2c5ee93b60b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=741&q=80nop"
-              class="img-fluid"
-            />
+      <div className="container-fluid final mt-5">
+        <div className="row pt-2" id="final" width="100%" height="350">
+          <div className="sobrenosotros col-md-4 my-4 text-center p-3">
+            <img className="imagenfooter" src={valores}></img>
+            <h5 className="px-2 mt-2 titulofooter">NUESTROS VALORES</h5>
+            <p className="footertext px-2 py-2">
+              En CINNAMOON somos partidarios de la inclusividad. Es por eso que
+              contamos con recetas para todas aquellas personas que, por una
+              cuestión personal o de salud, han renunciado a comer ciertos
+              alimentos. Partimos siempre de una base vegetal.
+            </p>
           </div>
-          <div className="col-md-6 col-sm-12 col-lg-6 textFooter d-flex justify-content-center align-items-center">
-            <div className="okinawa p-5">
-              <h1 className="title2 pb-5">Okinawa, la isla de la longevidad</h1>
-              <p>
-                Okinawa es una isla en el sur de Japón que se ha dado a conocer
-                por tener la esperanza de vida más elevada del mundo. Su
-                alimentación fundamentada en productos de origen vegetal y pobre
-                en ácidos grasos parece ser la clave de su longevidad. Sus
-                habitantes practican la alimentación consciente, utilizan
-                plantas y hierbas de la medicina tradicional china como la
-                cúrcuma o la artemisa, y le dan un papel protagonista a los
-                alimentos de origen vegetal. Los ultraprocesados, azúcares
-                refinados o grasas trans no tienen cabida en esta dieta, una de
-                las más interesantes del mundo para prevenir enfermedades, según
-                numerosos estudios.
-              </p>
-              <p>
-                Existen dos factores claves en la alimentación: qué comemos y
-                cómo lo comemos. Aunque en nuestra cultura estamos acostumbrados
-                a dar únicamente importancia a los alimentos en sí, el cómo
-                ingerimos esos alimentos, también tiene una importante
-                influencia en nuestra salud: la forma de prepararlos, el tiempo
-                que nos tomamos en ingerirlos, incluso nuestro estado mental
-                cuando realizamos dicha ingesta son importantes.
-              </p>
-              <p>
-                Se descartan las proteínas provenientes de la carne de res. Esta
-                dieta también elimina los alimentos procesados como azucares
-                refinados, lácteos, repostería, snacks y aceites de cocina
-                procesados. El consumo de sal es bajo.
-              </p>
-            </div>
+          <div className="sobrenosotros col-md-4 my-4 text-center p-3">
+            <img className="imagenfooter" src={somosque}></img>
+            <h5 className="px-2 mt-2 titulofooter">SOMOS LO QUE COMEMOS</h5>
+            <p className="footertext px-2 py-2">
+              Tan importante es alimentarse bien como hacerlo de forma
+              consciente. Es por eso que nos gusta aportar información acerca de
+              los ingredientes que utilizamos para las recetas. Como cocinar nos
+              apasiona, también nos apasiona la historia de los ingredientes.
+            </p>
+          </div>
+          <div className="sobrenosotros col-md-4 my-4 text-center p-3">
+            <img className="imagenfooter" src={comunidad}></img>
+            <h5 className="px-2 mt-2 titulofooter">CRECER EN COMUNIDAD</h5>
+            <p className="footertext px-2 py-2">
+              No queremos ser únicamente una página web de recetas. Nuestro
+              objetivo es crear una comunidad en la que cualquier persona afín a
+              nuestros valores pueda aportar su granito de arena. Compartir es
+              vivir.
+            </p>
           </div>
         </div>
-      </div>
-      {/* mailing list */}
-      <div
-        data-aos="flip-left"
-        className="econtainer-fluid suscribirse text-center justify-content-center align-items-center pt-4"
-      >
-        <h2>¡únete a nosotros!</h2>
-        <p>
-          Suscríbete a nuestra mailing list y recibe las últimas novedades:
-          nuevas recetas, historia de los alimentos, estilo de vida saludable...
-        </p>
-        <button className="suscribe">Suscríbete</button>
       </div>
     </>
   );

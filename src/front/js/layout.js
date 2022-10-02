@@ -21,6 +21,7 @@ import { Detail } from "./pages/detail";
 import RecipeAll from "./pages/recipesAll";
 import RecipesFavorits from "./component/recipesFavorits";
 import { NewRecipe } from "./pages/newRecipe";
+import { Contact } from "./component/contact";
 
 //create your first component
 const Layout = () => {
@@ -50,6 +51,7 @@ const Layout = () => {
             <Route element={<SearchApp />} path="/searchApp" />
             <Route element={<RecipesFavorits />} path="/recipefav" />
             <Route element={<NewRecipe />} path="/newrecipe" />
+            <Route element={<Contact />} path="/contact" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           <Footer />

@@ -25,30 +25,44 @@ export const Contact = () => {
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail}>
-      <label>Name</label>
-      <input className="user_name" type="text" name="user_name" />
-      <label>Email</label>
-      <input className="user_email" type="email" name="user_email" />
-      <label>Message</label>
-      <textarea name="message" className="message" />
-      <button className="suscribe">
-        <span className="hover-underline-animation">Enviar</span>
-        <svg
-          viewBox="0 0 46 16"
-          height="10"
-          width="30"
-          xmlns="http://www.w3.org/2000/svg"
-          id="arrow-horizontal"
-        >
-          <path
-            transform="translate(30)"
-            d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-            data-name="Path 10"
-            id="Path_10"
-          ></path>
-        </svg>
-      </button>
-    </form>
+    <>
+      <p className="footermailing">Contacta con nosotros </p>
+      <div className="row">
+        <form ref={form} className="" onSubmit={sendEmail}>
+          <div className="col-6 col-md-4">
+            <p className="contacto mb-0">Nombre</p>
+            <input type="text" className="user" name="user_name" />
+          </div>
+
+          <div className="col-6 col-md-4">
+            <p className="contacto mb-0">Email</p>
+            <input type="text" className="user" name="user_email" />
+          </div>
+
+          <div className="col-6 col-md-4">
+            <p className="contacto mb-0">Mensaje</p>
+            <input type="text" className="user" name="message" />
+          </div>
+
+          <button className="suscribe">
+            <span className="hover-underline-animation">Enviar</span>
+            <svg
+              viewBox="0 0 46 16"
+              height="10"
+              width="30"
+              xmlns="http://www.w3.org/2000/svg"
+              id="arrow-horizontal"
+            >
+              <path
+                transform="translate(30)"
+                d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                data-name="Path 10"
+                id="Path_10"
+              ></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </>
   );
 };

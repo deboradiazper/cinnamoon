@@ -6,11 +6,9 @@ export const Footer = () => {
   return (
     <footer className="footer mt-auto suscribirse">
       <div className="row mx-2">
-        <div className=" col-md-6 justify-content-center align-items-center my-4">
-          <p>
-            Suscríbete a nuestra mailing list y recibe las últimas novedades:
-            nuevas recetas, historia de los alimentos, estilo de vida
-            saludable...
+        <div className=" col-md-6 justify-content-center align-items-center my-3">
+          <p className="footermailing">
+            Suscríbete a nuestra mailing list y recibe las últimas novedades
           </p>
           <button className="suscribe">
             <span className="hover-underline-animation"> Mailing list</span>
@@ -29,12 +27,8 @@ export const Footer = () => {
               ></path>
             </svg>
           </button>
-          <p className="redessociales"> Síguenos en las redes sociales:</p>
-          <span>Instagram</span>
-          <span>Twitter</span>
-          <span>Pinterest</span>
         </div>
-        <div className=" col-md-6 text-center justify-content-center align-items-center my-5">
+        <div className=" col-md-6 my-3">
           <Contact />
         </div>
       </div>

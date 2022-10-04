@@ -10,11 +10,11 @@ import sugarfree from "../../img/sugarfree.png";
 import vegana from "../../img/vegana.png";
 import cinnamoon from "../../img/cinnamoon.png";
 import okinawa from "../../img/okinawa.png";
-import canela from "../../img/canela.png";
 import verde from "../../img/verde.png";
 import valores from "../../img/valores.png";
 import comunidad from "../../img/comunidad.png";
 import somosque from "../../img/somosque.png";
+import canela1 from "../../img/canela1.png";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -78,7 +78,7 @@ export const Home = () => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img src={sugarfree} class="d-block w-100" />
-            <div className="carousel-caption d-none d-sm-block">
+            <div className="carousel-caption ">
               <h5 className="carousel-titulos">Sin azúcar</h5>
               <p className="carousel-texto">
                 Es posible endulzar tus platos con alimentos que contengan
@@ -92,7 +92,7 @@ export const Home = () => {
           {/* vegan */}
           <div className="carousel-item">
             <img src={vegana} class="d-block w-100" />
-            <div className="carousel-caption d-none d-sm-block">
+            <div className="carousel-caption ">
               <h5 className="carousel-titulos">Vegano</h5>
               <p className="carousel-texto">
                 Para que una dieta vegana sea equilibrada es importante incluir
@@ -104,7 +104,7 @@ export const Home = () => {
           {/* {glutenfree} */}
           <div className="carousel-item">
             <img src={glutenfree} class="d-block w-100" />
-            <div className="carousel-caption d-none d-sm-block">
+            <div className="carousel-caption ">
               <h5 className="carousel-titulos">Sin gluten</h5>
               <p className="carousel-texto">
                 El arroz, el trigo sarraceno, el teff, el amaranto, el maiz o el
@@ -118,7 +118,7 @@ export const Home = () => {
           {/* {sin lactosa} */}
           <div className="carousel-item">
             <img src={lactosefree} class="d-block w-100" />
-            <div className="carousel-caption d-none d-sm-block">
+            <div className="carousel-caption ">
               <h5 className="carousel-titulos">Sin lactosa</h5>
               <p className="carousel-texto">
                 No consumir leche animal no es sinónimo de una dieta pobre en
@@ -263,10 +263,10 @@ export const Home = () => {
         </div>
 
         {/* okinawa */}
-        <div className="carousel-inner ">
+        <div className="carousel-inner d-none d-md-block">
           <div className="carousel-item active">
             <img src={okinawa} class="d-block w-100" />
-            <div className="carousel-caption d-none d-md-block">
+            <div className="carousel-caption ">
               <div className="row">
                 <div className="col-lg-6 col-sm-none">
                   <h5 className="carousel-titulos2 align-content-center">
@@ -294,8 +294,8 @@ export const Home = () => {
 
           {/* canela */}
           <div class="carousel-item">
-            <img src={canela} class="d-block w-100" />
-            <div className="carousel-caption d-none d-md-block">
+            <img src={canela1} class="d-block w-100" />
+            <div className="carousel-caption ">
               <h5 className="carousel-titulos2">
                 ¿Sabes de dónde viene la canela?
               </h5>
@@ -330,7 +330,7 @@ export const Home = () => {
           {/* {verde} */}
           <div className="carousel-item">
             <img src={verde} class="d-block w-100" />
-            <div className="carousel-caption d-none d-md-block">
+            <div className="carousel-caption ">
               <div className="row">
                 <div className="col-lg-6 col-sm-none"></div>
                 <div className="col-lg-6 col-sm-none">
@@ -345,9 +345,7 @@ export const Home = () => {
                     buen peso y talla. Estos alimentos deben su color gracias a
                     la presencia de la clorofila. Esto indica que aportan muy
                     pocas calorías y tienen un gran valor alimentario por su
-                    riqueza en vitaminas A, C, complejo B, E y K. También
-                    cuentan con minerales como el calcio, hierro, magnesio y
-                    potasio, además de ser una fuente abundante de fibra.{" "}
+                    riqueza en vitaminas A, C, complejo B, E y K.{" "}
                   </p>
                 </div>
               </div>
@@ -389,7 +387,7 @@ export const Home = () => {
         <RecipeFavList />
       </div>
 
-      <div className="container-fluid final mt-5">
+      <div data-aos="fade-down" className="container-fluid final mt-5">
         <div className="row pt-2" id="final" width="100%" height="350">
           <div className="sobrenosotros col-md-4 my-4 text-center p-3">
             <img className="imagenfooter" src={valores}></img>

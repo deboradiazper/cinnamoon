@@ -51,7 +51,14 @@ export const Navbar = () => {
             ) : (
               ""
             )}
-            <button className="ctamoon mx-lg-4"> CONTACTA CON NOSOTROS </button>
+            <Link to={"/"} className="ctamoon mx-lg-4">
+              {" "}
+              HOME{" "}
+            </Link>
+            <Link to={"/searchApp"} className="ctamoon mx-lg-4">
+              {" "}
+              RECETAS{" "}
+            </Link>
             {store.auth ? (
               <>
                 <Link to={"/userArea"} className="ctaLoging mx-lg-4">

@@ -25,15 +25,11 @@ export const Contact = () => {
   };
 
   return (
-    <>
-      <p className="footermailing">Contacta con nosotros </p>
+    <div className="container contacto1">
       <div className="row">
-        <form ref={form} className="" onSubmit={sendEmail}>
-          <div className="col-6 col-md-4">
-            <p className="contacto mb-0">Nombre</p>
-            <input type="text" className="user" name="user_name" />
-          </div>
+        <p className="footermailing">Contacta con nosotros </p>
 
+        <form ref={form} className="" onSubmit={sendEmail}>
           <div className="col-6 col-md-4">
             <p className="contacto mb-0">Email</p>
             <input type="text" className="user" name="user_email" />
@@ -63,6 +59,6 @@ export const Contact = () => {
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 };

@@ -31,7 +31,7 @@ export const SearchBar = () => {
 
   return (
     <>
-      <div className="row justify-content-center text-center my-5">
+      <div className="row justify-content-center text-center mb-5">
         <form
           onSubmit={subtmitHandler}
           className="formBusca d-flex justify-content-center"
@@ -41,17 +41,17 @@ export const SearchBar = () => {
               className="form-control searchIngredients2 px-2"
               id="searchinput"
               type="text"
-              placeholder="¿  Qué ingredientes tienes a mano?"
+              placeholder=""
               defaultValue={search}
               onChange={searcher}
             />
           </div>
         </form>
       </div>
-      <div className="row">
+      <div className="row mx-5">
         {recipe.map((recipe, index) => {
           return (
-            <div className="recipes col-12 col-md-4" key={index}>
+            <div className="recipes col-12 col-md-4 mb-5" key={index}>
               <Recipe
                 name={recipe.name}
                 id={recipe.id}

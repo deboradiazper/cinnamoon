@@ -53,10 +53,6 @@ h5 {
   font-size: 20px;
 }
 
-.text3 {
-  font-family: "Karla", sans-serif;
-}
-
 ::placeholder {
   font-family: "Karla", sans-serif;
 }
@@ -102,6 +98,10 @@ h5 {
   letter-spacing: 4px;
 }
 
+.carousel4 {
+  margin: 0;
+}
+
 .carousel-titulos {
   font-family: "EB Garamond", serif;
   font-size: 3rem;
@@ -116,7 +116,7 @@ h5 {
 
 .carousel-texto {
   font-family: "EB Garamond", serif;
-  background: #ffffff5d;
+  /* background: #ffffff5d; */
   font-size: 20px;
   width: fit-content;
   text-align: center;
@@ -413,7 +413,8 @@ ul {
 }
 
 .footermailing,
-.contacto {
+.contacto,
+.social {
   font-size: 14px;
   letter-spacing: 0.2em;
 }
@@ -594,7 +595,7 @@ ul {
   transition-property: width, left;
 }
 
-/* boton modo noche Navbar */
+/* boton recetas */
 .ctamoon {
   font-size: 14px;
   color: black;
@@ -607,6 +608,7 @@ ul {
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
   transition-property: color;
+  text-decoration: none;
 }
 
 .ctamoon:focus,

@@ -97,7 +97,7 @@ export const UserRegistration = () => {
               <input
                 className="input-reg"
                 name="lastName"
-                placeholder=" Apellido"
+                placeholder=" Apellidos"
                 autoComplete="off"
                 type="text"
                 {...register("lastName", {

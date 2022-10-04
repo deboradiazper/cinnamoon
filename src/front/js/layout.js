@@ -22,6 +22,7 @@ import RecipeAll from "./pages/recipesAll";
 import RecipesFavorits from "./component/recipesFavorits";
 import { NewRecipe } from "./pages/newRecipe";
 import { Contact } from "./component/contact";
+import { NewsletterSubscribe } from "./component/newsletterSubscribe";
 
 //create your first component
 const Layout = () => {
@@ -52,6 +53,11 @@ const Layout = () => {
             <Route element={<RecipesFavorits />} path="/recipefav" />
             <Route element={<NewRecipe />} path="/newrecipe" />
             <Route element={<Contact />} path="/contact" />
+            <Route
+              element={<NewsletterSubscribe />}
+              path="/newsletterSubscribe"
+            />
+
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           <Footer />

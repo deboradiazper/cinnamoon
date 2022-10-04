@@ -48,7 +48,7 @@ export const UserLogin = () => {
                     className="input-reg"
                     name="Password"
                     value={password}
-                    placeholder=" contraseña"
+                    placeholder=" Contraseña"
                     autoComplete="off"
                     type="password"
                     onChange={(event) => setPassword(event.target.value)}

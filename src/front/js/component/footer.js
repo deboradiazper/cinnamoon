@@ -5,7 +5,7 @@ import { NewsletterSubscribe } from "./newsletterSubscribe";
 
 export const Footer = () => {
   return (
-    <footer className="footer mt-auto suscribirse">
+    <footer className="footer m-auto mt-5 suscribirse">
       <div className="row mx-2">
         <div className=" col-md-12 my-3 d-flex justify-content-center">
           <Contact />

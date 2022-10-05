@@ -28,7 +28,7 @@ const RecipesFavorits = () => {
   return (
     <div className="container">
       <div className="row">
-        <h3 className="mt-5"> Mis Recetas favoritas </h3>
+        <h3 className="mt-5 mb-5"> Mis Recetas favoritas </h3>
         {store.recipesfavorites.map((recipe, index) => {
           return (
             <div className="col-12 col-md-3 my-5" key={index}>

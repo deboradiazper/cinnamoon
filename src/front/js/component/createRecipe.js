@@ -63,11 +63,11 @@ const CreateRecipe = () => {
       <div className="col-12 my-3 pt-5">
         <div className="d-flex justify-content-center flex-column">
           <h1 className="text-center p-3">Gracias</h1>
-          <p className="text-3 text-center pb-3">
+          <h4 className="text-center">
             Por hacer crecer nuesra comunidad. Con tu aportación más personas
             podrán disfrutar de una alimentación más adaptada, saludable y
             variada.
-          </p>
+          </h4>
         </div>
       </div>
       <div className="col-12 d-flex justify-content-center">

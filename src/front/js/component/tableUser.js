@@ -7,7 +7,7 @@ const TableUser = () => {
 
   const style = {
     backgroundImage:
-      'url("https://images.unsplash.com/photo-1565299543923-37dd37887442?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=781&q=80")',
+      'url("https://animalgourmet.com/wp-content/uploads/2018/01/bolitas_energeticas_fruta.jpg")',
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",

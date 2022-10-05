@@ -53,6 +53,10 @@ h5 {
   font-size: 20px;
 }
 
+#float {
+  text-align: left;
+}
+
 ::placeholder {
   font-family: "Karla", sans-serif;
 }
@@ -116,7 +120,7 @@ h5 {
 
 .carousel-texto {
   font-family: "EB Garamond", serif;
-  /* background: #ffffff5d; */
+  background: #ffffff91;
   font-size: 20px;
   width: fit-content;
   text-align: center;
@@ -412,7 +416,18 @@ ul {
   /* height: 400px; */
 }
 
-.footermailing,
+.footermailing {
+  font-size: 16px;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+}
+
+.titleNewrecipe,
+.content {
+  font-family: "EB Garamond", serif;
+  font-size: 18px;
+}
+
 .contacto,
 .social {
   font-size: 14px;
@@ -1044,6 +1059,11 @@ ul {
 
 .iconsFooter {
   font-weight: 500;
+}
+
+.containerfooter {
+  text-align: -moz-center;
+  text-align: -webkit-center;
 }
 
 /* From uiverse.io by @hritik5102 */

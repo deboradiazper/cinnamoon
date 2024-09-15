@@ -4,17 +4,13 @@ import Trivias from "./trivias";
 
 const RecipeDetail = (props) => {
   return (
-    <div className="row">
-      <div className="col-md-6">
+    <div className="row my-5">
+      <div className="col-md-6" style={{ minHeight: "400px" }}>
         <div className="card-detail">
           <div className="front">
-            <img
-              src={props.image}
-              className="image-detail img-fluid mx-auto d-block"
-              alt="..."
-            />
+            <img src={props.image} className="image-detail" alt="..." />
           </div>
-          <div className="back">
+          <div className="back overflow-auto">
             <div className="text-back text-center">
               <h5 className="title-back pb-2 mt-3">
                 <i class="fas fa-pencil-alt text-muted pe-2"></i> Ingredientes:
@@ -30,19 +26,14 @@ const RecipeDetail = (props) => {
         </div>
       </div>
 
-      <div className="description-detail col-md-6 ps-5">
+      <div
+        className="description-detail col-md-6 ps-5 overflow-auto"
+        style={{ minHeight: "400px" }}
+      >
         <div className="box-title d-flex justify-content-between align-items-center pe-5">
           <h4 className="title-detail">{props.name}</h4>
           <i className="fas fa-heart text-muted"></i>
         </div>
-        <div className="star mt-3">
-          <i className="fas fa-star"></i>
-          <i className="fas fa-star ms-3"></i>
-          <i className="fas fa-star ms-3"></i>
-          <i className="fas fa-star ms-3"></i>
-          <i className="fas fa-star ms-3"></i>
-        </div>
-
         <div className="icons-description d-flex my-3">
           <div className="categorie d-inline-flex">
             {props.categories.map((value, index) => {
@@ -53,9 +44,7 @@ const RecipeDetail = (props) => {
         <p className="card-text3">{props.description}</p>
       </div>
       <div className="col-12">
-        <h4 className="title-trivia mt-5 pt-5">
-          Conoce más sobre esta receta..
-        </h4>
+        <h4 className="title-trivia mt-5 pt-5">Conoce más sobre estos alimentos</h4>
 
         {props.ingredients.map((value, index) => {
           return (
